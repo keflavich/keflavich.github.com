@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://keflavich.github.com/atom.xml" rel="self"/>
   <link href="http://keflavich.github.com/"/>
-  <updated>2012-12-25T01:22:15-07:00</updated>
+  <updated>2012-12-25T01:26:26-07:00</updated>
   <id>http://keflavich.github.com/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -23,6 +23,8 @@ In its previous iteration, we assumed a fixed offset of 0.5&#8221; per step, and
 pointing errors.  This method uses the slit viewer to derive a pointing
 solution using <a href="astrometry.net">astrometry.net</a>, then apply that solution to
 each slit position to make a map.</p>
+
+<p>Work is largely based on <a href="http://adamginsburg.blogspot.com/2012/10/using-guider-images-to-achieve.html">this post idea</a></p>
 ]]></content>
   </entry>
   
