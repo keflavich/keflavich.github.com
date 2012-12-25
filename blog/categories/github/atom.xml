@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: github | My Octopress Blog]]></title>
+  <link href="http://keflavich.github.com/blog/categories/github/atom.xml" rel="self"/>
+  <link href="http://keflavich.github.com/"/>
+  <updated>2012-12-25T01:16:39-07:00</updated>
+  <id>http://keflavich.github.com/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[TripleSpec Slit Mapping]]></title>
+    <link href="http://keflavich.github.com/blog/2012/12/25/triplespec-slit-mapping/"/>
+    <updated>2012-12-25T01:04:00-07:00</updated>
+    <id>http://keflavich.github.com/blog/2012/12/25/triplespec-slit-mapping</id>
+    <content type="html"><![CDATA[<p>Working on a <a href="https://github.com/keflavich/tspec_mapping">TripleSpec Slit Mapping project on github</a>.
+In its previous iteration, we assumed a fixed offset of 0.5" per step, and no
+pointing errors.  This method uses the slit viewer to derive a pointing
+solution using <a href="astrometry.net">astrometry.net</a>, then apply that solution to
+each slit position to make a map.</p>
+]]></content>
+  </entry>
+  
+</feed>
