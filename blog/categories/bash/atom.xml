@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: bash | My Octopress Blog]]></title>
+  <link href="http://keflavich.github.com/blog/categories/bash/atom.xml" rel="self"/>
+  <link href="http://keflavich.github.com/"/>
+  <updated>2012-12-26T17:25:51-07:00</updated>
+  <id>http://keflavich.github.com/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Bash Prompt]]></title>
+    <link href="http://keflavich.github.com/blog/2012/12/26/bash-prompt/"/>
+    <updated>2012-12-26T16:55:00-07:00</updated>
+    <id>http://keflavich.github.com/blog/2012/12/26/bash-prompt</id>
+    <content type="html"><![CDATA[<p>Tried to create a new bash prompt today.  It's intended to show your current
+git branch in red if there have been any changes or green if there are no
+uncommitted changes.  Otherwise it's the same as my old prompt, with yellow
+path and cyan host name.  Here's the source gist:</p>
+
+<script src="https://gist.github.com/4383597.js"></script>
+
+
+<p>And a screenshot:
+<img src="/images/prompt.png" title="'prompt'" ></p>
+]]></content>
+  </entry>
+  
+</feed>
