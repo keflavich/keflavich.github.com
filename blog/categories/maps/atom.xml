@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: maps | Adam Ginsburg's Astro Blog]]></title>
+  <link href="http://keflavich.github.com/blog/categories/maps/atom.xml" rel="self"/>
+  <link href="http://keflavich.github.com/"/>
+  <updated>2012-12-28T17:22:06-07:00</updated>
+  <id>http://keflavich.github.com/</id>
+  <author>
+    <name><![CDATA[Adam Ginsburg]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[More problem maps]]></title>
+    <link href="http://keflavich.github.com/blog/2009/01/15/more-problem-maps/"/>
+    <updated>2009-01-15T19:29:00-07:00</updated>
+    <id>http://keflavich.github.com/blog/2009/01/15/more-problem-maps</id>
+    <content type="html"><![CDATA[<div class='post'>
+the l060-l062 range has some severe noise problems and rotator issues.  They need to be fixed before release.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[G34.3 PCA subtraction comparison]]></title>
+    <link href="http://keflavich.github.com/blog/2008/08/24/g343-pca-subtraction-comparison/"/>
+    <updated>2008-08-24T14:24:00-06:00</updated>
+    <id>http://keflavich.github.com/blog/2008/08/24/g343-pca-subtraction-comparison</id>
+    <content type="html"><![CDATA[<div class='post'>
+<a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://3.bp.blogspot.com/_lsgW26mWZnU/SLHDrcGWxqI/AAAAAAAADOM/mVp0tqm6qjI/s1600-h/g34.3_pca_compare.png"><img style="cursor: pointer;" src="http://3.bp.blogspot.com/_lsgW26mWZnU/SLHDrcGWxqI/AAAAAAAADOM/mVp0tqm6qjI/s400/g34.3_pca_compare.png" alt="" id="BLOGGER_PHOTO_ID_5238182992653239970" border="0" /></a><br /><br /><br />From top-left to the blue highlighted box, the 20th iteration of N pca components subtracted is shown.  N goes from 1 to 19.  The other plots are  'ascending' and 0-pca components with median and baseline subtraction - ask if you want more details on those.<br /><br />19 iterations recovers a LOT of flux.  I haven't generated the plots for flux as a function of iteration, but I have software to do that available. <br /><br />Things to note: at 10 iterations and higher, you start to generate negative bowls. <br />One observation is probably independently responsible for the chunks of glitchy data present even in the 19 PCA component subtraction.  While the bowls do worsen with higher number of PCA components, we also find fainter structure (e.g. those tongues to the southeast and northwest).</div>
+
+]]></content>
+  </entry>
+  
+</feed>

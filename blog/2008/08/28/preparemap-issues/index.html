@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>prepare_map issues - Adam Ginsburg's Astro Blog</title>
+  <meta name="author" content="Adam Ginsburg">
+
+  
+  <meta name="description" content="The problem: There is a bulk offset that can range from small to ~22&#8217; (largest observed so far) in the combined maps that is not present in &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://keflavich.github.com/blog/2008/08/28/preparemap-issues/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Adam Ginsburg's Astro Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adam Ginsburg's Astro Blog</a></h1>
+  
+    <h2>Nicer than keflavich.blogspot.com</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:keflavich.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Prepare_map Issues</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-28T18:07:00-06:00" pubdate data-updated="true">Aug 28<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+The problem:  There is a bulk offset that can range from small to ~22&#8217; (largest observed so far) in the combined maps that is not present in the individual maps.<br /><br />Observations: I THINK the offset between ra/dec and l/b is most pronounced when the map boundaries are most different.<br /><br />We have been putting CRPIX in the middle of the map (i.e. number of x/y elements divided by 2), which is not the same position as the median ra/dec or l/b.  I figured this might be a problem, but there&#8217;s not really a way around it - if you just set CRPIX to be 0,0, it doesn&#8217;t change anything.  xy2ad and ad2xy produce self-consistent results, but that doesn&#8217;t mean anything either.<br /><br />I think the problem is that AD2XY is largely ignorant of CRPIX: it calculates x/y offsets from the CRVAL assuming that the CRVAL is at CRPIX&#8230;. but I don&#8217;t know why that should be wrong.  Ideas?  More to come if I figure anything out.<br /><br />Update: from doing the individual maps in l/b vs ra/dec, I don&#8217;t think the offset is between l/b and ra/dec&#8230;. something less fundamental.<br /><br />Update 2: still no clues after reading ad2xy and trying to plow through parts of wcssph2xy.   gotta be rect_pix_tstream, but I think it&#8217;s right&#8230;.<br /><br />Update 3: I think I have figured out the problem, currently testing.  My idea has to do with the fact that all x,y positions in rect_pix_tstream are positive, but ad2xy is not constrained to return positive values.  In principle, the two-iteration ad2xy should take care of this, but in the case where the middle of the map in pixels is not the middle of the map in the WCS coordinate system, it is still possible to get negative pixel mappings out of the 2nd iteration.  I&#8217;m still confused about whether this is really possible - makes my head fuzzy - but I tried implementing a solution where I simply shift the crpix rather than recalculating with AD2XY.<br /><br />Update 4: Based on L111, my test in update 3 fixed the problem.  Scuba contours are correct, and reasonably consistent across the field - still need to do the more complete test, e.g. Cygnus<br /><br />Update 5: Cygnus tests still await completion, but a very close inspection of single L111 maps reveals a ~2 pixel difference that could go a long way to explaining my high-RMS pointing calculations.  Still doesn&#8217;t explain the sine curve, but anything helps&#8230;<br /><br />Update 6:  My correction definitely fixed the problem, EXCEPT there&#8217;s still an ambiguity at the .5 pixel level.  Specifically, is AD2XY treating the pixel center as .5,.5 or 0,0?  Ditto IDL.  I believe (from my simulated data) that this ambiguity is still causing a problem.<br /><br />Update 7: New correction fixed problem to better than 1&#8221; (checked by making a simulated map with 1&#8221; pixels) - probably &#8216;perfect&#8217; now.  Read prepare_map.pro for details.  The issue was a difference in pixel centers.</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Adam Ginsburg</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-28T18:07:00-06:00" pubdate data-updated="true">Aug 28<span>th</span>, 2008</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/bgps/'>bgps</a>, <a class='category' href='/blog/categories/mapping/'>mapping</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://keflavich.github.com/blog/2008/08/28/preparemap-issues/" data-via="" data-counturl="http://keflavich.github.com/blog/2008/08/28/preparemap-issues/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2008/08/27/confirmed-error-in-lb-mapping/" title="Previous Post: Confirmed error in L/B mapping">&laquo; Confirmed error in L/B mapping</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2008/09/02/pointing-model-success/" title="Next Post: Pointing model success">Pointing model success &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/26/bash-prompt/">Bash Prompt</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/catalog-vs-image-shift-possible/">Catalog vs Image shift?  A possible solution to the ATLASGAL issue</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/21/idea-multispectral-eigenimage/">Idea: Multispectral Eigenimage decomposition...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/20/first/">Fourier Upsampling</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Adam Ginsburg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

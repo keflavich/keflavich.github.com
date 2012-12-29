@@ -1,0 +1,516 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Adam Ginsburg's Astro Blog</title>
+  <meta name="author" content="Adam Ginsburg">
+
+  
+  <meta name="description" content="I&#8217;ve started looking at PPS fields to see if I can glean any additional information about the &#8220;flux discrepancy&#8221; from them.&nbsp; &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://keflavich.github.com/blog/page/8/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Adam Ginsburg's Astro Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adam Ginsburg's Astro Blog</a></h1>
+  
+    <h2>Nicer than keflavich.blogspot.com</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:keflavich.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/06/16/pps-analysis/">PPS Analysis</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-16T08:46:00-06:00" pubdate data-updated="true">Jun 16<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+I&#8217;ve started looking at PPS fields to see if I can glean any additional information about the &#8220;flux discrepancy&#8221; from them.&nbsp; However, the results are, as usual, unenlightening.<br /><br />There is no consistent increase in flux when 3 PCA components are used instead of 13 PCA components - very plausibly an indication that 13 PCA is not too much to subtract because it&#8217;s only atmosphere.&nbsp; Similarly, there is no obvious benefit to using a quadratic sky estimator instead of a PCA estimator.<br /><br />I&#8217;m using aperture photometry (without background subtraction) on identical fields to perform these comparisons.&nbsp; I&#8217;ve selected (arbitrarily) the l357pps source as my comparison source.&nbsp; The next step (ongoing) is to compare to the co-added maps and crosshatched large-scale maps of the same field.<br /><br />(next step) PPS &lt; single cross-hatched large-scale observation pair &lt; 13PCA full combined map &lt; 3PCA full combined map.<br /><br />Unfortunately, this result implies that the small maps under-recover flux, which suggests that the large maps are too bright, which is the opposite of what we expect.&nbsp; Additionally, lower noise -&gt; more flux recovered?<br /><br />When background subtraction is included, the 3PCA and 13PCA fluxes match nearly perfectly.<br /><br />Despite the failure of this test (PPS &lt; full field), I will do a systematic comparison of PPS sources with 0PCA + masking to the large fields in the hopes that doing so can provide a legitimate estimate of the &#8220;scale factor&#8221; from treating small and large fields differently.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/06/11/bgps-pipeline-published/">BGPS Pipeline Published</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-11T13:59:00-06:00" pubdate data-updated="true">Jun 11<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+The BGPS pipeline has officially been released on <a href="http://code.google.com/p/bgpspipeline/"> Google Code</a>.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/06/08/aperture-photometry-on-herschel-based/">Aperture Photometry on Herschel-based Simulation</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-08T11:22:00-06:00" pubdate data-updated="true">Jun 8<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/_lsgW26mWZnU/TA6IGulWZrI/AAAAAAAAFvU/MHMBrTgxxnU/s1600/ApertureCompare_Source00.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="133" src="http://1.bp.blogspot.com/_lsgW26mWZnU/TA6IGulWZrI/AAAAAAAAFvU/MHMBrTgxxnU/s200/ApertureCompare_Source00.png" width="200" /></a><a href="http://3.bp.blogspot.com/_lsgW26mWZnU/TA6IHwUnzhI/AAAAAAAAFvc/6xv7rKG9Ao4/s1600/ApertureCompare_Source01.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="133" src="http://3.bp.blogspot.com/_lsgW26mWZnU/TA6IHwUnzhI/AAAAAAAAFvc/6xv7rKG9Ao4/s200/ApertureCompare_Source01.png" width="200" /></a><a href="http://2.bp.blogspot.com/_lsgW26mWZnU/TA6IIrbLWVI/AAAAAAAAFvk/mVRxd8bCY0w/s1600/ApertureCompare_Source02.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="133" src="http://2.bp.blogspot.com/_lsgW26mWZnU/TA6IIrbLWVI/AAAAAAAAFvk/mVRxd8bCY0w/s200/ApertureCompare_Source02.png" width="200" /></a><a href="http://3.bp.blogspot.com/_lsgW26mWZnU/TA6IJQBhEoI/AAAAAAAAFvs/VhnsSNbs75A/s1600/ApertureCompare_Source03.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="133" src="http://3.bp.blogspot.com/_lsgW26mWZnU/TA6IJQBhEoI/AAAAAAAAFvs/VhnsSNbs75A/s200/ApertureCompare_Source03.png" width="200" /></a><a href="http://4.bp.blogspot.com/_lsgW26mWZnU/TA6IKP3X_SI/AAAAAAAAFv0/LCXAGTyp_yE/s1600/ApertureCompare_Source04.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="133" src="http://4.bp.blogspot.com/_lsgW26mWZnU/TA6IKP3X_SI/AAAAAAAAFv0/LCXAGTyp_yE/s200/ApertureCompare_Source04.png" width="200" /></a><a href="http://2.bp.blogspot.com/_lsgW26mWZnU/TA6ILDl55sI/AAAAAAAAFv8/jFfTmYof1yQ/s1600/ApertureCompare_Source05.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="133" src="http://2.bp.blogspot.com/_lsgW26mWZnU/TA6ILDl55sI/AAAAAAAAFv8/jFfTmYof1yQ/s200/ApertureCompare_Source05.png" width="200" /></a><a href="http://1.bp.blogspot.com/_lsgW26mWZnU/TA6IL9QhTmI/AAAAAAAAFwE/TAIwnefrPlE/s1600/ApertureCompare_Source06.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="133" src="http://1.bp.blogspot.com/_lsgW26mWZnU/TA6IL9QhTmI/AAAAAAAAFwE/TAIwnefrPlE/s200/ApertureCompare_Source06.png" width="200" /></a><a href="http://3.bp.blogspot.com/_lsgW26mWZnU/TA6IM_9TaaI/AAAAAAAAFwM/0YpADED3SlE/s1600/ApertureCompare_Source07.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="133" src="http://3.bp.blogspot.com/_lsgW26mWZnU/TA6IM_9TaaI/AAAAAAAAFwM/0YpADED3SlE/s200/ApertureCompare_Source07.png" width="200" /></a><a href="http://1.bp.blogspot.com/_lsgW26mWZnU/TA6IOYETGbI/AAAAAAAAFwU/aq5OYcifDc8/s1600/ApertureCompare_Source08.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="133" src="http://1.bp.blogspot.com/_lsgW26mWZnU/TA6IOYETGbI/AAAAAAAAFwU/aq5OYcifDc8/s200/ApertureCompare_Source08.png" width="200" /></a><a href="http://1.bp.blogspot.com/_lsgW26mWZnU/TA6IPFzIniI/AAAAAAAAFwc/omOacZgjFuc/s1600/ApertureCompare_Source09.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="133" src="http://1.bp.blogspot.com/_lsgW26mWZnU/TA6IPFzIniI/AAAAAAAAFwc/omOacZgjFuc/s200/ApertureCompare_Source09.png" width="200" /></a></div>Aperture Photometry on isolated and not-so-isolated sources in the Herschel-based BGPS simulation using the L=111 field for the &#8220;noise&#8221;.  Depending on the aperture, our flux recovery can be really really low.  The images should give an idea of the S/N.&nbsp; Background subtraction means subtracting the median of the image&#8230;. it works frighteningly well in most cases.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/06/07/pipeline-flowcharts/">Pipeline Flowcharts</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-07T16:39:00-06:00" pubdate data-updated="true">Jun 7<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+In the process of hunting down a supposed calibration error, I determined that it was necessary to generate a more intuitive graphical display of the pipeline.  Hence, pipeline flowcharts (generated in keynote).  The key should be self-explanatory to the degree that any part of these charts is understandable to an outsider.  The yellow boxes represent wrapper scripts/functions while the rounded box bubbles show individual functions within these wrappers and their interrelationship.<br /><br /><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/_lsgW26mWZnU/TA10NjZw6qI/AAAAAAAAFtc/ibmISvLIcm0/s1600/PipelineFlowchartV1.0.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="241" src="http://2.bp.blogspot.com/_lsgW26mWZnU/TA10NjZw6qI/AAAAAAAAFtc/ibmISvLIcm0/s400/PipelineFlowchartV1.0.png" width="400" /></a></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/_lsgW26mWZnU/TA10O8mOl5I/AAAAAAAAFtk/W5M6XdTf6mM/s1600/PipelineFlowchartV2.0.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="257" src="http://1.bp.blogspot.com/_lsgW26mWZnU/TA10O8mOl5I/AAAAAAAAFtk/W5M6XdTf6mM/s400/PipelineFlowchartV2.0.png" width="400" /></a></div></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/06/07/minor-mystery-resolved-perseus-cal/">Minor Mystery Resolved: Perseus Cal Curve</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-07T16:30:00-06:00" pubdate data-updated="true">Jun 7<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+When I started working on the Perseus data again, I decided to use the Enoch 2006 calibration curve directly.  However, it has a very different form than all other epochs.  The reason, as revealed below, is that it was not forced through 0,0.  Additionally, all of the BGPS data was observed with mean DC ~ 2-3 V, while the Perseus data was observed with mean DC 4-5 V, so the relevant regime is in a very different location.  The reference DC bias was much lower, ~2.15 V vs. 4.6 V in the 2005-2007 BGPS and 2.6 V in the 2009 BGPS.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/_lsgW26mWZnU/TA1yfdAS7BI/AAAAAAAAFtU/XvYiDQKi-cM/s1600/CalCurveComparison.png" imageanchor="1" ><img border="0" src="http://3.bp.blogspot.com/_lsgW26mWZnU/TA1yfdAS7BI/AAAAAAAAFtU/XvYiDQKi-cM/s320/CalCurveComparison.png" /></a></div></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/06/22/release/">RELEASE</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-06-22T17:30:00-06:00" pubdate data-updated="true">Jun 22<span>nd</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Finally.<br /><br /><a href="http://irsa.ipac.caltech.edu/">http://irsa.ipac.caltech.edu/</a></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/20/eimers-project/">Eimers Project</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-20T17:46:00-06:00" pubdate data-updated="true">Mar 20<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Project for Marc Eimers:<br />Determine velocities to molecular clouds by a variety of methods.  Start with l=30<br /><br />1. Find archival data, particularly from the JCMT, for each core.<br />2. Compare morphologically to 13CO from GRS<br />3. Find Vizier data</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/20/locating-beams/">Locating Beams</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-20T15:16:00-06:00" pubdate data-updated="true">Mar 20<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://3.bp.blogspot.com/_lsgW26mWZnU/ScQIDaTTPhI/AAAAAAAAEzk/C67XkoQb244/s1600-h/beamlocations_050619_default_bolopars.png"><img style="cursor:pointer; cursor:hand;width: 400px; height: 311px;" src="http://3.bp.blogspot.com/_lsgW26mWZnU/ScQIDaTTPhI/AAAAAAAAEzk/C67XkoQb244/s400/beamlocations_050619_default_bolopars.png" border="0" alt=""id="BLOGGER_PHOTO_ID_5315382314896932370" /></a><br /><br />White - &#8220;Default&#8221;, OP-calculated beam-locations<br />Red - My code&#8217;s beam locations<br />Yellow - Boloparams, the fiducial beam locations</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/08/gem-ob1-comparisons/">Gem OB1 Comparisons</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-08T18:03:00-06:00" pubdate data-updated="true">Mar 8<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+I&#8217;m running 0,1,2,3,5,7,10,16, and 19 PCA component 51 iteration maps of Gem OB1 with deconvolution.  No clue when they&#8217;ll be done because they&#8217;re at the end of a long queue.<br /><br />Next (important!) step is to re-run the simulations with linear source sizes but with different numbers of PCA components, different kernel sizes, etc&#8230;.. there is a LOT of parameter space to cover.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/04/detailed-look-at-l086/">A Detailed Look at L086</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-04T14:02:00-07:00" pubdate data-updated="true">Mar 4<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Despite a slew of alignment errors, it appears that the alignment for MOST fields turns out OK using Method 3 of the pixel-shift code; the signal to noise is VERY low in a lot of fields.<br /><br />070724_o38 does not come up with a good fit, for very good reason - there appears to be no signal at all.<br /><br />070907_o20 is a problem.  The offset was 27 pixels, which is too large, but nonetheless correct.  I had to institute the plane fitter at an earlier stage to get it to work.<br /><br />However, the biggest problem: the SCUBA source aligns with 070907_o20 but not the rest of the maps.  So I needed to re-fit everything.  That was a BIG mistake, we need to check carefully for it in other fields.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/9/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/7/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/26/bash-prompt/">Bash Prompt</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/catalog-vs-image-shift-possible/">Catalog vs Image shift?  A possible solution to the ATLASGAL issue</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/21/idea-multispectral-eigenimage/">Idea: Multispectral Eigenimage decomposition&#8230;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/20/first/">Fourier Upsampling</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Adam Ginsburg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

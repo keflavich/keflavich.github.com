@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Failed fields - Adam Ginsburg's Astro Blog</title>
+  <meta name="author" content="Adam Ginsburg">
+
+  
+  <meta name="description" content="l030 - comments were in the form ;; instead of # in the infilel055 - no such folderl026 - no infile existed; made onel028 - /scratch/ &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://keflavich.github.com/blog/2008/09/12/failed-fields/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Adam Ginsburg's Astro Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adam Ginsburg's Astro Blog</a></h1>
+  
+    <h2>Nicer than keflavich.blogspot.com</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:keflavich.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Failed Fields</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-09-12T16:09:00-06:00" pubdate data-updated="true">Sep 12<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+<ul><br /><li>l030 - comments were in the form ;; instead of # in the infile<br /></li><li>l055 - no such folder<br /></li><li>l026 - no infile existed; made one<br /><br /></li><li>l028 - /scratch/sliced_polychrome/l028/060605_o[**]_raw_ds5.nc are bad<br /></li><li>l031 - Downsampling seems to have failed for most of this directory.  Need to downsample all files and create a new infile<br /></li><li>l035 - /scratch/sliced_polychrome/l035/060605_o[**]_raw_ds5.nc are bad - that&#8217;s all 060605 observations of l035.<br /></li><li>l036 - /scratch/sliced_polychrome/l036/070702_o25_raw_ds5.nc, /scratch/sliced_polychrome/l036/070705_o21_raw_ds5.nc are bad<br /></li><li>l038 - /scratch/sliced_polychrome/l038/060627_ob3_raw_ds5.nc, /scratch/sliced_polychrome/l038/060627_ob[3567]_raw.nc are bad - had to re-preprocess </li><li>l054 - /scratch/sliced_polychrome/l054/070724_o25_raw_ds5.nc is bad<br /></li><li>l057 - /scratch/sliced_polychrome/l057/070907_o16_raw_ds5.nc is bad</li></ul>Except for l057, there is no guarantee that the whole observation is bad, BUT the code failed on ncdf_open, so it possible the observation turned bad during downsampling/preprocessing.<br /><br />fixed: 30, 26, 55, 35, 28, 31, 38, 54, 57<br />so far all observations on 060605 are bad.</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Adam Ginsburg</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-09-12T16:09:00-06:00" pubdate data-updated="true">Sep 12<span>th</span>, 2008</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/bgps/'>bgps</a>, <a class='category' href='/blog/categories/mapping/'>mapping</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://keflavich.github.com/blog/2008/09/12/failed-fields/" data-via="" data-counturl="http://keflavich.github.com/blog/2008/09/12/failed-fields/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2008/09/11/uh/" title="Previous Post: Uh?">&laquo; Uh?</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2008/09/14/progress-on-alignment-ideas-for-next/" title="Next Post: Progress on alignment, ideas for the next few steps">Progress on alignment, ideas for the next few steps &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/26/bash-prompt/">Bash Prompt</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/catalog-vs-image-shift-possible/">Catalog vs Image shift?  A possible solution to the ATLASGAL issue</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/21/idea-multispectral-eigenimage/">Idea: Multispectral Eigenimage decomposition...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/20/first/">Fourier Upsampling</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Adam Ginsburg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Adam Ginsburg's Astro Blog</title>
+  <meta name="author" content="Adam Ginsburg">
+
+  
+  <meta name="description" content="-bash-3.00$ du -h --max-depth=1 ../16K ../lost+found80G ../sliced1.3G ../elatov70G ../cleaned58G ../mapped179G ../sliced_polychrome4.0K ../ &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://keflavich.github.com/blog/page/18/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Adam Ginsburg's Astro Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adam Ginsburg's Astro Blog</a></h1>
+  
+    <h2>Nicer than keflavich.blogspot.com</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:keflavich.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/07/31/milkyway-scratch-disk-usage/">Milkyway /scratch Disk Usage</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-07-31T16:40:00-06:00" pubdate data-updated="true">Jul 31<span>st</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<pre><br />-bash-3.00$ du -h --max-depth=1 ../<br />16K     ../lost+found<br />80G     ../sliced<br />1.3G    ../elatov<br />70G     ../cleaned<br />58G     ../mapped<br />179G    ../sliced_polychrome<br />4.0K    ../ironsides<br />49G     ../coadd_mapped<br />2.1G    ../pca_coadd<br />2.8G    ../3pca_3iterations<br />11M     ../centroid<br />17M     ../lost<br />34M     ../ptg_maps<br />3.8G    ../montage<br />31G     ../maps_from_polychrome<br />93M     ../ptg_mmd<br />32G     ../backup_from_kilauea<br />31G     ../sharc<br />1.8M    ../distortion<br />6.9G    ../fake<br />138G    ../adam_work<br />136G    ../bgps_dir_from_polychrome<br />815G    ../<br /></pre></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/07/31/galactic-vs-ra-mapping/">Galactic vs. RA Mapping</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-07-31T14:30:00-06:00" pubdate data-updated="true">Jul 31<span>st</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+They don&#8217;t match up.  This is a serious problem.<br /><br />I think it&#8217;s only a problem for the GC: ad2xy refuses to map things right around that transition.  I think it&#8217;s OK elsewhere.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/07/31/update-pointing-model/">Update - Pointing Model</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-07-31T11:10:00-06:00" pubdate data-updated="true">Jul 31<span>st</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Update - Pointing Model  7/31/08<br />The pointing model application &#8220;works&#8221; now, but I have a problem with our model. We don&#8217;t get down to the <10" RMS offset we're looking for. The mean offsets are all zero, but the spread is more like 20".<br /><br />Example plots on milkyway:  [see attached PDFs too]<br />/scratch/adam_work/plots/models_ptgmdl_0506.ps<br />/scratch/adam_work/plots/models_ptgmdl_0707.ps<br />/scratch/adam_work/plots/models_rawcsoptg_0506.ps<br />/scratch/adam_work/plots/models_rawcsoptg_0707.ps<br /><br />On the left side are plotted &#8220;all&#8221; of the data points, on the right I&#8217;ve used a two-iteration 3-sigma rejection to eliminate outliers to a small degree.<br /><br />Top of these plots - as labeled - is altoff vs. alt, bottom is azoff vs. alt.<br /><br />The red lines are a 2nd order polynomial fit to the data.<br />The cyan lines are the pointing model corrections calculated by Meredith.<br /><br />The &#8216;ptgmdl&#8217; files have had the pointing model corrections applied. Note that they are centered around offsets of zero.<br />The &#8216;rawcsoptg&#8217; files DO NOT have pointing model corrections applied, and FZAO/FAZO have been REMOVED from the original pointing. Hence, these are RAW CSO TELESCOPE POINTING plots.<br /><br />Things to note:<br /><br />    * In the 0707 &#8216;ptgmdl&#8217; set, the az is not quite centered at zero<br />    * the 0506 &#8216;ptgmdl&#8217; set still has bulk offsets<br />    * the ALTOFF and AZOFF are in delta-coordinate: this means that azoff should be scaled by dividing by cos(alt) to put the y-axis in consistent units. In most cases, this means that the already large spread at higher altitudes is going to INCREASE. That means the problem is going to get worse&#8230;<br /><br />Questions:<br /><br />   1. What is the main difference between my plots and Meredith&#8217;s? i.e. why is my RMS ~an order of magnitude larger?<br />   2. Does more outlier rejection make sense? Is there any reason not to trust certain observations if they visible turn out right?<br /><br /><br /><br />PPSes are supposed to be &#8220;absolute references&#8221; for the 1x1, 3x1 maps<br />OLD PROBLEM: PPS and large maps mapped with same &#8216;pointing model&#8217; but ended up with different coordinates</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/07/30/defining-pointing-terminology/">Defining Pointing Terminology</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-07-30T15:38:00-06:00" pubdate data-updated="true">Jul 30<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+There has been a lot of confusion about pointing terminology.<br /><br /><ul><li>CSO pointing model: the telescope pointing model used and written as a black box </li><br /><ul><li> has already been corrected for aberration/nutation </li><br /><li> is in current epoch coordinates (e.g. J2007.34) </li></ul><br /><li> Instrument-specific correction to pointing model </li><br /><ul><li> ??? also referred to as &#8216;t terms&#8217; </li><br /><li> is offset between CSO pointing model and real locations </li><br /><li> should be a function of alt (and maybe az) </li><br /><li> is recorded in &#8220;RPC&#8221; files </li><br /><li> is in units of distance on the sky: delta-RA and delta-DEC, or delta-ALT and delta-AZ will be in the same units, while if they were in coordinate units delta-RA and delta-AZ would have to be scaled by 1/cos(DEC) or 1/cos(ALT) respectively<br /></li></ul><br /><li> FAZO and FZAO: Fixed Azimuth Offset and Fixed Zenith Angle Offset<br /><ul> <li> these are ambiguously defined in the pipeline code </li><br /><li> ???? FAZO/FZAO include both the functional instrument specific pointing offset and any manual changes made at the telescope [manual only relevant to 2007 observations] </li><br /><li> ???? or are these JUST fixed offsets, and the instrument specific corrections are not included?  Either way, how can I separate out manually-applied fixed offsets from fitted-model offsets? </li> </ul><br /></li></ul></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/07/30/new-pipeline-to-cvs/">New Pipeline to CVS</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-07-30T15:32:00-06:00" pubdate data-updated="true">Jul 30<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Open topic - what needs to be done to put the new pipeline on the CVS?<br /><br /><ol><li>Under the assumption that it will be used by others, the documentation needs to be complete.<br /></li><li>Needs to be compatible with current pipeline (no name overlap)<br /></li><li>Have to fix / update some Goddard astrolib routines that have short integer for loops and need long integer for loops<br />     -which ones?</li><li>Probably need to add instrument specific pointing model corrections for non-BGPS observations<br /></li></ol></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/07/30/bolocam-pipeline-blog/">BOLOCAM PIPELINE BLOG</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-07-30T15:29:00-06:00" pubdate data-updated="true">Jul 30<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Guy pointed out in the CU meeting today that we need a better way to keep track of changes / problems / etc.  The wiki&#8217;s kind of a pain, and this will serve as something of a replacement for the e-mail-only conversations that have been going on with the Software Power Team.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/17/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/26/bash-prompt/">Bash Prompt</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/catalog-vs-image-shift-possible/">Catalog vs Image shift?  A possible solution to the ATLASGAL issue</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/21/idea-multispectral-eigenimage/">Idea: Multispectral Eigenimage decomposition&#8230;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/20/first/">Fourier Upsampling</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Adam Ginsburg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

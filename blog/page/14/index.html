@@ -1,0 +1,516 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Adam Ginsburg's Astro Blog</title>
+  <meta name="author" content="Adam Ginsburg">
+
+  
+  <meta name="description" content="Done for the day after this (observing tonight)two new procedures: alignment_offsets_to_ncdf.pro calcoeffs_to_ncdf.prothey&#8217;re really easy, &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://keflavich.github.com/blog/page/14/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Adam Ginsburg's Astro Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adam Ginsburg's Astro Blog</a></h1>
+  
+    <h2>Nicer than keflavich.blogspot.com</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:keflavich.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/09/05/new-code/">New Code</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-09-05T14:47:00-06:00" pubdate data-updated="true">Sep 5<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Done for the day after this (observing tonight)<br /><br />two new procedures:<br />  alignment_offsets_to_ncdf.pro<br />  calcoeffs_to_ncdf.pro<br /><br />they&#8217;re really easy, very nearly one-liners.  Once they&#8217;ve been used once, you can just use ncdf_varput_scale<br /><br /><br />Modified keyword parameters in do_the_pointing:  offsets will always be applied unless the keyword &#8216;no_offsets&#8217; is passed into the code (or the top-level wrapper).  Since offsets default to zero, this should be OK.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/09/02/pointing-model-success/">Pointing Model Success</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-09-02T09:06:00-06:00" pubdate data-updated="true">Sep 2<span>nd</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+/scratch/adam_work/plots/models_myptgmdl_0707.ps<br /><br />Look at the left plots in #1 and #4, and ignore the red lines.  The RMS is 4.87 in alt, 3.51 in az, using all pointing observations in 0707 (i.e. not splitting it into part1/part2 or refining heavily).   Total is 6.003&#8221;, not bad.<br /><br />I&#8217;m calling it quits on pointing refinement for the moment; I&#8217;m satisfied using Meredith&#8217;s pointing models to get science maps co-aligned, then we&#8217;ll use my model on the PPSes to get the pointing to maximum precision.<br /><br />Also, in the galactic center, the mapping works happily now.  No more silly problems with that.<br /><br />It&#8217;s time for a real Next Step.  I think that means mapping nearly everything.  Well, here goes!</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/08/28/preparemap-issues/">Prepare_map Issues</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-28T18:07:00-06:00" pubdate data-updated="true">Aug 28<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+The problem:  There is a bulk offset that can range from small to ~22&#8217; (largest observed so far) in the combined maps that is not present in the individual maps.<br /><br />Observations: I THINK the offset between ra/dec and l/b is most pronounced when the map boundaries are most different.<br /><br />We have been putting CRPIX in the middle of the map (i.e. number of x/y elements divided by 2), which is not the same position as the median ra/dec or l/b.  I figured this might be a problem, but there&#8217;s not really a way around it - if you just set CRPIX to be 0,0, it doesn&#8217;t change anything.  xy2ad and ad2xy produce self-consistent results, but that doesn&#8217;t mean anything either.<br /><br />I think the problem is that AD2XY is largely ignorant of CRPIX: it calculates x/y offsets from the CRVAL assuming that the CRVAL is at CRPIX&#8230;. but I don&#8217;t know why that should be wrong.  Ideas?  More to come if I figure anything out.<br /><br />Update: from doing the individual maps in l/b vs ra/dec, I don&#8217;t think the offset is between l/b and ra/dec&#8230;. something less fundamental.<br /><br />Update 2: still no clues after reading ad2xy and trying to plow through parts of wcssph2xy.   gotta be rect_pix_tstream, but I think it&#8217;s right&#8230;.<br /><br />Update 3: I think I have figured out the problem, currently testing.  My idea has to do with the fact that all x,y positions in rect_pix_tstream are positive, but ad2xy is not constrained to return positive values.  In principle, the two-iteration ad2xy should take care of this, but in the case where the middle of the map in pixels is not the middle of the map in the WCS coordinate system, it is still possible to get negative pixel mappings out of the 2nd iteration.  I&#8217;m still confused about whether this is really possible - makes my head fuzzy - but I tried implementing a solution where I simply shift the crpix rather than recalculating with AD2XY.<br /><br />Update 4: Based on L111, my test in update 3 fixed the problem.  Scuba contours are correct, and reasonably consistent across the field - still need to do the more complete test, e.g. Cygnus<br /><br />Update 5: Cygnus tests still await completion, but a very close inspection of single L111 maps reveals a ~2 pixel difference that could go a long way to explaining my high-RMS pointing calculations.  Still doesn&#8217;t explain the sine curve, but anything helps&#8230;<br /><br />Update 6:  My correction definitely fixed the problem, EXCEPT there&#8217;s still an ambiguity at the .5 pixel level.  Specifically, is AD2XY treating the pixel center as .5,.5 or 0,0?  Ditto IDL.  I believe (from my simulated data) that this ambiguity is still causing a problem.<br /><br />Update 7: New correction fixed problem to better than 1&#8221; (checked by making a simulated map with 1&#8221; pixels) - probably &#8216;perfect&#8217; now.  Read prepare_map.pro for details.  The issue was a difference in pixel centers.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/08/27/confirmed-error-in-lb-mapping/">Confirmed Error in L/B Mapping</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-27T13:37:00-06:00" pubdate data-updated="true">Aug 27<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+I&#8217;ve used my simulated data and confirmed that there is in fact an error in the l/b mapping, but I haven&#8217;t tracked it down yet.  Stay tuned.<br /><br /><br />Update:  Something is not self-consistent in prepare_map.  I&#8217;ve tried a variety of different things without success yet.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/08/25/updates-today/">Updates Today</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-25T17:32:00-06:00" pubdate data-updated="true">Aug 25<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+I updated the FITS header writing pieces of the software today, we should now have:<br />N_PCA<br />ITERNUM<br />PPBEAM<br /><br />in all new maps.<br /><br />I&#8217;m mapping all of Cygnus degree-by-degree in RA/Dec and Galactic to try to measure offsets&#8230; possibly offsets as a function of l/b or ra/dec.  I should really be doing this with PPSes, though.<br /><br />My priority list:<br /><ol><li>find out what&#8217;s causing bulk offsets</li><li>beat down noise in my pointing models by rejecting bad sources/points [has to be done from campus]<br /></li><li>test my personal special pointing models</li><li>make maps!</li><li>figure out the rest of pointing<br /></li></ol></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/08/25/iterating-to-convergence/">Iterating to Convergence</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-25T11:38:00-06:00" pubdate data-updated="true">Aug 25<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://4.bp.blogspot.com/_lsgW26mWZnU/SLLufcweELI/AAAAAAAADOs/5LV8RF28aUk/s1600-h/iteratetoconvergence-0.png"><img style="cursor: pointer;" src="http://4.bp.blogspot.com/_lsgW26mWZnU/SLLufcweELI/AAAAAAAADOs/5LV8RF28aUk/s400/iteratetoconvergence-0.png" alt="" id="BLOGGER_PHOTO_ID_5238511540648153266" border="0" /></a><br />Some sample plots of flux-vs-iteration number in the Galactic Center.  The above is for a 13-pca-component map, and the plot is of the northeast peak of SGR B2.  The other plots (available in postscript below) are of two other points in the GC, and the last one is of the whole of SGR B2 (it&#8217;s a very large aperture).<br /><br />ps version here:<br /><a href="http://sites.google.com/site/bolocam/pipeline/mapping/iteratetoconvergence.ps?attredirects=0">http://sites.google.com/site/bolocam/pipeline/mapping/iteratetoconvergence.ps?attredirects=0</a><br /><br />or /scratch/adam_work/plots/iteratetoconvergence.ps</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/08/24/g343-pca-subtraction-comparison/">G34.3 PCA Subtraction Comparison</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-24T14:24:00-06:00" pubdate data-updated="true">Aug 24<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://3.bp.blogspot.com/_lsgW26mWZnU/SLHDrcGWxqI/AAAAAAAADOM/mVp0tqm6qjI/s1600-h/g34.3_pca_compare.png"><img style="cursor: pointer;" src="http://3.bp.blogspot.com/_lsgW26mWZnU/SLHDrcGWxqI/AAAAAAAADOM/mVp0tqm6qjI/s400/g34.3_pca_compare.png" alt="" id="BLOGGER_PHOTO_ID_5238182992653239970" border="0" /></a><br /><br /><br />From top-left to the blue highlighted box, the 20th iteration of N pca components subtracted is shown.  N goes from 1 to 19.  The other plots are  &#8216;ascending&#8217; and 0-pca components with median and baseline subtraction - ask if you want more details on those.<br /><br />19 iterations recovers a LOT of flux.  I haven&#8217;t generated the plots for flux as a function of iteration, but I have software to do that available. <br /><br />Things to note: at 10 iterations and higher, you start to generate negative bowls. <br />One observation is probably independently responsible for the chunks of glitchy data present even in the 19 PCA component subtraction.  While the bowls do worsen with higher number of PCA components, we also find fainter structure (e.g. those tongues to the southeast and northwest).</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/08/24/some-good-news-some-not-news/">Some Good News, Some&#8230;. Not News.</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-24T14:07:00-06:00" pubdate data-updated="true">Aug 24<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+I&#8217;ve been mapping all weekend.  It turns out that if you do 25 mapping runs that take ~1hr apiece, that takes ~25 hours.  Who knew?<br /><br />Whole observation took 3965.3506 sec.<br />Whole observation took 3071.1403 sec.<br />Whole observation took 4205.3337 sec.<br />Whole observation took 7362.5490 sec.<br />Whole observation took 9313.6064 sec.<br />Whole observation took 3755.2383 sec.<br />Whole observation took 3755.8278 sec.<br />Whole observation took 3760.7032 sec.<br />Whole observation took 3758.5719 sec.<br />Whole observation took 3763.1436 sec.<br />Whole observation took 3766.0066 sec.<br />Whole observation took 3789.5806 sec.<br />Whole observation took 3760.9774 sec.<br />Whole observation took 3762.7124 sec.<br />Whole observation took 3763.1120 sec.<br />Whole observation took 3767.1255 sec.<br />Whole observation took 3766.9085 sec.<br />Whole observation took 3758.5867 sec.<br />Whole observation took 3760.2131 sec.<br />Whole observation took 3755.8963 sec.<br />Whole observation took 3759.9199 sec.<br />Whole observation took 3764.4494 sec.<br />Whole observation took 3766.9686 sec.<br />Whole observation took 3756.5876 sec.<br /><br /><br />The good news is that I haven&#8217;t encountered any crashes.  Smooth sailing so far.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/08/23/re-convergence-tests/">Re: Convergence Tests</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-23T10:37:00-06:00" pubdate data-updated="true">Aug 23<span>rd</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Made a little code to check out convergence, but frankly it&#8217;s pretty easy to just build a mapcube and plot lines in the iteration axis.  The code is in bgps_pipeline/postproc/compareiters.pro, and it is not a single program.<br /><br />Comparing deconvolution to no deconvolution, deconvolution is a lot better.  Without it, there are much more substantial negative regions.  In the GC, my test region, the noise-dominated areas were about the same, though the no-deconvolve map had a little bit more large scale structure.  The signal-dominated regions were very nearly uniformly brighter.  The deconvolved map was ~3 Jy brighter in SGR B2, or 4%.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/08/23/on-list-for-today/">On the List for Today&#8230;.</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-23T07:25:00-06:00" pubdate data-updated="true">Aug 23<span>rd</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Since my gigantic mapping run is still going, I&#8217;m going to work primarily on developing code for testing the maps, and determining important information about the mapper.<br /><br />The data paper will require an iteration-to-convergence figure, or at least an estimate of degree of convergence.<br /><ol><li>Need to develop code to show iteration-to-convergence<br /><ol type="a"><li> need it for both NxNpca and ascending/descending</li><li>have to use region files?  make some sort of region reader?</li><li>pick demonstration sources</li></ol></li><li>Compare N<sub>pca</sub> results for bright, faint sources</li><li>Compare iterating with/without deconvolution</li><li>Compare median/average/baseline sky subtraction</li><li>Analyze efficiency&#8230;</li><li>Try to figure out what&#8217;s causing huge offsets.  Is it Galactic Coordinate mapping?<br /></li></ol><br /><br /><br /><pre><br />-bash-3.00$ less /scratch/adam_work/logs/log_082208_domemiter.log | grep Whole<br />Whole observation took 5122.6795 sec.<br />Whole observation took 4774.3424 sec.<br />Whole observation took 2687.7761 sec.<br />Whole observation took 2102.5577 sec.<br />Whole observation took 3247.5344 sec.<br />Whole observation took 5515.2907 sec.<br />Whole observation took 2877.6389 sec.<br />Whole observation took 2757.0235 sec.<br />Whole observation took 1453.0918 sec.<br />Whole observation took 1459.7892 sec.<br />Whole observation took 1381.3762 sec.<br />Whole observation took 1443.1440 sec.<br />Whole observation took 614.39645 sec.<br />Whole observation took 2001.6709 sec.<br />Whole observation took 1817.1512 sec.<br />Whole observation took 1879.1385 sec.<br /></pre><br /><br />Note that the longest set there - 5515s = 1.53 hours - was 40 iterations!</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/15/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/13/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/26/bash-prompt/">Bash Prompt</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/catalog-vs-image-shift-possible/">Catalog vs Image shift?  A possible solution to the ATLASGAL issue</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/21/idea-multispectral-eigenimage/">Idea: Multispectral Eigenimage decomposition&#8230;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/20/first/">Fourier Upsampling</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Adam Ginsburg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

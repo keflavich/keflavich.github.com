@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Calibration Offsets Revisited - Adam Ginsburg's Astro Blog</title>
+  <meta name="author" content="Adam Ginsburg">
+
+  
+  <meta name="description" content="The agreement with Motte et al 2007 is now perfect with a vertical ADDITIVE offset instead of the annoying multiplicative offset. An additive offset &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://keflavich.github.com/blog/2011/11/15/calibration-offsets-revisited/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Adam Ginsburg's Astro Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adam Ginsburg's Astro Blog</a></h1>
+  
+    <h2>Nicer than keflavich.blogspot.com</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:keflavich.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Calibration Offsets Revisited</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-15T17:55:00-07:00" pubdate data-updated="true">Nov 15<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+The agreement with Motte et al 2007 is now perfect with a vertical ADDITIVE offset instead of the annoying multiplicative offset. An additive offset can trivially be accounted for by a spatial transfer function. As is evident in the difference images, the MAMBO data appears to sit on a plateau.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-dCeUkoHiAPs/TrwYlSZ2I6I/AAAAAAAAGj8/2FpasBudxPc/s1600/newtestregl44_bgps_s1200_comp_linefits_point.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://2.bp.blogspot.com/-dCeUkoHiAPs/TrwYlSZ2I6I/AAAAAAAAGj8/2FpasBudxPc/s320/newtestregl44_bgps_s1200_comp_linefits_point.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-XWWisYSwoiw/TrwYl-E4uQI/AAAAAAAAGkI/Gu5MxohyxZY/s1600/newtestregl44_bgpsv2_s1200_comp_linefits_point.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://2.bp.blogspot.com/-XWWisYSwoiw/TrwYl-E4uQI/AAAAAAAAGkI/Gu5MxohyxZY/s320/newtestregl44_bgpsv2_s1200_comp_linefits_point.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-flBRCavDJKM/TrwYmZLzifI/AAAAAAAAGkU/D7K7-aG_ZZE/s1600/testregl44_bgps_s1200_comp_origimages_scales1200peak_1.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://3.bp.blogspot.com/-flBRCavDJKM/TrwYmZLzifI/AAAAAAAAGkU/D7K7-aG_ZZE/s320/testregl44_bgps_s1200_comp_origimages_scales1200peak_1.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-0i_9U9v37Wc/TrwYm3Ctx4I/AAAAAAAAGkg/xj1xWYI4eLo/s1600/testregl44_bgpsv2_s1200_comp_origimages_scales1200peak_1.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://3.bp.blogspot.com/-0i_9U9v37Wc/TrwYm3Ctx4I/AAAAAAAAGkg/xj1xWYI4eLo/s320/testregl44_bgpsv2_s1200_comp_origimages_scales1200peak_1.png" /></a></div><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-Wnys8tmpdnI/TsMFsi04CZI/AAAAAAAAGlc/sXKhoMMDRUM/s1600/newirdc1_bgps_iram_comp_linefits_cross.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://4.bp.blogspot.com/-Wnys8tmpdnI/TsMFsi04CZI/AAAAAAAAGlc/sXKhoMMDRUM/s320/newirdc1_bgps_iram_comp_linefits_cross.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-XWRv2iQr_yM/TsMFtHzCWUI/AAAAAAAAGlo/MVvzvsJEv8s/s1600/irdc1_bgps_iram_comp_origimages_scaleirampeak.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://4.bp.blogspot.com/-XWRv2iQr_yM/TsMFtHzCWUI/AAAAAAAAGlo/MVvzvsJEv8s/s320/irdc1_bgps_iram_comp_origimages_scaleirampeak.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-2VT-44snbic/TsMFthQNCzI/AAAAAAAAGl0/XJmjYJWlT0A/s1600/newirdc1_bgpsv2_iram_comp_linefits_cross.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://1.bp.blogspot.com/-2VT-44snbic/TsMFthQNCzI/AAAAAAAAGl0/XJmjYJWlT0A/s320/newirdc1_bgpsv2_iram_comp_linefits_cross.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-76VOl5ASlas/TsMFuS2tU7I/AAAAAAAAGmA/1GY0DwzsToo/s1600/irdc1_bgpsv2_iram_comp_origimages_scaleirampeak.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://4.bp.blogspot.com/-76VOl5ASlas/TsMFuS2tU7I/AAAAAAAAGmA/1GY0DwzsToo/s320/irdc1_bgpsv2_iram_comp_origimages_scaleirampeak.png" /></a></div><br /><br />Cygnus X:<br />BGPSV1:<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-Ul21t0ucmOs/TsMGdaRI50I/AAAAAAAAGmM/UhJ_mCKRZ4A/s1600/newmottecygx2_bgps_iram_comp_linefits_cross.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://3.bp.blogspot.com/-Ul21t0ucmOs/TsMGdaRI50I/AAAAAAAAGmM/UhJ_mCKRZ4A/s320/newmottecygx2_bgps_iram_comp_linefits_cross.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-d_XSGb63vtk/TsMGd7cMs1I/AAAAAAAAGmY/MTL7mFfH9_I/s1600/newmottecygx2_bgps_iram_comp_linefits_cross_2.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://1.bp.blogspot.com/-d_XSGb63vtk/TsMGd7cMs1I/AAAAAAAAGmY/MTL7mFfH9_I/s320/newmottecygx2_bgps_iram_comp_linefits_cross_2.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-CKArUxnvfXc/TsMGeY4yP7I/AAAAAAAAGmk/iaRcDy28-8w/s1600/newmottecygx2_bgps_iram_comp_linefits_cross_3.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://1.bp.blogspot.com/-CKArUxnvfXc/TsMGeY4yP7I/AAAAAAAAGmk/iaRcDy28-8w/s320/newmottecygx2_bgps_iram_comp_linefits_cross_3.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-cNgOGbIFhzc/TsMGe3d7kZI/AAAAAAAAGmw/kn3Y0M18flM/s1600/newmottecygx2_bgps_iram_comp_linefits_cross_dr21.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://4.bp.blogspot.com/-cNgOGbIFhzc/TsMGe3d7kZI/AAAAAAAAGmw/kn3Y0M18flM/s320/newmottecygx2_bgps_iram_comp_linefits_cross_dr21.png" /></a></div><br /><br /><br />BGPSV2:<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-cIZHQxLW7t0/TsMGrpLUTcI/AAAAAAAAGm8/PJfhh_Z1Y44/s1600/newmottecygx2_bgpsv2_iram_comp_linefits_cross.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://4.bp.blogspot.com/-cIZHQxLW7t0/TsMGrpLUTcI/AAAAAAAAGm8/PJfhh_Z1Y44/s320/newmottecygx2_bgpsv2_iram_comp_linefits_cross.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-55051oTEK34/TsMGrzJL3eI/AAAAAAAAGnI/pd468xeLBxQ/s1600/newmottecygx2_bgpsv2_iram_comp_linefits_cross_2.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://4.bp.blogspot.com/-55051oTEK34/TsMGrzJL3eI/AAAAAAAAGnI/pd468xeLBxQ/s320/newmottecygx2_bgpsv2_iram_comp_linefits_cross_2.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-f2BTCfMG5Ao/TsMGsTy98yI/AAAAAAAAGnU/6m30n1cgwgQ/s1600/newmottecygx2_bgpsv2_iram_comp_linefits_cross_3.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://4.bp.blogspot.com/-f2BTCfMG5Ao/TsMGsTy98yI/AAAAAAAAGnU/6m30n1cgwgQ/s320/newmottecygx2_bgpsv2_iram_comp_linefits_cross_3.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-ND8KA8OqHpc/TsMGs5pAo0I/AAAAAAAAGng/kkucv9xfINk/s1600/newmottecygx2_bgpsv2_iram_comp_linefits_cross_dr21.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://1.bp.blogspot.com/-ND8KA8OqHpc/TsMGs5pAo0I/AAAAAAAAGng/kkucv9xfINk/s320/newmottecygx2_bgpsv2_iram_comp_linefits_cross_dr21.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-8ovlXgU6EIU/TsMMT0wfZ-I/AAAAAAAAGns/dq5Es6kDmE0/s1600/sections.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="259" width="320" src="http://4.bp.blogspot.com/-8ovlXgU6EIU/TsMMT0wfZ-I/AAAAAAAAGns/dq5Es6kDmE0/s320/sections.png" /></a></div></div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adam</div>
+<div class='content'>
+Check to make sure original fits were/were not forced through 0,0</div>
+</div>
+</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Adam Ginsburg</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-15T17:55:00-07:00" pubdate data-updated="true">Nov 15<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/bgps/'>bgps</a>, <a class='category' href='/blog/categories/calibration/'>calibration</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://keflavich.github.com/blog/2011/11/15/calibration-offsets-revisited/" data-via="" data-counturl="http://keflavich.github.com/blog/2011/11/15/calibration-offsets-revisited/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/08/29/bolocat-v1-v2-comparison-with-new/" title="Previous Post: Bolocat v1-v2 comparison with new calibration">&laquo; Bolocat v1-v2 comparison with new calibration</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/12/02/calibration-as-good-as-its-gonna-get/" title="Next Post: Calibration: As good as it's gonna get">Calibration: As good as it's gonna get &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/26/bash-prompt/">Bash Prompt</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/catalog-vs-image-shift-possible/">Catalog vs Image shift?  A possible solution to the ATLASGAL issue</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/21/idea-multispectral-eigenimage/">Idea: Multispectral Eigenimage decomposition...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/20/first/">Fourier Upsampling</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Adam Ginsburg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Progress on alignment, ideas for the next few steps - Adam Ginsburg's Astro Blog</title>
+  <meta name="author" content="Adam Ginsburg">
+
+  
+  <meta name="description" content="Alignment: I did a more thorough test of the aligner, and found an error that was getting me the wrong results. I&#8217;m still getting distinctly &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://keflavich.github.com/blog/2008/09/14/progress-on-alignment-ideas-for-next/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Adam Ginsburg's Astro Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adam Ginsburg's Astro Blog</a></h1>
+  
+    <h2>Nicer than keflavich.blogspot.com</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:keflavich.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Progress on Alignment, Ideas for the Next Few Steps</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-09-14T19:18:00-06:00" pubdate data-updated="true">Sep 14<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+Alignment:  I did a more thorough test of the aligner, and found an error that was getting me the wrong results.  I&#8217;m still getting distinctly different results than I got with imalign, but I&#8217;m not convinced they&#8217;re wrong.  One problem I have to deal with is the ambiguity between pointing model applied / no pointing model applied.  In retrospect, I should have done ALL of the maps with no pointing model: it would be simpler to maintain a self-consistent set of alignment corrections.<br /><br />However, since that isn&#8217;t what I did - and there isn&#8217;t enough memory to host both data sets at the moment - I&#8217;ve dealt with the problem by adding all of the offsets to the header.  Hopefully now it will be obvious if and what offsets have been applied, both pointing model and &#8216;manual&#8217;, from header keywords.  Sadly, it was a pain to get that to work - IDL&#8217;s _extra does not work the same way as normal keyword passing, which is disappointing and frustrating because it made me rename a lot of variables that should not have been renamed.<br /><br />IF this alignment fails to produce perfect results (which I don&#8217;t really expect to happen - it will just take time to debug), it is still a good first step, and all we&#8217;d really need to do is use bolocat to pull out sources from the reference image and then match those in the others, doing the same thing imalign does.  It wouldn&#8217;t be difficult but it would be time consuming to program.<br /><br />Had a bunch of ideas during my insomnia last night, but I&#8217;m afraid I forgot most of them&#8230;<br /><br />One idea was related to the use of MAD as opposed to STDDEV: it may allow for a more robust sigma-rejection for automated flagging.  But that&#8217;s difficult.<br /><br />Another thought was using the maps to auto-identify glitches.  To do this, I&#8217;d make a combined map and an individual map, hastrom them, and subtract the combined from the individual.  We could then probably pretty easily spot any glitches; they should be the only outliers left, in principle.  I&#8217;ll test that idea, but it actually looks less promising than I&#8217;d hoped.  Things are not coming out right in preliminary tests - huge residuals.</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Adam Ginsburg</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-09-14T19:18:00-06:00" pubdate data-updated="true">Sep 14<span>th</span>, 2008</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/bgps/'>bgps</a>, <a class='category' href='/blog/categories/pipeline/'>pipeline</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://keflavich.github.com/blog/2008/09/14/progress-on-alignment-ideas-for-next/" data-via="" data-counturl="http://keflavich.github.com/blog/2008/09/14/progress-on-alignment-ideas-for-next/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2008/09/12/failed-fields/" title="Previous Post: Failed fields">&laquo; Failed fields</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2008/09/14/alignment-success-stories/" title="Next Post: Alignment success stories">Alignment success stories &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/26/bash-prompt/">Bash Prompt</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/catalog-vs-image-shift-possible/">Catalog vs Image shift?  A possible solution to the ATLASGAL issue</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/21/idea-multispectral-eigenimage/">Idea: Multispectral Eigenimage decomposition...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/20/first/">Fourier Upsampling</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Adam Ginsburg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

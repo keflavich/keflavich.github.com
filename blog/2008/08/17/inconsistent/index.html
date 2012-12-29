@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Inconsistent - Adam Ginsburg's Astro Blog</title>
+  <meta name="author" content="Adam Ginsburg">
+
+  
+  <meta name="description" content="James: &#8220;I think it&#8217;s fair to say, though, that there is some problem with the simultaneous assumption that CSO coords are geo and that &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://keflavich.github.com/blog/2008/08/17/inconsistent/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Adam Ginsburg's Astro Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adam Ginsburg's Astro Blog</a></h1>
+  
+    <h2>Nicer than keflavich.blogspot.com</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:keflavich.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Inconsistent</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-17T12:19:00-06:00" pubdate data-updated="true">Aug 17<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+James: &#8220;I think it&#8217;s fair to say, though, that there is some problem with the simultaneous assumption that CSO coords are geo and that we are applying the ab/nut correction correctly.&#8221;<br /><br />Yep.  The relevant files are in /scratch/adam_work/plots/:<br />models_noabnut_radec_0707.ps<br />models_noabnut_rawcsoptg_radec_0707.ps<br />models_oppositeabnut_radec_0707.ps<br />models_oppositeabnut_rawcso_radec_0707.ps<br /><br />I&#8217;m afraid they&#8217;re pretty confusing. <br /><br />&#8216;noabnut&#8217; means no aberration/nutation correction was applied during the mapping process.<br />&#8216;oppositeabnut&#8217; means that an aberration/nutation correction that, according to the eq2hor and hor2eq texts, should actually convert heliocentric to geocentric, is being used on data that we believe is starting in a geocentric frame.  There are two possibilities: 1. We are wrong 2. eq2hor/hor2eq are wrong.<br /><br />The &#8216;rawcso&#8217; files have FAZO/FZAO  &#8220;subtracted out&#8221; (removed) in pages 1 and 3, and FAZO/FZAO added back in on pages 2 and 4.  &#8216;rawcso&#8217; means that we&#8217;re looking at the ra/dec the CSO gave without the users&#8217; FAZO/FZAO corrections.<br /><br />The non-rawcso have the NCDF ra/dec vectors, with precession correction applied (and some form of ab/nut correction), but the FAZO/FZAO are still present.  THESE should be equivalent to Meredith&#8217;s plots, e.g. where FAZO_SET/FZAO_SET are on the y axis.  However, that&#8217;s only true for pages 1 and 3.  Pages 2 and 4 have FAZO/FZAO essentially double-subtracted, so they should be ignored.  Pages 1 and 3 of the non-rawcso files should be equivalent to pages 2 and 4 of the rawcso files with the exception that the sigma-rejection used to choose the yellow points is different.<br /><br />So what&#8217;s in each page?  On pages 1 and 2, the red lines are my best fit to the yellow data, which is the black data with an iterative sigma rejection applied (i.e. reject at 1 sigma, recalculate sigma from good data, reject at 2 sigma).  The blue lines are Meredith&#8217;s models.  The right side includes only the yellow data points with the red line subtracted.  On pages 3 and 4, the same is pretty much true except that ONLY the altitude-dependent line has been subtracted: there is no fit to azimuth.<br /><br />Also, the &#8216;sourcecompare&#8217; files are similar.  I&#8217;d check those out too.<br /><br />I still don&#8217;t have the extremely low RMS that Meredith saw.  I&#8217;m going to go through and try to reject bad data points by hand to see if I can get to that level.  We&#8217;ll see.</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Adam Ginsburg</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-17T12:19:00-06:00" pubdate data-updated="true">Aug 17<span>th</span>, 2008</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/bgps/'>bgps</a>, <a class='category' href='/blog/categories/pointing/'>pointing</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://keflavich.github.com/blog/2008/08/17/inconsistent/" data-via="" data-counturl="http://keflavich.github.com/blog/2008/08/17/inconsistent/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2008/08/13/direct-comparison-with-merediths/" title="Previous Post: Direct comparison with Meredith's pointing calculations">&laquo; Direct comparison with Meredith's pointing calculations</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2008/08/19/modifications/" title="Next Post: Modifications">Modifications &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/26/bash-prompt/">Bash Prompt</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/catalog-vs-image-shift-possible/">Catalog vs Image shift?  A possible solution to the ATLASGAL issue</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/21/idea-multispectral-eigenimage/">Idea: Multispectral Eigenimage decomposition...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/20/first/">Fourier Upsampling</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Adam Ginsburg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,554 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Adam Ginsburg's Astro Blog</title>
+  <meta name="author" content="Adam Ginsburg">
+
+  
+  <meta name="description" content="The raw data from Bolocam contains noise components from the atmosphere and instrument in addition to the astrophysical signal. To remove the &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://keflavich.github.com/blog/page/12/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Adam Ginsburg's Astro Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adam Ginsburg's Astro Blog</a></h1>
+  
+    <h2>Nicer than keflavich.blogspot.com</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:keflavich.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/11/14/paragraph-for-methods-paper/">Paragraph for the Methods Paper</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-11-14T16:10:00-07:00" pubdate data-updated="true">Nov 14<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+The raw data from Bolocam contains noise components from the atmosphere and instrument in addition to the astrophysical signal.  To remove the atmospheric noise, an iterative approach was required.  <br /><br /><ol><br /><li> The median across all bolometers is subtracted<br /><li> A set number of principle components are subtracted.  The principle components are the most correlated components between bolometers.  In this process both the atmosphere above the telescope - which is assumed to be constant across the field of view - and any large-scale astrophysical structure are removed.<br /><li> The timestream data is mapped into the plane of the sky.  Data points are mapped to the nearest pixel.  7.2&#8221; pixels are used so that sampling is better than Nyquist.<br /><li> The map is deconvolved using a maximum entropy deconvolution algorithm ( Based on paper by Hollis, Dorband, Yusef-Zadeh, Ap.J. Feb.1992, written by Frank Varosi at NASA/GSFC 1992)<br /><li> The deconvolved map is returned to a timestream and subtracted from the original to yield a noise-only timestream.  <br /><li> Power spectral densities are calculated for each scan in the noise timestream, and weights are calculated from these.  [At the moment, the weights are actually inverse-variance]<br /><li> The deconvolved map timestream is subtracted from the raw timestream, and then steps 1-6 are repeated on that timestream to recover flux that was oversubtracted in the first iteration.<br /></ol><br /><br />Convergence takes ???? iterations&#8230;.<br />??? PCA components are subtracted [default 13]&#8230;</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/11/14/weighting-and-high-frequency-noise/">Weighting and High-frequency Noise</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-11-14T16:02:00-07:00" pubdate data-updated="true">Nov 14<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://1.bp.blogspot.com/_lsgW26mWZnU/SR4DzVCz1WI/AAAAAAAADfk/cJ70OPeqEzg/s1600-h/psds.png"><img style="cursor: pointer; width: 400px; height: 237px;" src="http://1.bp.blogspot.com/_lsgW26mWZnU/SR4DzVCz1WI/AAAAAAAADfk/cJ70OPeqEzg/s400/psds.png" alt="" id="BLOGGER_PHOTO_ID_5268652794427200866" border="0" /></a><br /><br />Image of PSDs (with no normalization) of the raw (blue), delined and exponential and polynomial subtracted (white), the noise timestream (yellow), and the data (cyan).<br /><br />The good: It looks like all of the powerline noise got into the noise timestream and almost none in the data.<br /><br />The bad: weighting is based on the noise timestream so it&#8217;s possible that the weights aren&#8217;t quite right as a result<br /><br />The weird: the data PSD.  What&#8217;s up with that?  Apparently I&#8217;m preferentially subtracting certain scales but I don&#8217;t know why, unless deconvolution is at fault.<br /><br /><br />Edit/Update: The deconvolution is definitely at fault.  Here&#8217;s the same scan done without deconvolution:<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://3.bp.blogspot.com/_lsgW26mWZnU/SR4ZM6FPfrI/AAAAAAAADf0/baHOQwedeqs/s1600-h/psds2.png"><img style="cursor:pointer; cursor:hand;width: 400px; height: 239px;" src="http://3.bp.blogspot.com/_lsgW26mWZnU/SR4ZM6FPfrI/AAAAAAAADf0/baHOQwedeqs/s400/psds2.png" border="0" alt=""id="BLOGGER_PHOTO_ID_5268676323610427058" /></a><br /><br />It should have been obvious; the cyan in the first plot is the PSD of the deconvolution straight up, and that should have no high-frequency structure&#8230;</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/11/14/rewriting-pipeline-again/">Rewriting Pipeline Again</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-11-14T13:41:00-07:00" pubdate data-updated="true">Nov 14<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Not entirely, but I realized my code had become&#8230; clunky, at best.<br /><br />I&#8217;m rewriting the wrappers using structs.  I HATE IDL structs, but they&#8217;re necessary&#8230;. if only they would make them dynamically modifiable.<br /><br />Weighting worked to some degree, the mapping is pretty much done.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/11/08/implementing-weighting/">Implementing Weighting</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-11-08T21:46:00-07:00" pubdate data-updated="true">Nov 8<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Not as easy as it ought to be.<br /><br /><br />I think I need to do a few things:<br />1. check and make sure there are no more of those !@#$!@#$#@% different sized array subtractions/multiplications.  &#8216;weight&#8217; and &#8216;best_astro_model&#8217; need to have the same size & shape in mem_iter_pc<br />2. I guess just check and make sure stuff works.  The weighted mean I&#8217;m using appears to be right: sum(weight * value) / sum(weight)<br /><br />I hate making lists that end up being two items&#8230;.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/11/08/latest-re-run-of-pipeline/">Latest Re-run of the Pipeline</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-11-08T20:10:00-07:00" pubdate data-updated="true">Nov 8<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Wow.  A lot of errors this time around.<br /><br /><code><br />bash: /scratch/adam_work/l020/l020_fitslist.txt: Permission denied<br />MRDFITS: Image array (1634,560)  Type=Real*4<br />% HEULER: FITS header is already in Galactic: nothing changed<br />% READFITS:  ERROR - Unable to locate file<br />            060628_o32_raw_ds5.nc_indiv13pca_map01.fits<br />% Variable is undefined: HDIMAGE.<br />% Execution halted at: IMAGE_SHIFTS       44<br />  /home/milkyway/student/ginsbura/bgps_pipeline/alignment/image_shifts.pro<br />%                      COALIGN_FIELD      31<br />  /home/milkyway/student/ginsbura/bgps_pipeline/wrappers/coalign_field.pro<br />%                      $MAIN$          <br /><br /><br />Updated radec_offsets in /scratch/sliced_polychrome/l034/050708_o21_raw_ds5.nc<br />Writing offsets to   -0.00192975 -9.22609e-09 (ncfile was -0.000337092)<br />% ALIGNMENT_OFFSETS_TO_NCDF: Could not find file <br />% Execution halted at: ALIGNMENT_OFFSETS_TO_NCDF    4<br />  /home/milkyway/student/ginsbura/bgps_pipeline/preproc/alignment_offsets_to_<br />  ncdf.pro<br />%                      WRITE_IMSHIFTS     11<br />  /home/milkyway/student/ginsbura/bgps_pipeline/alignment/write_imshifts.pro<br />%                      COALIGN_FIELD      34<br />  /home/milkyway/student/ginsbura/bgps_pipeline/wrappers/coalign_field.pro<br />%                      IMAGE_SHIFTS       44<br />  /home/milkyway/student/ginsbura/bgps_pipeline/alignment/image_shifts.pro<br />%                      COALIGN_FIELD      31<br />  /home/milkyway/student/ginsbura/bgps_pipeline/wrappers/coalign_field.pro<br />%                      $MAIN$          <br /><br /><br />/scratch/adam_work/l354/070709_o16_raw_ds5.nc_indiv13pca took 110.42429 sec.<br /><br />MRDFITS: File access error<br />% HEULER: ERROR - First parameter must be a FITS header or astrometry<br />          structure<br />% Execution halted at: HEULER             78<br /><br />FIELD l351 COMPLETED at Sat Nov  8 05:34:01 2008.  Took 1122.3564 seconds<br />% Program caused arithmetic error: Floating underflow<br />% Program caused arithmetic error: Floating illegal operand<br />FIELD l052 BEGUN at Sat Nov  8 05:34:01 2008<br />% FILE_LINES: Error opening file.<br />              File: /scratch/sliced/l052/l052_infile.txt<br />  No such file or directory<br />% Error occurred at: READCOL           141<br /><br />FIELD l359 COMPLETED at Sat Nov  8 05:41:34 2008.  Took 452.60051 seconds<br />% Program caused arithmetic error: Floating underflow<br />% Program caused arithmetic error: Floating illegal operand<br />FIELD l066 BEGUN at Sat Nov  8 05:41:34 2008<br />% FILE_LINES: Error opening file.<br />              File: /scratch/sliced/l066/l066_infile.txt<br />  No such file or directory<br />% Error occurred at: READCOL           141<br /><br /><br />FIELD l072 BEGUN at Sat Nov  8 05:41:34 2008<br />% FILE_LINES: Error opening file.<br />              File: /scratch/sliced/l072/l072_infile.txt<br />  No such file or directory<br />% Error occurred at: READCOL           141<br /><br /><br /><br />MRDFITS: Image array (628,561)  Type=Real*4<br />% HEULER: FITS header is already in Galactic: nothing changed<br />% HEULER: FITS header is already in Galactic: nothing changed<br />/scratch/adam_work/l086/060627_o23_raw_ds5.nc_indiv13pca_map01.fits<br /> shifts in pixels:     -9.77712      11.8034 shifts in arcsec l/b:<br />       70.395277       84.984804 delta-ra (as):        19.007974<br /> delta-dec (as):       -108.70337 x/y error in pixels:       3.99631<br />    0.0701244 ra/dec error:    -0.0079926204   0.00014024887 gal l/b error: <br />   -0.0079926204   0.00014024887<br />% HEULER: FITS header is already in Galactic: nothing changed<br />WARNING!  x,y offs were too large:       203.757    -0.224758<br /> so a different method is being attempted<br />WARNING!  x,y offs were too large on the SECOND TRY too:      -74.7339<br />     -159.448 so a third method is being attempted<br />This third method is meant to deal with small overlap regions that may be confused by high noise, it restricts<br />to a maximum 15 pixel offset (really less than that in practice) and therefore should be checked carefully.<br />/scratch/adam_work/l086/060627_o26_raw_ds5.nc_indiv13pca_map01.fits<br /> shifts in pixels:     -1.38579      1.39157 shifts in arcsec l/b:<br />       9.9777001       10.019338 delta-ra (as):        1.1521393<br /> delta-dec (as):       -14.093081 x/y error in pixels:     0.0814682<br />    0.0882818 ra/dec error:   -0.00016293635   0.00017656364 gal l/b error: <br />  -0.00016293635   0.00017656364<br />% HEULER: FITS header is already in Galactic: nothing changed<br />WARNING!  x,y offs were too large:       9.13210      11.3905<br /> so a different method is being attempted<br />WARNING!  x,y offs were too large on the SECOND TRY too:      -79.0260<br />      20.0907 so a third method is being attempted<br />This third method is meant to deal with small overlap regions that may be confused by high noise, it restricts<br />to a maximum 15 pixel offset (really less than that in practice) and therefore should be checked carefully.<br />/scratch/adam_work/l086/070707_o49_raw_ds5.nc_indiv13pca_map01.fits<br /> shifts in pixels:     -9.13210     -11.3905 shifts in arcsec l/b:<br />       65.751123      -82.011258 delta-ra (as):       -105.06683<br /> delta-dec (as):        3.1919479 x/y error in pixels:      0.486307<br />     0.950778 ra/dec error:   -0.00097261386    0.0019015568 gal l/b error: <br />  -0.00097261386    0.0019015568<br />% HEULER: FITS header is already in Galactic: nothing changed<br />WARNING!  x,y offs were too large:      0.384630      13.1890<br /> so a different method is being attempted<br />WARNING!  x,y offs were too large on the SECOND TRY too:       205.434<br />     -23.9600 so a third method is being attempted<br />This third method is meant to deal with small overlap regions that may be confused by high noise, it restricts<br />to a maximum 15 pixel offset (really less than that in practice) and therefore should be checked carefully.<br />/scratch/adam_work/l086/070708_o37_raw_ds5.nc_indiv13pca_map01.fits<br /> shifts in pixels:    -0.384630     -13.1890 shifts in arcsec l/b:<br />       2.7693373      -94.960636 delta-ra (as):       -74.063617<br /> delta-dec (as):        59.509407 x/y error in pixels:       2.29135<br />     0.933383 ra/dec error:    -0.0045826990    0.0018667649 gal l/b error: <br />   -0.0045826990    0.0018667649<br />% HEULER: FITS header is already in Galactic: nothing changed<br />WARNING!  x,y offs were too large:      -143.139      10.8130<br /> so a different method is being attempted<br />% Subscript range values of the form low:high must be >= 0, < size, with low<br />  <= high: CORR.<br />% Execution halted at: PIXSHIFT          107<br /><br /><br /><br /><br />ALL PREPROC ... output is /scratch/adam_work/l133/070911_o25_raw_ds5.nc_indiv13pca  READING IN 1 FILES FROM /scratch/sliced/l133/070911_o25_raw_ds5.nc<br />Reading file /scratch/sliced/l133/070911_o25_raw_ds5.nc<br />Applying pointing model with alt/az off     -0.024687220    -0.029154389<br />NO OFFSETS APPLIED<br />3.6277909 sec.<br />No values flagged as bad!<br />AC_BOLOS has 0.0 NAN points, which is 0.0 of total<br />Flatfielding (polynomial subtraction) ...0.92621708 sec.<br />No values flagged as bad!<br />AC_BOLOS has 0.0 NAN points, which is 0.0 of total<br />Prepare Map ... 1.4727209 sec.<br />% CHECK_FITS: NAXIS keywords in FITS header have been updated<br />Done preproc ... 11.113711 sec.<br />ITERATION NUMBER 0 ...SKY SUBTRACTION - MEDIAN0.15759706 sec.<br />BEGINNING PCA SUBTRACTION OF COMPONENTS 0 TO 13 ... 0.68130398 sec.<br />Flatfielding (polynomial subtraction) ...0.96450186 sec.<br />% CHECK_FITS: NAXIS keywords in FITS header have been updated<br />% CHECK_FITS: NAXIS keywords in FITS header have been updated<br />% Program caused arithmetic error: Floating underflow<br />Deconvolution iteration  0:  1.2357290 sec.<br />Deconvolution iteration  1:  0.93198013 sec.<br />Deconvolution iteration  2:  0.93152189 sec.<br />Deconvolution iteration  3:  0.93164992 sec.<br />Chi2 for iteration 0 is 1.22593e+07 with 2.07110e+06 degrees of freedom<br />FINISHED ITERATION 0   13.803532 sec.<br />ITERATION NUMBER 1 ...SKY SUBTRACTION - MEDIAN0.15691710 sec.<br />BEGINNING PCA SUBTRACTION OF COMPONENTS 0 TO 13 ... % TRIQL: Too many iterations in tqli.<br />% Error occurred at: EIGENQL           122<br />  /usr/local/itt/idl70/lib/eigenql.pro<br />%                    PCA_SUBTRACT       19<br /><br /><br /><br />/scratch/adam_work/l135p1/060917_o12_raw_ds5.nc_indiv13pca took 30.478553 sec.<br /><br />MRDFITS: File access error<br />% HEULER: ERROR - First parameter must be a FITS header or astrometry<br />          structure<br />% Execution halted at: HEULER             78<br /><br /><br />MRDFITS: Image array (1630,555)  Type=Real*4<br />% HEULER: FITS header is already in Galactic: nothing changed<br />% HEULER: FITS header is already in Galactic: nothing changed<br />/scratch/adam_work/l068/070910_ob3_raw_ds5.nc_indiv13pca_map01.fits<br /> shifts in pixels:   -0.0271645   -0.0270424 shifts in arcsec l/b:<br />      0.19558409     -0.19470519 delta-ra (as):      -0.26866187<br /> delta-dec (as):     -0.062403024 x/y error in pixels:   0.000193238<br />   0.00126581 ra/dec error:   -3.8647498e-07   2.5316247e-06 gal l/b error: <br />  -3.8647498e-07   2.5316247e-06<br />% HEULER: FITS header is already in Galactic: nothing changed<br />WARNING!  x,y offs were too large:       34.8510     -5.72119<br /> so a different method is being attempted<br />WARNING!  x,y offs were too large on the SECOND TRY too:       142.704<br />      76.4267 so a third method is being attempted<br />This third method is meant to deal with small overlap regions that may be confused by high noise, it restricts<br />to a maximum 15 pixel offset (really less than that in practice) and therefore should be checked carefully.<br />/scratch/adam_work/l068/070911_ob8_raw_ds5.nc_indiv13pca_map01.fits<br /> shifts in pixels:      15.0101      3.42143 shifts in arcsec l/b:<br />      -108.07276       24.634271 delta-ra (as):        78.221561<br /> delta-dec (as):        78.545365 x/y error in pixels:     0.0114306<br />     0.184410 ra/dec error:   -2.2861189e-05   0.00036881918 gal l/b error: <br />  -2.2861189e-05   0.00036881918<br />% HEULER: FITS header is already in Galactic: nothing changed<br />WARNING!  x,y offs were too large:       56.2296      14.6994<br /> so a different method is being attempted<br />WARNING!  x,y offs were too large on the SECOND TRY too:       728.753<br />     -184.087 so a third method is being attempted<br />This third method is meant to deal with small overlap regions that may be confused by high noise, it restricts<br />to a maximum 15 pixel offset (really less than that in practice) and therefore should be checked carefully.<br />/scratch/adam_work/l068/070911_ob9_raw_ds5.nc_indiv13pca_map01.fits<br /> shifts in pixels:     -56.2296     -14.6994 shifts in arcsec l/b:<br />       404.85292      -105.83592 delta-ra (as):       -304.51436<br /> delta-dec (as):       -286.88182 x/y error in pixels:       7.32951<br />   0.00354093 ra/dec error:     -0.014659024   7.0818565e-06 gal l/b error: <br />    -0.014659024   7.0818565e-06<br />% HEULER: FITS header is already in Galactic: nothing changed<br />WARNING!  x,y offs were too large:       3.31224     -13.8321<br /> so a different method is being attempted<br />% Subscript range values of the form low:high must be >= 0, < size, with low<br />  <= high: CORR.<br />% Execution halted at: PIXSHIFT          107<br /><br />/scratch/adam_work/l111/060605_o48_raw_ds5.nc_indiv13pca took 10.098406 sec.<br /><br />MRDFITS: File access error<br />% HEULER: ERROR - First parameter must be a FITS header or astrometry<br />          structure<br />% Execution halted at: HEULER             78<br /><br /><br />Writing offsets to /scratch/sliced/l027/060616_o10_raw_ds5.nc   0.00120866<br />  -0.00287235 (ncfile was 060616_o10_raw_ds5.nc)<br />Updated radec_offsets in /scratch/sliced/l027/060616_o10_raw_ds5.nc<br />Writing offsets to   5.77312e-05 -2.39760e-06 (ncfile was 0.000409983)<br />% ALIGNMENT_OFFSETS_TO_NCDF: Could not find file <br />% Execution halted at: ALIGNMENT_OFFSETS_TO_NCDF    4<br /></code></div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adam</div>
+<div class='content'>
+l020 too</div>
+</div>
+<div class='comment'>
+<div class='author'>Adam</div>
+<div class='content'>
+redo targets:<BR/>l068<BR/>l086<BR/>l111<BR/>l027</div>
+</div>
+<div class='comment'>
+<div class='author'>Adam</div>
+<div class='content'>
+the l111 reference field was 60% flagged out because of bad rotators:<BR/><BR/>ALL PREPROC &#8230; output is /scratch/adam_work/l111/060602_o34_raw_ds5.nc_indiv13pca  READING IN 1 FILES FROM /scratch/sliced/l111/060602_o34_raw_ds5.nc<BR/>Reading file /scratch/sliced/l111/060602_o34_raw_ds5.nc<BR/>Flagged scan        2 in file /scratch/sliced/l111/060602_o34_raw_ds5.nc<BR/> because rotangle changes by      -23.2941<BR/>Flagged scan        6 in file /scratch/sliced/l111/060602_o34_raw_ds5.nc<BR/> because rotangle changes by      -24.9265<BR/>Flagged scan        7 in file /scratch/sliced/l111/060602_o34_raw_ds5.nc<BR/> because rotangle changes by      -21.3750<BR/>Flagged scan        8 in file /scratch/sliced/l111/060602_o34_raw_ds5.nc<BR/> because rotangle changes by      -25.7647<BR/>Flagged scan        9 in file /scratch/sliced/l111/060602_o34_raw_ds5.nc<BR/> because rotangle changes by      0.110294<BR/>Flagged scan       10 in file /scratch/sliced/l111/060602_o34_raw_ds5.nc<BR/> because rotangle changes by      -26.6140<BR/>Flagged scan       11 in file /scratch/sliced/l111/060602_o34_raw_ds5.nc<BR/> because rotangle changes by      0.143383<BR/>Flagged scan       12 in file /scratch/sliced/l111/060602_o34_raw_ds5.nc<BR/> because rotangle changes by      -27.4743<BR/>Flagged scan       14 in file /scratch/sliced/l111/060602_o34_raw_ds5.nc<BR/> because rotangle changes by      -28.3235<BR/>Flagged scan       15 in file /scratch/sliced/l111/060602_o34_raw_ds5.nc<BR/> because rotangle changes by      -24.6397<BR/>Flagged scan       17 in file /scratch/sliced/l111/060602_o34_raw_ds5.nc<BR/> because rotangle changes by      -25.4559<BR/>Flagged scan       18 in file /scratch/sliced/l111/060602_o34_raw_ds5.nc<BR/> because rotangle changes by      -30.0441<BR/>Flagged scan       19 in file /scratch/sliced/l111/060602_o34_raw_ds5.nc<BR/> because rotangle changes by      0.110292<BR/>Flagged scan       21 in file /scratch/sliced/l111/060602_o34_raw_ds5.nc<BR/> because rotangle changes by      0.220589<BR/>Flagged scan       22 in file /scratch/sliced/l111/060602_o34_raw_ds5.nc<BR/> because rotangle changes by      -31.8088<BR/>Flagged scan       23 in file /scratch/sliced/l111/060602_o34_raw_ds5.nc<BR/> because rotangle changes by      -27.9596<BR/>Flagged scan       24 in file /scratch/sliced/l111/060602_o34_raw_ds5.nc<BR/> because rotangle changes by      -32.7022<BR/>Flagged scan       26 in file /scratch/sliced/l111/060602_o34_raw_ds5.nc<BR/> because rotangle changes by      -33.5846<BR/>Flagged scan       28 in file /scratch/sliced/l111/060602_o34_raw_ds5.nc<BR/> because rotangle changes by      -34.4890<BR/>Flagged scan       30 in file /scratch/sliced/l111/060602_o34_raw_ds5.nc<BR/> because rotangle changes by      -35.3934<BR/>Flagged scan       31 in file /scratch/sliced/l111/060602_o34_raw_ds5.nc<BR/> because rotangle changes by      -31.3787<BR/>Flagged scan       33 in file /scratch/sliced/l111/060602_o34_raw_ds5.nc<BR/> because rotangle changes by     -0.231617<BR/>Flagged scan       34 in file /scratch/sliced/l111/060602_o34_raw_ds5.nc<BR/> because rotangle changes by      0.121325<BR/>Flagged scan       36 in file /scratch/sliced/l111/060602_o34_raw_ds5.nc<BR/> because rotangle changes by      0.132353<BR/>Flagged scan       38 in file /scratch/sliced/l111/060602_o34_raw_ds5.nc<BR/> because rotangle changes by      0.209558<BR/>Flagged scan       39 in file /scratch/sliced/l111/060602_o34_raw_ds5.nc<BR/> because rotangle changes by     -0.198528<BR/>Flagged scan       40 in file /scratch/sliced/l111/060602_o34_raw_ds5.nc<BR/> because rotangle changes by      0.231617<BR/>Flagged scan       42 in file /scratch/sliced/l111/060602_o34_raw_ds5.nc<BR/> because rotangle changes by      0.121325<BR/>Did not find rpcfile /data/bgps/raw/rpc/20060602/20060602_0811_rpc.bin for file /scratch/sliced/l111/060602_o34_raw_ds5.nc<BR/>Applying pointing model with alt/az off   -0.00023445157  -0.00016187002<BR/>NO OFFSETS APPLIED<BR/>Scans            2           6           7           8           9          10<BR/>          11          12          14          15          17          18<BR/>          19          21          22          23          24          26<BR/>          28          30          31          33          34          36<BR/>          38          39          40          42<BR/> flagged in file /scratch/sliced/l111/060602_o34_raw_ds5.nc because of rotation<BR/>4.2049680 sec.<BR/>Total of      1947176 points flagged<BR/>AC_BOLOS has 1.94718e+06 NAN points, which is 0.608696 of total</div>
+</div>
+<div class='comment'>
+<div class='author'>Adam</div>
+<div class='content'>
+curiously, l135p1 has a reference field that is only present in the w3ohbolocam directory.  Probably need to remake the infiles for all of W3/4/5</div>
+</div>
+<div class='comment'>
+<div class='author'>Adam</div>
+<div class='content'>
+I think l086 needs to be re-treated specially; it had way too many large offsets.  Probably the error that resulted was from an overlap region smaller than itself&#8230;.</div>
+</div>
+<div class='comment'>
+<div class='author'>Adam</div>
+<div class='content'>
+/scratch/sliced/l354/070724_o10_raw_ds5.nc was the reference file for l354 but somehow was excluded from the l354_infile.  Warrants another check post-mapping</div>
+</div>
+<div class='comment'>
+<div class='author'>Adam</div>
+<div class='content'>
+somehow /scratch/sliced_polychrome/l034/050708_o21_raw_mmd_ds5.nc got into the l033_infile and screwed things up</div>
+</div>
+</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/11/06/bgps-photo/">BGPS Photo</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-11-06T00:29:00-07:00" pubdate data-updated="true">Nov 6<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+http://www.nrao.edu/index.php/learn/gallery/imagecontest</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/10/15/new-to-do-list-updated-things/">New To-do List, Updated Things&#8230;.</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-10-15T06:50:00-06:00" pubdate data-updated="true">Oct 15<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<code>do_maptests.pro</code> is running a bunch of different mapping parameters (pca components, deconvolution, etc.) on l000, l002, l003, l033, l083.  We&#8217;ll then run bolocat on it and look for the following:<br />-number of sources found<br />-flux in sources found as a function of n_pca<br />-size of sources as function of n_pca<br />-BADNESS, e.g. blurring / unremoved atmosphere / oversubtracted sources<br /><br /><code>bolocat2reg</code> makes a region file out of a bolocat catalog.  I&#8217;d like to make a separate ds9 region file that includes the actual pointing error + the centroiding error rather than just the elliptical fit to a given source; that will be more useful for finder charts.<br /><br />My current goal is to get a nice set of images I can combine to release as a poster to Jason Glenn&#8217;s student who is making pretty posters for publicity purposes; probably to promote CCAT.   Umm&#8230;. I blame the late hour for the alliteration.<br /><br />That goal also means I&#8217;ve been using an IRAF task to do some mosaicing (easier than writing the IDL code AGAIN):<br /><code><br />mscstack l001_5pca_map09.fits,l002_5pca_map09.fits,l000_5pca_map09.fits,l359_5pca_map09.fits,l003_5pca_map09.fits  GCCOMBINE_5pca.fits lthresh=-1<br />l001_13pca_map09_scuba_aligned.fits,l002_13pca_map09_scuba_aligned.fits,l000_13pca_map09_scuba_aligned.fits,l359_13pca_map09_scuba_aligned.fits,l003_13pca_map09_scuba_aligned.fits  GCCOMBINE.fits lthresh=-1<br />mscstack l029_13pca_map09_scuba_aligned.fits,l030_13pca_map09_scuba_aligned.fits,l031_13pca_map09_scuba_aligned.fits,l032_13pca_map09_scuba_aligned.fits,l033_13pca_map09_scuba_aligned.fits,l034_13pca_map09_scuba_aligned.fits L33COMBINE.fits lthresh=-1 hsig=5 lsig=5<br /></code></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/10/13/outer-galaxy-fields-done/">Outer Galaxy Fields Done</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-10-13T08:47:00-06:00" pubdate data-updated="true">Oct 13<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+they&#8217;re small files<br /><code><br />logs/log_101008_coalign.log:/scratch/adam_work/l059/l059_13pca took 286.08181 sec.<br />logs/log_101008_coalign.log:/scratch/adam_work/l062/l062_13pca took 390.88015 sec.<br />logs/log_101008_coalign.log:/scratch/adam_work/l065/l065_13pca took 296.88441 sec.<br />logs/log_101008_coalign.log:/scratch/adam_work/l068/l068_13pca took 1136.2623 sec.<br />logs/log_101008_coalign.log:/scratch/adam_work/l071/l071_13pca took 899.41245 sec.<br />logs/log_101208_coalign.log:/scratch/adam_work/l189p5/l189p5_13pca took 375.06840 sec.<br />logs/log_101208_coalign.log:/scratch/adam_work/l192/l192_13pca took 403.81112 sec.<br />logs/log_101208_coalign.log:/scratch/adam_work/l060/l060_13pca took 90.815500 sec.<br />logs/log_101208_coalign.log:/scratch/adam_work/l069/l069_13pca took 160.17454 sec.<br /></code></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/10/07/flagging/">Flagging</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-10-07T22:31:00-06:00" pubdate data-updated="true">Oct 7<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+most of what&#8217;s left now is flagging.  I updated the flagger, flag_manual.pro.  Check it out for documentation</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/09/17/maps-with-problems/">Maps With Problems</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-09-17T08:38:00-06:00" pubdate data-updated="true">Sep 17<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+l002: fuzzy stuff - bad sky sub?<br />l033: misalignment<br />l004: possible misalignment?  Pattern recognition fails me here<br />l354: misalignment</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/13/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/11/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/26/bash-prompt/">Bash Prompt</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/catalog-vs-image-shift-possible/">Catalog vs Image shift?  A possible solution to the ATLASGAL issue</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/21/idea-multispectral-eigenimage/">Idea: Multispectral Eigenimage decomposition&#8230;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/20/first/">Fourier Upsampling</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Adam Ginsburg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

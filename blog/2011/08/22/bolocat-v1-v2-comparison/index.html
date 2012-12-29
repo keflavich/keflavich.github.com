@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Bolocat v1-v2 comparison - Adam Ginsburg's Astro Blog</title>
+  <meta name="author" content="Adam Ginsburg">
+
+  
+  <meta name="description" content="For this experiment, I ran Bolocat on all of the v1 and v2 images using the source masks Erik derived for v1. I then compared the derived fluxes &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://keflavich.github.com/blog/2011/08/22/bolocat-v1-v2-comparison/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Adam Ginsburg's Astro Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adam Ginsburg's Astro Blog</a></h1>
+  
+    <h2>Nicer than keflavich.blogspot.com</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:keflavich.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Bolocat V1-v2 Comparison</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-08-22T22:39:00-06:00" pubdate data-updated="true">Aug 22<span>nd</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+For this experiment, I ran Bolocat on all of the v1 and v2 images using the source masks Erik derived for v1.  I then compared the derived fluxes using both aperture photometry (as defined in bolocat) and the mask sums.<br /><br />First, note that the object_photometry code Erik wrote does NOT do background subtraction - this is important for understanding non-multiplicative offsets between v1 and v2.<br /><br />I fit a 2-parameter model (a line) to the v2 vs v1 plots using two methods.  The simple linear-least-squares method is one we&#8217;re all familiar with, and it gives semi-reasonable results, but is NOT statistically robust when there are errors on both axes.  The other fit method used was Total Least Squares, which is approximately equivalent to Principle Component Analysis with 2 vectors.  It uses components of the singular-value-decomposition to determine the best fit.  The fits returned by TLS should be more robust, though the additive offsets need not be.<br /><br />Conclusion: Our factor of 1.5 looks like it was pretty accurate.  For 40&#8221; apertures, the best fit is ~1.56, which is easily within the error bars.  Luckily, for 40&#8221; apertures, there is no apparent need for an additive offset (I&#8217;m pretty sure the uncertainty on the measured offset is larger than the offset, though statistically that is not the case), which would complicate things.  <br /><br />However, for the source mask, there is a greater scaling factor and a very substantial offset.  This implies that the peaks in v2 are brighter by a large factor, but the backgrounds in v2 are actually lower than in v1 (though please do check my reasoning here).  I&#8217;m really not sure what to make of the difference between source mask and aperture yet, though&#8230; there&#8217;s probably something significant in the source mask being forced to pick positive pixels.  (and peppered pickles)<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-9a-O_TQx3Ek/TlMr1f-nmKI/AAAAAAAAGbs/Tp6UY_vwl_s/s1600/total_v1v2_40arcsec_fit_compare.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://2.bp.blogspot.com/-9a-O_TQx3Ek/TlMr1f-nmKI/AAAAAAAAGbs/Tp6UY_vwl_s/s320/total_v1v2_40arcsec_fit_compare.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-zhLxvflZ-30/TlMr1mWy6kI/AAAAAAAAGb0/GH7xSizIjnk/s1600/total_v1v2_sourcemask_fit_compare.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://2.bp.blogspot.com/-zhLxvflZ-30/TlMr1mWy6kI/AAAAAAAAGb0/GH7xSizIjnk/s320/total_v1v2_sourcemask_fit_compare.png" /></a></div><br /></div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Adam Ginsburg</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-08-22T22:39:00-06:00" pubdate data-updated="true">Aug 22<span>nd</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/bgps/'>bgps</a>, <a class='category' href='/blog/categories/bolocat/'>bolocat</a>, <a class='category' href='/blog/categories/version-comparison/'>version comparison</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://keflavich.github.com/blog/2011/08/22/bolocat-v1-v2-comparison/" data-via="" data-counturl="http://keflavich.github.com/blog/2011/08/22/bolocat-v1-v2-comparison/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/08/22/v1-v2-comparison/" title="Previous Post: v1-v2 comparison">&laquo; v1-v2 comparison</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/08/25/v1-vs-v2-calibration-curves/" title="Next Post: V1 vs V2: Calibration Curves">V1 vs V2: Calibration Curves &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/26/bash-prompt/">Bash Prompt</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/catalog-vs-image-shift-possible/">Catalog vs Image shift?  A possible solution to the ATLASGAL issue</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/21/idea-multispectral-eigenimage/">Idea: Multispectral Eigenimage decomposition...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/20/first/">Fourier Upsampling</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Adam Ginsburg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

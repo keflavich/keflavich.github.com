@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Revisiting calibration yet again - Adam Ginsburg's Astro Blog</title>
+  <meta name="author" content="Adam Ginsburg">
+
+  
+  <meta name="description" content="The recent hiatus for paper revisions has, unfortunately, come to an end.Re-examining my work, I did quite a lot but encountered many dead-ends. &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://keflavich.github.com/blog/2011/03/22/revisiting-calibration-yet-again/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Adam Ginsburg's Astro Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adam Ginsburg's Astro Blog</a></h1>
+  
+    <h2>Nicer than keflavich.blogspot.com</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:keflavich.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Revisiting Calibration Yet Again</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-22T18:22:00-06:00" pubdate data-updated="true">Mar 22<span>nd</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+The recent hiatus for paper revisions has, unfortunately, come to an end.<br /><br />Re-examining my work, I did quite a lot but encountered many dead-ends.  <br /><br />First, we would very much like to use an *identical* reduction process on both the calibration data and the science data.  That way, we could feel very confident that the reduction process isn&#8217;t introducing any weird artifacts.<br /><br />Unfortunately, I discovered early on that using ds5 data, 13 pca components, and n>1 iterations resulted in strange shape and flux conservation failures.  These errors do NOT occur in co-added maps; they are unique to single-observation scans (though I don&#8217;t recollect whether 2 scans is enough or if you need more).  <br /><br />I spent many hours banging my head against this problem and have never gotten a satisfactory solution.  But perhaps it&#8217;s time to approach it again.  The map00 images look MUCH rounder and generally better than the map10 images.   <br /><br />So, the problem I need to examine is the iterative process.  Why does it fail for single images?  Is it something about the noise properties?  model00 looks fine&#8230; what gets put into the timestream?  Examining timestreams is a terrible and horrendous process&#8230; but what else can I do?<br /><br />The next step will be to examine the timestreams of a particular observation.  I think a good choice is 101208_ob7; the next observation, 101208_ob8 was a large-area map and it looks fine (i.e., it improves with iteration).  So I can start looking at the effects of polysub, iteration, etc. on this particular source.<br /><br />Of course, the stupid trick with the pipeline - every time - is that &#8220;fixing&#8221; a problem for one source has a nasty tendency to break it for all other sources.  That&#8217;s why there are so many flags that can be passed around.  Still, this is the approach I have to take&#8230;</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Adam Ginsburg</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-22T18:22:00-06:00" pubdate data-updated="true">Mar 22<span>nd</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/bgps/'>bgps</a>, <a class='category' href='/blog/categories/calibration/'>calibration</a>, <a class='category' href='/blog/categories/pipeline/'>pipeline</a>, <a class='category' href='/blog/categories/planning/'>planning</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://keflavich.github.com/blog/2011/03/22/revisiting-calibration-yet-again/" data-via="" data-counturl="http://keflavich.github.com/blog/2011/03/22/revisiting-calibration-yet-again/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/02/13/downsampling-why-is-dec-2010-different/" title="Previous Post: Downsampling - Why is Dec 2010 different?">&laquo; Downsampling - Why is Dec 2010 different?</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/03/23/workaround-for-individual-maps/" title="Next Post: A workaround for individual maps?">A workaround for individual maps? &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/26/bash-prompt/">Bash Prompt</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/catalog-vs-image-shift-possible/">Catalog vs Image shift?  A possible solution to the ATLASGAL issue</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/21/idea-multispectral-eigenimage/">Idea: Multispectral Eigenimage decomposition...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/20/first/">Fourier Upsampling</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Adam Ginsburg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

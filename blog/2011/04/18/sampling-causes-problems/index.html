@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Sampling causes problems - Adam Ginsburg's Astro Blog</title>
+  <meta name="author" content="Adam Ginsburg">
+
+  
+  <meta name="description" content="One of the simplest experiments that can be run is a point-source observed in point-scan mode, i.e. with smaller step-sizes. I&#8217;ve done this &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://keflavich.github.com/blog/2011/04/18/sampling-causes-problems/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Adam Ginsburg's Astro Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adam Ginsburg's Astro Blog</a></h1>
+  
+    <h2>Nicer than keflavich.blogspot.com</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:keflavich.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Sampling Causes Problems</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-18T17:39:00-06:00" pubdate data-updated="true">Apr 18<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+One of the simplest experiments that can be run is a point-source observed in point-scan mode, i.e. with smaller step-sizes.  I&#8217;ve done this for an Airy disk with noise added in the image plan but not atmosphere (some noise is necessary to avoid bizarre artifacts with weighting when you have truly zero signal and zero noise).  At a S/N of 500, the noise is pretty minimal, though.<br /><br />It turns out for the &#8216;noiseless&#8217; images, the PCA cleaning is the issue&#8230; curiously, it varies significantly with iteration.  Is it worth trying to debug the PCA cleaning for noiseless timestreams?  I mean&#8230; they really shouldn&#8217;t have any correlated information anyway.<br /><br />There is still an outstanding issue where one bolometer gets scaled to be higher than the rest without any apparent reason for doing so.<br /><br />It is also clear that we do not nyquist-sample the pixels with the timestream.  However, that doesn&#8217;t explain a deficiency observed in the ds1 images.  Also note that the sidelobes are not picked up at this S/N, but that&#8217;s not too surprising.<br /><br />And here is the explanation:  The peak is missed by about 10% because of finite sampling?  Somehow the sampled gaussian nearly uniformly underestimates the gaussian&#8230; I think this violates theory a bit&#8230;..<div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-L2CMkehyV2g/TazJvpj2jjI/AAAAAAAAGGg/_BM0_GgC_x4/s1600/airy_test_ds1_reconv_arrang45_atmotest_amp1.0E-01timestream011_plots_20_bolo07.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="229" width="320" src="http://3.bp.blogspot.com/-L2CMkehyV2g/TazJvpj2jjI/AAAAAAAAGGg/_BM0_GgC_x4/s320/airy_test_ds1_reconv_arrang45_atmotest_amp1.0E-01timestream011_plots_20_bolo07.png" /></a></div><br />Here&#8217;s the problem shown again:<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-vvY-1uleKmk/TazKE4Osm_I/AAAAAAAAGGo/n6Nadxi8UM4/s1600/airy_test_ds1_reconv_arrang45_atmotest_amp1.0E-01_compare.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://2.bp.blogspot.com/-vvY-1uleKmk/TazKE4Osm_I/AAAAAAAAGGo/n6Nadxi8UM4/s320/airy_test_ds1_reconv_arrang45_atmotest_amp1.0E-01_compare.png" /></a></div>This is a comparison between the input image and a ds1-sampled image with perfectly correlated atmospheric noise.  So there is something in the pipeline that is preventing the peaks from achieving the necessary heights&#8230;. I wonder if resampling the deconvolved image onto a higher-resolution grid, then downsampling afterwards, would fix this?<br /><br />Also note that the flux loss increases from 7% to 20% from ds1 to ds5:<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-hHQBTMME8Ow/TazKuf0gkuI/AAAAAAAAGGw/uQdJw4kc2U8/s1600/airy_test_ds5_reconv_arrang45_atmotest_amp1.0E-01_compare.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://4.bp.blogspot.com/-hHQBTMME8Ow/TazKuf0gkuI/AAAAAAAAGGw/uQdJw4kc2U8/s320/airy_test_ds5_reconv_arrang45_atmotest_amp1.0E-01_compare.png" /></a></div></div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Adam Ginsburg</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-18T17:39:00-06:00" pubdate data-updated="true">Apr 18<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/bgps/'>bgps</a>, <a class='category' href='/blog/categories/downsampling/'>downsampling</a>, <a class='category' href='/blog/categories/pipeline/'>pipeline</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://keflavich.github.com/blog/2011/04/18/sampling-causes-problems/" data-via="" data-counturl="http://keflavich.github.com/blog/2011/04/18/sampling-causes-problems/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/04/11/definitive-testing/" title="Previous Post: Definitive Testing">&laquo; Definitive Testing</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/04/19/sampling-causes-problems-rd-2/" title="Next Post: Sampling Causes Problems: Rd 2">Sampling Causes Problems: Rd 2 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/26/bash-prompt/">Bash Prompt</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/catalog-vs-image-shift-possible/">Catalog vs Image shift?  A possible solution to the ATLASGAL issue</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/21/idea-multispectral-eigenimage/">Idea: Multispectral Eigenimage decomposition...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/20/first/">Fourier Upsampling</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Adam Ginsburg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

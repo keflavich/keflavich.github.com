@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Sampling Causes Problems: Rd 2 - Adam Ginsburg's Astro Blog</title>
+  <meta name="author" content="Adam Ginsburg">
+
+  
+  <meta name="description" content="Proof that a well-sampled timestream / gaussian is recovered better than a poorly sampled one:These aren&#8217;t really the most convincing, since &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://keflavich.github.com/blog/2011/04/19/sampling-causes-problems-rd-2/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Adam Ginsburg's Astro Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adam Ginsburg's Astro Blog</a></h1>
+  
+    <h2>Nicer than keflavich.blogspot.com</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:keflavich.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Sampling Causes Problems: Rd 2</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-19T11:39:00-06:00" pubdate data-updated="true">Apr 19<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+Proof that a well-sampled timestream / gaussian is recovered better than a poorly sampled one:<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-PVt1suBQt3s/Ta3EQqypzAI/AAAAAAAAGG4/ap-3_SKjigI/s1600/airy_test_superres_ds1_smallpix_sn100timestream012_plots_16_bolo12.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="229" width="320" src="http://3.bp.blogspot.com/-PVt1suBQt3s/Ta3EQqypzAI/AAAAAAAAGG4/ap-3_SKjigI/s320/airy_test_superres_ds1_smallpix_sn100timestream012_plots_16_bolo12.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-HMr4DXKBVMY/Ta3GE49GmcI/AAAAAAAAGHA/ULLRUq_IWn8/s1600/airy_test_superres_ds1_sn100timestream012_plots_20_bolo12.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="229" width="320" src="http://1.bp.blogspot.com/-HMr4DXKBVMY/Ta3GE49GmcI/AAAAAAAAGHA/ULLRUq_IWn8/s320/airy_test_superres_ds1_sn100timestream012_plots_20_bolo12.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-ujL_h0j-Gms/Ta3GWwcEttI/AAAAAAAAGHI/4uVLXXXhtqc/s1600/airy_test_superres_ds1_smallpix_sn100_compare.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://3.bp.blogspot.com/-ujL_h0j-Gms/Ta3GWwcEttI/AAAAAAAAGHI/4uVLXXXhtqc/s320/airy_test_superres_ds1_smallpix_sn100_compare.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-r98h73qcMKY/Ta3GXBKAT3I/AAAAAAAAGHQ/k3y8j427TC0/s1600/airy_test_superres_ds1_sn100_compare.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://4.bp.blogspot.com/-r98h73qcMKY/Ta3GXBKAT3I/AAAAAAAAGHQ/k3y8j427TC0/s320/airy_test_superres_ds1_sn100_compare.png" /></a></div><br />These aren&#8217;t really the most convincing, since the flux loss is only 1-8% depending on how you count.  The atmosphere-included ones have larger flux loss, which is important to understand&#8230; WHY does the added noise INCREASE the flux loss? <br /><br /><br />Ugh, unfortunately, there is a perfect counter-example.  The first image shows a timestream in which the input map is sampled by 7.2&#8221; pixels, which is just shy of nyquist sampling the 1-sigma width of the gaussian (but is fine for the FWHM of the gaussian).  The second shows 3.6&#8221; sampling of the same.  No improvement.  The third, very surprisingly, shows significant improvement - but this was an experiment in which the relative scales were allowed to vary.<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-NIwHLJT2SOw/Ta3IAGQA4HI/AAAAAAAAGHY/N3Oju7RHhRE/s1600/airy_test_ds1_reconv_arrang45_atmotest_amp1.0E-01timestream011_plots_20_bolo07.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="229" width="320" src="http://4.bp.blogspot.com/-NIwHLJT2SOw/Ta3IAGQA4HI/AAAAAAAAGHY/N3Oju7RHhRE/s320/airy_test_ds1_reconv_arrang45_atmotest_amp1.0E-01timestream011_plots_20_bolo07.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-Qo8-kSCFMCc/Ta3IATO7P1I/AAAAAAAAGHg/Jx9ufNhabiE/s1600/airy_test_ds1_reconv_arrang45_atmotest_smallpix_amp1.0E-01timestream011_plots_20_bolo07.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="229" width="320" src="http://4.bp.blogspot.com/-Qo8-kSCFMCc/Ta3IATO7P1I/AAAAAAAAGHg/Jx9ufNhabiE/s320/airy_test_ds1_reconv_arrang45_atmotest_smallpix_amp1.0E-01timestream011_plots_20_bolo07.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-6PlqmOsDRFY/Ta3IA00cfBI/AAAAAAAAGHo/t5b2jddw5Lw/s1600/airy_test_ds1_reconv_arrang45_atmotest_varyrelscale_amp1.0E-01timestream011_plots_20_bolo07.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="229" width="320" src="http://3.bp.blogspot.com/-6PlqmOsDRFY/Ta3IA00cfBI/AAAAAAAAGHo/t5b2jddw5Lw/s320/airy_test_ds1_reconv_arrang45_atmotest_varyrelscale_amp1.0E-01timestream011_plots_20_bolo07.png" /></a></div><br /><br />The first two each had one high-weight bolometer rejected, the last had 12 high-weight bolos rejected.  So that&#8217;s problably the problem&#8230;.</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adam</div>
+<div class='content'>
+It is somewhat clear that sampling isn&#39;t causing huge issues in the sense I was imagining&#8230; the highest pixel ranges from 0.98 to 1.04 depending on how the PSF is made anyway, so 5% errors are totally unavoidable.</div>
+</div>
+</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Adam Ginsburg</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-19T11:39:00-06:00" pubdate data-updated="true">Apr 19<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/bgps/'>bgps</a>, <a class='category' href='/blog/categories/downsampling/'>downsampling</a>, <a class='category' href='/blog/categories/pipeline/'>pipeline</a>, <a class='category' href='/blog/categories/simulation/'>simulation</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://keflavich.github.com/blog/2011/04/19/sampling-causes-problems-rd-2/" data-via="" data-counturl="http://keflavich.github.com/blog/2011/04/19/sampling-causes-problems-rd-2/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/04/18/sampling-causes-problems/" title="Previous Post: Sampling causes problems">&laquo; Sampling causes problems</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/04/19/weighting-and-scaling/" title="Next Post: Weighting and Scaling">Weighting and Scaling &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/26/bash-prompt/">Bash Prompt</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/catalog-vs-image-shift-possible/">Catalog vs Image shift?  A possible solution to the ATLASGAL issue</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/21/idea-multispectral-eigenimage/">Idea: Multispectral Eigenimage decomposition...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/20/first/">Fourier Upsampling</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Adam Ginsburg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: administrative | Adam Ginsburg's Astro Blog]]></title>
+  <link href="http://keflavich.github.com/blog/categories/administrative/atom.xml" rel="self"/>
+  <link href="http://keflavich.github.com/"/>
+  <updated>2012-12-28T17:22:06-07:00</updated>
+  <id>http://keflavich.github.com/</id>
+  <author>
+    <name><![CDATA[Adam Ginsburg]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Milkyway /scratch disk usage]]></title>
+    <link href="http://keflavich.github.com/blog/2008/07/31/milkyway-scratch-disk-usage/"/>
+    <updated>2008-07-31T16:40:00-06:00</updated>
+    <id>http://keflavich.github.com/blog/2008/07/31/milkyway-scratch-disk-usage</id>
+    <content type="html"><![CDATA[<div class='post'>
+<pre><br />-bash-3.00$ du -h --max-depth=1 ../<br />16K     ../lost+found<br />80G     ../sliced<br />1.3G    ../elatov<br />70G     ../cleaned<br />58G     ../mapped<br />179G    ../sliced_polychrome<br />4.0K    ../ironsides<br />49G     ../coadd_mapped<br />2.1G    ../pca_coadd<br />2.8G    ../3pca_3iterations<br />11M     ../centroid<br />17M     ../lost<br />34M     ../ptg_maps<br />3.8G    ../montage<br />31G     ../maps_from_polychrome<br />93M     ../ptg_mmd<br />32G     ../backup_from_kilauea<br />31G     ../sharc<br />1.8M    ../distortion<br />6.9G    ../fake<br />138G    ../adam_work<br />136G    ../bgps_dir_from_polychrome<br />815G    ../<br /></pre></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[BOLOCAM PIPELINE BLOG]]></title>
+    <link href="http://keflavich.github.com/blog/2008/07/30/bolocam-pipeline-blog/"/>
+    <updated>2008-07-30T15:29:00-06:00</updated>
+    <id>http://keflavich.github.com/blog/2008/07/30/bolocam-pipeline-blog</id>
+    <content type="html"><![CDATA[<div class='post'>
+Guy pointed out in the CU meeting today that we need a better way to keep track of changes / problems / etc.  The wiki's kind of a pain, and this will serve as something of a replacement for the e-mail-only conversations that have been going on with the Software Power Team.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

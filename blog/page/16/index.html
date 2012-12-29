@@ -1,0 +1,516 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Adam Ginsburg's Astro Blog</title>
+  <meta name="author" content="Adam Ginsburg">
+
+  
+  <meta name="description" content="I&#8217;ve encountered a lot (!) of unlucky prime numbers that I&#8217;m trying to FFT in too many places, and it basically stops the code.211151 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://keflavich.github.com/blog/page/16/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Adam Ginsburg's Astro Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adam Ginsburg's Astro Blog</a></h1>
+  
+    <h2>Nicer than keflavich.blogspot.com</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:keflavich.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/08/12/ffts-and-unlucky-primes/">FFTs and Unlucky Primes</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-12T11:01:00-06:00" pubdate data-updated="true">Aug 12<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+I&#8217;ve encountered a lot (!) of unlucky prime numbers that I&#8217;m trying to FFT in too many places, and it basically stops the code.<br /><br />211151 was impossibly bad, 5827 is pretty bad too.<br /><br />I solved the first by splitting into by-scan delining, which is better anyway.  But the second is a map, in which I KNOW zero padding is OK.  So&#8230; are there any functions that find the nearest reasonably efficient map size?</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/08/12/more-cleaning-modifications/">More Cleaning Modifications</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-12T09:48:00-06:00" pubdate data-updated="true">Aug 12<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+I had removed sigmadeglitch from deline, now it&#8217;s permanently gone.  I think it might be worth exploring re-inserting sigmadeglitch somewhere.<br /><br />My higher-order polynomial fit is creating deeper bowls around sources, so that&#8217;s a big problem, but if I use a lower order I get the bad streaks.  What&#8217;s the best way to deal with this?  I&#8217;m thinking perhaps only doing the polysub on the second iteration (i.e. after a source model has been subtracted).<br /><br />Delining runs into some issues now, though, because not all frequencies are sampled (?).</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/08/12/wow-fft-failure/">Wow - FFT Failure</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-12T07:57:00-06:00" pubdate data-updated="true">Aug 12<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+On my huge Cygnus run, the fft keeps failing in the deline code.  It&#8217;s actually pretty impressive, but there are 844604 points in the timestream.  The prime factorization of 844604 is 2^2 * 211151.  This is just damned bad luck, because I think an FFT is extremely inefficient when it can&#8217;t factorize.  What&#8217;s the best workaround?  &#8230;.<br /><br />9 AM update: I&#8217;ve rewritten the deliner to work on a scan-by-scan basis.  It&#8217;s possible that the delining failed in the past because it was essentially removing a constant amplitude at the line frequencies across the observation (or combined observations!) which is not likely to be true.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/08/11/cleaning-ideas/">Cleaning Ideas</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-11T09:02:00-06:00" pubdate data-updated="true">Aug 11<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+It&#8217;s proving very difficult to get rid of glitches, so here are some more ideas:<br />   Median filter the whole timestream (downsampled) at a resolution that will pull down the glitch peak.  Subtract out the median-filtered timestream from the original, and look for outliers in that distribution: in principle, those should be glitches.<br /><br />    Another option:  subtract out the noise map AND the best-model map from the original timestream before trying to pull out additional astro model stuff.  The map-to-timestream astro model can&#8217;t include glitches because they&#8217;re averaged over, but the sky-subtracted timestream DOES include glitches (no matter how many PCA components are removed) because glitches are NOT correlated across detectors.  The weird thing is that this is effectively subtracting out exactly what was calculated from the sky subtraction - the question is whether subtracting it out BEFORE sky subtracting again gets you any benefit.  If it was just noise, subtracting noise from noise is fine, but the &#8220;noise&#8221; does include some residual signal.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/08/10/glitches-and-errors/">Glitches and Errors</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-10T22:06:00-06:00" pubdate data-updated="true">Aug 10<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+It&#8217;s definitely important to get rid of the spikes and, more importantly, the exponential decay.  The current function is pretty good, but possibly not good enough because there are some situations in which the turnaround decay is obviously not well-enough dealt with and results in high/low streaks.<br /><br />The glitches can be ~20 Jy.  The problem is that they sometimes show up in the middle of sources (e.g. in 060609_o26).  That will badly distort fluxes. <br /><br />My ideal is still to use a median instead of mean combination of data points into image points, but that seems to be impractical to implement.  Other ideas&#8230;</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/08/08/big-run-this-weekend/">Big Run This Weekend&#8230;</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-08T18:21:00-06:00" pubdate data-updated="true">Aug 8<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+In case anyone is wondering why Milkyway is going really slowly, I&#8217;m mapping a 69-observation set of Cygnus.  It ought to prove to be an interesting test of Milkyway&#8217;s swap capacity, but other than that I doubt it will be useful.  While the pointing is reasonably good at this point (30&#8221; still, but whatever), I haven&#8217;t done ANY work on filtering out bad observations / flagging stuff in Cyg.  Data massaging is going to be a long process, it would be great if I could do that instead of pointing stuff.  Argh.<br /><br />One thing to note is that this file:<br />/scratch/sliced/l078/070702_o33_raw_ds5.nc<br />is a &#8220;_ds5.nc&#8221; but is NOT downsampled!<br /><br /><br />Update:<br />Mapped the individual files successfully, picked out noisy ones.  The overall map failed - just not enough memory to do a field that large.  I split it up in to two sets of 25 observations, plus I&#8217;ll be mapping each L 70-L 90 field separately (I didn&#8217;t get ride of noisy observations for this).  I&#8217;m also remapping the individual observations with PSD flagging enabled to see how that works.<br /><br />For notes on the P Cyg observations, see the file<br />/scratch/adam_work/texts/cygnus_for_pat.in</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/08/08/rms-fails-to-shrink/">RMS Fails to Shrink</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-08T14:11:00-06:00" pubdate data-updated="true">Aug 8<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Spent a while today working on these plots after rejecting every obvious bad point:<br />/scratch/adam_work/plots/sourcecompare_0_rawcsoptg_0707.ps<br />/scratch/adam_work/plots/sourcecompare_10_rawcsoptg_0707.ps<br />/scratch/adam_work/plots/sourcecompare_1_rawcsoptg_0707.ps<br />/scratch/adam_work/plots/sourcecompare_2_rawcsoptg_0707.ps<br />/scratch/adam_work/plots/sourcecompare_3_rawcsoptg_0707.ps<br />/scratch/adam_work/plots/sourcecompare_4_rawcsoptg_0707.ps<br />/scratch/adam_work/plots/sourcecompare_5_rawcsoptg_0707.ps<br />/scratch/adam_work/plots/sourcecompare_6_rawcsoptg_0707.ps<br />/scratch/adam_work/plots/sourcecompare_7_rawcsoptg_0707.ps<br />/scratch/adam_work/plots/sourcecompare_8_rawcsoptg_0707.ps<br />/scratch/adam_work/plots/sourcecompare_9_rawcsoptg_0707.ps<br />/scratch/adam_work/plots/models_rawcsoptg_0707.ps<br /><br />The net result is, I still don&#8217;t have a nice small RMS offset<br /><br />Update 8/12/08: using RA/DEC mapping doesn&#8217;t help.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/08/07/images-with-artifacts/">Images With Artifacts</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-07T13:39:00-06:00" pubdate data-updated="true">Aug 7<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Here&#8217;s the list from 0507:<br /><br />Streaky offsets:<br />/scratch/adam_work/g34.3/rawcsoptg050706_o47_raw_ds1.nc_indiv3pca_map00.fits <a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://3.bp.blogspot.com/_lsgW26mWZnU/SJtP9wKu4_I/AAAAAAAADNo/gmMEFkzCX-A/s1600-h/050706_o47.png"><img style="cursor: pointer;" src="http://3.bp.blogspot.com/_lsgW26mWZnU/SJtP9wKu4_I/AAAAAAAADNo/gmMEFkzCX-A/s320/050706_o47.png" alt="" id="BLOGGER_PHOTO_ID_5231863314441495538" border="0" /></a><br /><br />Totally messed up (two sets of images many degrees apart):<br />/scratch/adam_work/g34.3/rawcsoptg050713_o40_raw_ds1.nc_indiv3pca_map00.fits<br /><br /><br />070709_ob7 :<br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://4.bp.blogspot.com/_lsgW26mWZnU/SJuIDL161GI/AAAAAAAADN4/D4mxFyx1Fr0/s1600-h/070709_ob7_1730m130_peanut.png"><img style="cursor: pointer;" src="http://4.bp.blogspot.com/_lsgW26mWZnU/SJuIDL161GI/AAAAAAAADN4/D4mxFyx1Fr0/s320/070709_ob7_1730m130_peanut.png" alt="" id="BLOGGER_PHOTO_ID_5231924980420891746" border="0" /></a><br /><br />070703_o48 :<br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://4.bp.blogspot.com/_lsgW26mWZnU/SJuICzavE_I/AAAAAAAADNw/70Hl5930eU8/s1600-h/070703_o48_3c454.3.png"><img style="cursor: pointer;" src="http://4.bp.blogspot.com/_lsgW26mWZnU/SJuICzavE_I/AAAAAAAADNw/70Hl5930eU8/s320/070703_o48_3c454.3.png" alt="" id="BLOGGER_PHOTO_ID_5231924973864424434" border="0" /></a></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/08/07/looking-back-at-old-pipeline/">Looking Back at the Old Pipeline</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-07T09:27:00-06:00" pubdate data-updated="true">Aug 7<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+I&#8217;ve obviously missed something.  So to try to figure out what it is, I&#8217;m going back to the old pipeline&#8230; again&#8230;<br /><br />in map_ncdf_reading, lines 441-448, there is something curious that goes back to a definition-of-variables problem:  ddec and dra are ADDED to ra and dec to get the new &#8220;ra_all&#8221; and &#8220;dec_all&#8221; variables.  ddec and dra are calculated from eaz and eel: ERROR OFFSETS in Az and El.  Why?  What?!<br /><br />I added a new piece of code, correct_eaz_eel.pro.  It is extremely short, but extremely necessary.<br /><br /><pre><br />pro correct_eaz_eel,ra,dec,el,az,eel,eaz,pa<br />    dra=-eaz*cos(!dtor*pa)*cos(!dtor*el)+eel*sin(!dtor*pa)<br />    ddec=eaz*sin(!dtor*pa)*cos(!dtor*el)+eel*cos(!dtor*pa)<br />    dec += ddec/3600.<br />    ra  += dra/3600. / cos(!dtor*dec) / 15.<br />end    <br /></pre><br /><br />This comes back to the fact that I don&#8217;t know what ANY of the variables in the NCDF header are supposed to be.  Why are &#8220;error&#8221; variables actually OFFSET variables, and why didn&#8217;t anyone know about them?</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/08/06/something-is-wrong-in-0507/">Something Is Wrong in 0507&#8230;.</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-06T17:06:00-06:00" pubdate data-updated="true">Aug 6<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://picasaweb.google.com/keflavich/Bolocam/photo?authkey=OyC8l5sv3gI#5231555630189235762"><img style="cursor: pointer; width: 320px;" src="http://picasaweb.google.com/keflavich/Bolocam/photo?authkey=OyC8l5sv3gI#5231555630189235762" alt="" border="0" /></a><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://4.bp.blogspot.com/_lsgW26mWZnU/SJousnsJDjI/AAAAAAAADMY/-hhiIoQ171A/s1600-h/g34.3_zoo.jpg"><img style="cursor: pointer;" src="http://4.bp.blogspot.com/_lsgW26mWZnU/SJousnsJDjI/AAAAAAAADMY/-hhiIoQ171A/s320/g34.3_zoo.jpg" alt="" id="BLOGGER_PHOTO_ID_5231545261247499826" border="0" /></a><br /><br />Look at that zoomed in.  Note that the first 20ish are from 0507.  I don&#8217;t know what&#8217;s causing the double source.  Maybe a 90 degree rotation would do it, I don&#8217;t know.  I do know that I&#8217;m applying an array angle of 76.2 degrees for those July observations and 113.6 degrees for the June 05 observations.  Maybe that got swapped or something&#8230;.<br /><br />It looks like Meredith ran into the same problems when mapping 0506, but not 0507.<br /><br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://3.bp.blogspot.com/_lsgW26mWZnU/SJo7MpPYjDI/AAAAAAAADNg/6_pSjjeKjLM/s1600-h/g34_0507_compare.jpg"><img style="cursor: pointer;" src="http://3.bp.blogspot.com/_lsgW26mWZnU/SJo7MpPYjDI/AAAAAAAADNg/6_pSjjeKjLM/s320/g34_0507_compare.jpg" alt="" id="BLOGGER_PHOTO_ID_5231559005559098418" border="0" /></a><br />comparing mine to hers (I even used the same downsampled/cleand file), it is obvious that something went wrong with the mapping.  I tested a number of different fiducial array angles and none of them generated real maps, so the mapping is correct except for offsets in the scan direction, as usual.  What the heck.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/17/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/15/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/26/bash-prompt/">Bash Prompt</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/catalog-vs-image-shift-possible/">Catalog vs Image shift?  A possible solution to the ATLASGAL issue</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/21/idea-multispectral-eigenimage/">Idea: Multispectral Eigenimage decomposition&#8230;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/20/first/">Fourier Upsampling</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Adam Ginsburg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

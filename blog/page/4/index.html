@@ -1,0 +1,516 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Adam Ginsburg's Astro Blog</title>
+  <meta name="author" content="Adam Ginsburg">
+
+  
+  <meta name="description" content="The majority of the past week has been dedicated to debugging; it looks like cross-scanned simulations finally work.The plot below is a derivation &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://keflavich.github.com/blog/page/4/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Adam Ginsburg's Astro Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adam Ginsburg's Astro Blog</a></h1>
+  
+    <h2>Nicer than keflavich.blogspot.com</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:keflavich.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/07/13/spatial-transfer-functions/">Spatial Transfer Functions</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-07-13T12:54:00-06:00" pubdate data-updated="true">Jul 13<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+The majority of the past week has been dedicated to debugging; it looks like cross-scanned simulations finally work.<br /><br />The plot below is a derivation of the spatial transfer function for a number of different intrinsic sky power-law power spectra.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-JyAPg0u9uQ8/Th3kuQh1fpI/AAAAAAAAGRs/pP7o3n9_wds/s1600/Experiment10_AverageRecoveryFunction.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://2.bp.blogspot.com/-JyAPg0u9uQ8/Th3kuQh1fpI/AAAAAAAAGRs/pP7o3n9_wds/s320/Experiment10_AverageRecoveryFunction.png" /></a></div><br />Justifying the above plot is essential.<br /><br />First, the very steep power-laws [-3 in the example below] show a recovery fraction &gt;1.  This is simply because their S/N was inadequate - the output power spectrum is nearly flat, but at a level higher than the sky.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-JPBjsLDfP5M/Th3lw5n1xTI/AAAAAAAAGR0/aDeOmMv5s8w/s1600/exp10_ds2_astrosky_arrang45_atmotest_amp1.0E%252B01_sky00_seed00_peak010.00_nosmooth_compare.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://4.bp.blogspot.com/-JPBjsLDfP5M/Th3lw5n1xTI/AAAAAAAAGR0/aDeOmMv5s8w/s320/exp10_ds2_astrosky_arrang45_atmotest_amp1.0E%252B01_sky00_seed00_peak010.00_nosmooth_compare.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-LOCDmoLCcZs/Th3lxfnKVzI/AAAAAAAAGR8/9NCM3OroGoM/s1600/exp10_ds2_astrosky_arrang45_atmotest_amp1.0E%252B01_sky00_seed00_peak010.00_nosmooth_psds.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://3.bp.blogspot.com/-LOCDmoLCcZs/Th3lxfnKVzI/AAAAAAAAGR8/9NCM3OroGoM/s320/exp10_ds2_astrosky_arrang45_atmotest_amp1.0E%252B01_sky00_seed00_peak010.00_nosmooth_psds.png" /></a></div><br /><br />Second, the most plausible power-laws [-1.5 in the example below] show pretty good recovery (90-95% over the relevant range):<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-MTZ8WGl3ZRc/Th3mMkvv2II/AAAAAAAAGSE/0OO4Te39fPI/s1600/exp10_ds2_astrosky_arrang45_atmotest_amp1.0E%252B01_sky03_seed00_peak010.00_nosmooth_compare.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://1.bp.blogspot.com/-MTZ8WGl3ZRc/Th3mMkvv2II/AAAAAAAAGSE/0OO4Te39fPI/s320/exp10_ds2_astrosky_arrang45_atmotest_amp1.0E%252B01_sky03_seed00_peak010.00_nosmooth_compare.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-5IeTZW-ZTAw/Th3mNHPC8gI/AAAAAAAAGSM/WhIWClGWqbo/s1600/exp10_ds2_astrosky_arrang45_atmotest_amp1.0E%252B01_sky03_seed00_peak010.00_nosmooth_psds.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://2.bp.blogspot.com/-5IeTZW-ZTAw/Th3mNHPC8gI/AAAAAAAAGSM/WhIWClGWqbo/s320/exp10_ds2_astrosky_arrang45_atmotest_amp1.0E%252B01_sky03_seed00_peak010.00_nosmooth_psds.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-O6ofm7GaxUI/Th3mNgf29AI/AAAAAAAAGSU/VzQ7aL-yd_E/s1600/exp10_ds2_astrosky_arrang45_atmotest_amp1.0E%252B01_sky03_seed00_peak010.00_nosmooth_stf.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://4.bp.blogspot.com/-O6ofm7GaxUI/Th3mNgf29AI/AAAAAAAAGSU/VzQ7aL-yd_E/s320/exp10_ds2_astrosky_arrang45_atmotest_amp1.0E%252B01_sky03_seed00_peak010.00_nosmooth_stf.png" /></a></div><br />There are some &#8220;white&#8221; power losses, particularly in the flatter power-spectra.  My best guess is that this has something to do with the relative scales being offset from a mean of 1, but so far all tests to show that that is the cause have in fact shown no problems at all.  What else could cause a scale-independent power loss?  <br /><br />Also, the flat power spectrum (and inverted) aren&#8217;t quite flat because I impose a &#8220;galactic scale height&#8221; on them.  Should I stop doing that?</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/07/12/additional-problems/">Additional Problems</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-07-12T13:08:00-06:00" pubdate data-updated="true">Jul 12<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+There are a few cases in the L=30 field that look awful.  050706_o31 probably observed the inside of the dish.  070727_ob6 shows some streaking that I can&#8217;t easily explain&#8230; though it appears that there are some bad bolos that need to get flagged out.  I wonder if that&#8217;s systematic over 070727 observations&#8230;.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/07/10/minor-ongoing-problems/">[Minor] Ongoing Problems&#8230;</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-07-10T13:41:00-06:00" pubdate data-updated="true">Jul 10<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Since I have many tasks running in parallel, I need to summarize them sometimes&#8230;<br /><br /><ol><li> There are many &#8220;bad&#8221; observations that haven&#8217;t been placed in &#8220;bad&#8221; directories. A list of the error messages generated is here: <a href="http://code.google.com/p/bgpspipeline/wiki/MakingInfiles">Making Infiles wiki</a><br /><li> There may be streaking in the BGPS ds2 images of l030 and l032.  Still trying to re-run cleanly to find out<br /><li> There may be unflagged high-points in l030 and l032.  Also under examination<br /><li> Simulations have been generating bulk-offset outputs; my suspicion was that the relative scales were being set incorrectly because astro dominated atmo, so I bumped up the atmo scale.   The tests have run but I haven&#8217;t examined the outputs<br /><li> V1 sims have shown streaking, possibly because of the previous bullet, but certainly (in part) because cross-scans haven&#8217;t worked<br /></ol></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/06/28/direct-comparison-of-column-density/">Direct Comparison of Column-density Power Spectra</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-28T22:43:00-06:00" pubdate data-updated="true">Jun 28<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+I&#8217;ve multiplied the 13CO integrated data cube, the Herschel 500 micron*, and the BGPS v1.0 and v2.0 by the appropriate conversion factor to get the maps into units of column density assuming T=20K and some opacity for the dust maps.  BGPS v1 has been multiplied by the 1.5 &#8220;correction&#8221; factor.<br /><br />* The Herschel maps are arbitrarily scaled; I didn&#8217;t derive an actual column conversion but just guess-and-checked once or twice until I got something pretty close.<br /><br />The power spectra look pretty outstanding:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/--uPAgTvMjkk/TgqcjV9uvhI/AAAAAAAAGO4/cOe1iLuF-H0/s1600/powerspectrum_comparison_512_0x1.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://4.bp.blogspot.com/--uPAgTvMjkk/TgqcjV9uvhI/AAAAAAAAGO4/cOe1iLuF-H0/s320/powerspectrum_comparison_512_0x1.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-1Lupi5MSVpk/TgqcjsPwKFI/AAAAAAAAGPA/D9oNXIHdRtE/s1600/powerspectrum_comparison_512_1x1.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://3.bp.blogspot.com/-1Lupi5MSVpk/TgqcjsPwKFI/AAAAAAAAGPA/D9oNXIHdRtE/s320/powerspectrum_comparison_512_1x1.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-P2pC9RDKUic/TgqckFwVQUI/AAAAAAAAGPI/FU8cUUZe7bc/s1600/powerspectrum_comparison_512_2x1.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://2.bp.blogspot.com/-P2pC9RDKUic/TgqckFwVQUI/AAAAAAAAGPI/FU8cUUZe7bc/s320/powerspectrum_comparison_512_2x1.png" /></a></div><br />The bumps and wiggles in the 50-200&#8221; range are quite well-matched in Herschel and Bolocam.  Some map edge effects are visible in the Herschel maps, resulting in multi-frequency bumps at small spatial scales.  The Herschel noise floor is also quite evidently lower.  Also noteworthy is that BGPS v1 (scaled up by 1.5) matches the others &#8220;pretty well&#8221; but is a worse match, in general, to the Herschel data than is the BGPS v2.  <br /><br />Here are some zoomed-in plots on the inverse scale:<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-ldoGiyzeb2w/TgqhYPqerHI/AAAAAAAAGPQ/E1BFNEhcadw/s1600/powerspectrum_comparison_512_0x1.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://3.bp.blogspot.com/-ldoGiyzeb2w/TgqhYPqerHI/AAAAAAAAGPQ/E1BFNEhcadw/s320/powerspectrum_comparison_512_0x1.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-algBRWCXB9E/TgqhYgcwsPI/AAAAAAAAGPY/eSbDDcAYvCk/s1600/powerspectrum_comparison_512_1x1.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://3.bp.blogspot.com/-algBRWCXB9E/TgqhYgcwsPI/AAAAAAAAGPY/eSbDDcAYvCk/s320/powerspectrum_comparison_512_1x1.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-36H34cVnAPM/TgqhY7f4kAI/AAAAAAAAGPg/HUWvO9nZwuE/s1600/powerspectrum_comparison_512_2x1.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://4.bp.blogspot.com/-36H34cVnAPM/TgqhY7f4kAI/AAAAAAAAGPg/HUWvO9nZwuE/s320/powerspectrum_comparison_512_2x1.png" /></a></div><br />And finally, the 13CO data is totally unrepresentative of the dust data.  There is very little agreement on any scale.  This may imply that the 13CO and/or dust temperature is too high, as a decreased T_D or T_ex will decrease 13CO column and increase dust column.  However, it also raises a question - on what scales should dust and CO agree?  <br /><br />This is getting into some real science, perhaps.  The shapes of the CO and dust power spectra disagree: the CO is pretty well-fit by a power law, while the dust is not.  What hypotheses can explain this?<br /><ol><li> There is a systematic temperature difference / preference in which CO or dust is hotter on the largest scales.<br /><br>-Dust is probably warmer on larger scales, however CO should be less abundant / more readily dissociated on these largest, most diffuse scales.  CO shouldn&#8217;t exist (or at least, should be underabundant) in regions with high temperature.  Maybe?  This probably needs to be quantified.<br /><li> There is a systematic dust opacity difference on large scales resulting in lower dust emission.<br /><br> -This is almost certainly true: the dust population increases in opacity with age, following OH94.  Dust on the largest spatial scales should not have coagulated / collected ice, leading to a lower opacity on the largest scales<br /><br> -This may also be true even though CO is present: dust coagulation is less efficient than CO formation at n~10^3-10^4 (I think - again, off the cuff, but consistent with OH94)<br /><li> The CO overestimates all scales, either because of incorrect bulk abundance or temperature considerations.  <br /><br> This is problematic&#8230;.. if you drop the CO values at all scales, it becomes deficient in the 50-200 arcsecond range, where the dust measurements agree quite well<br /><li> There is a preferred distance in both images<br /><br> -It is not clear that the observed effects would occur because of this<br /><br> -It is also quite evident from other analyses that there IS a preferred velocity, at least, and it completely dominates all others and has the same shape as the integrated power spectrum.  So a distance effect is most likely ruled out.<br /></ol></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/06/23/power-spectra-of-13co-and-bolocam/">Power Spectra of 13CO and Bolocam</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-23T16:15:00-06:00" pubdate data-updated="true">Jun 23<span>rd</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-3MtYyDWjw5M/TgJ-D2bJHSI/AAAAAAAAGN4/ahpU3EQhXCc/s1600/bgps_v2.0_l030_13pca_map20_powerlaw_fit_grid_512.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://1.bp.blogspot.com/-3MtYyDWjw5M/TgJ-D2bJHSI/AAAAAAAAGN4/ahpU3EQhXCc/s320/bgps_v2.0_l030_13pca_map20_powerlaw_fit_grid_512.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-Qi9sN4goeRU/TgJ-ETc9zSI/AAAAAAAAGOA/xuBCh6P2eEg/s1600/grs_13CO_mosaic_integ_15-40_powerlaw_fit_grid_512.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://3.bp.blogspot.com/-Qi9sN4goeRU/TgJ-ETc9zSI/AAAAAAAAGOA/xuBCh6P2eEg/s320/grs_13CO_mosaic_integ_15-40_powerlaw_fit_grid_512.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-HkLX-iYn-xE/TgJ-E8vfkTI/AAAAAAAAGOI/o4VKOLtGD2Q/s1600/grs_13CO_mosaic_integ_70-87_powerlaw_fit_grid_512.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://3.bp.blogspot.com/-HkLX-iYn-xE/TgJ-E8vfkTI/AAAAAAAAGOI/o4VKOLtGD2Q/s320/grs_13CO_mosaic_integ_70-87_powerlaw_fit_grid_512.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-bFamQqeIUYU/TgJ-FgzJWuI/AAAAAAAAGOQ/cRkRgGgjeRM/s1600/grs_13CO_mosaic_integ_87-115_powerlaw_fit_grid_512.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://4.bp.blogspot.com/-bFamQqeIUYU/TgJ-FgzJWuI/AAAAAAAAGOQ/cRkRgGgjeRM/s320/grs_13CO_mosaic_integ_87-115_powerlaw_fit_grid_512.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-JeZkpWsaqB0/TgJ-GWz5PhI/AAAAAAAAGOY/K-Gfk0sOaXk/s1600/herschel_500um_powerlaw_fit_grid_512.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://3.bp.blogspot.com/-JeZkpWsaqB0/TgJ-GWz5PhI/AAAAAAAAGOY/K-Gfk0sOaXk/s320/herschel_500um_powerlaw_fit_grid_512.png" /></a></div><br />Examples of power-spectra in the left panel:<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-A3CRKX13SQQ/TgNmIfHWUpI/AAAAAAAAGOg/-cQRvrR11eA/s1600/bgps_v2.0_l030_13pca_map20_powerspectrum_512_0x1.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://1.bp.blogspot.com/-A3CRKX13SQQ/TgNmIfHWUpI/AAAAAAAAGOg/-cQRvrR11eA/s320/bgps_v2.0_l030_13pca_map20_powerspectrum_512_0x1.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-K8Xb5KaLcbA/TgNmIoPKWgI/AAAAAAAAGOo/3P3E5b2Q3f0/s1600/herschel_500um_powerspectrum_512_0x1.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://2.bp.blogspot.com/-K8Xb5KaLcbA/TgNmIoPKWgI/AAAAAAAAGOo/3P3E5b2Q3f0/s320/herschel_500um_powerspectrum_512_0x1.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-_uIH2k5WxqU/TgNmJCaNLUI/AAAAAAAAGOw/xVupKJbngLs/s1600/grs_13CO_mosaic_integ_0-115_powerspectrum_512_0x1.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://3.bp.blogspot.com/-_uIH2k5WxqU/TgNmJCaNLUI/AAAAAAAAGOw/xVupKJbngLs/s320/grs_13CO_mosaic_integ_0-115_powerspectrum_512_0x1.png" /></a></div><br /><br />The BGPS power law is fitted only over the &#8220;valid&#8221; range, which is shown in black.  The BGPS power spectrum agrees pretty well with the Herschel power spectrum.  Both are substantially steeper than (any) of the 13CO power spectra.  Unfortunately, this somewhat calls into question any comparison between the data sets - it seems most likely that 13CO and dust actually trace different mass, particularly since both Herschel and Bolocam show a &#8220;bump&#8221; centered at 6&#8217; (10<sup>-1</sup> image sizes) that is not evident in 13CO.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/06/07/measuring-preferred-angles-in-herschel/">Measuring Preferred Angles in the Herschel Data on Larger Scales</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-07T16:09:00-06:00" pubdate data-updated="true">Jun 7<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+This is something of a repeat of yesterday&#8217;s exercise, but for Herschel data on larger scales, where filamentation is expected (at different angles?) on a different scale than the Galactic plane.<br /><br />First example: L030 500 microns<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-wtocYOxuJGo/Te6boI6cE7I/AAAAAAAAGNU/f9h0MXIPNh8/s1600/bin_l30_plw_PSD.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://1.bp.blogspot.com/-wtocYOxuJGo/Te6boI6cE7I/AAAAAAAAGNU/f9h0MXIPNh8/s320/bin_l30_plw_PSD.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-HlNCVZYyly4/Te6bob1mWLI/AAAAAAAAGNc/Jq6MTJnVyWE/s1600/bin_l30_plw_azprofile.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://4.bp.blogspot.com/-HlNCVZYyly4/Te6bob1mWLI/AAAAAAAAGNc/Jq6MTJnVyWE/s320/bin_l30_plw_azprofile.png" /></a></div><br />There is evidently a preferred direction that is correlated down to the resolution of the map, though the preference is smallest at the smallest scales.  This may simply be a statement that there are more sources along the galactic plane, though, since there really isn&#8217;t any particularly obvious filamentation in the image.<br /><br /><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-LfWovOR8nBk/Te6bpM-PNTI/AAAAAAAAGNk/T9il85L34p0/s1600/bin_l59_plw_PSD.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://4.bp.blogspot.com/-LfWovOR8nBk/Te6bpM-PNTI/AAAAAAAAGNk/T9il85L34p0/s320/bin_l59_plw_PSD.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-1_7ezH0S6tk/Te6bpokBuYI/AAAAAAAAGNs/AQL0U86N4gw/s1600/bin_l59_plw_azprofile.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://4.bp.blogspot.com/-1_7ezH0S6tk/Te6bpokBuYI/AAAAAAAAGNs/AQL0U86N4gw/s320/bin_l59_plw_azprofile.png" /></a></div><br />In L59, on the other hand, there is at most a very weak preference except at the largest scales corresponding to the Galactic Plane.  This is somewhat interesting because there IS obvious filamentation in the L59 image, but it does not have a preferred direction.  Unfortunately, it is not obvious whether or where filamentation shows up in fourier space if it does not have a preferred direction.  There is no excess at any spatial scale that I can pick out.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/06/05/hunting-for-preferred-directions/">Hunting for Preferred Directions</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-05T21:58:00-06:00" pubdate data-updated="true">Jun 5<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+In our last group meeting, we discussed simulations using filamentary structures.  I&#8217;ve been trying to determine how best to generate random/artificial filamentary structures in images.  The first step in that direction is coming up with a way to measure asymmetries and therefore preferred directions within a real map.  In order to do this, I&#8217;ve had to develop a number of new tools in agpy for azimuthally binned radial profiles and radially-averaged azimuthal profiles (<a href="http://code.google.com/p/agpy/source/browse/trunk/agpy/radialprofile.py">radialprofile.py</a>).<br /><br />Examining real maps is necessary because a simple sinusoidal dependence of the power introduces filamentation along the same directions at ALL scales, which is not obviously (or in some cases, obviously not) the correct solution.  Filaments are observed on large scales, but sometimes there can be &#8216;kinks&#8217; in opposite directions on small scales.<br /><br />So, the map I picked to examine was one with the most flagrantly obvious filamentary structure in it:  the Motte DR 21 MAMBO map.  It was also a choice of convenience because I already had the data on my laptop&#8230;.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-ULjqyt_ofEI/TexIAK9ohhI/AAAAAAAAGM0/eCEys_tFOTA/s1600/MAMBOmap.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="284" width="320" src="http://3.bp.blogspot.com/-ULjqyt_ofEI/TexIAK9ohhI/AAAAAAAAGM0/eCEys_tFOTA/s320/MAMBOmap.png" /></a></div><br />The preferred direction is quite obvious in this map: there is a long filament going up and down the map.  Therefore, the DC component should be substantially higher in one direction than the other.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-X7TY9wPUL7Y/TexIAZ7hH_I/AAAAAAAAGM8/IEkgX500_Os/s1600/MAMBOpsd.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="215" width="320" src="http://1.bp.blogspot.com/-X7TY9wPUL7Y/TexIAZ7hH_I/AAAAAAAAGM8/IEkgX500_Os/s320/MAMBOpsd.png" /></a></div><br />In the power-spectral-density image, it is quite clear that there is a preferred direction, though it is not obvious that the fourier transform is rotated 90 degrees from the image.  My fourier intuition somewhat fails me here&#8230;. I realize that a broad, smooth profile in real space should be narrow and highly peaked in fourier space, but I don&#8217;t fully understand why it effectively spreads out in the perpendicular direction, which I have confirmed that it does with a simple experiment.<br /><br />I also don&#8217;t know what the Shah function is, but it implies a periodic dip in the image at every 1/5th of the image, or every 50 pixels.  <br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-l4qWlj1G42k/TexIAufhjSI/AAAAAAAAGNE/UqagczdWzwA/s1600/MAMBOpowerspectra.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="215" width="320" src="http://2.bp.blogspot.com/-l4qWlj1G42k/TexIAufhjSI/AAAAAAAAGNE/UqagczdWzwA/s320/MAMBOpowerspectra.png" /></a></div><br />These are the power spectra averaged over different angles as labeled.  -15 corresponds to -15 to +15, 15 corresponds to 15 to 45, etc.  The highly peaked 75-105 power spectrum shows the large-scale filamentary profile.  I think the difference in the DC component is actually an artifact of the azimuthal binning process: each pixel can only be assigned one angle, so the DC value isn&#8217;t included in all of them&#8230; I&#8217;ll need to find a workaround for that because it&#8217;s quite deceptive.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-qEWk2rRrwNI/TexIBKn59FI/AAAAAAAAGNM/MXdsiKagpW4/s1600/MAMBOazspectra.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="150" width="320" src="http://4.bp.blogspot.com/-qEWk2rRrwNI/TexIBKn59FI/AAAAAAAAGNM/MXdsiKagpW4/s320/MAMBOazspectra.png" /></a></div><br />The more interesting way to view the data - and perhaps to analyze maps - is to take <i>radial</i> averages in some range of spatial scales and plot the azimuthal dependence.  There is a clear sinusoid at large scales.  The legend shows &#8220;spatial frequency&#8221; in 1/pixel units.  The distribution becomes more even with angle and even changes preferred direction at smaller scales (higher frequencies).<br /><br />Next step is testing different approaches.  I think an added, steeper-power-law component would probably be the best way to start.<br /><br />Another suggestion, courtesy Bruce Elmegreen, is to attempt this sort of asymmetric power law sampling in 3 dimensions (with only 1 or 2 dimensions asymmetric) and then projecting down onto two dimensions.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/05/27/recovery-as-function-of-bolometer-noise_27/">Recovery as a Function of Bolometer Noise Part 2</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-27T17:49:00-06:00" pubdate data-updated="true">May 27<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+In the Experiment 7 simulations I was running, I observed greater noise than expected, causing me to question the results of the <a href="http://bolocam.blogspot.com/2011/05/recovery-as-function-of-bolometer-noise.html"> previous post </a>.  I therefore ran Experiment 8, which is the same as Experiment 6 from that post with a larger (320x320) map with a larger step size.  The noise recovery remains linear, but the scaling is quite different - a factor of ~4 instead of ~12.  The step size is the most likely culprit, since an 8x larger step size should result in sqrt(8)~2.8 worse noise per pixel.  <br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-ubZ-9LXWmXQ/TeAdFoOUcZI/AAAAAAAAGMY/bSSwM2JuLyA/s1600/exp8_measurednoise_vs_bolonoiseRMS.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://1.bp.blogspot.com/-ubZ-9LXWmXQ/TeAdFoOUcZI/AAAAAAAAGMY/bSSwM2JuLyA/s320/exp8_measurednoise_vs_bolonoiseRMS.png" /></a></div><br />There are some curious / worrisome artifacts that turn up and are evident in the recovery fraction plot.  For the low-noise cases, the middle bolometers get totally flagged out because they are over-weighted (by orders of magnitude).<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-0KKwo1wB6aI/TeAdFz6pTiI/AAAAAAAAGMg/yHGsx8j7WMM/s1600/exp8_recovery_vs_bolonoiseRMS.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://3.bp.blogspot.com/-0KKwo1wB6aI/TeAdFz6pTiI/AAAAAAAAGMg/yHGsx8j7WMM/s320/exp8_recovery_vs_bolonoiseRMS.png" /></a></div><br />So I&#8217;m forced to explore via pyflagger.  I will almost certainly need to re-run all experiments after making a change to how weights are computed.<br /><br />Well, it turns out the problem is that those 28 bolos are scaled to zero, even though there is nothing obvious (or even suggestive) in their timestream plots.  This is only true when varyrelscale is off.  Apparently varying the relative scales leads to a different problem.<br /><br />AHA!  The noise is so low that the relative scales are SO well correlated that the signal is enough to cause problems!  A plausible solution is therefore no change to the pipeline, but to add minimal (nominal) noise to the relative scales to increase the MAD so that the others don&#8217;t get flagged out.<br /><br />So I added a 1% variation, which prevented flagging at the scale stage, but there are still some disturbing artifacts in the map:<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-TX2_8PsUgdM/TeA4Iu9T5FI/AAAAAAAAGMo/vfEjTGcSBp0/s1600/psf_ds1_reconv_arrang45_atmotest_noise%252B1.0E-03_amp1.0E%252B00_compare.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://4.bp.blogspot.com/-TX2_8PsUgdM/TeA4Iu9T5FI/AAAAAAAAGMo/vfEjTGcSBp0/s320/psf_ds1_reconv_arrang45_atmotest_noise%252B1.0E-03_amp1.0E%252B00_compare.png" /></a></div><br />Unfortunately, this problem requires further examination in detail.  Exp 9/10 should probably be gaussians and airys on larger step-size maps, but the solution will require something else, possibly even a change in the pipeline.  On the plus side, I think I can re-run experiment 7 with a factor of 4 instead of 12 scaling for the noise and expect it to work.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/05/26/recovery-as-function-of-bolometer-noise/">Recovery as a Function of Bolometer Noise</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-26T11:45:00-06:00" pubdate data-updated="true">May 26<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+One clear simulation result comes from varying the amplitude of the gaussian noise added to each bolometer&#8217;s timestream for a fixed atmosphere amplitude.  The atmosphere amplitude sets the <i>mean</i> value of the atmosphere timestream.<br /><br />Increased bolometer noise results in decreased recovery of the outer rings of the PSF.  This is demonstrated in that the peak amplitudes remain constant (as long as they are still recovered) while the aperture sums (in 100&#8221; radius apertures) decrease.<br /><br />The simulations were run on a logarithmic spacing from 1e-3 to 1e0.  The 1e0 point is missing because the peak flux wasn&#8217;t recovered by the gaussian fitter.  The model maps don&#8217;t recover the source at all for this run, which is worrisome, since it means there is no iterative process<br /><br />There is a minor concern that some simulations over-recover the peak at high noise, but the effect is at a &lt;1% level so not very worrisome.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-H0j13RdCays/Td6QrP78qWI/AAAAAAAAGMI/X-74WUEgYFE/s1600/exp6_recovery_vs_bolonoiseRMS.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://1.bp.blogspot.com/-H0j13RdCays/Td6QrP78qWI/AAAAAAAAGMI/X-74WUEgYFE/s320/exp6_recovery_vs_bolonoiseRMS.png" /></a></div><br /><br />From the same set of simulations, I derive the pixel RMS of the map (the noise level) derived from a give individual bolometer noise.  The theoretical expectation would be<br /><br>Measured Noise = Input Noise / N(bolometers)<br /><br><i>if</i> the pixel sampling and the timestream sampling were the same (i.e. there were exactly sqrt(nbolos) hits per pixel).  This is not exactly the case, and there are potential additional sources of noise.  Nonetheless, the naive theory appears to be good enough in this simulation:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-ar8f4tdXUkQ/Td6fecs1WoI/AAAAAAAAGMQ/f_PwoxFp4Fo/s1600/exp6_measurednoise_vs_bolonoiseRMS.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://3.bp.blogspot.com/-ar8f4tdXUkQ/Td6fecs1WoI/AAAAAAAAGMQ/f_PwoxFp4Fo/s320/exp6_measurednoise_vs_bolonoiseRMS.png" /></a></div><br />You can ignore the green/blue points in this plot; they just show that the std. dev. around the source is dominated by the source.  Additionally, there is a noise floor, probably set by an inability to model the point source when the S/N gets to be ~500, preventing convergence of the iterator at a level better than 0.2%.  <br /><br />In short, though, I&#8217;m going to use 1/sqrt(nbolos) to determine the appropriate input noise level in the astro simulations.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/05/24/astrophysical-signal-modeling/">Astrophysical Signal Modeling</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-24T11:39:00-06:00" pubdate data-updated="true">May 24<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Here we finally get into the meat of the simulations.  The goal is to develop realistic - but arbitrary - astrophysical models to run through simulations.<br /><br />The first step is to figure out what a realistic sky looks like.  To this end, I use the HiGal SDP fields, looking only at their power spectra.  They are well represented by a power law with &alpha; = 3 (shown in the dashed black line below).<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-50R2lfaIGrY/TdvZi5tl5VI/AAAAAAAAGLQ/w45OC9dk3Rg/s1600/sdp_psds_powerlaw.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="249" width="320" src="http://2.bp.blogspot.com/-50R2lfaIGrY/TdvZi5tl5VI/AAAAAAAAGLQ/w45OC9dk3Rg/s320/sdp_psds_powerlaw.png" /></a></div><br />Therefore, I&#8217;ve attempted to randomly sample from a similar power law distribution using the following IDL code:<br /><code><br />    dimsize = 512<br /><br />    realpower = realpowers[ii]<br />    imagpower = imagpowers[ii]<br />    imagscale = imagscales[ii]<br />    peakamp = 1.0<br />    noise = 0.03<br />    smoothscale = 2.0<br />    smoothkernel = psf_gaussian(npix=512,ndim=2,fwhm=31.2/7.2/2.0,/normalize)<br />    sigma_gp = 128.0 ; sigma-width of the Galactic Plane (can get more accurate value from Cara's paper)<br /><br />    xx = findgen(dimsize) #  replicate(1.0,dimsize)<br />    yy = findgen(dimsize) ## replicate(1.0,dimsize)<br />    rr = sqrt( (xx-255.5)^2 + (yy-255.5)^2 )<br />    realpart = (rr^realpower) * randomn(seed1,[dimsize,dimsize])<br />    imagpart = ((rr*imagscale)^imagpower) * randomn(seed2,[dimsize,dimsize])*complex(0,1) <br />    fakesky = abs(fft(shift(realpart + imagpart,0,0),1))<br />    expweight = exp(-(yy-255.5)^2/(2.0*sigma_gp^2)) ; most power is in the inner plane<br /><br />    fakesky *= peakamp/max(fakesky)<br />    fakesky_sm = convolve(fakesky,smoothkernel)<br />    fakesky_sm = fakesky_sm*expweight<br />    fakesky_sm += randomn(seed3,[dimsize,dimsize]) * noise<br /></code><br /><br />Since Power is the fourier-transform squared, I&#8217;m using a power-law of &alpha;=1.5 for the &#8220;real&#8221; part of the sampling.  The imaginary part follows a shallower slope to reduce the amount of power in large structures, which didn&#8217;t look quite right (but maybe I should leave both slopes the same?).  With both the same, and without the imaginary part down-scaled, the structure appears too &#8220;cloudy&#8221; and not &#8220;clumpy&#8221; enough.  But back to that later&#8230;<br /><br />The peak amplitude is set by re-scaling the map.  Ideally, we&#8217;d like to see this set by a point source, since that is true in most fields.<br /><br />The noise level should not be included in simulations, but should be used to show the difference between pipeline-leftover noise and gaussian noise on the sky.  i.e., what structures disappear when you just add noise, and what structures are removed by the pipeline.<br /><br />The PSF is simply to smooth out signals that are removed by the telescope beam.  We can replace this with a &#8220;real&#8221; PSF if and when we&#8217;ve come up with a believable one.<br /><br />The noise is added after the smoothing because it should be on a pixel scale rather than a beam scale.<br /><br />Here are some example realizations with different power laws:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-vCy9Lx2RjWw/Tdvs_PO1u6I/AAAAAAAAGLw/cc7cIupQu0U/s1600/exp7_fakesky_sm_realP-1.0_imagP-1.0_imagS01.0_seednum02.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://3.bp.blogspot.com/-vCy9Lx2RjWw/Tdvs_PO1u6I/AAAAAAAAGLw/cc7cIupQu0U/s320/exp7_fakesky_sm_realP-1.0_imagP-1.0_imagS01.0_seednum02.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-qpgg2U41r6U/Tdvs_RPxARI/AAAAAAAAGL4/v5exzhhqDew/s1600/exp7_fakesky_sm_realP-1.5_imagP-1.5_imagS01.0_seednum02.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://4.bp.blogspot.com/-qpgg2U41r6U/Tdvs_RPxARI/AAAAAAAAGL4/v5exzhhqDew/s320/exp7_fakesky_sm_realP-1.5_imagP-1.5_imagS01.0_seednum02.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-2kUqO9aE8zM/Tdvs_maHaCI/AAAAAAAAGMA/u5bDCfiVuH0/s1600/exp7_fakesky_sm_realP-2.0_imagP-2.0_imagS01.0_seednum02.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://3.bp.blogspot.com/-2kUqO9aE8zM/Tdvs_maHaCI/AAAAAAAAGMA/u5bDCfiVuH0/s320/exp7_fakesky_sm_realP-2.0_imagP-2.0_imagS01.0_seednum02.png" /></a></div></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/5/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/3/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/26/bash-prompt/">Bash Prompt</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/catalog-vs-image-shift-possible/">Catalog vs Image shift?  A possible solution to the ATLASGAL issue</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/21/idea-multispectral-eigenimage/">Idea: Multispectral Eigenimage decomposition&#8230;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/20/first/">Fourier Upsampling</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Adam Ginsburg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

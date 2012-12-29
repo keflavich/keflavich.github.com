@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>V1 vs V2: Calibration Curves - Adam Ginsburg's Astro Blog</title>
+  <meta name="author" content="Adam Ginsburg">
+
+  
+  <meta name="description" content="Why did we find a factor ~1.8 in the previous post? Well, for starters we used a calibration curve that was based off of &#8216;masking&#8217; and &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://keflavich.github.com/blog/2011/08/25/v1-vs-v2-calibration-curves/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Adam Ginsburg's Astro Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adam Ginsburg's Astro Blog</a></h1>
+  
+    <h2>Nicer than keflavich.blogspot.com</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:keflavich.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">V1 vs V2: Calibration Curves</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-08-25T11:09:00-06:00" pubdate data-updated="true">Aug 25<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+Why did we find a factor ~1.8 in <a href="http://bolocam.blogspot.com/2011/08/bolocat-v1-v2-comparison.html">the previous post</a>?  Well, for starters we used a calibration curve that was based off of &#8216;masking&#8217; and other tricky techniques.<br /><br />The calibration curves below are the first ever produced self-consistently, i.e. using the EXACT same pipeline with the EXACT same parameters as the science data.  No hacks were needed to produce these<a href=#asterisk">*</a>.  The recovered Volts/Jy are substantially higher than BGPSv1 and ALSO higher than the curve used about a year ago in an attempt to explain the v1 flux discrepancy.<br /><br />Remember that a higher calibration curve means a LOWER recovered flux.  I haven&#8217;t finished the check, but odds are pretty good that applying these self-consistent cal curves will reduce the v2 data to be about 1.5.<br /><br /> <div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-PRU4LQ5f-C4/TlZ9wpeFBeI/AAAAAAAAGb8/jKdJHtIqV40/s1600/planet_dcfluxes_05_defaults_ds2_v2.0_13pca_map20.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="229" width="320" src="http://4.bp.blogspot.com/-PRU4LQ5f-C4/TlZ9wpeFBeI/AAAAAAAAGb8/jKdJHtIqV40/s320/planet_dcfluxes_05_defaults_ds2_v2.0_13pca_map20.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-AIzsETyl69g/TlZ9w50DjBI/AAAAAAAAGcE/h5ggKhH3dO4/s1600/planet_dcfluxes_06_defaults_ds2_v2.0_13pca_map20.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="229" width="320" src="http://3.bp.blogspot.com/-AIzsETyl69g/TlZ9w50DjBI/AAAAAAAAGcE/h5ggKhH3dO4/s320/planet_dcfluxes_06_defaults_ds2_v2.0_13pca_map20.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-BNWD4QQ21Ac/TlZ9xZ5eTkI/AAAAAAAAGcM/QOVbum2jXIo/s1600/planet_dcfluxes_07_defaults_ds2_v2.0_13pca_map20.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="229" width="320" src="http://4.bp.blogspot.com/-BNWD4QQ21Ac/TlZ9xZ5eTkI/AAAAAAAAGcM/QOVbum2jXIo/s320/planet_dcfluxes_07_defaults_ds2_v2.0_13pca_map20.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-OucWo74b8VY/TlZ9yFIJYQI/AAAAAAAAGcU/IBMs5YLMlYU/s1600/planet_dcfluxes_09_defaults_ds2_v2.0_13pca_map20.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="229" width="320" src="http://2.bp.blogspot.com/-OucWo74b8VY/TlZ9yFIJYQI/AAAAAAAAGcU/IBMs5YLMlYU/s320/planet_dcfluxes_09_defaults_ds2_v2.0_13pca_map20.png" /></a></div><br /><div name="asterisk>While no hacks were needed to produce these plots, there were abundant problems.  There are far fewer data points than there should be.  The problems are manifold, but mostly have to do with the PCA scaling (I think).<br /><br />In some cases, the first scan in an observation was wildly variable.  There looked to be an exponential or similar decay (as has been observed in scan turnarounds) at the observation start that took ~3 scans to decay to bring all of the bolometers onto a scaleable curve.  This is a HUGE problem, because the assumption that the dominant signal is atmosphere is badly violated in this situation - the signal becomes electronics-dominated.  The first PCA component is then an ugly step-function.  With these first scans flagged out, the whole problem goes away, but that&#8217;s a painful manual process.  Automating it MAY be possible, but also risky.<br /><br />In other cases, particularly September 4th 2007, the atmosphere appeared to be negligible!  While the atmospheric optical depth probably was not, if it was extraordinarily stable over the course of ~10 minutes, again we experience severe problems.  A stable atmosphere means no atmospheric variation, which means that ACBOLOS is just noise (plus Uranus signal).  Ironically, this is very bad for calibration - it means there is no common signal on which we can calibrate the bolos&#8217; relative sensitivities.  This problem doesn&#8217;t seem to affect science data, probably because there&#8217;s no such thing as 45-minute stable atmosphere (especially when you&#8217;re following rising/setting sources).  If I REALLY need that data, I could snag the relative scalings from a science field and apply them to the cal data&#8230; honestly that&#8217;s not a bad idea in general&#8230; hmm&#8230; Well, we&#8217;ll explore that later if I have time, that will take days to implement.</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Adam Ginsburg</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-08-25T11:09:00-06:00" pubdate data-updated="true">Aug 25<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/bgps/'>bgps</a>, <a class='category' href='/blog/categories/calibration/'>calibration</a>, <a class='category' href='/blog/categories/version-comparison/'>version comparison</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://keflavich.github.com/blog/2011/08/25/v1-vs-v2-calibration-curves/" data-via="" data-counturl="http://keflavich.github.com/blog/2011/08/25/v1-vs-v2-calibration-curves/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/08/22/bolocat-v1-v2-comparison/" title="Previous Post: Bolocat v1-v2 comparison">&laquo; Bolocat v1-v2 comparison</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/08/26/final-calibration-curves-yeah-sure/" title="Next Post: Final calibration curves (yeah... sure)">Final calibration curves (yeah... sure) &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/26/bash-prompt/">Bash Prompt</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/catalog-vs-image-shift-possible/">Catalog vs Image shift?  A possible solution to the ATLASGAL issue</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/21/idea-multispectral-eigenimage/">Idea: Multispectral Eigenimage decomposition...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/20/first/">Fourier Upsampling</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Adam Ginsburg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

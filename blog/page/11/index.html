@@ -1,0 +1,516 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Adam Ginsburg's Astro Blog</title>
+  <meta name="author" content="Adam Ginsburg">
+
+  
+  <meta name="description" content="I&#8217;ve done some by-eye comparisons of deconvolutions vs no deconvolution. The no-deconvolution clearly does better on the bright sources: &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://keflavich.github.com/blog/page/11/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Adam Ginsburg's Astro Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adam Ginsburg's Astro Blog</a></h1>
+  
+    <h2>Nicer than keflavich.blogspot.com</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:keflavich.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/11/28/deconvolution-vs-not/">Deconvolution vs. Not</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-11-28T12:37:00-07:00" pubdate data-updated="true">Nov 28<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+I&#8217;ve done some by-eye comparisons of deconvolutions vs no deconvolution.  The no-deconvolution clearly does better on the bright sources: probably the deconvolved beam size is a little bit different from (larger? smaller?) the actual source size.  Deconvolution does better in putting noise from noisy regions into the noisemap and keeping it out of the astromap.<br /><br />Both might be useful - the deconvolved maps may end up being prettier, but the no-deconvolve maps will probably have more reliable fluxes.<br /><br />This all probably relies on testing / simulation.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/11/28/4-errors/">4 Errors</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-11-28T09:45:00-07:00" pubdate data-updated="true">Nov 28<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+l047, l083, l359 (l000 is in /usb, l359 is in /scratch), l136p15<br /><br />Only 83 is a code error, the others are file location errors.  l083 is an error in &#8216;pixshift&#8217; with subscripting and will require real debugging.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/11/23/defusercommon-modified/">Def_user_common Modified</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-11-23T08:17:00-07:00" pubdate data-updated="true">Nov 23<span>rd</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+The NP doesn&#8217;t work without USER_COMMON defined because at a single point it makes use of the &#8216;which&#8217; function.  <br /><br />def_user_common is a disaster, though, because it calls get_screen_size(), which forces an X connection to be launched, which means that if you start a remote session and close X IDL crashes.  This has been a constant nagging problem and has cost me ~a few days of work.  So I commented out the offending (and offensive) line.  The worst of it is, I&#8217;m not even convinced there&#8217;s anything that uses any of that information.  The common block is only needed to get paths, so which could have been written better.<br /><br />The pipeline ground to a halt for an unknown reason at an unknown point so I added a lot more timing outputs to try to figure out what&#8217;s going on.<br /><br />Back to the grind&#8230;</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/11/21/flagger/">Flagger</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-11-21T18:35:00-07:00" pubdate data-updated="true">Nov 21<span>st</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Discovered that the flagger causes some pretty serious problems if you try to run it on a non-coadd for obvious reasons: there&#8217;s practically no coverage!  Individual maps should NOT go through the flagger, so I have added a piece of code that turns off the flagger if only one observation is being used.  That code is in map_iter where the flagger is called.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/11/18/version-06-begun/">Version 0.6 Begun</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-11-18T21:50:00-07:00" pubdate data-updated="true">Nov 18<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+I started on (what I hope will be) v0.6 tonight.<br /><br />New things:<br />-Sigma-rejection flagging in the spatial domain<br />-Inverse-variance weighting</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/11/18/mad-flagger/">MAD Flagger</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-11-18T09:20:00-07:00" pubdate data-updated="true">Nov 18<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<pre><br />; The Mad Flagger<br />; Flag based on the median average deviation within a spatial pixel<br />function mad_flagger,data,inds,flags,nsig=nsig<br /><br />    t = systime(/sec)<br />    f0 = total(where(flags))<br /><br />    if n_e(nsig) eq 0 then nsig = 3    <br />    <br />    newflags = flags<br /><br />    mx=max(inds)<br />    vec3=fltarr(mx+1)<br />    h=histogram(inds,reverse_indices=ri,OMIN=om)<br />    for j=0L,n_elements(h)-1 do begin<br />        if ri[j+1] gt ri[j] then begin<br />            v_inds = [ri[ri[j]:ri[j+1]-1]]<br />            if n_e(v_inds) gt 2 then begin<br />                vec = data[v_inds]<br />;                vecmad = mad(vec)  ; the MAD is WAY too small!  I ended up rejecting 8% of points!<br />                vecmad = stddev(vec)<br />                vecmed = median(vec,/even)<br />                madreject = where( (vec gt vecmed + nsig*vecmad) or (vec lt vecmed - nsig*vecmad) )<br />                if (n_e(madreject) gt 0 and total(madreject)) gt 0 then begin<br />                    reject_inds = v_inds[madreject]<br />                    newflags[reject_inds] = 1<br />                endif <br />            endif<br />        endif<br />    endfor<br />    print,"MAD flagger took ",strc(systime(/sec)-t)," seconds and flagged ",$<br />        strc(round(total(where(newflags)) - f0)),' points'<br /><br />    return,newflags<br /><br />end<br /></pre></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/11/18/median-drizzling/">Median Drizzling</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-11-18T08:23:00-07:00" pubdate data-updated="true">Nov 18<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<a href="http://groups.google.com/group/comp.lang.idl-pvwave/browse_thread/thread/762770933591238d">http://groups.google.com/group/comp.lang.idl-pvwave/browse_thread/thread/762770933591238d</a><br /><br />Someone going by the name &#8216;wox&#8217; introduced me to a spectacularly simple drizzling algorithm for medianing.  It will be a little less efficient because it can&#8217;t take advantage of some &#8216;partial sum&#8217; tricks that the average can, but it will median over ALL data points, which is an advantage.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/11/17/massive-upgrades-new-strategy/">Massive Upgrades, New Strategy?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-11-17T20:55:00-07:00" pubdate data-updated="true">Nov 17<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+A few major things today:<br />1. I renamed &#8216;ts_to_map&#8217; to &#8216;drizzle&#8217; and made &#8216;ts_to_map&#8217; a wrapper that will either median combine by scans (if passed the right keywords, i.e. tstomapmedian and scans_info).  This will reject cosmic rays much more effectively than previously.<br />2. My extensive test runs on the &#8216;weird&#8217; fields completed.  Conclusions:<br />     a. Deconvolution is DEFINITELY responsibly for the weird fuzzy effects seen esp. in l=33, l=2. <br />     b. Even a descending iterator is ineffective at alleviating this problem<br />What I still don&#8217;t understand is WHY the deconvolver is behaving badly for some regions.  It is extracting peaks that are too high.<br />      c. Not deconvolving works pretty well, so I&#8217;m not really concerned.  I&#8217;m resetting the defaults to no deconvolution once my next test is done&#8230;.<br />3. Started up a new test run to compare median stacking with weighted average stacking</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/11/17/5x1/">5x1?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-11-17T09:32:00-07:00" pubdate data-updated="true">Nov 17<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+060609_o17 is weird looking.  It appears to be TWO 3x1s with an overlap, but it&#8217;s only 1 observation.  Any idea what happened?</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/11/14/weighting-next-steps/">Weighting - Next Steps</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-11-14T18:01:00-07:00" pubdate data-updated="true">Nov 14<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Idea: &#8216;edge taper&#8217; for scans.  The scan start/end usually has higher noise, so it would be good to downweight those regions slightly.  Probably only the first/last 5% of each scan should be linearly downweighted.<br /><br />I&#8217;m running a lot of tests on l001 with/without deconvolution, lots of iterations, different pca components.  They&#8217;ll be done sometime tomorrow.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/12/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/10/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/26/bash-prompt/">Bash Prompt</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/catalog-vs-image-shift-possible/">Catalog vs Image shift?  A possible solution to the ATLASGAL issue</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/21/idea-multispectral-eigenimage/">Idea: Multispectral Eigenimage decomposition&#8230;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/20/first/">Fourier Upsampling</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Adam Ginsburg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

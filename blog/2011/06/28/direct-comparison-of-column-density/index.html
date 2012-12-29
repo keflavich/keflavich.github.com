@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Direct comparison of column-density power spectra - Adam Ginsburg's Astro Blog</title>
+  <meta name="author" content="Adam Ginsburg">
+
+  
+  <meta name="description" content="I&#8217;ve multiplied the 13CO integrated data cube, the Herschel 500 micron*, and the BGPS v1.0 and v2.0 by the appropriate conversion factor to &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://keflavich.github.com/blog/2011/06/28/direct-comparison-of-column-density/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Adam Ginsburg's Astro Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adam Ginsburg's Astro Blog</a></h1>
+  
+    <h2>Nicer than keflavich.blogspot.com</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:keflavich.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Direct Comparison of Column-density Power Spectra</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-28T22:43:00-06:00" pubdate data-updated="true">Jun 28<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+I&#8217;ve multiplied the 13CO integrated data cube, the Herschel 500 micron*, and the BGPS v1.0 and v2.0 by the appropriate conversion factor to get the maps into units of column density assuming T=20K and some opacity for the dust maps.  BGPS v1 has been multiplied by the 1.5 &#8220;correction&#8221; factor.<br /><br />* The Herschel maps are arbitrarily scaled; I didn&#8217;t derive an actual column conversion but just guess-and-checked once or twice until I got something pretty close.<br /><br />The power spectra look pretty outstanding:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/--uPAgTvMjkk/TgqcjV9uvhI/AAAAAAAAGO4/cOe1iLuF-H0/s1600/powerspectrum_comparison_512_0x1.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://4.bp.blogspot.com/--uPAgTvMjkk/TgqcjV9uvhI/AAAAAAAAGO4/cOe1iLuF-H0/s320/powerspectrum_comparison_512_0x1.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-1Lupi5MSVpk/TgqcjsPwKFI/AAAAAAAAGPA/D9oNXIHdRtE/s1600/powerspectrum_comparison_512_1x1.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://3.bp.blogspot.com/-1Lupi5MSVpk/TgqcjsPwKFI/AAAAAAAAGPA/D9oNXIHdRtE/s320/powerspectrum_comparison_512_1x1.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-P2pC9RDKUic/TgqckFwVQUI/AAAAAAAAGPI/FU8cUUZe7bc/s1600/powerspectrum_comparison_512_2x1.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://2.bp.blogspot.com/-P2pC9RDKUic/TgqckFwVQUI/AAAAAAAAGPI/FU8cUUZe7bc/s320/powerspectrum_comparison_512_2x1.png" /></a></div><br />The bumps and wiggles in the 50-200&#8221; range are quite well-matched in Herschel and Bolocam.  Some map edge effects are visible in the Herschel maps, resulting in multi-frequency bumps at small spatial scales.  The Herschel noise floor is also quite evidently lower.  Also noteworthy is that BGPS v1 (scaled up by 1.5) matches the others &#8220;pretty well&#8221; but is a worse match, in general, to the Herschel data than is the BGPS v2.  <br /><br />Here are some zoomed-in plots on the inverse scale:<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-ldoGiyzeb2w/TgqhYPqerHI/AAAAAAAAGPQ/E1BFNEhcadw/s1600/powerspectrum_comparison_512_0x1.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://3.bp.blogspot.com/-ldoGiyzeb2w/TgqhYPqerHI/AAAAAAAAGPQ/E1BFNEhcadw/s320/powerspectrum_comparison_512_0x1.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-algBRWCXB9E/TgqhYgcwsPI/AAAAAAAAGPY/eSbDDcAYvCk/s1600/powerspectrum_comparison_512_1x1.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://3.bp.blogspot.com/-algBRWCXB9E/TgqhYgcwsPI/AAAAAAAAGPY/eSbDDcAYvCk/s320/powerspectrum_comparison_512_1x1.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-36H34cVnAPM/TgqhY7f4kAI/AAAAAAAAGPg/HUWvO9nZwuE/s1600/powerspectrum_comparison_512_2x1.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://4.bp.blogspot.com/-36H34cVnAPM/TgqhY7f4kAI/AAAAAAAAGPg/HUWvO9nZwuE/s320/powerspectrum_comparison_512_2x1.png" /></a></div><br />And finally, the 13CO data is totally unrepresentative of the dust data.  There is very little agreement on any scale.  This may imply that the 13CO and/or dust temperature is too high, as a decreased T_D or T_ex will decrease 13CO column and increase dust column.  However, it also raises a question - on what scales should dust and CO agree?  <br /><br />This is getting into some real science, perhaps.  The shapes of the CO and dust power spectra disagree: the CO is pretty well-fit by a power law, while the dust is not.  What hypotheses can explain this?<br /><ol><li> There is a systematic temperature difference / preference in which CO or dust is hotter on the largest scales.<br /><br>-Dust is probably warmer on larger scales, however CO should be less abundant / more readily dissociated on these largest, most diffuse scales.  CO shouldn&#8217;t exist (or at least, should be underabundant) in regions with high temperature.  Maybe?  This probably needs to be quantified.<br /><li> There is a systematic dust opacity difference on large scales resulting in lower dust emission.<br /><br> -This is almost certainly true: the dust population increases in opacity with age, following OH94.  Dust on the largest spatial scales should not have coagulated / collected ice, leading to a lower opacity on the largest scales<br /><br> -This may also be true even though CO is present: dust coagulation is less efficient than CO formation at n~10^3-10^4 (I think - again, off the cuff, but consistent with OH94)<br /><li> The CO overestimates all scales, either because of incorrect bulk abundance or temperature considerations.  <br /><br> This is problematic&#8230;.. if you drop the CO values at all scales, it becomes deficient in the 50-200 arcsecond range, where the dust measurements agree quite well<br /><li> There is a preferred distance in both images<br /><br> -It is not clear that the observed effects would occur because of this<br /><br> -It is also quite evident from other analyses that there IS a preferred velocity, at least, and it completely dominates all others and has the same shape as the integrated power spectrum.  So a distance effect is most likely ruled out.<br /></ol></div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Adam Ginsburg</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-28T22:43:00-06:00" pubdate data-updated="true">Jun 28<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/analysis/'>analysis</a>, <a class='category' href='/blog/categories/bgps/'>bgps</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://keflavich.github.com/blog/2011/06/28/direct-comparison-of-column-density/" data-via="" data-counturl="http://keflavich.github.com/blog/2011/06/28/direct-comparison-of-column-density/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/06/23/power-spectra-of-13co-and-bolocam/" title="Previous Post: Power Spectra of 13CO and Bolocam">&laquo; Power Spectra of 13CO and Bolocam</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/07/10/minor-ongoing-problems/" title="Next Post: [minor] Ongoing problems...">[minor] Ongoing problems... &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/26/bash-prompt/">Bash Prompt</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/catalog-vs-image-shift-possible/">Catalog vs Image shift?  A possible solution to the ATLASGAL issue</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/21/idea-multispectral-eigenimage/">Idea: Multispectral Eigenimage decomposition...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/20/first/">Fourier Upsampling</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Adam Ginsburg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

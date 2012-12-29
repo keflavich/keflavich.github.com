@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: distortion mapping | Adam Ginsburg's Astro Blog]]></title>
+  <link href="http://keflavich.github.com/blog/categories/distortion-mapping/atom.xml" rel="self"/>
+  <link href="http://keflavich.github.com/"/>
+  <updated>2012-12-28T17:22:06-07:00</updated>
+  <id>http://keflavich.github.com/</id>
+  <author>
+    <name><![CDATA[Adam Ginsburg]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Deconvolve and Epochs]]></title>
+    <link href="http://keflavich.github.com/blog/2011/04/05/deconvolve-and-epochs/"/>
+    <updated>2011-04-05T12:12:00-06:00</updated>
+    <id>http://keflavich.github.com/blog/2011/04/05/deconvolve-and-epochs</id>
+    <content type="html"><![CDATA[<div class='post'>
+I've spent a large portion of the last week working on the deconvolver.  I found <a href="http://bolocam.blogspot.com/2011/03/workaround-for-individual-maps.html">previously</a> that a reconvolved map does a better job of restoring flux than the straight-up deconvolved map for point sources / pointing observations.<br /><br />However, the same update broke the regular mapping modes, leading to horrible instability in the mapping routines for large maps such as W5.  Curiously, it seems that the aspect that breaks is the weighting; somehow the noise drops precipitously in certain bolometers, leading to extremely high weights.  Perhaps they somehow dominate the PCA subtraction and therefore have all their noise removed?<br /><br />Either way, there are a few large-scale changes that need to be made:<br /><ol><li> Since Scaling and Weighting are now done on a whole-timestream basis, we should only map single epochs at once and coadd them after the fact.  This approach will also help relieve RAM strain.  Since it appears that individual observations are now reasonably convergent with the proper treatment of NANs in the deconvolution scheme, it should be possible to take any individual map and coadd it in a reasonable way.<br /><li> Bolometers with bad weights need to be thrown out.  Alternatively, and more appropriately, I need to discover WHY their weights are going bad.<br /></ol>We also need to explore different weighting schemes. <ol><li> 1/Variance over whole timestream (current default)<br /><li> 1/Variance on a per-scan basis (previous default) [based on PSDs]<br /><li> Minimum Chi<sup>2</sup> with Astrophysical Model (??)<br /><li> Min Chi<sup>2</sup> on a per-scan basis?<br /></ol><br />Because of the extensive testing this will require, it is really becoming essential that we develop an arbitrary map creation & testing routine.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[locating beams]]></title>
+    <link href="http://keflavich.github.com/blog/2009/03/20/locating-beams/"/>
+    <updated>2009-03-20T15:16:00-06:00</updated>
+    <id>http://keflavich.github.com/blog/2009/03/20/locating-beams</id>
+    <content type="html"><![CDATA[<div class='post'>
+<a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://3.bp.blogspot.com/_lsgW26mWZnU/ScQIDaTTPhI/AAAAAAAAEzk/C67XkoQb244/s1600-h/beamlocations_050619_default_bolopars.png"><img style="cursor:pointer; cursor:hand;width: 400px; height: 311px;" src="http://3.bp.blogspot.com/_lsgW26mWZnU/ScQIDaTTPhI/AAAAAAAAEzk/C67XkoQb244/s400/beamlocations_050619_default_bolopars.png" border="0" alt=""id="BLOGGER_PHOTO_ID_5315382314896932370" /></a><br /><br />White - "Default", OP-calculated beam-locations<br />Red - My code's beam locations<br />Yellow - Boloparams, the fiducial beam locations</div>
+
+]]></content>
+  </entry>
+  
+</feed>

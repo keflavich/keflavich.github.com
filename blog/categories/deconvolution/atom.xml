@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: deconvolution | Adam Ginsburg's Astro Blog]]></title>
+  <link href="http://keflavich.github.com/blog/categories/deconvolution/atom.xml" rel="self"/>
+  <link href="http://keflavich.github.com/"/>
+  <updated>2012-12-28T17:22:06-07:00</updated>
+  <id>http://keflavich.github.com/</id>
+  <author>
+    <name><![CDATA[Adam Ginsburg]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Getting rid of haloes]]></title>
+    <link href="http://keflavich.github.com/blog/2012/03/30/getting-rid-of-haloes/"/>
+    <updated>2012-03-30T18:28:00-06:00</updated>
+    <id>http://keflavich.github.com/blog/2012/03/30/getting-rid-of-haloes</id>
+    <content type="html"><![CDATA[<div class='post'>
+Haloes are when images look like this: <div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-Hwwiewo9FyU/T3Yhs6TpYcI/AAAAAAAAG0k/uKSTBCn95FY/s1600/Screen%2Bshot%2B2012-03-30%2Bat%2B3.09.54%2BPM.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="132" width="111" src="http://1.bp.blogspot.com/-Hwwiewo9FyU/T3Yhs6TpYcI/AAAAAAAAG0k/uKSTBCn95FY/s320/Screen%2Bshot%2B2012-03-30%2Bat%2B3.09.54%2BPM.png" /></a></div><br />instead of this, as they should:<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-t5jVccq9Dtc/T3Yhs-hcY5I/AAAAAAAAG0s/EZ4x0zdSgxw/s1600/Screen%2Bshot%2B2012-03-30%2Bat%2B3.09.58%2BPM.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="141" width="121" src="http://4.bp.blogspot.com/-t5jVccq9Dtc/T3Yhs-hcY5I/AAAAAAAAG0s/EZ4x0zdSgxw/s320/Screen%2Bshot%2B2012-03-30%2Bat%2B3.09.58%2BPM.png" /></a></div><br />Things to try:<br /><ol><li> Pass <code>/return_deconv</code> to deconv_map<br /><li> Pass <code>/linear</code> to deconv_map<br /><li> Disable deconvolve - deconvolve=0<br /></ol>In l123 & l169, at least, <code>/return_deconv</code> worked</div>
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: discrepancy | Adam Ginsburg's Astro Blog]]></title>
+  <link href="http://keflavich.github.com/blog/categories/discrepancy/atom.xml" rel="self"/>
+  <link href="http://keflavich.github.com/"/>
+  <updated>2012-12-28T17:22:06-07:00</updated>
+  <id>http://keflavich.github.com/</id>
+  <author>
+    <name><![CDATA[Adam Ginsburg]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[STF measurement attempts, round 3?]]></title>
+    <link href="http://keflavich.github.com/blog/2011/07/28/stf-measurement-attempts-round-3/"/>
+    <updated>2011-07-28T23:24:00-06:00</updated>
+    <id>http://keflavich.github.com/blog/2011/07/28/stf-measurement-attempts-round-3</id>
+    <content type="html"><![CDATA[<div class='post'>
+Below are plots of the spatial transfer function for a variety of simulation parameters.  Each line represents the median (i.e., mean of the center 2 of 4) spatial transfer function of 4 realizations of the listed parameters.  <br /><br /><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-qAq4e3xotf8/TjJCwJb6knI/AAAAAAAAGXA/mv7hs-uKudI/s1600/stfs_atmo01_peak010_smooth.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://3.bp.blogspot.com/-qAq4e3xotf8/TjJCwJb6knI/AAAAAAAAGXA/mv7hs-uKudI/s320/stfs_atmo01_peak010_smooth.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-lTKFbV1Zxno/TjJCwluvOXI/AAAAAAAAGXI/fK7qPWDF0Qw/s1600/stfs_atmo10_peak010_smooth.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://2.bp.blogspot.com/-lTKFbV1Zxno/TjJCwluvOXI/AAAAAAAAGXI/fK7qPWDF0Qw/s320/stfs_atmo10_peak010_smooth.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-HNLrsuXSrvA/TjJCwx9xEBI/AAAAAAAAGXQ/a0l3Qljyp04/s1600/stfs_atmo10_peak100_smooth.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://1.bp.blogspot.com/-HNLrsuXSrvA/TjJCwx9xEBI/AAAAAAAAGXQ/a0l3Qljyp04/s320/stfs_atmo10_peak100_smooth.png" /></a></div><br />A few unfortunate details are apparent:<br /><ol><li> The STF is background dependent, though not strongly<br /><li> The STF appears to never exceed 85%, and be more typically 75%.  If this is not matched by point-source PSDs, an explanation for the flux discrepancy becomes possible<br /><li> The 50% recovery point is much closer in than previously stated, at closer to 150" than 300".  <br /></ol> Note for comparison that the recovery fraction for point sources is much more nearly 1, at least in the calibrator type maps.  We need to wait for Jared's simulations with point sources in a full size map to confirm this, but it seems pretty likely that the STF is different for point sources and extended structures.   <div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-n0mH8DTSc80/Tji3c0tOffI/AAAAAAAAGXc/_Xd-AQMo4QU/s1600/psf_ds1_reconv_arrang45_atmotest_noise%252B6.3E-04varyrelscale_amp1.0E%252B00_psds.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://4.bp.blogspot.com/-n0mH8DTSc80/Tji3c0tOffI/AAAAAAAAGXc/_Xd-AQMo4QU/s320/psf_ds1_reconv_arrang45_atmotest_noise%252B6.3E-04varyrelscale_amp1.0E%252B00_psds.png" /></a></div></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Trying to bootstrap]]></title>
+    <link href="http://keflavich.github.com/blog/2011/03/27/trying-to-bootstrap/"/>
+    <updated>2011-03-27T20:01:00-06:00</updated>
+    <id>http://keflavich.github.com/blog/2011/03/27/trying-to-bootstrap</id>
+    <content type="html"><![CDATA[<div class='post'>
+I've concluded, based on previous posts http://bolocam.blogspot.com/2011/02/downsampling-why-is-dec-2010-different.html, http://bolocam.blogspot.com/2011/03/revisiting-calibration-yet-again.html, and http://bolocam.blogspot.com/2011/03/workaround-for-individual-maps.html, that ds5 is a problem primarily for undersampled images, i.e. those taken in the normal mapping mode.  This makes bootstrapping a bit tricky.<br /><br />There are two options:<br />1. Map Uranus and AFGL 4029 both in Volts and figure out what flux density AFGL 4029 must have to lie on that curve<br />2. Map Uranus and compute a calibration curve, apply that calibration curve to AFGL 4029, and then compare derived flux densities.<br /><br />Both have the major problem that the individual AFGL 4029 maps will forcibly be undersampled if I use ds5 data (which is normally OK, according to the first paragraph).  In the second case, it is possible to co-add the images and get around the under-sampling issue, while in the first case it is not because of the dependence on total loading (MEANDC).  <br /><br />The real problem is that the whole goal of these observations was to compare the different observing methods and see if they agree (1x1, 3x1, pointing, etc.) since the pointing-style observations were used to calibrate the others.  But if the 1x1s are just straight-up unreliable, how can we do the comparison?  I think the co-added AFGL 4029 is the only option, but then how do I test if it's correct?  It would be really nice to have AFGL 4029 observed with both scan types... <br /><br /><br />Alright, onto the data.  After last week's fix of the bad bolos, I really hope ds1 and ds5 agree.  However, first glance at the cal curves says they don't.  ds1 and ds2 agree, but ds5 is different.<br /><br />After checking them out with <code> ds9 *ds[15]*13pca*_map10.fits -scale limits -1 1000 -log -cmap hsv -match colorbars -match scales -match frames wcs &</code>, it appears that the _mask_ data is all... wrong, somehow.  That's OK, I want to discard the mask data anyway, so I'm happy to NOT spend time debugging it.<br /><br />Even after careful examination showing that the fits look good - and noting that the fluxes look pretty much the same - the calibration curves still look rather different.  Unfortunately I had to spend 3 hours debugging IDL plotting commands; I want to show the fits each time and save them as postscripts.  What does "xyouts" with "/device,/normal" do?  I thought that should plot x,y text at the coordinates specified in the plot window... but no, that is JUST /normalize.<br /><br />Anyway, realized that centroid_map treated NANs as zero.  Added ERR keyword (with a reasonable estimate of the error) in centroid_map to ignore NANs.   It looks like improper treatment of NANs is responsible for a lot of the scatter seen in the calibration plots.<br /><br />There is a substantial difference between the "fitted" peak and the "measured" peak (the latter computed by taking the sum of the pixels divided by the area of the fitted gaussian).  It looks like the "measured" version is more robust, at first glance.  However, unfortunately, for 101208_o11, the difference between ds1 and ds5 exists in both quantities.  I will have to examine timestreams now... ARGH.<br /><br />Well, the timestreams show... that indeed the model is lower in ds1, but not why.  The "remainder" (new_astro; the stuff that never gets incorporated into the model but DOES get incorporated into the map) appears to be the same in both.  Similarly, there is little to no flux in the PCA atmosphere, so it's not simply being cleaned out.  Where is the flux going or coming from?  <br /><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-6lqGwWn650Q/TY_rgZKA9QI/AAAAAAAAGCI/Iq9O5mnmhl8/s1600/101208_o11_ds1_uranus_indivtest_delinetimestream011_plots_20_bolo02.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img title="DS1 deline" border="0" height="229" width="320" src="http://3.bp.blogspot.com/-6lqGwWn650Q/TY_rgZKA9QI/AAAAAAAAGCI/Iq9O5mnmhl8/s320/101208_o11_ds1_uranus_indivtest_delinetimestream011_plots_20_bolo02.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-7uBbEU1tAqM/TY_rgg6Jq9I/AAAAAAAAGCQ/iaGhOSb6gtQ/s1600/101208_o11_ds5_uranus_indivtesttimestream011_plots_20_bolo02.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img title="DS5" border="0" height="229" width="320" src="http://1.bp.blogspot.com/-7uBbEU1tAqM/TY_rgg6Jq9I/AAAAAAAAGCQ/iaGhOSb6gtQ/s320/101208_o11_ds5_uranus_indivtesttimestream011_plots_20_bolo02.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-YKdZcNOjm7Q/TY_rg6tcvhI/AAAAAAAAGCY/fr4l8j-v4xI/s1600/101208_o11_ds1_uranus_indivtesttimestream011_plots_20_bolo02.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img title="DS1" border="0" height="229" width="320" src="http://1.bp.blogspot.com/-YKdZcNOjm7Q/TY_rg6tcvhI/AAAAAAAAGCY/fr4l8j-v4xI/s320/101208_o11_ds1_uranus_indivtesttimestream011_plots_20_bolo02.png" /></a></div></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[v2.0 is to v1.0 as ___ is to v1.0]]></title>
+    <link href="http://keflavich.github.com/blog/2010/06/24/v20-is-to-v10-as-is-to-v10/"/>
+    <updated>2010-06-24T09:42:00-06:00</updated>
+    <id>http://keflavich.github.com/blog/2010/06/24/v20-is-to-v10-as-is-to-v10</id>
+    <content type="html"><![CDATA[<div class='post'>
+<div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/_lsgW26mWZnU/TCN8uqZ-xSI/AAAAAAAAFw8/TywL2w_ntIk/s1600/l079_comparison.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/_lsgW26mWZnU/TCN8uqZ-xSI/AAAAAAAAFw8/TywL2w_ntIk/s320/l079_comparison.png" /></a><a href="http://4.bp.blogspot.com/_lsgW26mWZnU/TCN8vlKAjAI/AAAAAAAAFxE/BZE5Wlca8oU/s1600/l079_comparison_psd.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/_lsgW26mWZnU/TCN8vlKAjAI/AAAAAAAAFxE/BZE5Wlca8oU/s320/l079_comparison_psd.png" /></a></div><br />Apparently v2.0 recovers flux better at all scales than v1.0.&nbsp; However, it is noisier.&nbsp; The full comparison is available <a href="http://casa.colorado.edu/%7Eginsbura/bgps/v1.0_v2.0_comparison.pdf">here</a>.&nbsp; The trustworthy range of flux scales is 1.2-1.6ish.&nbsp; The flux is increased at ALL scales in most images.&nbsp; However, as was noted in comparisons with MAMBO, there may be curvature in the best-fit lines.&nbsp; Also, l=35 does not appear to scale up linearly... G34 is fainter in v2.0?<br /><br />In the low S/N fields, the PSD is more reliable than the pixel-pixel comparison.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[PPS comparison completed]]></title>
+    <link href="http://keflavich.github.com/blog/2010/06/24/pps-comparison-completed/"/>
+    <updated>2010-06-24T09:24:00-06:00</updated>
+    <id>http://keflavich.github.com/blog/2010/06/24/pps-comparison-completed</id>
+    <content type="html"><![CDATA[<div class='post'>
+The PPS scale factor seems to hold for many different (and ridiculous) aperture sizes.&nbsp; The full results are <a href="http://casa.colorado.edu/%7Eginsbura/bgps/pps_comparison.pdf">here.</a></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[PPS analysis: suggests a possible solution to the discrepancy]]></title>
+    <link href="http://keflavich.github.com/blog/2010/06/21/pps-analysis-suggests-possible-solution/"/>
+    <updated>2010-06-21T12:17:00-06:00</updated>
+    <id>http://keflavich.github.com/blog/2010/06/21/pps-analysis-suggests-possible-solution</id>
+    <content type="html"><![CDATA[<div class='post'>
+The comparisons I mentioned in the previous post are sort of done.&nbsp; They are pretty suggestive of a solution to the "flux recovery problem" we think must be true.&nbsp; However, even if it is a solution, it doesn't really solve the problem completely.<br /><br />It looks like v1.0 should be scaled up by a factor of 1.3-1.4 (not 1.5).&nbsp; v2.0 is consistent with the PPS sources to within 5%, and might even be slightly too high.<br /><br />The comparison was done by taking the flux in a 60" radius aperture (equivalent to bolocat 120" diameter apertures) and subtracting off the background measured in a 120" radius annulus around the source.&nbsp; Without the background subtraction, these numbers would look very different: in the science fields, most of the sources sit on an extended background.&nbsp; Even though the "background flux" isn't recovered in the PPS fields, it should contribute to the source background because it is involved in the atmosphere subtraction (it's sort of "already subtracted" so you have to subtract from the science fields).<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/_lsgW26mWZnU/TB-rPT7MLdI/AAAAAAAAFws/7oWTt3FOF-M/s1600/BGPS_correction_factors.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/_lsgW26mWZnU/TB-rPT7MLdI/AAAAAAAAFws/7oWTt3FOF-M/s320/BGPS_correction_factors.png" /></a><a href="http://2.bp.blogspot.com/_lsgW26mWZnU/TB-rQId8G_I/AAAAAAAAFw0/NUJKQO_5zI4/s1600/BGPS_correction_factor_histograms.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/_lsgW26mWZnU/TB-rQId8G_I/AAAAAAAAFw0/NUJKQO_5zI4/s320/BGPS_correction_factor_histograms.png" /></a></div>Next step: direct comparison between v1.0 and v2.0.&nbsp; Pixel by pixel, aperture, and powerspectrum</div>
+
+]]></content>
+  </entry>
+  
+</feed>

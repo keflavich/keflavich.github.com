@@ -1,0 +1,532 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Adam Ginsburg's Astro Blog</title>
+  <meta name="author" content="Adam Ginsburg">
+
+  
+  <meta name="description" content="I&#8217;ve spent a large portion of the last week working on the deconvolver. I found previously that a reconvolved map does a better job of &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://keflavich.github.com/blog/page/6/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Adam Ginsburg's Astro Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adam Ginsburg's Astro Blog</a></h1>
+  
+    <h2>Nicer than keflavich.blogspot.com</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:keflavich.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/04/05/deconvolve-and-epochs/">Deconvolve and Epochs</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-05T12:12:00-06:00" pubdate data-updated="true">Apr 5<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+I&#8217;ve spent a large portion of the last week working on the deconvolver.  I found <a href="http://bolocam.blogspot.com/2011/03/workaround-for-individual-maps.html">previously</a> that a reconvolved map does a better job of restoring flux than the straight-up deconvolved map for point sources / pointing observations.<br /><br />However, the same update broke the regular mapping modes, leading to horrible instability in the mapping routines for large maps such as W5.  Curiously, it seems that the aspect that breaks is the weighting; somehow the noise drops precipitously in certain bolometers, leading to extremely high weights.  Perhaps they somehow dominate the PCA subtraction and therefore have all their noise removed?<br /><br />Either way, there are a few large-scale changes that need to be made:<br /><ol><li> Since Scaling and Weighting are now done on a whole-timestream basis, we should only map single epochs at once and coadd them after the fact.  This approach will also help relieve RAM strain.  Since it appears that individual observations are now reasonably convergent with the proper treatment of NANs in the deconvolution scheme, it should be possible to take any individual map and coadd it in a reasonable way.<br /><li> Bolometers with bad weights need to be thrown out.  Alternatively, and more appropriately, I need to discover WHY their weights are going bad.<br /></ol>We also need to explore different weighting schemes. <ol><li> 1/Variance over whole timestream (current default)<br /><li> 1/Variance on a per-scan basis (previous default) [based on PSDs]<br /><li> Minimum Chi<sup>2</sup> with Astrophysical Model (??)<br /><li> Min Chi<sup>2</sup> on a per-scan basis?<br /></ol><br />Because of the extensive testing this will require, it is really becoming essential that we develop an arbitrary map creation & testing routine.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/30/weird-problem/">Weird Problem</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-30T20:25:00-06:00" pubdate data-updated="true">Mar 30<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+I&#8217;m remapping everything, and there&#8217;s a really strange situation in ic1396&#8230; only one field has a source that doesn&#8217;t have rotation problems, every other observation is clearly improperly rotated.  The weird thing is that it&#8217;s NOT the one you&#8217;d expect from the information below:<br /><br /><code><br />readcol,'/Volumes/disk2/sliced/infiles/ic1396_infile.txt',filelist,format='A'<br />for i=0,6 do begin & ncdf_varget_scale,filelist[i],'array_params',ap & print,filelist[i],ap & endfor<br />/Volumes/disk2/sliced/ic1396/070911_o19_raw_ds5.nc      7.70000      31.2000      70.7000      0.00000      0.00000<br />/Volumes/disk2/sliced/ic1396/070912_o26_raw_ds5.nc      7.70000      31.2000      84.0000      0.00000      0.00000<br />/Volumes/disk2/sliced/ic1396_d/070913_o19_raw_ds5.nc      7.70000      31.2000      84.0000      0.00000      0.00000<br />/Volumes/disk2/sliced/ic1396_l/070913_o17_raw_ds5.nc      7.70000      31.2000      84.0000      0.00000      0.00000<br />/Volumes/disk2/sliced/ic1396_r/070913_o18_raw_ds5.nc      7.70000      31.2000      84.0000      0.00000      0.00000<br />/Volumes/disk2/sliced/ic1396_u/070913_o20_raw_ds5.nc      7.70000      31.2000      84.0000      0.00000      0.00000<br /></code><br /><br />One ofthese things is not like the others&#8230; but it&#8217;s 070913_o18_raw_ds5.nc, not /Volumes/disk2/sliced/ic1396/070911_o19_raw_ds5.nc</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/29/progress-but-still-ds1-ds5-issues/">Progress, but Still Ds1-ds5 Issues</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-29T20:47:00-06:00" pubdate data-updated="true">Mar 29<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+ds1 and ds5 agree pretty well with the recent upgrades to delining and deconvolution.  However, there are still counterexamples, e.g. 101208_o13, in which ds5 < ds1: <table><br /><tr><td><br /><a href="http://4.bp.blogspot.com/-fIJHF_x5mBI/TZI0cryJfbI/AAAAAAAAGDI/GsNfLRGNZAk/s1600/101208_o13_raw_ds1.nc_indiv13pca.png" ><img  width="390" src="http://4.bp.blogspot.com/-fIJHF_x5mBI/TZI0cryJfbI/AAAAAAAAGDI/GsNfLRGNZAk/s200/101208_o13_raw_ds1.nc_indiv13pca.png" /></a> <br /></td><td><a href="http://2.bp.blogspot.com/-QRhiz8W9RDc/TZI0dGUR4UI/AAAAAAAAGDQ/WC8eLQd6_Z0/s1600/101208_o13_raw_ds5.nc_indiv13pca.png" ><img  width="390" src="http://2.bp.blogspot.com/-QRhiz8W9RDc/TZI0dGUR4UI/AAAAAAAAGDQ/WC8eLQd6_Z0/s200/101208_o13_raw_ds5.nc_indiv13pca.png" /></a></td></tr><br /></table><br />The &#8216;fitted&#8217; values agree better than the &#8216;measured&#8217; values now that NANs are treated properly.<br /><br /><br />Spent a few hours today trying to figure out if weighting can explain the difference between ds1 and ds5; it appears to make up for most of it so I&#8217;m doing some more experiments.  Why is there so much parameter space?  Why can&#8217;t weighting just work?  It doesn&#8217;t&#8230;.<br /><br />also wasted a few hours trying to write a python drizzling algorithm, which unfortunately is impossible so I had to resort to an inefficient for loop.  <br /><br />Finally got some minor results.  It really looks like there is a trend pushing up the recovered flux (i.e. higher volts/Jy) for ds5 over ds1.  There is a discrepancy between map types for ds1 but not for ds5, which is actually backwards from what I would have expected, since ds1 will get better-sampled maps. <br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-ARaSL7ZdDmc/TZKRcE01DnI/AAAAAAAAGDY/YMZRpRo53Hw/s1600/uranus_dcfluxes_dec2010_nomask_ds1_13pca_fits_map10.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="229" width="320" src="http://2.bp.blogspot.com/-ARaSL7ZdDmc/TZKRcE01DnI/AAAAAAAAGDY/YMZRpRo53Hw/s320/uranus_dcfluxes_dec2010_nomask_ds1_13pca_fits_map10.png" /></a><br /><a href="http://3.bp.blogspot.com/-pWtggp0vSP4/TZKRcwZ_SrI/AAAAAAAAGDg/IqVHQSprkL8/s1600/uranus_dcfluxes_dec2010_nomask_ds5_13pca_fits_map10.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="229" width="320" src="http://3.bp.blogspot.com/-pWtggp0vSP4/TZKRcwZ_SrI/AAAAAAAAGDg/IqVHQSprkL8/s320/uranus_dcfluxes_dec2010_nomask_ds5_13pca_fits_map10.png" /></a></div><br />Luckily, the difference between peak fitting and &#8220;measuring&#8221; results in very small (insignificant) changes to the calibration curve (recall fitting is direct gaussian fitting; &#8216;measuring&#8217; is using the gaussian-fit width and total flux in an ellipse to infer a peak assuming a point source):<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-E-FDTTj-4Ik/TZKVyUA8zBI/AAAAAAAAGDo/9NGubgLWBvo/s1600/uranus_dcfluxes_dec2010_nomask_ds5_13pca_fits_map10.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="229" width="320" src="http://2.bp.blogspot.com/-E-FDTTj-4Ik/TZKVyUA8zBI/AAAAAAAAGDo/9NGubgLWBvo/s320/uranus_dcfluxes_dec2010_nomask_ds5_13pca_fits_map10.png" /></a><br /><a href="http://3.bp.blogspot.com/-GdyxFnmwQ7g/TZKVykSg57I/AAAAAAAAGDw/PPVXtfAxW0s/s1600/uranus_dcfluxes_dec2010_nomask_ds5_13pca_map10.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="229" width="320" src="http://3.bp.blogspot.com/-GdyxFnmwQ7g/TZKVykSg57I/AAAAAAAAGDw/PPVXtfAxW0s/s320/uranus_dcfluxes_dec2010_nomask_ds5_13pca_map10.png" /></a></div><br />Since this work has all been done for the &#8216;bootstrapping&#8217; observations that are supposed to tell us if different map sizes are compatible, I have included the map sizes in the diagrams now.  However, to really understand the ds1/ds5 difference, there are much better data sets, which I&#8217;m now reprocessing using the new and improved methods.<br /><br />(the Whole BGPS is also processing with the new methods in the background, though since the methods are being updated live there may be more changes and it will have to be re-run&#8230;. initial looks at W5 are BAD but L030 is GOOD (bordering on amazing))</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/29/careful-comparison-of-ds1-and-ds5/">Careful Comparison of Ds1 and Ds5</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-29T09:23:00-06:00" pubdate data-updated="true">Mar 29<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+I looked very closely at the timestream and maps of 101208_o11 and had a pretty hard time figuring out why the data were different, but it looked like the data really did differ on a point-by-point basis (according to pyflagger).  The only conclusion I was able to draw is that the scaling must be off.  I realized that the scaling was being done before delining.  I moved scaling from readall_pc to premap, and it brought at least this one source into agreement.  Time to run ds1-ds5 comparisons again!<br /><br />(this means that ds1 data MUST have deline run on it, but ds5 data doesn&#8217;t really need it)<br /><br />Here are examples of ds1 and ds5 timestreams, with and without scaling, and ds1 with and without delining:<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-KR_NYG31_O0/TZECtBAgqFI/AAAAAAAAGCg/1jC9Ys2r9Iw/s1600/101208_o11_ds5_uranus_indivtesttimestream011_plots_20_bolo02.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="143" width="200" src="http://4.bp.blogspot.com/-KR_NYG31_O0/TZECtBAgqFI/AAAAAAAAGCg/1jC9Ys2r9Iw/s200/101208_o11_ds5_uranus_indivtesttimestream011_plots_20_bolo02.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-HbK-hAXjSDs/TZECtUNe8AI/AAAAAAAAGCo/i4fsH12Iw8Y/s1600/101208_o11_ds1_uranus_indivtest_delinetimestream011_plots_20_bolo02.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="143" width="200" src="http://3.bp.blogspot.com/-HbK-hAXjSDs/TZECtUNe8AI/AAAAAAAAGCo/i4fsH12Iw8Y/s200/101208_o11_ds1_uranus_indivtest_delinetimestream011_plots_20_bolo02.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-edXLnDrrt5o/TZECt0No8oI/AAAAAAAAGCw/QjHg1ScBHG0/s1600/101208_o11_ds1_uranus_indivtesttimestream011_plots_20_bolo02.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="143" width="200" src="http://3.bp.blogspot.com/-edXLnDrrt5o/TZECt0No8oI/AAAAAAAAGCw/QjHg1ScBHG0/s200/101208_o11_ds1_uranus_indivtesttimestream011_plots_20_bolo02.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-4NIxFxEQ1jU/TZECuDJ1fVI/AAAAAAAAGC4/tGE5tDH_168/s1600/101208_o11_ds1_uranus_indivtest_deline_noscaleacbtimestream011_plots_20_bolo02.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="143" width="200" src="http://1.bp.blogspot.com/-4NIxFxEQ1jU/TZECuDJ1fVI/AAAAAAAAGC4/tGE5tDH_168/s200/101208_o11_ds1_uranus_indivtest_deline_noscaleacbtimestream011_plots_20_bolo02.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-DfIepZXXCFc/TZECuhm8lwI/AAAAAAAAGDA/Awp60ZuPGps/s1600/101208_o11_ds5_uranus_indivtest_noscaleacbtimestream011_plots_20_bolo02.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="143" width="200" src="http://2.bp.blogspot.com/-DfIepZXXCFc/TZECuhm8lwI/AAAAAAAAGDA/Awp60ZuPGps/s200/101208_o11_ds5_uranus_indivtest_noscaleacbtimestream011_plots_20_bolo02.png" /></a></div></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/27/trying-to-bootstrap/">Trying to Bootstrap</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-27T20:01:00-06:00" pubdate data-updated="true">Mar 27<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+I&#8217;ve concluded, based on previous posts http://bolocam.blogspot.com/2011/02/downsampling-why-is-dec-2010-different.html, http://bolocam.blogspot.com/2011/03/revisiting-calibration-yet-again.html, and http://bolocam.blogspot.com/2011/03/workaround-for-individual-maps.html, that ds5 is a problem primarily for undersampled images, i.e. those taken in the normal mapping mode.  This makes bootstrapping a bit tricky.<br /><br />There are two options:<br />1. Map Uranus and AFGL 4029 both in Volts and figure out what flux density AFGL 4029 must have to lie on that curve<br />2. Map Uranus and compute a calibration curve, apply that calibration curve to AFGL 4029, and then compare derived flux densities.<br /><br />Both have the major problem that the individual AFGL 4029 maps will forcibly be undersampled if I use ds5 data (which is normally OK, according to the first paragraph).  In the second case, it is possible to co-add the images and get around the under-sampling issue, while in the first case it is not because of the dependence on total loading (MEANDC).  <br /><br />The real problem is that the whole goal of these observations was to compare the different observing methods and see if they agree (1x1, 3x1, pointing, etc.) since the pointing-style observations were used to calibrate the others.  But if the 1x1s are just straight-up unreliable, how can we do the comparison?  I think the co-added AFGL 4029 is the only option, but then how do I test if it&#8217;s correct?  It would be really nice to have AFGL 4029 observed with both scan types&#8230; <br /><br /><br />Alright, onto the data.  After last week&#8217;s fix of the bad bolos, I really hope ds1 and ds5 agree.  However, first glance at the cal curves says they don&#8217;t.  ds1 and ds2 agree, but ds5 is different.<br /><br />After checking them out with <code> ds9 *ds[15]*13pca*_map10.fits -scale limits -1 1000 -log -cmap hsv -match colorbars -match scales -match frames wcs &</code>, it appears that the _mask_ data is all&#8230; wrong, somehow.  That&#8217;s OK, I want to discard the mask data anyway, so I&#8217;m happy to NOT spend time debugging it.<br /><br />Even after careful examination showing that the fits look good - and noting that the fluxes look pretty much the same - the calibration curves still look rather different.  Unfortunately I had to spend 3 hours debugging IDL plotting commands; I want to show the fits each time and save them as postscripts.  What does &#8220;xyouts&#8221; with &#8220;/device,/normal&#8221; do?  I thought that should plot x,y text at the coordinates specified in the plot window&#8230; but no, that is JUST /normalize.<br /><br />Anyway, realized that centroid_map treated NANs as zero.  Added ERR keyword (with a reasonable estimate of the error) in centroid_map to ignore NANs.   It looks like improper treatment of NANs is responsible for a lot of the scatter seen in the calibration plots.<br /><br />There is a substantial difference between the &#8220;fitted&#8221; peak and the &#8220;measured&#8221; peak (the latter computed by taking the sum of the pixels divided by the area of the fitted gaussian).  It looks like the &#8220;measured&#8221; version is more robust, at first glance.  However, unfortunately, for 101208_o11, the difference between ds1 and ds5 exists in both quantities.  I will have to examine timestreams now&#8230; ARGH.<br /><br />Well, the timestreams show&#8230; that indeed the model is lower in ds1, but not why.  The &#8220;remainder&#8221; (new_astro; the stuff that never gets incorporated into the model but DOES get incorporated into the map) appears to be the same in both.  Similarly, there is little to no flux in the PCA atmosphere, so it&#8217;s not simply being cleaned out.  Where is the flux going or coming from?  <br /><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-6lqGwWn650Q/TY_rgZKA9QI/AAAAAAAAGCI/Iq9O5mnmhl8/s1600/101208_o11_ds1_uranus_indivtest_delinetimestream011_plots_20_bolo02.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img title="DS1 deline" border="0" height="229" width="320" src="http://3.bp.blogspot.com/-6lqGwWn650Q/TY_rgZKA9QI/AAAAAAAAGCI/Iq9O5mnmhl8/s320/101208_o11_ds1_uranus_indivtest_delinetimestream011_plots_20_bolo02.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-7uBbEU1tAqM/TY_rgg6Jq9I/AAAAAAAAGCQ/iaGhOSb6gtQ/s1600/101208_o11_ds5_uranus_indivtesttimestream011_plots_20_bolo02.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img title="DS5" border="0" height="229" width="320" src="http://1.bp.blogspot.com/-7uBbEU1tAqM/TY_rgg6Jq9I/AAAAAAAAGCQ/iaGhOSb6gtQ/s320/101208_o11_ds5_uranus_indivtesttimestream011_plots_20_bolo02.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-YKdZcNOjm7Q/TY_rg6tcvhI/AAAAAAAAGCY/fr4l8j-v4xI/s1600/101208_o11_ds1_uranus_indivtesttimestream011_plots_20_bolo02.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img title="DS1" border="0" height="229" width="320" src="http://1.bp.blogspot.com/-YKdZcNOjm7Q/TY_rg6tcvhI/AAAAAAAAGCY/fr4l8j-v4xI/s320/101208_o11_ds1_uranus_indivtesttimestream011_plots_20_bolo02.png" /></a></div></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/23/workaround-for-individual-maps/">A Workaround for Individual Maps?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-23T18:33:00-06:00" pubdate data-updated="true">Mar 23<span>rd</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+I closely examined the timestreams of 101208_ob7 as I said I would yesterday.  Unfortunately, all I can do is describe the symptoms: the first deconvolution model looks good, though it isn&#8217;t quite as wide as the true source (this should be OK; it is an iterative method, after all).  In the second iteration, though, the deconvolution model is even smaller and lower amplitude&#8230; and it goes on like that. <br /><br><div class="separator" style="clear: both; text-align: center;"><nobr><img width=390 src="http://dl.dropbox.com/u/11308804/101208_ob7_uranus_indivtest_noaddmodeltimestream008_plots_00_bolo03.png" align=left><br /><img width=390 src="http://dl.dropbox.com/u/11308804/101208_ob7_uranus_indivtest_noaddmodeltimestream008_plots_01_bolo03.png" align=right></nobr></div><br><br /><br /><div align=left class="separator" style="clear: both; text-align: left;"><p><br>Not deconvolving results in a healthy-looking clean map - pretty much what you expect and want to see.<br /></div><br />This implies that somehow removing an incomplete deconvolved model leads to more of the source being included in the &#8216;atmosphere&#8217; than would have been included with no model subtraction at all.  I&#8217;m not sure how this is possible.  In fact&#8230; I&#8217;m really quite sure that it is not.  <br /><br />The workaround is to only add positive changes to the model.  This should &#8216;definitely work&#8217; but may be non-convergent and assumes that the model never has anything wrong with it at any iteration.  I have demonstrated that this works nicely for the two Uranus observations I tested on, but now I have to run the gamut of tests&#8230;. the first (very obvious) problem is that the background is now positive, which is dead wrong.  This workaround is not viable.<br /><br />Alright, so what next?  I&#8217;ve described the symptoms and that I think they can&#8217;t occur&#8230;<br />A closer look shows that new_astro is not being incorporated into astro_model at the second iteration.  Why?<br /><br /><br />AHA!  Pyflagger + find_all_points reveals the problem!<br /><pre>Map value: 16.939728   Weighted average: 17.476323   Unweighted Average: 524.573136<br />scan,bolo,time:       mapped       astro       flags      weight       scale<br />   3,  22,  12:     8.380408   13.561113    0.000000    0.025132    1.000000<br />   4, 124,  23:   822.005327   13.561113    0.000000    0.000038    1.118012<br />   4,  21,  38:   719.408983   13.561113    0.000000    0.000037    0.946721<br />   5,  20,   7:     4.470616   13.561113    0.000000    0.013303    1.400000<br />   5, 119,  23:   882.508303   13.561113    0.000000    0.000033    0.926887<br />   5, 100,  35:   327.007750   13.561113    0.000000    0.000074    1.184397<br />   5, 106,  38:   162.562098   13.561113    0.000000    0.000704    0.970000<br />   6, 116,  27:   779.075640   13.561113    0.000000    0.000033    0.891768<br />   8, 112,   3:   235.557390   13.561113    0.000000    0.000147    0.947130<br />   9,   3,  14:   966.721773   13.561113    0.000000    0.000032    1.166292<br />   9, 109,  41:   139.753656   13.561113    0.000000    0.000753    1.075269<br />  10, 104,   8:   641.121935   13.561113    0.000000    0.000050    0.927827<br />  10, 105,  24:     4.323228   13.561113    0.000000    0.032759    0.019022<br />  10,  32,  36:   847.646990   13.561113    0.000000    0.000034    1.099406<br />  11,  36,   9:   834.757586   13.561113    0.000000    0.000038    1.184751<br />  11,  76,  37:   566.851891   13.561113    0.000000    0.000040    1.111000<br />  12,  77,  13:   834.603090   13.561113    0.000000    0.000034    1.128464<br />  12,  44,  44:   335.465654   13.561113    0.000000    0.000195    2.165775<br />  13,  26,  17:    50.423143   13.561113    0.000000    0.004826    0.829932<br />  13,  75,  29:   724.884676   13.561113    0.000000    0.000042    0.923077<br />  14,  49,  21:   797.618990   13.561113    0.000000    0.000038    1.091918<br />  14,  29,  33:   743.856012   13.561113    0.000000    0.000035    1.050360<br />  15,  33,  13:   660.670099   13.561113    0.000000    0.000031    0.832180<br />  15,  53,  25:   604.174286   13.561113    0.000000    0.000047    0.889922<br />  15,  88,  40:     4.626476   13.561113    0.000000    0.008241    0.191489<br />  17,  64,  20:   778.950533   13.561113    0.000000    0.000037    1.233108<br />  18,  68,  30:   686.048136   13.561113    0.000000    0.000040    1.387283<br /></pre><br />Note that the lowest points have the highest weights.  They DEFINITELY shouldn&#8217;t.  What&#8217;s wrong with them?<br /><br />Apparently they have NO sensitivity to the sky!  What?!  There were a bunch of bad bolos in Dec2010 that weren&#8217;t flagged out&#8230; I wonder if that problem persists to other epochs.  Still, why does it only affect pointing observations?  Looking at the power spectra&#8230; the large-timescale stuff becomes less dominant when scans are longer, but the noisy spectra are still clearly noise-only.  How odd.<br /><br />Dropped to 112 good bolos from 134.  That is much more believable.  Have to go back and fix Dec09 data too&#8230;<br /><br />Even after fixing the bad bolos, the model drops with iteration number.  Why why why?<br /><br />Well, looking at deconv_map, I&#8217;ve always returned the truly deconvolved version, not the reconvolved&#8230; maybe the reconvolved really is better?  Again, this will have to be extensively tested, but it certainly gets rid of the obvious/dominant error that the model kept dropping off.  However, FINALLY, based on how ridiculously good the reconv-deconvolved map looks, I think I&#8217;m ready to do the extensive pipeline tests.  So, 10dec_caltest has been started up with all of the new bolo_params applied and the changes in place to deconv_map&#8230; let&#8217;s see what happens.<br /><img src="http://dl.dropbox.com/u/11308804/compare_noadd_nodeconv.png" width=800 title="Comparison of deconvolved and not-deconvolved maps (with reconv)"><br /><br />After that runs, I&#8217;ll have to re-run the fit_and_plot routines</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/22/revisiting-calibration-yet-again/">Revisiting Calibration Yet Again</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-22T18:22:00-06:00" pubdate data-updated="true">Mar 22<span>nd</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+The recent hiatus for paper revisions has, unfortunately, come to an end.<br /><br />Re-examining my work, I did quite a lot but encountered many dead-ends.  <br /><br />First, we would very much like to use an *identical* reduction process on both the calibration data and the science data.  That way, we could feel very confident that the reduction process isn&#8217;t introducing any weird artifacts.<br /><br />Unfortunately, I discovered early on that using ds5 data, 13 pca components, and n>1 iterations resulted in strange shape and flux conservation failures.  These errors do NOT occur in co-added maps; they are unique to single-observation scans (though I don&#8217;t recollect whether 2 scans is enough or if you need more).  <br /><br />I spent many hours banging my head against this problem and have never gotten a satisfactory solution.  But perhaps it&#8217;s time to approach it again.  The map00 images look MUCH rounder and generally better than the map10 images.   <br /><br />So, the problem I need to examine is the iterative process.  Why does it fail for single images?  Is it something about the noise properties?  model00 looks fine&#8230; what gets put into the timestream?  Examining timestreams is a terrible and horrendous process&#8230; but what else can I do?<br /><br />The next step will be to examine the timestreams of a particular observation.  I think a good choice is 101208_ob7; the next observation, 101208_ob8 was a large-area map and it looks fine (i.e., it improves with iteration).  So I can start looking at the effects of polysub, iteration, etc. on this particular source.<br /><br />Of course, the stupid trick with the pipeline - every time - is that &#8220;fixing&#8221; a problem for one source has a nasty tendency to break it for all other sources.  That&#8217;s why there are so many flags that can be passed around.  Still, this is the approach I have to take&#8230;</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/02/13/downsampling-why-is-dec-2010-different/">Downsampling - Why Is Dec 2010 Different?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-13T12:43:00-07:00" pubdate data-updated="true">Feb 13<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+As you&#8217;ll recall from <a href="http://bolocam.blogspot.com/2011/02/downsampling-what-is-going-on.html"> my previous post </a> (and references therein&#8230;), the 2005 Orion data shows a discrepancy between ds1 and ds5 data in which the ds1 data is significantly (~10%) higher than the ds5 data.  However, the 2010 Uranus observations show much larger discrepancies between ds1 and ds5 favoring the ds5 data!  Because that was somewhat unbelievable to me, I ran ds1-ds5 comparisons on Uranus data from other epochs, and discovered that ds1&gt;ds5 uniformly (also, it looks a LOT better).<br /><br />So, the question remains, WHY is the Dec 2010 data brighter in ds5?  More confusing to me, why do the ds5 PSFs from 2010 look so reasonable, while the ds5 PSFs from all earlier epochs look terrible?<br /><br />For example, I use the observations 070727_o31 and _o32.  These show clearly the blurring and flux-loss that happens when ds5 data are used for &#8216;normal&#8217; point-sources.  The disagreement is, surprisingly, worse for the co-added image, though the correlation is better&#8230; I&#8217;m not entirely clear what that means besides there being a positional offset between the individual maps that is not entirely believable.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-Fv-rLVtwUQk/TVgwKdUUU-I/AAAAAAAAGBk/M_FHcZaeo7Y/s1600/uranus_070727_ds1_o31-2_0pca_v2.0_map10.fits_compareds1ds5.png" imageanchor="1" style="margin-bottom: 1em; margin-right: 1em;"><img border="0" height="320" src="http://3.bp.blogspot.com/-Fv-rLVtwUQk/TVgwKdUUU-I/AAAAAAAAGBk/M_FHcZaeo7Y/s320/uranus_070727_ds1_o31-2_0pca_v2.0_map10.fits_compareds1ds5.png" width="320" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-Mr9VutL-9t4/TVgyBq2z-kI/AAAAAAAAGBo/fdFkQ-w99Lw/s1600/uranus_v2.0_070727_o32_indiv_map10_compareds1ds5.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="320" src="http://3.bp.blogspot.com/-Mr9VutL-9t4/TVgyBq2z-kI/AAAAAAAAGBo/fdFkQ-w99Lw/s320/uranus_v2.0_070727_o32_indiv_map10_compareds1ds5.png" width="320" /></a></div><br /><br /><a href="http://3.bp.blogspot.com/-jVosT6o4bUw/TVgyCG9ql_I/AAAAAAAAGBs/aju-XfQqMJg/s1600/uranus_v2.0_070727_o31_indiv_map10_compareds1ds5.png" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" height="320" src="http://3.bp.blogspot.com/-jVosT6o4bUw/TVgyCG9ql_I/AAAAAAAAGBs/aju-XfQqMJg/s320/uranus_v2.0_070727_o31_indiv_map10_compareds1ds5.png" style="cursor: move;" width="320" /></a><br /><br /><div class="separator" style="clear: both; text-align: center;">However, the point is that these maps do not share the properties of the 2010 maps, in which the ds5 source is brighter and possibly even more peaked than the ds1 source, despite the ds1 data having lower noise (as you&#8217;d expect):<br /><br /><br /><a href="http://1.bp.blogspot.com/_lsgW26mWZnU/TVSaYfZx0WI/AAAAAAAAGBE/cWbbBQCJOvk/s1600/101208_ob4_ds1ds5_compare.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em; float: center; clear: center;"><img border="0" height="320" src="http://1.bp.blogspot.com/_lsgW26mWZnU/TVSaYfZx0WI/AAAAAAAAGBE/cWbbBQCJOvk/s320/101208_ob4_ds1ds5_compare.png" width="320" /></a></div><br /><br /><br />What could be boosting the flux in the Dec 2010 downsampled data?  Is there something about the lines - before downsampling - that is changing the relative scaling?  Perhaps I can answer this with the w5 maps&#8230; but I think that&#8217;s unlikely&#8230;</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adam</div>
+<div class='content'>
+It looks like, for AFGL 4029 combined images, ds1 and ds5 agree to within 5% in the Dec2010 data.  This implies that the offset is a result of the individual scans instead of coadds, though for the individual observations ds1&gt;ds5 pretty uniformly.</div>
+</div>
+</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/02/10/downsampling-what-is-going-on/">Downsampling - What Is Going On?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-10T21:19:00-07:00" pubdate data-updated="true">Feb 10<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+The downsampling failure I <a href="http://bolocam.blogspot.com/2011/01/downsampling-has-serious-negative.html">noted</a> <a href="http://bolocam.blogspot.com/2011/01/more-evidence-that-downsampling-causes.html">previously</a> appears to be illusory.  It may be that the offset noted only holds for single-frame images, in which there may be many blank pixels.  It is possible - though not certain - that the ds1 images were significantly higher than ds5 because more noise-only pixels were included with higher outliers; i.e., ds1 high-outlier noise was being compared to ds5 noise that was lower amplitude. <br /><br />What led to these conclusions?  First, I was getting inconsistent results looking at Uranus in particular - ds5 appeared to have higher fluxes than ds1.  This was inconsistent with <a href="http://bolocam.blogspot.com/2011/01/downsampling-has-serious-negative.html">earlier results</a> on OMC1.  Partly, this is because I switched from my <a href="http://4.bp.blogspot.com/_lsgW26mWZnU/TTiWWl3j3dI/AAAAAAAAF3I/Ef3WHEv5oXU/s1600/omc1_dstest_pixel-pixel.png">hacked-together plots</a> to the much more refined <a href="http://code.google.com/p/bgpspipeline/source/browse/bgps_pipeline/plotting/compare_images.py">compare_images</a> script, which demonstrated the effect of changing the cutoff of the comparison.<br /><br />Also, I added in a Pearson Correlation Coefficient computation.  Given a single data set with the only difference being downsampling, the data should be perfectly correlated even if there is a flux offset (correlation should be 1, but the best fit slope should not be).  It was an indication of a problem when I started seeing correlation coefficients &lt;0.90 for data that had already been sigma-cut; that means that noise was being included in the correlation computations.<br /><br />Therefore, the approach needed is to cut out the high pixels that are on map edges.  This I accomplished by adding an &#8216;aperture&#8217; capability to the compare_images code (for Uranus) and cropping using montage and a wcs-based box for Orion.<br /><br />The results&#8230; are ambiguous.  Wow.  In some sub-fields - within the same co-added map - the agreement is near-perfect.<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-i20j3FEx758/TVR-PbQl7lI/AAAAAAAAGAY/imgMqceS9n8/s1600/v2.0_dl_omc_b_OMC4_ds1ds5_compare.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-i20j3FEx758/TVR-PbQl7lI/AAAAAAAAGAY/imgMqceS9n8/s1600/v2.0_dl_omc_b_OMC4_ds1ds5_compare.png" width="800" /></a></div>In others, ds1 is clearly &gt; ds5 .  <br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-JsRH_ZQilWM/TVR-Os6vBSI/AAAAAAAAGAQ/JRR6Trm-weo/s1600/v2.0_dl_omc_b_OMC2_ds1ds5_compare.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-JsRH_ZQilWM/TVR-Os6vBSI/AAAAAAAAGAQ/JRR6Trm-weo/s1600/v2.0_dl_omc_b_OMC2_ds1ds5_compare.png" width="800" /></a></div>What&#8217;s going on?  ds1 does look uniformly more smooth.<br /><br />Note that the <i>disagreement</i> is nearly scale-free:<a href="http://2.bp.blogspot.com/-J1XXZki2sxU/TVSXhlmGZKI/AAAAAAAAGAg/aDyQ7Sz2CfM/s1600/v2.0_dl_omc_b_OMC2_ds1ds5_psd_compare.png" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" height="320" src="http://2.bp.blogspot.com/-J1XXZki2sxU/TVSXhlmGZKI/AAAAAAAAGAg/aDyQ7Sz2CfM/s320/v2.0_dl_omc_b_OMC2_ds1ds5_psd_compare.png" width="320" /></a><br /><br /><br />OK, so given the conclusion in Orion that ds1>=ds5, what&#8217;s the deal with Uranus?<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-AosJ1vzcYSs/TVSZjIZ81fI/AAAAAAAAGAk/qVGeaJtkbPA/s1600/101208_o10_ds1ds5_compare.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://3.bp.blogspot.com/-AosJ1vzcYSs/TVSZjIZ81fI/AAAAAAAAGAk/qVGeaJtkbPA/s320/101208_o10_ds1ds5_compare.png" /></a></div><br />The first two comparisons are for 1x1&deg; observations; in both cases ds1 &lt; ds5, but by 6% and 24% respectively!  The image of Uranus looks much better (because of lack of parallel lines) in the second, more extreme case.  In both cases, the ds5 excess is nearly scale-free (not shown).<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/_lsgW26mWZnU/TVSZki9k9OI/AAAAAAAAGA0/t9LOGHOAL7Q/s1600/101208_o10_ds1ds5_compare.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://1.bp.blogspot.com/_lsgW26mWZnU/TVSZki9k9OI/AAAAAAAAGA0/t9LOGHOAL7Q/s320/101208_o10_ds1ds5_compare.png" /></a></div><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/_lsgW26mWZnU/TVSZj1pglLI/AAAAAAAAGAs/-4153NoAQQ0/s1600/101208_o11_ds1ds5_compare.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://2.bp.blogspot.com/_lsgW26mWZnU/TVSZj1pglLI/AAAAAAAAGAs/-4153NoAQQ0/s320/101208_o11_ds1ds5_compare.png" /></a></div><br />The 3x1s are also highly discrepant.  #12 shows nearly perfect agreement, albeit with high dispersion (low correlation) because of pixel-to-pixel variations around the peak.  #13 is the only observation with a huge DS1 excess.  It also demonstrates very poor correlation.  It looks like the telescope got bumped for the ds5 data (which is not actually possible; recall they&#8217;re the same data set).  What happened here?  Maybe a glitch that went unflagged (mad_flagger is off by default for individual scans)?<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-9gwzGfDBCEk/TVSZllWeBxI/AAAAAAAAGA8/x3mg5RbMScs/s1600/101208_o12_ds1ds5_compare.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://3.bp.blogspot.com/-9gwzGfDBCEk/TVSZllWeBxI/AAAAAAAAGA8/x3mg5RbMScs/s320/101208_o12_ds1ds5_compare.png" title="101208 Observation 12"/></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-9gwzGfDBCEk/TVSZllWeBxI/AAAAAAAAGA8/x3mg5RbMScs/s1600/101208_o13_ds1ds5_compare.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://3.bp.blogspot.com/-9gwzGfDBCEk/TVSZllWeBxI/AAAAAAAAGA8/x3mg5RbMScs/s320/101208_o13_ds1ds5_compare.png" title="101208 Observation 13"/></a></div><br /><br />In observations 4 and 5, we&#8217;re looking at a 40-50% excess in ds5!  What the heck?  There really is no clear explanation for this.<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/_lsgW26mWZnU/TVSaYfZx0WI/AAAAAAAAGBE/cWbbBQCJOvk/s1600/101208_ob4_ds1ds5_compare.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://1.bp.blogspot.com/_lsgW26mWZnU/TVSaYfZx0WI/AAAAAAAAGBE/cWbbBQCJOvk/s320/101208_ob4_ds1ds5_compare.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/_lsgW26mWZnU/TVSaZM27sqI/AAAAAAAAGBM/XR-6pttUcBo/s1600/101208_ob5_ds1ds5_compare.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://2.bp.blogspot.com/_lsgW26mWZnU/TVSaZM27sqI/AAAAAAAAGBM/XR-6pttUcBo/s320/101208_ob5_ds1ds5_compare.png" /></a></div><br />But&#8230; what?  Magically, they come into perfect agreement when the scan axis nearly lines up with the coordinate axis!  Or, is this just an effect of the worse weather on night 2?<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/_lsgW26mWZnU/TVSaaP6ISNI/AAAAAAAAGBU/PvN5aFOxBAQ/s1600/101209_ob5_ds1ds5_compare.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://3.bp.blogspot.com/_lsgW26mWZnU/TVSaaP6ISNI/AAAAAAAAGBU/PvN5aFOxBAQ/s320/101209_ob5_ds1ds5_compare.png" /></a></div><br />Next thing to try: masked source map comparison.  Unfortunately, masking royally screwed up the long scans - probably because the initial polysub didn&#8217;t work.  And masking in the individual point source maps did nothing&#8230; so that pretty much rules out atmospheric oversubtraction, doesn&#8217;t it?<br /><br />What else could be causing this offset?  0pca looks the same as 13pca, give or take, so it&#8217;s not the atmospheric subtraction.  Could the downsampling result in an offset in the bolo-scaling?  Where else in the process could things go wrong?  Tomorrow, need to investigate .sav files with pyflagger&#8230;</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adam</div>
+<div class='content'>
+From a comparison of 3 different epochs using about a dozen different reduction techniques, but all with pairs of cross-scans, ds1 is uniformly higher than ds5.<br /><br />The only thing left to do is compare the individual scans, I suppose&#8230; if the cross-scans behave differently, that explains the difference between 2010 and other epochs</div>
+</div>
+</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/02/06/making-maps-faster/">Making Maps Faster</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-06T21:38:00-07:00" pubdate data-updated="true">Feb 6<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+The fundamental problem at this point is making the pipeline run faster.  At current speeds, with undownsampled data, it may take ~days to process a single map.  Ideas for faster processing:<br /><br /><ol><li> Find out how long it takes to converge to 1%, 5%&#8230;.  If it only requires 10 iterations, that&#8217;s a factor of 2 savings over current strategies.<br /><li> Use downsampled data of some sort if possible.  Does DS2 match DS1?  How do we measure it?  Flux-flux comparison and PSF point-source size measurements are the most important.  Need to automate PSF comparison&#8230;.<br /><li> Can we use median-combined individual images as a 0th order model?  I bet the answer is &#8216;yes&#8217; and will probably increase the speed of convergence by a large amount.  Tests to run?  This is probably needed if we are to split up the &#8216;super-fields&#8217; into smaller sub-fields, otherwise overlapping data will be used less effectively.<br /><li> Find some way to keep bgps.raw, bgps.ra, bgps.dec, and other items that are only used once on the HD during the iterative process.  Is there any way to separate out data in a struct in this manner?<br /></ol></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/7/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/5/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/26/bash-prompt/">Bash Prompt</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/catalog-vs-image-shift-possible/">Catalog vs Image shift?  A possible solution to the ATLASGAL issue</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/21/idea-multispectral-eigenimage/">Idea: Multispectral Eigenimage decomposition&#8230;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/20/first/">Fourier Upsampling</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Adam Ginsburg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

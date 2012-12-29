@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Progress, but still ds1-ds5 issues - Adam Ginsburg's Astro Blog</title>
+  <meta name="author" content="Adam Ginsburg">
+
+  
+  <meta name="description" content="ds1 and ds5 agree pretty well with the recent upgrades to delining and deconvolution. However, there are still counterexamples, e.g. 101208_o13, in &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://keflavich.github.com/blog/2011/03/29/progress-but-still-ds1-ds5-issues/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Adam Ginsburg's Astro Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adam Ginsburg's Astro Blog</a></h1>
+  
+    <h2>Nicer than keflavich.blogspot.com</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:keflavich.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Progress, but Still Ds1-ds5 Issues</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-29T20:47:00-06:00" pubdate data-updated="true">Mar 29<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+ds1 and ds5 agree pretty well with the recent upgrades to delining and deconvolution.  However, there are still counterexamples, e.g. 101208_o13, in which ds5 < ds1: <table><br /><tr><td><br /><a href="http://4.bp.blogspot.com/-fIJHF_x5mBI/TZI0cryJfbI/AAAAAAAAGDI/GsNfLRGNZAk/s1600/101208_o13_raw_ds1.nc_indiv13pca.png" ><img  width="390" src="http://4.bp.blogspot.com/-fIJHF_x5mBI/TZI0cryJfbI/AAAAAAAAGDI/GsNfLRGNZAk/s200/101208_o13_raw_ds1.nc_indiv13pca.png" /></a> <br /></td><td><a href="http://2.bp.blogspot.com/-QRhiz8W9RDc/TZI0dGUR4UI/AAAAAAAAGDQ/WC8eLQd6_Z0/s1600/101208_o13_raw_ds5.nc_indiv13pca.png" ><img  width="390" src="http://2.bp.blogspot.com/-QRhiz8W9RDc/TZI0dGUR4UI/AAAAAAAAGDQ/WC8eLQd6_Z0/s200/101208_o13_raw_ds5.nc_indiv13pca.png" /></a></td></tr><br /></table><br />The &#8216;fitted&#8217; values agree better than the &#8216;measured&#8217; values now that NANs are treated properly.<br /><br /><br />Spent a few hours today trying to figure out if weighting can explain the difference between ds1 and ds5; it appears to make up for most of it so I&#8217;m doing some more experiments.  Why is there so much parameter space?  Why can&#8217;t weighting just work?  It doesn&#8217;t&#8230;.<br /><br />also wasted a few hours trying to write a python drizzling algorithm, which unfortunately is impossible so I had to resort to an inefficient for loop.  <br /><br />Finally got some minor results.  It really looks like there is a trend pushing up the recovered flux (i.e. higher volts/Jy) for ds5 over ds1.  There is a discrepancy between map types for ds1 but not for ds5, which is actually backwards from what I would have expected, since ds1 will get better-sampled maps. <br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-ARaSL7ZdDmc/TZKRcE01DnI/AAAAAAAAGDY/YMZRpRo53Hw/s1600/uranus_dcfluxes_dec2010_nomask_ds1_13pca_fits_map10.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="229" width="320" src="http://2.bp.blogspot.com/-ARaSL7ZdDmc/TZKRcE01DnI/AAAAAAAAGDY/YMZRpRo53Hw/s320/uranus_dcfluxes_dec2010_nomask_ds1_13pca_fits_map10.png" /></a><br /><a href="http://3.bp.blogspot.com/-pWtggp0vSP4/TZKRcwZ_SrI/AAAAAAAAGDg/IqVHQSprkL8/s1600/uranus_dcfluxes_dec2010_nomask_ds5_13pca_fits_map10.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="229" width="320" src="http://3.bp.blogspot.com/-pWtggp0vSP4/TZKRcwZ_SrI/AAAAAAAAGDg/IqVHQSprkL8/s320/uranus_dcfluxes_dec2010_nomask_ds5_13pca_fits_map10.png" /></a></div><br />Luckily, the difference between peak fitting and &#8220;measuring&#8221; results in very small (insignificant) changes to the calibration curve (recall fitting is direct gaussian fitting; &#8216;measuring&#8217; is using the gaussian-fit width and total flux in an ellipse to infer a peak assuming a point source):<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-E-FDTTj-4Ik/TZKVyUA8zBI/AAAAAAAAGDo/9NGubgLWBvo/s1600/uranus_dcfluxes_dec2010_nomask_ds5_13pca_fits_map10.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="229" width="320" src="http://2.bp.blogspot.com/-E-FDTTj-4Ik/TZKVyUA8zBI/AAAAAAAAGDo/9NGubgLWBvo/s320/uranus_dcfluxes_dec2010_nomask_ds5_13pca_fits_map10.png" /></a><br /><a href="http://3.bp.blogspot.com/-GdyxFnmwQ7g/TZKVykSg57I/AAAAAAAAGDw/PPVXtfAxW0s/s1600/uranus_dcfluxes_dec2010_nomask_ds5_13pca_map10.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="229" width="320" src="http://3.bp.blogspot.com/-GdyxFnmwQ7g/TZKVykSg57I/AAAAAAAAGDw/PPVXtfAxW0s/s320/uranus_dcfluxes_dec2010_nomask_ds5_13pca_map10.png" /></a></div><br />Since this work has all been done for the &#8216;bootstrapping&#8217; observations that are supposed to tell us if different map sizes are compatible, I have included the map sizes in the diagrams now.  However, to really understand the ds1/ds5 difference, there are much better data sets, which I&#8217;m now reprocessing using the new and improved methods.<br /><br />(the Whole BGPS is also processing with the new methods in the background, though since the methods are being updated live there may be more changes and it will have to be re-run&#8230;. initial looks at W5 are BAD but L030 is GOOD (bordering on amazing))</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Adam Ginsburg</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-29T20:47:00-06:00" pubdate data-updated="true">Mar 29<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/bgps/'>bgps</a>, <a class='category' href='/blog/categories/calibration/'>calibration</a>, <a class='category' href='/blog/categories/downsampling/'>downsampling</a>, <a class='category' href='/blog/categories/pipeline/'>pipeline</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://keflavich.github.com/blog/2011/03/29/progress-but-still-ds1-ds5-issues/" data-via="" data-counturl="http://keflavich.github.com/blog/2011/03/29/progress-but-still-ds1-ds5-issues/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/03/29/careful-comparison-of-ds1-and-ds5/" title="Previous Post: Careful comparison of ds1 and ds5">&laquo; Careful comparison of ds1 and ds5</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/03/30/weird-problem/" title="Next Post: Weird problem">Weird problem &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/26/bash-prompt/">Bash Prompt</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/catalog-vs-image-shift-possible/">Catalog vs Image shift?  A possible solution to the ATLASGAL issue</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/21/idea-multispectral-eigenimage/">Idea: Multispectral Eigenimage decomposition...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/20/first/">Fourier Upsampling</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Adam Ginsburg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

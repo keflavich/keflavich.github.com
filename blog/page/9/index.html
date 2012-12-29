@@ -1,0 +1,516 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Adam Ginsburg's Astro Blog</title>
+  <meta name="author" content="Adam Ginsburg">
+
+  
+  <meta name="description" content="The methods paper needs some justification of the number of PCA components used. This will require a map of some field with a range of number of PCA &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://keflavich.github.com/blog/page/9/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Adam Ginsburg's Astro Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adam Ginsburg's Astro Blog</a></h1>
+  
+    <h2>Nicer than keflavich.blogspot.com</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:keflavich.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/03/methods-paper-figures-analysis-to/">Methods Paper: Figures / Analysis to Produce</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-03T20:19:00-07:00" pubdate data-updated="true">Mar 3<span>rd</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+The methods paper needs some justification of the number of PCA components used.  This will require a map of some field with a range of number of PCA components.  <br /><br />Plan:<br />simulate a map of L111 (the most square field) with 0-20 PCA components x 21 iterations and a variety of source sizes and plot the recovered flux vs. number of PCA components.  Ideally, do this with both deconvolution and not.  Estimated processing time is ~24 hours.<br /><br />Also, a plot of flux vs. iteration number will be useful.<br /><br /><br />Glitch filtering method has been modified:<br />&#8220;Glitches are removed by drizzling each bolometer measurement into a given pixel using the mapping M[p], but retaining each pixel as an array of measurements.  Then, measurements exceeding $3\times MAD$ (Median Average Deviation) are flagged out in the timestream.  In cases where there were too few ($<3$) hits per pixel, the pixel was completely flagged out.  This only occurred for pixels at scan edges."<br /><br /><br /><br />Data flagging:<br />Partly covered by deglitching.  Many scans were flagged by hand to remove overly noisy scans and those that were observed to confuse the iterative mapper.  Hand flagging is more robust than automated and can remove features caused by the filter convolved with the glitch.<br /><br /><br />Creation of astrophysical model:<br />Not entirely sure what this section entails.  Should have a subsection on deconvolution though.<br /><br />Jackknifing has not generally been done&#8230;</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/03/43-relative-alignment-and-mosaicing/">4.3 Relative Alignment and Mosaicing</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-03T19:51:00-07:00" pubdate data-updated="true">Mar 3<span>rd</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Relative alignment was performed by finding the peak of the cross-correlation between images and a pointing master selected from the epoch with the best-constrained pointing model for that field.  Each observation was initially mapped individually, then all observations of a given field were cross-correlated with a selected master image of that field.  The cross-correlation peak was fit with a gaussian and the difference between the gaussian peak and the image center was used as the pixel offset.  The offsets were recorded and written to the timestreams.  Finally, all observations of a field were merged into a single timestream with pointing offsets applied to create the field mosaic.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/02/bunch-of-plots/">A Bunch of Plots</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-02T18:05:00-07:00" pubdate data-updated="true">Mar 2<span>nd</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://1.bp.blogspot.com/_lsgW26mWZnU/SayCk8uDT2I/AAAAAAAAEzE/hVCHxfejfxk/s1600-h/noise_per_deg.png"><img style="cursor:pointer; cursor:hand;width: 400px; height: 267px;" src="http://1.bp.blogspot.com/_lsgW26mWZnU/SayCk8uDT2I/AAAAAAAAEzE/hVCHxfejfxk/s400/noise_per_deg.png" border="0" alt=""id="BLOGGER_PHOTO_ID_5308761632049155938" /></a><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://3.bp.blogspot.com/_lsgW26mWZnU/SayCkyW19KI/AAAAAAAAEy8/Df_SgR-blY4/s1600-h/fillfact_per_deg.png"><img style="cursor:pointer; cursor:hand;width: 400px; height: 267px;" src="http://3.bp.blogspot.com/_lsgW26mWZnU/SayCkyW19KI/AAAAAAAAEy8/Df_SgR-blY4/s400/fillfact_per_deg.png" border="0" alt=""id="BLOGGER_PHOTO_ID_5308761629267457186" /></a><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://1.bp.blogspot.com/_lsgW26mWZnU/SayCk9BDNzI/AAAAAAAAEy0/oBgJX2IWav8/s1600-h/mean_per_deg.png"><img style="cursor:pointer; cursor:hand;width: 400px; height: 267px;" src="http://1.bp.blogspot.com/_lsgW26mWZnU/SayCk9BDNzI/AAAAAAAAEy0/oBgJX2IWav8/s400/mean_per_deg.png" border="0" alt=""id="BLOGGER_PHOTO_ID_5308761632128841522" /></a><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://2.bp.blogspot.com/_lsgW26mWZnU/SayCksjhWmI/AAAAAAAAEys/vt0ZUY50Uqw/s1600-h/sources_per_deg.png"><img style="cursor:pointer; cursor:hand;width: 400px; height: 267px;" src="http://2.bp.blogspot.com/_lsgW26mWZnU/SayCksjhWmI/AAAAAAAAEys/vt0ZUY50Uqw/s400/sources_per_deg.png" border="0" alt=""id="BLOGGER_PHOTO_ID_5308761627710020194" /></a><br />I wasted a lot of time making these so I figured I might as well waste a little space showing them.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/02/new-series-of-problems/">A New Series of Problems</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-02T17:33:00-07:00" pubdate data-updated="true">Mar 2<span>nd</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<ol><br /><li> There are severe (~5 pixel) pointing offsets in the MOSAICs.  They are caused by IRAF and I can&#8217;t figure out exactly why.<br /><li> Deconvolution has created more artifacts at l=54, 70, 357.  I don&#8217;t know how to fix them.<br /><li> Either my earlier time estimates were way off, or the mapping has gotten slower.  It now takes ~120 computer hours (72 real hours) where before it was taking closer to 48.<br /></ol></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/02/23/return-to-deconvolution/">Return to Deconvolution</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-02-23T11:46:00-07:00" pubdate data-updated="true">Feb 23<span>rd</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+I ran the v0.7 reductions with deconvolution on for 50 iterations.  I had cut out deconvolution originally because of the funky noise maps, but that was partly an error on my part.  There is also an issue with bright sources being largely left over in the noise maps. <br /><br />The deconvolver does MUCH better at filtering out the fuzzy atmospheric emission, so I want to use it.  It leaves some flux from bright point sources behind, though, so I decided to try to make the deconvolution kernel smaller to see if that recovers more of the pointlike flux.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/02/06/planet-fluxes/">Planet Fluxes</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-02-06T15:39:00-07:00" pubdate data-updated="true">Feb 6<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+; ephemerides from the JCMT<br />; MARS:<br />; June 30 2005: 730.14 Jy   UT:53551<br />; July 15 2005: 872.83 Jy   UT:53566          <br />; Sept 10 2005: 1941.72 Jy  UT:53623<br />; June 5  2006: 553.13 Jy   UT:53891<br />; June 23 2006: 674.14 Jy   UT:53544<br />; Sept 10 2006: 135.79 Jy   UT:53896<br />; July 20 2007: 381.18 Jy   UT:54301          <br />; Sept 10 2007: 597.87 Jy   UT:54353          <br />;<br />; URANUS:<br />; June 30 2005: 43.43 Jy   UT:53551<br />; July 15 2005: 44.35 Jy   UT:53566          <br />; Sept 10 2005: 45.78 Jy   UT:53623<br />; June 5  2006: 41.71 Jy   UT:53891<br />; June 23 2006: 42.96 Jy   UT:53544<br />; Sept 10 2006: 41.62 Jy   UT:53896<br />; July 20 2007: 43.90 Jy   UT:54301          <br />; Sept 10 2007: 45.57 Jy   UT:54353          <br />;<br />; NEPTUNE:<br />; June 30 2005: 17.42 Jy   UT:53551<br />; July 15 2005: 17.58 Jy   UT:53566          <br />; Sept 10 2005: 17.50 Jy   UT:53623<br />; June 5  2006: 17.04 Jy   UT:53891<br />; June 23 2006: 17.33 Jy   UT:53544<br />; Sept 10 2006: 17.09 Jy   UT:53896<br />; July 20 2007: 17.59 Jy   UT:54301          <br />; Sept 10 2007: 17.56 Jy   UT:54353</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/02/06/rant-calcbeamlocations/">Rant: Calc_beam_locations</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-02-06T10:00:00-07:00" pubdate data-updated="true">Feb 6<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+It took me a few days to figure this out, but &#8220;calc_beam_locations&#8221; is about 800 lines of wasted space.  It does nothing substantive until line 335.  Everything to that point is parameter parsing.  But there doesn&#8217;t need to be any of that crap, really, and it should have been outsourced to functions to begin with.<br /><br />NCDF files are read to get the rotation angle - JUST as an error check!  There is no a priori reason to include it.<br /><br />All that the code does is read in a centroid file (a list of x,y offsets), rotate them, and output them as r,theta,error.  Sure, there&#8217;s a bunch of automated outlier rejection etc, but&#8230; seriously?!  We don&#8217;t have enough observations to hold up the statistics necessary for that to begin with!  NO ONE would if each observation takes an hour.  It&#8217;s absurd.  Odd as it is coming from me, manual rejection makes a lot more sense in this case.<br /><br />Now, I still have to understand WHY the beam locations are rotated by the fiducial array angle.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/02/01/distortion-mapping-done/">Distortion Mapping Done?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-02-01T13:36:00-07:00" pubdate data-updated="true">Feb 1<span>st</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Created &#8216;beam_locations_0707.txt&#8217; from uranus_070702_o42 with a few contributions from g34.3_070630_o34.<br /><br />The rest were created by averaging over all of the beam location files</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/02/01/0707-distortion-maps/">0707 Distortion Maps</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-02-01T13:25:00-07:00" pubdate data-updated="true">Feb 1<span>st</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://2.bp.blogspot.com/_lsgW26mWZnU/SYYFc97uFjI/AAAAAAAAEt0/nxjKDE_KBIA/s1600-h/0707distmaps.png"><img style="cursor:pointer; cursor:hand;width: 400px; height: 248px;" src="http://2.bp.blogspot.com/_lsgW26mWZnU/SYYFc97uFjI/AAAAAAAAEt0/nxjKDE_KBIA/s400/0707distmaps.png" border="0" alt=""id="BLOGGER_PHOTO_ID_5297928006867490354" /></a><br />They&#8217;re consistent but not very close to each other.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/02/01/sign-errors/">Sign Errors</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-02-01T12:47:00-07:00" pubdate data-updated="true">Feb 1<span>st</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+pinned down the problem.  Was a minor sign error in the offsets.  Why is it that simple sign errors are ALWAYS the hardest things to track down?<br /><br />Now, open question: should x,y scaling be free parameters or not?  What I mean is, when I measure the positions of bolometers on the array using the planet map, should I allow the X and Y stretch (the bolometer spacing) to change?  Should it be a uniform stretch in X and Y or should it be allowed to &#8216;distort&#8217; too?  My opinion is, none of the above: I&#8217;m measuring their actual positions (in terms of a fixed spacing) and therefore stretching or distorting to match the nominal positions is not necessary.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/10/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/8/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/26/bash-prompt/">Bash Prompt</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/catalog-vs-image-shift-possible/">Catalog vs Image shift?  A possible solution to the ATLASGAL issue</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/21/idea-multispectral-eigenimage/">Idea: Multispectral Eigenimage decomposition&#8230;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/20/first/">Fourier Upsampling</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Adam Ginsburg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

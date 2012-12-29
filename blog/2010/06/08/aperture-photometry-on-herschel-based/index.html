@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Aperture Photometry on Herschel-based simulation - Adam Ginsburg's Astro Blog</title>
+  <meta name="author" content="Adam Ginsburg">
+
+  
+  <meta name="description" content="Aperture Photometry on isolated and not-so-isolated sources in the Herschel-based BGPS simulation using the L=111 field for the &#8220;noise&#8221 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://keflavich.github.com/blog/2010/06/08/aperture-photometry-on-herschel-based/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Adam Ginsburg's Astro Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adam Ginsburg's Astro Blog</a></h1>
+  
+    <h2>Nicer than keflavich.blogspot.com</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:keflavich.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Aperture Photometry on Herschel-based Simulation</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-08T11:22:00-06:00" pubdate data-updated="true">Jun 8<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+<div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/_lsgW26mWZnU/TA6IGulWZrI/AAAAAAAAFvU/MHMBrTgxxnU/s1600/ApertureCompare_Source00.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="133" src="http://1.bp.blogspot.com/_lsgW26mWZnU/TA6IGulWZrI/AAAAAAAAFvU/MHMBrTgxxnU/s200/ApertureCompare_Source00.png" width="200" /></a><a href="http://3.bp.blogspot.com/_lsgW26mWZnU/TA6IHwUnzhI/AAAAAAAAFvc/6xv7rKG9Ao4/s1600/ApertureCompare_Source01.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="133" src="http://3.bp.blogspot.com/_lsgW26mWZnU/TA6IHwUnzhI/AAAAAAAAFvc/6xv7rKG9Ao4/s200/ApertureCompare_Source01.png" width="200" /></a><a href="http://2.bp.blogspot.com/_lsgW26mWZnU/TA6IIrbLWVI/AAAAAAAAFvk/mVRxd8bCY0w/s1600/ApertureCompare_Source02.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="133" src="http://2.bp.blogspot.com/_lsgW26mWZnU/TA6IIrbLWVI/AAAAAAAAFvk/mVRxd8bCY0w/s200/ApertureCompare_Source02.png" width="200" /></a><a href="http://3.bp.blogspot.com/_lsgW26mWZnU/TA6IJQBhEoI/AAAAAAAAFvs/VhnsSNbs75A/s1600/ApertureCompare_Source03.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="133" src="http://3.bp.blogspot.com/_lsgW26mWZnU/TA6IJQBhEoI/AAAAAAAAFvs/VhnsSNbs75A/s200/ApertureCompare_Source03.png" width="200" /></a><a href="http://4.bp.blogspot.com/_lsgW26mWZnU/TA6IKP3X_SI/AAAAAAAAFv0/LCXAGTyp_yE/s1600/ApertureCompare_Source04.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="133" src="http://4.bp.blogspot.com/_lsgW26mWZnU/TA6IKP3X_SI/AAAAAAAAFv0/LCXAGTyp_yE/s200/ApertureCompare_Source04.png" width="200" /></a><a href="http://2.bp.blogspot.com/_lsgW26mWZnU/TA6ILDl55sI/AAAAAAAAFv8/jFfTmYof1yQ/s1600/ApertureCompare_Source05.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="133" src="http://2.bp.blogspot.com/_lsgW26mWZnU/TA6ILDl55sI/AAAAAAAAFv8/jFfTmYof1yQ/s200/ApertureCompare_Source05.png" width="200" /></a><a href="http://1.bp.blogspot.com/_lsgW26mWZnU/TA6IL9QhTmI/AAAAAAAAFwE/TAIwnefrPlE/s1600/ApertureCompare_Source06.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="133" src="http://1.bp.blogspot.com/_lsgW26mWZnU/TA6IL9QhTmI/AAAAAAAAFwE/TAIwnefrPlE/s200/ApertureCompare_Source06.png" width="200" /></a><a href="http://3.bp.blogspot.com/_lsgW26mWZnU/TA6IM_9TaaI/AAAAAAAAFwM/0YpADED3SlE/s1600/ApertureCompare_Source07.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="133" src="http://3.bp.blogspot.com/_lsgW26mWZnU/TA6IM_9TaaI/AAAAAAAAFwM/0YpADED3SlE/s200/ApertureCompare_Source07.png" width="200" /></a><a href="http://1.bp.blogspot.com/_lsgW26mWZnU/TA6IOYETGbI/AAAAAAAAFwU/aq5OYcifDc8/s1600/ApertureCompare_Source08.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="133" src="http://1.bp.blogspot.com/_lsgW26mWZnU/TA6IOYETGbI/AAAAAAAAFwU/aq5OYcifDc8/s200/ApertureCompare_Source08.png" width="200" /></a><a href="http://1.bp.blogspot.com/_lsgW26mWZnU/TA6IPFzIniI/AAAAAAAAFwc/omOacZgjFuc/s1600/ApertureCompare_Source09.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="133" src="http://1.bp.blogspot.com/_lsgW26mWZnU/TA6IPFzIniI/AAAAAAAAFwc/omOacZgjFuc/s200/ApertureCompare_Source09.png" width="200" /></a></div>Aperture Photometry on isolated and not-so-isolated sources in the Herschel-based BGPS simulation using the L=111 field for the &#8220;noise&#8221;.  Depending on the aperture, our flux recovery can be really really low.  The images should give an idea of the S/N.&nbsp; Background subtraction means subtracting the median of the image&#8230;. it works frighteningly well in most cases.</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Adam Ginsburg</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-08T11:22:00-06:00" pubdate data-updated="true">Jun 8<span>th</span>, 2010</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/bgps/'>bgps</a>, <a class='category' href='/blog/categories/simulation/'>simulation</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://keflavich.github.com/blog/2010/06/08/aperture-photometry-on-herschel-based/" data-via="" data-counturl="http://keflavich.github.com/blog/2010/06/08/aperture-photometry-on-herschel-based/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2010/06/07/pipeline-flowcharts/" title="Previous Post: Pipeline Flowcharts">&laquo; Pipeline Flowcharts</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2010/06/11/bgps-pipeline-published/" title="Next Post: BGPS Pipeline Published">BGPS Pipeline Published &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/26/bash-prompt/">Bash Prompt</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/catalog-vs-image-shift-possible/">Catalog vs Image shift?  A possible solution to the ATLASGAL issue</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/21/idea-multispectral-eigenimage/">Idea: Multispectral Eigenimage decomposition...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/20/first/">Fourier Upsampling</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Adam Ginsburg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

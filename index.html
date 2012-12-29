@@ -116,6 +116,43 @@ path and cyan host name.  Here&#8217;s the source gist:</p>
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2012/12/25/catalog-vs-image-shift-possible/">Catalog vs Image Shift? A Possible Solution to the ATLASGAL Issue</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-25T20:30:00-07:00" pubdate data-updated="true">Dec 25<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<div dir="ltr" style="text-align: left;" trbidi="on">In the <a href="http://bolocam.blogspot.com/2012/12/pointing-cross-correlation-yet-again.html">previous post</a>, I came up with a final plot showing the pointing offset was, on average, not significant, even in the ATLASGAL overlap zone.<br /><br />So why did the ATLASGAL group infer a net pointing offset?<br /><br />The problem is probably one or two fields with a slight pointing offset, but a huge number of source. &nbsp;l=1 has an offset of the right sign and is the single most source-rich degree in the survey, with 368 sources.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-ONF7C_v8rNk/UNpmXIEe6HI/AAAAAAAAHUI/kdf3pmUKyE0/s1600/l001_catalog_image_compare.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="229" src="http://2.bp.blogspot.com/-ONF7C_v8rNk/UNpmXIEe6HI/AAAAAAAAHUI/kdf3pmUKyE0/s320/l001_catalog_image_compare.png" width="320" /></a></div>This figure shows the v1 vs v2 source locations in grey, their average and standard deviation in green, and the cross-correlation offset in red. &nbsp;The plot is somewhat difficult to interpret, but it appears that the v1 point sources are systematically more shifted to negative longitudes than v2, and the point sources more than the maps themselves. &nbsp;There may have been some reason sources were systematically selected at more negative longitudes in the v1 catalog; around Sgr B2 there&#8217;s a lot of structure that had to be decomposed somehow but was not necessarily &#8220;source&#8221;. <br /><br />One thing to note is the reversal in left-right (in pixel space) vs the positive/negativeness in longitude. &nbsp;The above plot is correct (negative longitudes, as shown on the plot, are &#8220;right&#8221; in images), but most of my other plots have the X-axis flipped.<br /><br />In the end, after spending two weeks hammering my head against this, I find no clear evidence for an offset &nbsp;between the BGPS and Herschel or v1/v2 data overall or in the ATLASGAL fields. &nbsp;In any individual field, that statement is not necessarily true.<br /><br />Despite the strong statistical evidence, it is really hard to be really sure about sub-pixel offsets, since the &#8220;model&#8221; image is never perfect. &nbsp;I think we can safely state the ~1/2 pixel offsets (~3&#8221;) but I just don&#8217;t feel confident about numbers below that range for ALL fields.</div></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a></h1>
     
     
@@ -146,6 +183,43 @@ solution using <a href="astrometry.net">astrometry.net</a>, then apply that solu
 each slit position to make a map.</p>
 
 <p>Work is largely based on <a href="http://adamginsburg.blogspot.com/2012/10/using-guider-images-to-achieve.html">this post idea</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/12/21/idea-multispectral-eigenimage/">Idea: Multispectral Eigenimage Decomposition&#8230;</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-21T19:53:00-07:00" pubdate data-updated="true">Dec 21<span>st</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<div dir="ltr" style="text-align: left;" trbidi="on">Can use BGPS + HiGal to look for correlated (thermal) components and decorrelated (free-free) components. &nbsp;Obviously needs to be tried in GC first.<br /><br />Also, need to figure out a method to mitigate negative bowls in unsharp-masking for herschel-bolocam comparison</div></div>
 </div>
   
   
@@ -193,7 +267,194 @@ each slit position to make a map.</p>
 
     </article>
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/12/10/pointing-cross-correlation-yet-again/">Pointing & Cross-Correlation Yet Again</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-10T12:08:00-07:00" pubdate data-updated="true">Dec 10<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<div dir="ltr" style="text-align: left;" trbidi="on"><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js" type="text/javascript">MathJax.Hub.Config({  extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],  jax: ["input/TeX", "output/HTML-CSS"],  tex2jax: {      inlineMath: [ ['$','$'], ["\\(","\\)"] ],      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],  },  "HTML-CSS": { availableFonts: ["TeX"] } }); </script>  <br /><div dir="ltr" style="text-align: left;" trbidi="on">Prompted in part by a <a href="http://arxiv.org/abs/1211.0741">recent ATLASGAL paper</a>&nbsp;identifying pointing offsets of about 3&#8221; in the BGPS, we revisit the BGPS pointing.<br /><br />The ATLASGAL team compared the source locations in their catalog to source locations in the Bolocam catalog by doing &#8220;nearest-match&#8221; searches within a 40&#8221; radius (see their Figure 8, reproduced here)<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-UJVCzHbaDCI/UMYpeAoulVI/AAAAAAAAHR4/cy5SIqL_HFQ/s1600/ATLASGALvsBolocam.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="313" src="http://1.bp.blogspot.com/-UJVCzHbaDCI/UMYpeAoulVI/AAAAAAAAHR4/cy5SIqL_HFQ/s320/ATLASGALvsBolocam.png" width="320" /></a></div><span id="goog_773521641"></span><span id="goog_773521642"></span><br />Their comparison was over the range -10 &lt; l &lt; 21, so it only covered a small fraction of the BGPS. &nbsp;It covered 13 fields with independent pointing solutions, so it&#8217;s possible that they have actually discovered an offset only in some of our fields.<br /><br />The catalog comparison, while interesting, is potentially quite flawed. &nbsp;There&#8217;s no guarantee that a source extraction algorithm will measure source centers accurately when a &#8220;source&#8221; is just a local overdensity on a complex background. &nbsp;Using source comparison will also lead to a bias towards the most source-rich fields, e.g. l000 and l001, so an offset in one of those fields would drastically affect the catalog offset.<br /><br />There is a better way to compare pointing between two images that are expected to be (nearly) identical. &nbsp;It is well-known that cross-correlation is an effective technique for determining the offsets between two identical images; I&#8217;ll briefly summarize some of the literature here.<br /><br /><a href="http://adsabs.harvard.edu/abs/2005A%26A...443..357G">Gratadour et al 2005</a>&nbsp;used a maximum likelihood estimator approach to determine the &#8220;best-fit&#8221; offset between two images. &nbsp;This approach is comparable to <a href="http://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=5&amp;cad=rja&amp;ved=0CF0QFjAE&amp;url=http%3A%2F%2Fwww.optics.rochester.edu%2Fworkgroups%2Ffienup%2FPUBLICATIONS%2FMGS_OL08_EffRegistration.pdf&amp;ei=rC3GUJC9CcSA2AX3wYCIAg&amp;usg=AFQjCNHdUm0v8qYzNbvrqFRqByR_3svlSA&amp;sig2=GQztgkfvoQzAzQ7kzCJU2w">Guizar et al (2008)</a>, who <a href="http://www.mathworks.com/matlabcentral/fileexchange/18401-efficient-subpixel-image-registration-by-cross-correlation">implemented</a> a fast solution for (highly) sub-pixel image registration in matlab. &nbsp;In order for the image registration to be fast, it must operate in fourier space, but to get sub-pixel registration in fourier space, you need to either pad (which is slow, and increases memory use drastically) or fit some functional form around the peak of the cross-correlation image. &nbsp;The alternative approach implemented by Guizar utilizes the <a href="http://en.wikipedia.org/wiki/Fourier_transform#Basic_properties">Fourier scaling theorem</a>&nbsp;to create a zoomed-in image of the peak pixel, which allows you to get much higher precision for a much lower computational cost.<br /><br />My innovation is to use the minimum $\chi^2$ estimator to determine the goodness of fit and therefore error bars on the best-fit offset. &nbsp;Because the $\chi^2$ value for each offset is simply determined by sums and multiplication ($\chi^2 = \sum \frac{x_i-\mu_x}{\sigma_{x_i}^2}$), we can compute each term that goes in to the $\chi^2$ value independently with fourier transforms, then create goodness-of-fit contours around the $\chi^2$ minimum. &nbsp;The statistical requirement for this approach to make sense is that the errors on the data are gaussian distributed, which is an assumption we inevitably make for astronomical images. &nbsp;I believe there is also a requirement that the errors are independent, which may be more difficult to satisfy, but in the Bolocam images it is satisfied, especially when multiple independent observations are combined.<br /><br />Strictly, this approach can only be used when the model data have the same multiplicative scale as the fitted data. &nbsp;The peak will never be wrong using this method, but the errors could be incorrect if the model and data are multiplicatively offset. &nbsp;In principle, this can be resolved in the future using a <a href="http://en.wikipedia.org/wiki/Mellin_transform">Mellin transform</a>&nbsp;[see <a href="http://ecocodespace.wordpress.com/category/matlab/image-matching/fourier-mellin-transform/">this site</a>&nbsp;or <a href="http://www.mathworks.com/matlabcentral/fileexchange/authors/7667">this</a> for a matlab approach and <a href="http://www.fresnel.fr/perso/derrode/publi/Cviu01.pdf">this</a> for an academic paper on it].<br /><br />This is the approach I have implemented at&nbsp;<a href="http://image-registration.rtfd.org/">image-registration.rtfd.org</a>. &nbsp;I used simulated test cases to demonstrate that it is, indeed, effective and accurate. &nbsp;I used this method to measure the offsets between the v2 data and the v1 data (which should, in principle, be the same as the offsets between ATLASGAL and v1) and the v2 vs Herschel Hi-Gal data (which should be zero). <br /><br />There are actually a few methods implemented in image-registration, and I compared those. &nbsp;There&#8217;s a &#8220;dft&#8221; and a &#8220;$\chi^2$&#8221; approach, which are the same (except $\chi^2$ includes realistic errors), a method where a 2D gaussian is fit to the peak of the cross-correlation image, and a method where a 2nd-order Taylor expansion is performed around the peak of the cross-correlation image. &nbsp;The latter two are <i>biased</i>. &nbsp;An example comparison plot looks like this:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-LtA6owJr_vc/UMZBLK394HI/AAAAAAAAHSI/tR4F0BnFSVs/s1600/l000_catalog_image_compare_chi2contours.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="228" src="http://1.bp.blogspot.com/-LtA6owJr_vc/UMZBLK394HI/AAAAAAAAHSI/tR4F0BnFSVs/s320/l000_catalog_image_compare_chi2contours.png" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;">The grey dots are catalog centroid positions offsets measured between v1 and v2. &nbsp;The green cross represents the mean and standard deviation of the grey points. &nbsp;The other data points, as labeled, show the offsets between the l000 images in v1 and v2 as measured by the method shown. They all have errorbars plotted, but the errorbars are generally smaller than the points. &nbsp;The dark spot seen behind the purple point shows the $\chi^2$ contours out to 8-$\sigma$: the error in the offset is tiny, sub-arcsecond. &nbsp;In this case, the offsets nearly agree:</div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both;">l000 catalog dx: &nbsp;-0.31 +/- 0.68 &nbsp; dy: 1.48 +/- 0.64</div><div class="separator" style="clear: both;">l000 $\chi^2$ dx: &nbsp; 1.74 +/- 0.03 &nbsp;dy: 1.41 +/- 0.03&nbsp;</div><div class="separator" style="clear: both;"><br /></div><div class="separator" style="clear: both; text-align: left;">This field agreed nicely between v1 and v2.</div><br /><br />The comparison to Hi-Gal is perhaps more important; HiGal&#8217;s pointing is calibrated based on multi-wavelength observations, some of which include actual stars. &nbsp;It&#8217;s a space-based mission, so its pointing is more stable. &nbsp;And finally, being a space mission, there&#8217;s a large dedicated team instead of a single, part-time individual working on the data.<br /><br />Our offsets from Hi-Gal are pretty small in general, though not trivially small.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-JyMtqE536LY/UMaEqOYBRxI/AAAAAAAAHSY/85nEo6rEc9k/s1600/Offsets_XYplot.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="214" src="http://1.bp.blogspot.com/-JyMtqE536LY/UMaEqOYBRxI/AAAAAAAAHSY/85nEo6rEc9k/s320/Offsets_XYplot.png" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">And it turns out, the region that overlaps with ATLASGAL had more serious pointing errors than the rest of the survey:</div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-iXI7TUl1y9I/UMaHHXwN2oI/AAAAAAAAHSg/z3g51NHD0zk/s1600/Offsets_XYplot_ATLASGALoverlap.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="214" src="http://2.bp.blogspot.com/-iXI7TUl1y9I/UMaHHXwN2oI/AAAAAAAAHSg/z3g51NHD0zk/s320/Offsets_XYplot_ATLASGALoverlap.png" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;">(note: both of the above plots are missing L=359 because I forgot it. &nbsp;Fixing that now&#8230;)</div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">The clearest problem field is l=15, with a longitude offset of -6&#8221; between v2 and HiGal&#8230;. that&#8217;s not the question, though. &nbsp;Somehow I&#8217;ve lost the code that did the v1-HiGal offsets; I&#8217;ll have to re-write that tomorrow and let it run&#8230;</div><br />Update 12/13: &nbsp;I&#8217;ve spent the last couple days clearing up some issues with the offsets. &nbsp;The error bars should be MUCH smaller than in the above plots. &nbsp;The means are pretty similar, though. <br /><br />Short story: the offsets between v1 and Hi-Gal are greater in the ATLASGAL overlap regions than elsewhere, and in the right general direction, but not quite as serious as they claimed. &nbsp;In v2, the ATLASGAL overlap fields and the rest of the survey have the same mean offsets, and those offsets are small (-0.5&#8221; in l, -1&#8221; in b).<br /><br />The problem now is the table. &nbsp;If everything made sense, (v1-v2)+(v2-higal)+(higal-v1) = 0. &nbsp;But that clearly isn&#8217;t the case, which implies an error in the method, which sucks since I&#8217;m claiming this method is superior to alternatives. &nbsp;It&#8217;s possible that I&#8217;m actually underestimating the errors against Hi-Gal - that can be fixed relatively easily - but the magnitude of the error won&#8217;t affect the centroid measurements. &nbsp;So I probably need to investigate one case very carefully. &nbsp;l050 is a big problem case, with vector sums &gt;1 pixel in both directions. &nbsp;That will be my next line of investigation.<br /><br />The approach will be:<br />-crop identical fields within l050 from v1, v2, herschel<br />-perform pointing comparison between them<br />-check that vector sum &lt; sum of errors<br /><br />I think - and hope - the trouble is just that I&#8217;m using inconsistent sub-fields to compare Herschel with the two different Bolocam versions, which is possible because of the way I selected these sub-fields. &nbsp;I&#8217;ll do more careful cropping, and probably re-do this analysis degree-by-degree (with $512^2$ fields, in the hope that it speeds up the FTs).<br /><br />Update 12/14:<br />I&#8217;ve now cropped identical sections in each of the survey, 1 square degree (512 pixels) each - which is great for speed. &nbsp;As a sidenote, a little line profiling revealed that the make_cross_plots<br />&nbsp;code was the slow point in the process, and it is dominated by savefig calls, not ffts. <br /><br />I&#8217;ve run a careful examination of self consistency on the l=0 field, with positive results: the offsets agree to well within the errorbars (though there is some residual error at the 0.5&#8221; level).<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/--3Q9h0Q1jA4/UMuUjQ33dCI/AAAAAAAAHS4/zSD3H26r5dA/s1600/circular_selfconsistency.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="214" src="http://1.bp.blogspot.com/--3Q9h0Q1jA4/UMuUjQ33dCI/AAAAAAAAHS4/zSD3H26r5dA/s320/circular_selfconsistency.png" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">However, a similar inspection of l=50 resulted in a major failure:</div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-wlwvC26eTEk/UMuYZHU179I/AAAAAAAAHTI/Csf3mBSdbGI/s1600/circular_selfconsistency.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="214" src="http://2.bp.blogspot.com/-wlwvC26eTEk/UMuYZHU179I/AAAAAAAAHTI/Csf3mBSdbGI/s320/circular_selfconsistency.png" width="320" /></a></div><div class="separator" style="clear: both; text-align: left;">In this case, the problem is caused by W51 being exactly on the field edge, leading to huge cross-correlation power at dx=0, but spread over a large y range. &nbsp;My first thought is to try to downweight the edges, which can be achieved by &#8220;zero-padding&#8221; the noise image, but with high values instead of zero&#8230; or alternatively, by setting the edge region to zero smoothly.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">OK, first thought: Bad idea. &nbsp;Increasing the noise along the edges drastically increases the small-shift autocorrelation for the noise, which in turn ends up ruling out the small shifts as a fit possibility. &nbsp;I don&#8217;t think this really makes sense mathematically, but each step does. &nbsp;Why would increasing the noise along the edges make the $\chi^2$ fit worse? &nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">This revealed a serious bug in the code that, luckily, only affected non-uniform error maps. &nbsp;Basically, I had decomposed the $\chi^2$ equation wrong (which is as bad as it sounds). &nbsp;</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">That total mess has been resolved now. &nbsp;The image edges are downweighted with a gaussian of 12 pixels, error=100 outside and weight=0 outside (with weight^2 inside&#8230; best to just view the source if you really want to know the details). &nbsp;The new versions of the above diagrams:</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-mjPyO7LkbGc/UMuxVgSxwZI/AAAAAAAAHTY/ilRnJRaAiOQ/s1600/circular_selfconsistency.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="214" src="http://4.bp.blogspot.com/-mjPyO7LkbGc/UMuxVgSxwZI/AAAAAAAAHTY/ilRnJRaAiOQ/s320/circular_selfconsistency.png" width="320" /></a><a href="http://3.bp.blogspot.com/-rMiHxucSQuo/UMuxZSH63fI/AAAAAAAAHTg/W_IzmhcFCzo/s1600/circular_selfconsistency.png" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" height="214" src="http://3.bp.blogspot.com/-rMiHxucSQuo/UMuxZSH63fI/AAAAAAAAHTg/W_IzmhcFCzo/s320/circular_selfconsistency.png" width="320" /></a></div><br /><div></div><div class="separator" stype="clear:both; text-align: left">Less than spectacular for l=50, but acceptable given the errors, which are indeed significantly larger, as you might expect given the lower total signal in l=50.  Now I need to re-run the fits on every field. </div><div class="separator" stype="clear:both; text-align: left"><br /></div><div class="separator" stype="clear:both; text-align: left"><br /></div><div class="separator" stype="clear:both; text-align: left"><br /></div><div class="separator" stype="clear:both; text-align: left"><br /></div><div class="separator" stype="clear:both; text-align: left"><br /></div><div class="separator" stype="clear:both; text-align: left"><br /></div><div class="separator" stype="clear:both; text-align: left"><br /></div><div class="separator" stype="clear:both; text-align: left"><br /></div><div class="separator" stype="clear:both; text-align: left"><br /></div><div class="separator" stype="clear:both; text-align: left"><br /></div><div class="separator" stype="clear:both; text-align: left"><br /></div><div class="separator" stype="clear:both; text-align: left"><br /></div><div class="separator" stype="clear:both; text-align: left"><br /></div><div class="separator" stype="clear:both; text-align: left"><br /></div><div class="separator" stype="clear:both; text-align: left"><br /></div><div class="separator" stype="clear:both; text-align: left"><br /></div><div class="separator" stype="clear:both; text-align: left"><br /></div><div class="separator" stype="clear:both; text-align: left"><br /></div><div class="separator" stype="clear:both; text-align: left"><br /></div><div class="separator" stype="clear:both; text-align: left"><br /></div><div class="separator" stype="clear:both; text-align: left"><br /></div><div class="separator" stype="clear:both; text-align: left"><br /></div><div class="separator" stype="clear:both; text-align: left">OK, cool, last thing accomplished today (&#8230;by 8pm): offset comparison by square degree for all fields. &nbsp;Again, I don&#8217;t reproduce the magnitude of the ATLASGAL-measured offsets, but the ATLASGAL fields are, on average, more offset in longitude (to the negative) than the overall average.</div><div class="separator" stype="clear:both; text-align: left"><br /></div><div class="separator" stype="clear:both; text-align: left">Curiously, for both v1 and v2, there appears to be a -1.5 deg shift in latitude from Hi-Gal.</div><div class="separator" stype="clear:both; text-align: left"><br /></div><div class="separator" stype="clear:both; text-align: left">The vector sums are mostly sub-arcsecond, with most exceptions at l&gt;50. &nbsp;l=59,64, and 65 are particularly bad - but l=50 isn&#8217;t so bad. &nbsp;So I should do the &#8220;deep&#8221; examination of one or two of those fields&#8230; who knows what new errors I&#8217;ll turn up?</div><div class="separator" stype="clear:both; text-align: left"><br /></div><div class="separator" stype="clear:both; text-align: left">Here&#8217;s the new v1-ATLASGAL offset plot:</div><div class="separator" stype="clear:both; text-align: left"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-iv_FsACT958/UMvsyr90haI/AAAAAAAAHTw/g56hcK6hMCw/s1600/Offsets_XYplot_v1-Hi-Gal_ATLASGALoverlap.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="214" src="http://3.bp.blogspot.com/-iv_FsACT958/UMvsyr90haI/AAAAAAAAHTw/g56hcK6hMCw/s320/Offsets_XYplot_v1-Hi-Gal_ATLASGALoverlap.png" width="320" /></a></div><div class="separator" stype="clear:both; text-align: left"><br /></div></div></div></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/09/08/cross-correlation-offsets-revisited/">Cross-Correlation Offsets Revisited</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-08T02:05:00-06:00" pubdate data-updated="true">Sep 8<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<div dir="ltr" style="text-align: left;" trbidi="on">Since last time (<a href="http://bolocam.blogspot.com/2009/03/43-relative-alignment-and-mosaicing.html">Taylor Expansion &amp; Cross Correlation</a><a href="">, </a><a href="http://bolocam.blogspot.com/2012/03/new-coalignment-code.html">Coalignment Code</a>), I have attempted to re-do the cross-correlation with an added component: error estimates.<br /><br />It turns out, there is a better method than the Taylor-expansion around the cross-correlation peak. &nbsp;Fourier upsampling can be used to efficiently determine precise sub-pixel offsets (<a href="http://www.mathworks.com/matlabcentral/fileexchange/18401-efficient-subpixel-image-registration-by-cross-correlation/content/html/efficient_subpixel_registration.html">matlab version</a>, <a href="http://people.web.psi.ch/guizar_m/main/">Manuel Guizar, author</a>, <a href="http://www.opticsinfobase.org/view_article.cfm?gotourl=http%3A%2F%2Fwww%2Eopticsinfobase%2Eorg%2FDirectPDFAccess%2F6C566DF3-B5C5-B342-97F01180999C7632_148843%2Fol-33-2-156%2Epdf%3Fda%3D1%26id%3D148843%26seq%3D0%26mobile%3Dno&amp;org=University%20of%20Colorado%20at%20Boulder%20Library">refereed article</a>).<br /><br />However, in the published methods just cited, there is no way to determine the error - those algorithms are designed to measure offsets between identical images corrupted by noise but still strongly dominated by signal.<br /><br />We&#8217;re more interested in the case where individual pixels may well be noise-dominated, but the overall signal in the map is still large.<br /><br />So, I&#8217;ve developed a python translation of the above codes and then some.<br /><br /><a href="https://github.com/keflavich/image_registration">Image Registration on github</a><br /><br />The docstrings are pretty solid, but there is no overall documentation.<br /><br />However, there&#8217;s a pretty good demo of the simulation AND fitting code here:<br /><a href="https://github.com/keflavich/image_registration/blob/master/doc/CrossCorrelationSimulation.pdf?raw=true">Tests and Examples</a><br /><br />The results for the Bolocam data are here (only applied to v2-Herschel offsets):<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-PMJx-wX23w8/UErt7G3PqfI/AAAAAAAAHOQ/-5xD6ReBRGs/s1600/Offsets_XYplot.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="320" src="http://2.bp.blogspot.com/-PMJx-wX23w8/UErt7G3PqfI/AAAAAAAAHOQ/-5xD6ReBRGs/s320/Offsets_XYplot.png" width="320" /></a></div><br /></div></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/05/24/bolocat-v1-vs-v2/">Bolocat V1 vs V2</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-24T11:55:00-06:00" pubdate data-updated="true">May 24<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+I&#8217;ve done some very extensive comparison of v1 and v2.  The plots below are included in the current BGPS draft, but I&#8217;ll go into more excessive detail here.  ALL plots below show Version 1 fluxes versus Version 2 fluxes using Bolocat V1 apertures.  This means there are only two possible effects in play: <br /><br /><ol><li>Different fluxes in the v1 and v2 maps</li><li>Pointing (spatial) offsets between the v1 and v2 maps [see&nbsp;http://bolocam.blogspot.com/2012/05/bgps-v2-pointing.html]</li></ol>Therefore, the plots below are just different ways of visualizing the same information.  This holds true despite the fact that different &#8220;correction factors&#8221; appear in different plots.  <br /><div><br /></div><br /><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-gGL8rEcNr20/T75tzRC4dJI/AAAAAAAAHHM/A8KeWkBtfmc/s1600/total_ratiohistograms.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="214" src="http://3.bp.blogspot.com/-gGL8rEcNr20/T75tzRC4dJI/AAAAAAAAHHM/A8KeWkBtfmc/s320/total_ratiohistograms.png" width="320" /></a></div>Ratios of v2 fluxes to v1 fluxes in the listed apertures.  The curves represent best-fit gaussian distributions to the data after excluding outliers using a <a href="http://scikit-learn.org/dev/modules/generated/sklearn.covariance.MinCovDet.html">minimum covariance determinant</a> method  <br /><table><tbody><tr><td width="400"><table cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: 1em; text-align: right;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-n_NxdUplC5s/T75t2udmpqI/AAAAAAAAHIQ/yRM1PQjXEV0/s1600/total_v1v2_40arcsec_fit_compare.png" imageanchor="1" style="margin-bottom: 1em; margin-left: auto; margin-right: auto;"><img border="0" height="213" src="http://3.bp.blogspot.com/-n_NxdUplC5s/T75t2udmpqI/AAAAAAAAHIQ/yRM1PQjXEV0/s320/total_v1v2_40arcsec_fit_compare.png" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">v1 vs v2 with a background subtracted around the source equal to the source area (this was not reported in Bolocat v1, but is a tool Erik implemented so I used it)</td></tr></tbody></table></td><td width="400"><table cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-right: 1em; text-align: left;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-EJs6vHAzoM8/T75t2hH3u0I/AAAAAAAAHII/GbdXYj10Z8k/s1600/total_v1v2_40_nobgarcsec_fit_compare.png" imageanchor="1" style="clear: left; margin-bottom: 1em; margin-left: auto; margin-right: auto;"><img border="0" height="213" src="http://3.bp.blogspot.com/-EJs6vHAzoM8/T75t2hH3u0I/AAAAAAAAHII/GbdXYj10Z8k/s320/total_v1v2_40_nobgarcsec_fit_compare.png" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">v1 vs v2 in 40&#8221; apertures, as stated. &nbsp;There are y=x and y=1.5x lines plotted: these are NOT fits to the data! &nbsp;The green line is a Total Least Squares linear fit to the data weighted by the measured errors. &nbsp;</td></tr></tbody></table></td></tr></tbody></table><br /><br />Source Mask &#8220;aperture&#8221;: <br /><table><tbody><tr><td width="400"><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-YS2Jtvz4Yy0/T75pixKkYsI/AAAAAAAAHFs/iEJHrsKsBk0/s1600/total_v1v2_sourcemask_bg_fit_compare.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="213" src="http://1.bp.blogspot.com/-YS2Jtvz4Yy0/T75pixKkYsI/AAAAAAAAHFs/iEJHrsKsBk0/s320/total_v1v2_sourcemask_bg_fit_compare.png" width="320" /></a></div></td><td width="400"><a href="http://1.bp.blogspot.com/-g-ZbEUUWEpY/T75pjj26FeI/AAAAAAAAHGE/rtdSRgoMQpo/s1600/total_v1v2_sourcemask_fit_compare.png" imageanchor="1" style="clear: left;  margin-bottom: 1em; margin-right: 1em;"><img border="0" height="213" src="http://1.bp.blogspot.com/-g-ZbEUUWEpY/T75pjj26FeI/AAAAAAAAHGE/rtdSRgoMQpo/s320/total_v1v2_sourcemask_fit_compare.png" width="320" /></a></td></tr></tbody></table>Same as above, but the best fit slope is steeper.  The best explanation for the steeper slope (i.e., v2 &gt; 1.5(v1)) is that more extended flux is recovered in v2 around bright sources, therefore in the larger source masks, there is greater flux than would be recovered if a simple 1.5x corrective factor was applied.  <br /><br />80&#8221; apertures<br /><br /><table><tbody><tr><td width="400"><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-WKtlvnFbUF4/T75piyh8tVI/AAAAAAAAHF4/FROq508X6pU/s1600/total_v1v2_80arcsec_fit_compare.png" imageanchor="1" style="margin-bottom: 1em; margin-left: 1em;"><img border="0" height="213" src="http://2.bp.blogspot.com/-WKtlvnFbUF4/T75piyh8tVI/AAAAAAAAHF4/FROq508X6pU/s320/total_v1v2_80arcsec_fit_compare.png" width="320" /></a></div></td><td width="400"><a href="http://1.bp.blogspot.com/-EHGNHIarslc/T75yqG_AmFI/AAAAAAAAHJg/ToAicG9ynmk/s1600/total_v1v2_80_nobgarcsec_fit_compare.png" imageanchor="1" style="clear: left;  margin-bottom: 1em; margin-right: 1em;"><img border="0" height="214" src="http://1.bp.blogspot.com/-EHGNHIarslc/T75yqG_AmFI/AAAAAAAAHJg/ToAicG9ynmk/s320/total_v1v2_80_nobgarcsec_fit_compare.png" width="320" /></a> </td></tr></tbody></table><div class="separator" style="clear: both; text-align: left;">Same for 120&#8221; apertures:</div><table><tbody><tr><td width="400"><a href="http://1.bp.blogspot.com/-ymBFW1Y5OhY/T75piwFYrJI/AAAAAAAAHFw/07ujRFCd_Ts/s1600/total_v1v2_120arcsec_fit_compare.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="213" src="http://1.bp.blogspot.com/-ymBFW1Y5OhY/T75piwFYrJI/AAAAAAAAHFw/07ujRFCd_Ts/s320/total_v1v2_120arcsec_fit_compare.png" width="320" /></a> </td><td width="400"><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-PMkvtoJKNVs/T75yqPe16PI/AAAAAAAAHJk/QF041ok8yQ0/s1600/total_v1v2_120_nobgarcsec_fit_compare.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="214" src="http://3.bp.blogspot.com/-PMkvtoJKNVs/T75yqPe16PI/AAAAAAAAHJk/QF041ok8yQ0/s320/total_v1v2_120_nobgarcsec_fit_compare.png" width="320" /></a></div></td></tr></tbody></table><br />For all 3 of the 40, 80 and 120&#8221; apertures both, the 1.5x correction factor is nearly perfect (agrees to &lt;5%). &nbsp;The background subtraction seems to have different effects depending on aperture size. &nbsp;I welcome Erik to comment on this, but I do not think it is particularly important.<br /><br /><br />The figures below require some explanation. &nbsp;NONE of the circular apertures use background subtraction in this comparison (i.e., compare to the RIGHT column above).<br /><br />These figures are histograms of the flux ratio within a given aperture as a function of flux in the v1 aperture. &nbsp;From bottom to top, the flux in the v1 aperture goes from 0.1 to 10 Jy. &nbsp;The X-axis shows the ratio of the v2 flux to the v1 flux. &nbsp;The black dots with error bars represent the best-fit gaussian distribution to each flux bin. &nbsp;The colorbar shows the log of the number of sources; the most in any bin is about 10<sup>2.5</sup> ~ 300. <br /><br />In short, there is some sign that the ratio of v2/v1 flux varies with v1 flux. &nbsp;This effect could be seen in the figures above since a linear fit is imperfect. &nbsp;The effect is not very strong. &nbsp;Again, I believe the explanation here is the changed spatial transfer function in v2.<br /><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-bfrjMd2veR0/T75pzxm5_xI/AAAAAAAAHGs/SQ1LDR8_EoM/s1600/ratio_twodhist_40.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="213" src="http://3.bp.blogspot.com/-bfrjMd2veR0/T75pzxm5_xI/AAAAAAAAHGs/SQ1LDR8_EoM/s320/ratio_twodhist_40.png" width="320" /></a></div><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-unXyfhsIL1g/T75pkN6kWkI/AAAAAAAAHGQ/axiiWsEMO0M/s1600/ratio_twodhist_80.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="213" src="http://4.bp.blogspot.com/-unXyfhsIL1g/T75pkN6kWkI/AAAAAAAAHGQ/axiiWsEMO0M/s320/ratio_twodhist_80.png" width="320" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-kJEMLqkaQak/T75pkNu78XI/AAAAAAAAHGM/Dh2T4m0cD-8/s1600/ratio_twodhist_120.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="213" src="http://2.bp.blogspot.com/-kJEMLqkaQak/T75pkNu78XI/AAAAAAAAHGM/Dh2T4m0cD-8/s320/ratio_twodhist_120.png" width="320" /></a><a href="http://4.bp.blogspot.com/-ExDpIxfHO74/T75pkjjeKAI/AAAAAAAAHGk/pU3mE5uzcgM/s1600/ratio_twodhist_sourcemask_nobg.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="213" src="http://4.bp.blogspot.com/-ExDpIxfHO74/T75pkjjeKAI/AAAAAAAAHGk/pU3mE5uzcgM/s320/ratio_twodhist_sourcemask_nobg.png" width="320" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-Pru74WRl-Hg/T75pkOL1YWI/AAAAAAAAHGU/qtrMl-w59SA/s1600/ratio_twodhist_sourcemask.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="213" src="http://3.bp.blogspot.com/-Pru74WRl-Hg/T75pkOL1YWI/AAAAAAAAHGU/qtrMl-w59SA/s320/ratio_twodhist_sourcemask.png" width="320" /></a></div></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/05/23/bgps-v2-pointing/">BGPS V2 Pointing</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-23T17:59:00-06:00" pubdate data-updated="true">May 23<span>rd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+BGPS V2.0 pointing offsets relative to V1 and Herschel:   <div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-41YC6GZJR-0/T715bELMplI/AAAAAAAAHE0/Fzk41wW8ysM/s1600/Offsets_CDF.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://4.bp.blogspot.com/-41YC6GZJR-0/T715bELMplI/AAAAAAAAHE0/Fzk41wW8ysM/s320/Offsets_CDF.png" /></a></div>Cumulative Distribution Function of the total offsets.  <div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-9zPWRdGI0jY/T715bmcgVnI/AAAAAAAAHFA/K0XKvlJdO_8/s1600/Offsets_Histogram.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://2.bp.blogspot.com/-9zPWRdGI0jY/T715bmcgVnI/AAAAAAAAHFA/K0XKvlJdO_8/s320/Offsets_Histogram.png" /></a></div>Histograms of the total offsets.   <div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-3hkzLY1D4KY/T715b0VfMxI/AAAAAAAAHFM/DDBXKCGu8ng/s1600/Offsets_XYplot.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://2.bp.blogspot.com/-3hkzLY1D4KY/T715b0VfMxI/AAAAAAAAHFM/DDBXKCGu8ng/s320/Offsets_XYplot.png" /></a></div>X-offsets vs Y-offsets (X and Y are GLON and GLAT).  The ellipses are centered at the mean of the X/Y offsets and have major and minor axes corresponding to the standard deviations.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/03/30/getting-rid-of-haloes/">Getting Rid of Haloes</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-30T18:28:00-06:00" pubdate data-updated="true">Mar 30<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Haloes are when images look like this: <div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-Hwwiewo9FyU/T3Yhs6TpYcI/AAAAAAAAG0k/uKSTBCn95FY/s1600/Screen%2Bshot%2B2012-03-30%2Bat%2B3.09.54%2BPM.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="132" width="111" src="http://1.bp.blogspot.com/-Hwwiewo9FyU/T3Yhs6TpYcI/AAAAAAAAG0k/uKSTBCn95FY/s320/Screen%2Bshot%2B2012-03-30%2Bat%2B3.09.54%2BPM.png" /></a></div><br />instead of this, as they should:<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-t5jVccq9Dtc/T3Yhs-hcY5I/AAAAAAAAG0s/EZ4x0zdSgxw/s1600/Screen%2Bshot%2B2012-03-30%2Bat%2B3.09.58%2BPM.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="141" width="121" src="http://4.bp.blogspot.com/-t5jVccq9Dtc/T3Yhs-hcY5I/AAAAAAAAG0s/EZ4x0zdSgxw/s320/Screen%2Bshot%2B2012-03-30%2Bat%2B3.09.58%2BPM.png" /></a></div><br />Things to try:<br /><ol><li> Pass <code>/return_deconv</code> to deconv_map<br /><li> Pass <code>/linear</code> to deconv_map<br /><li> Disable deconvolve - deconvolve=0<br /></ol>In l123 & l169, at least, <code>/return_deconv</code> worked</div>
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
+    
+      <a class="prev" href="/blog/page/2/">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -210,7 +471,15 @@ each slit position to make a map.</p>
       </li>
     
       <li class="post">
+        <a href="/blog/2012/12/25/catalog-vs-image-shift-possible/">Catalog vs Image shift?  A possible solution to the ATLASGAL issue</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/21/idea-multispectral-eigenimage/">Idea: Multispectral Eigenimage decomposition&#8230;</a>
       </li>
     
       <li class="post">

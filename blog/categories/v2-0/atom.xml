@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: v2.0 | Adam Ginsburg's Astro Blog]]></title>
+  <link href="http://keflavich.github.com/blog/categories/v2-0/atom.xml" rel="self"/>
+  <link href="http://keflavich.github.com/"/>
+  <updated>2012-12-28T17:22:06-07:00</updated>
+  <id>http://keflavich.github.com/</id>
+  <author>
+    <name><![CDATA[Adam Ginsburg]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[BGPS V2 pointing]]></title>
+    <link href="http://keflavich.github.com/blog/2012/05/23/bgps-v2-pointing/"/>
+    <updated>2012-05-23T17:59:00-06:00</updated>
+    <id>http://keflavich.github.com/blog/2012/05/23/bgps-v2-pointing</id>
+    <content type="html"><![CDATA[<div class='post'>
+BGPS V2.0 pointing offsets relative to V1 and Herschel:   <div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-41YC6GZJR-0/T715bELMplI/AAAAAAAAHE0/Fzk41wW8ysM/s1600/Offsets_CDF.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://4.bp.blogspot.com/-41YC6GZJR-0/T715bELMplI/AAAAAAAAHE0/Fzk41wW8ysM/s320/Offsets_CDF.png" /></a></div>Cumulative Distribution Function of the total offsets.  <div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-9zPWRdGI0jY/T715bmcgVnI/AAAAAAAAHFA/K0XKvlJdO_8/s1600/Offsets_Histogram.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://2.bp.blogspot.com/-9zPWRdGI0jY/T715bmcgVnI/AAAAAAAAHFA/K0XKvlJdO_8/s320/Offsets_Histogram.png" /></a></div>Histograms of the total offsets.   <div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-3hkzLY1D4KY/T715b0VfMxI/AAAAAAAAHFM/DDBXKCGu8ng/s1600/Offsets_XYplot.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="214" width="320" src="http://2.bp.blogspot.com/-3hkzLY1D4KY/T715b0VfMxI/AAAAAAAAHFM/DDBXKCGu8ng/s320/Offsets_XYplot.png" /></a></div>X-offsets vs Y-offsets (X and Y are GLON and GLAT).  The ellipses are centered at the mean of the X/Y offsets and have major and minor axes corresponding to the standard deviations.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[v2.0 is to v1.0 as ___ is to v1.0]]></title>
+    <link href="http://keflavich.github.com/blog/2010/06/24/v20-is-to-v10-as-is-to-v10/"/>
+    <updated>2010-06-24T09:42:00-06:00</updated>
+    <id>http://keflavich.github.com/blog/2010/06/24/v20-is-to-v10-as-is-to-v10</id>
+    <content type="html"><![CDATA[<div class='post'>
+<div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/_lsgW26mWZnU/TCN8uqZ-xSI/AAAAAAAAFw8/TywL2w_ntIk/s1600/l079_comparison.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/_lsgW26mWZnU/TCN8uqZ-xSI/AAAAAAAAFw8/TywL2w_ntIk/s320/l079_comparison.png" /></a><a href="http://4.bp.blogspot.com/_lsgW26mWZnU/TCN8vlKAjAI/AAAAAAAAFxE/BZE5Wlca8oU/s1600/l079_comparison_psd.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/_lsgW26mWZnU/TCN8vlKAjAI/AAAAAAAAFxE/BZE5Wlca8oU/s320/l079_comparison_psd.png" /></a></div><br />Apparently v2.0 recovers flux better at all scales than v1.0.&nbsp; However, it is noisier.&nbsp; The full comparison is available <a href="http://casa.colorado.edu/%7Eginsbura/bgps/v1.0_v2.0_comparison.pdf">here</a>.&nbsp; The trustworthy range of flux scales is 1.2-1.6ish.&nbsp; The flux is increased at ALL scales in most images.&nbsp; However, as was noted in comparisons with MAMBO, there may be curvature in the best-fit lines.&nbsp; Also, l=35 does not appear to scale up linearly... G34 is fainter in v2.0?<br /><br />In the low S/N fields, the PSD is more reliable than the pixel-pixel comparison.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Uh? - Adam Ginsburg's Astro Blog</title>
+  <meta name="author" content="Adam Ginsburg">
+
+  
+  <meta name="description" content="I&#8217;m not sure the error reported yesterday is reproducible.Tonight, I started a complete re-mapping of the entire survey. The new mapping will &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://keflavich.github.com/blog/2008/09/11/uh/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Adam Ginsburg's Astro Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adam Ginsburg's Astro Blog</a></h1>
+  
+    <h2>Nicer than keflavich.blogspot.com</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:keflavich.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Uh?</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-09-11T22:57:00-06:00" pubdate data-updated="true">Sep 11<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+I&#8217;m not sure the error reported yesterday is reproducible.<br /><br />Tonight, I started a complete re-mapping of the entire survey.  The new mapping will include beam-smoothed maps and more complete header parameters.<br /><br />I need to re-check the L111 mapping.  It looks like the region with NGC 7538 in it did alright, but the southeast region didn&#8217;t do so well.  The combined maps are probably better than in any previous iteration, though.<br /><br />Tomorrow&#8217;s tests will include L024 presumably.  <br /><br />It&#8217;s time to get to work on this stuff.  There is definitely a reasonably efficient way to go through all of this stuff; the most difficult part is post-facto error checking.  <br /><br />Here are some awk commands I found useful (the &#39;s are because of VI):<br /><code> awk '{printf( $0); if ($2 \!= 0){ printf(" \%4i\%4i",$4-443,$5-207) }; if($4\!=0){printf(" \%4i,\%4i",$2-272,$3-742)}; printf("\n") }' align/l111_fitslist_shiftfind.txt</code><br /><code>awk '{print $6,$7}' align/l111_fitslist_shiftfind.txt > align/shifts_all_lb.txt</code><br /><br />One important point: I had to add a parameter to the header file to say whether the current pointing model was used or not.  It matters when applying the offsets.  Note that since I&#8217;m using the pointing model to make all the individual maps, we actually have to stick with this current set of pointing models for all coaligned maps.  <br /><br />The current models:<br /><pre><br />#   Definition of coefficientts:<br />#   start/end mjd are the start/end modified Julian date of a given pointing model<br />#   the 'a' coefficients are for the AZIMUTH OFFSET, the b coefficients are for the ZENITH ANGLE OFFSET<br />#   a0/b0 are constants (e.g. the mean)<br />#   [ab][12] are the 1st and 2nd coefficients of Azimuth.  They have been fiated to zero for most of<br />#   the past year or three.<br />#   [ab][34] are the 1st and 2nd coefficients of Zenith Angle.<br />#   A 'pointing model' is therefore something like this:<br />#   azoff = a0 + a3*alt + a4*alt^2<br />#   altoff = b0 + b3*alt + b4*alt^2<br />#<br />#   It is important that the start_mjd/end_mjd be in ascending order<br />#<br />#   WARNING: LATER THAN JULY 2007 DEFAULTS TO JULY 2007 WHICH WILL PROBABLY RESULT IN ERRORS!<br />#   I don't have a September 2007 model yet.<br />#<br />#   start_mjd      end_mjd               a0              a1            a2              a3             a4                 b0             b1             b2             b3                b4       realdate<br />      53522.5      53582.5       -9.2413685             0.0           0.0   -0.0066354359  -0.0015110883          7.0392221            0.0            0.0   -0.053635657    -0.00047042481       20050601<br />      53614.5      53643.5        84.969583             0.0           0.0      -2.4339154    0.016300937          126.00164            0.0            0.0     -2.4424431       0.015455417       20050901<br />      53887.5      53947.5        9.5305281             0.0           0.0    -0.053191181  -0.0029300592         0.13425019            0.0            0.0     0.48160040     -0.0092814256       20060601<br />      53979.5      54008.5       -98.980381             0.0           0.0      0.65354164   -0.012414466          52.841380            0.0            0.0      1.6705743      -0.020893018       20060901<br />      54101.5      54252.5       -99.078392             0.0           0.0        0.105270   -0.005943491          86.896333            0.0            0.0     0.54257415      -0.011919129       20070101<br />      54252.5      54288         -103.03831             0.0           0.0      0.20972540  -0.0060336987          100.74491            0.0            0.0   0.0099012827     -0.0033331895       20070601<br />#      54288        54313         -99.078392             0.0           0.0      0.10527000  -0.0059434911          86.896333            0.0            0.0     0.54257415      -0.011919129       20070707<br />      54288        54313         -98.803883             0.0           0.0      0.11810246  -0.0051207995          91.720516            0.0            0.0     0.18953269      -0.0078189793       20070707<br />      54313        54500         -99.078392             0.0           0.0      0.10527000  -0.0059434911          86.896333            0.0            0.0     0.54257415      -0.011919129       20070707<br /><br /><br />mjd2date,53522.5 ,y,m,d & print,y,m,d<br />mjd2date,53614.5 ,y,m,d & print,y,m,d<br />mjd2date,53887.5 ,y,m,d & print,y,m,d<br />mjd2date,53979.5 ,y,m,d & print,y,m,d<br />mjd2date,54101.5 ,y,m,d & print,y,m,d<br />mjd2date,54252.5 ,y,m,d & print,y,m,d<br />mjd2date,54288   ,y,m,d & print,y,m,d<br /></pre></div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Adam Ginsburg</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-09-11T22:57:00-06:00" pubdate data-updated="true">Sep 11<span>th</span>, 2008</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/alignment/'>alignment</a>, <a class='category' href='/blog/categories/bgps/'>bgps</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://keflavich.github.com/blog/2008/09/11/uh/" data-via="" data-counturl="http://keflavich.github.com/blog/2008/09/11/uh/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2008/09/10/disagreement-over-definition-of-lb/" title="Previous Post: Disagreement over definition of l,b coordinates">&laquo; Disagreement over definition of l,b coordinates</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2008/09/12/failed-fields/" title="Next Post: Failed fields">Failed fields &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/26/bash-prompt/">Bash Prompt</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/catalog-vs-image-shift-possible/">Catalog vs Image shift?  A possible solution to the ATLASGAL issue</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/21/idea-multispectral-eigenimage/">Idea: Multispectral Eigenimage decomposition...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/20/first/">Fourier Upsampling</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Adam Ginsburg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

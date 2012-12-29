@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Trying to bootstrap - Adam Ginsburg's Astro Blog</title>
+  <meta name="author" content="Adam Ginsburg">
+
+  
+  <meta name="description" content="I&#8217;ve concluded, based on previous posts http://bolocam.blogspot.com/2011/02/downsampling-why-is-dec-2010-different.html, http://bolocam. &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://keflavich.github.com/blog/2011/03/27/trying-to-bootstrap/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Adam Ginsburg's Astro Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adam Ginsburg's Astro Blog</a></h1>
+  
+    <h2>Nicer than keflavich.blogspot.com</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:keflavich.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Trying to Bootstrap</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-27T20:01:00-06:00" pubdate data-updated="true">Mar 27<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+I&#8217;ve concluded, based on previous posts http://bolocam.blogspot.com/2011/02/downsampling-why-is-dec-2010-different.html, http://bolocam.blogspot.com/2011/03/revisiting-calibration-yet-again.html, and http://bolocam.blogspot.com/2011/03/workaround-for-individual-maps.html, that ds5 is a problem primarily for undersampled images, i.e. those taken in the normal mapping mode.  This makes bootstrapping a bit tricky.<br /><br />There are two options:<br />1. Map Uranus and AFGL 4029 both in Volts and figure out what flux density AFGL 4029 must have to lie on that curve<br />2. Map Uranus and compute a calibration curve, apply that calibration curve to AFGL 4029, and then compare derived flux densities.<br /><br />Both have the major problem that the individual AFGL 4029 maps will forcibly be undersampled if I use ds5 data (which is normally OK, according to the first paragraph).  In the second case, it is possible to co-add the images and get around the under-sampling issue, while in the first case it is not because of the dependence on total loading (MEANDC).  <br /><br />The real problem is that the whole goal of these observations was to compare the different observing methods and see if they agree (1x1, 3x1, pointing, etc.) since the pointing-style observations were used to calibrate the others.  But if the 1x1s are just straight-up unreliable, how can we do the comparison?  I think the co-added AFGL 4029 is the only option, but then how do I test if it&#8217;s correct?  It would be really nice to have AFGL 4029 observed with both scan types&#8230; <br /><br /><br />Alright, onto the data.  After last week&#8217;s fix of the bad bolos, I really hope ds1 and ds5 agree.  However, first glance at the cal curves says they don&#8217;t.  ds1 and ds2 agree, but ds5 is different.<br /><br />After checking them out with <code> ds9 *ds[15]*13pca*_map10.fits -scale limits -1 1000 -log -cmap hsv -match colorbars -match scales -match frames wcs &</code>, it appears that the _mask_ data is all&#8230; wrong, somehow.  That&#8217;s OK, I want to discard the mask data anyway, so I&#8217;m happy to NOT spend time debugging it.<br /><br />Even after careful examination showing that the fits look good - and noting that the fluxes look pretty much the same - the calibration curves still look rather different.  Unfortunately I had to spend 3 hours debugging IDL plotting commands; I want to show the fits each time and save them as postscripts.  What does &#8220;xyouts&#8221; with &#8220;/device,/normal&#8221; do?  I thought that should plot x,y text at the coordinates specified in the plot window&#8230; but no, that is JUST /normalize.<br /><br />Anyway, realized that centroid_map treated NANs as zero.  Added ERR keyword (with a reasonable estimate of the error) in centroid_map to ignore NANs.   It looks like improper treatment of NANs is responsible for a lot of the scatter seen in the calibration plots.<br /><br />There is a substantial difference between the &#8220;fitted&#8221; peak and the &#8220;measured&#8221; peak (the latter computed by taking the sum of the pixels divided by the area of the fitted gaussian).  It looks like the &#8220;measured&#8221; version is more robust, at first glance.  However, unfortunately, for 101208_o11, the difference between ds1 and ds5 exists in both quantities.  I will have to examine timestreams now&#8230; ARGH.<br /><br />Well, the timestreams show&#8230; that indeed the model is lower in ds1, but not why.  The &#8220;remainder&#8221; (new_astro; the stuff that never gets incorporated into the model but DOES get incorporated into the map) appears to be the same in both.  Similarly, there is little to no flux in the PCA atmosphere, so it&#8217;s not simply being cleaned out.  Where is the flux going or coming from?  <br /><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-6lqGwWn650Q/TY_rgZKA9QI/AAAAAAAAGCI/Iq9O5mnmhl8/s1600/101208_o11_ds1_uranus_indivtest_delinetimestream011_plots_20_bolo02.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img title="DS1 deline" border="0" height="229" width="320" src="http://3.bp.blogspot.com/-6lqGwWn650Q/TY_rgZKA9QI/AAAAAAAAGCI/Iq9O5mnmhl8/s320/101208_o11_ds1_uranus_indivtest_delinetimestream011_plots_20_bolo02.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-7uBbEU1tAqM/TY_rgg6Jq9I/AAAAAAAAGCQ/iaGhOSb6gtQ/s1600/101208_o11_ds5_uranus_indivtesttimestream011_plots_20_bolo02.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img title="DS5" border="0" height="229" width="320" src="http://1.bp.blogspot.com/-7uBbEU1tAqM/TY_rgg6Jq9I/AAAAAAAAGCQ/iaGhOSb6gtQ/s320/101208_o11_ds5_uranus_indivtesttimestream011_plots_20_bolo02.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-YKdZcNOjm7Q/TY_rg6tcvhI/AAAAAAAAGCY/fr4l8j-v4xI/s1600/101208_o11_ds1_uranus_indivtesttimestream011_plots_20_bolo02.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img title="DS1" border="0" height="229" width="320" src="http://1.bp.blogspot.com/-YKdZcNOjm7Q/TY_rg6tcvhI/AAAAAAAAGCY/fr4l8j-v4xI/s320/101208_o11_ds1_uranus_indivtesttimestream011_plots_20_bolo02.png" /></a></div></div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Adam Ginsburg</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-27T20:01:00-06:00" pubdate data-updated="true">Mar 27<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/bgps/'>bgps</a>, <a class='category' href='/blog/categories/calibration/'>calibration</a>, <a class='category' href='/blog/categories/discrepancy/'>discrepancy</a>, <a class='category' href='/blog/categories/downsampling/'>downsampling</a>, <a class='category' href='/blog/categories/pipeline/'>pipeline</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://keflavich.github.com/blog/2011/03/27/trying-to-bootstrap/" data-via="" data-counturl="http://keflavich.github.com/blog/2011/03/27/trying-to-bootstrap/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/03/23/workaround-for-individual-maps/" title="Previous Post: A workaround for individual maps?">&laquo; A workaround for individual maps?</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/03/29/careful-comparison-of-ds1-and-ds5/" title="Next Post: Careful comparison of ds1 and ds5">Careful comparison of ds1 and ds5 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/26/bash-prompt/">Bash Prompt</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/catalog-vs-image-shift-possible/">Catalog vs Image shift?  A possible solution to the ATLASGAL issue</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/21/idea-multispectral-eigenimage/">Idea: Multispectral Eigenimage decomposition...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/20/first/">Fourier Upsampling</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Adam Ginsburg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

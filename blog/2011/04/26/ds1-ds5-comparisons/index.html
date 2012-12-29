@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>ds1-ds5 comparisons - Adam Ginsburg's Astro Blog</title>
+  <meta name="author" content="Adam Ginsburg">
+
+  
+  <meta name="description" content="I&#8217;m comparing simulated ds1-ds5 to real ds1-ds5 comparison tests.In the simulated tests, I compare the recovered map after 20 iterations with &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://keflavich.github.com/blog/2011/04/26/ds1-ds5-comparisons/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Adam Ginsburg's Astro Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adam Ginsburg's Astro Blog</a></h1>
+  
+    <h2>Nicer than keflavich.blogspot.com</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:keflavich.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Ds1-ds5 Comparisons</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-26T15:54:00-06:00" pubdate data-updated="true">Apr 26<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+I&#8217;m comparing simulated ds1-ds5 to real ds1-ds5 comparison tests.<br /><br />In the simulated tests, I compare the recovered map after 20 iterations with 13 pca components subtracted to the input map.  There are figures showing this comparison for ds1 and ds5 images in addition to one showing the comparison between ds1 and ds5.  The agreement is pretty much as good as you could ask for.<br /><br />These simulations are the most realistic run yet.  They include a simulated atmosphere that is perfectly correlated between all bolometers excepting gaussian noise, but the relative sensitivity of the bolometers is varied.  <br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-xZqAo2n84iE/TbcsrsLkkaI/AAAAAAAAGIM/J_4xWIOGoCQ/s1600/exp2_varyrelscale_amp1.0E-01_map20_ds1ds5compare.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://4.bp.blogspot.com/-xZqAo2n84iE/TbcsrsLkkaI/AAAAAAAAGIM/J_4xWIOGoCQ/s320/exp2_varyrelscale_amp1.0E-01_map20_ds1ds5compare.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-G7ks6aygM8w/TbcssORKmqI/AAAAAAAAGIU/aFrSrgTEhc4/s1600/airy_test_ds1_reconv_arrang45_atmotest_varyrelscale_amp1.0E-01_compare.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://4.bp.blogspot.com/-G7ks6aygM8w/TbcssORKmqI/AAAAAAAAGIU/aFrSrgTEhc4/s320/airy_test_ds1_reconv_arrang45_atmotest_varyrelscale_amp1.0E-01_compare.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-MemhZbvFgYw/Tbcssv4s06I/AAAAAAAAGIc/8aSHBsnKHuU/s1600/airy_test_ds5_reconv_arrang45_atmotest_amp1.0E-01_compare.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://4.bp.blogspot.com/-MemhZbvFgYw/Tbcssv4s06I/AAAAAAAAGIc/8aSHBsnKHuU/s320/airy_test_ds5_reconv_arrang45_atmotest_amp1.0E-01_compare.png" /></a></div><br />This is what a &#8216;real&#8217; ds1-ds5 comparison looks like.  The image shown is a &#8220;cross-linked&#8221; observation of Uranus with downsampling off and on.  Note that downsampling clearly and blatantly smears the source flux.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-UvoCV4PvBcM/TbcstPbA_5I/AAAAAAAAGIk/S1cPsnCGmvc/s1600/091219_o15-6_ds5_uranus_indivtest_reconv_ds1ds5compare.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://2.bp.blogspot.com/-UvoCV4PvBcM/TbcstPbA_5I/AAAAAAAAGIk/S1cPsnCGmvc/s320/091219_o15-6_ds5_uranus_indivtest_reconv_ds1ds5compare.png" /></a></div><br />The same image with &#8220;beam location correction&#8221; looks no better.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-ab27Av_tJB4/Tbcu3Jp0x6I/AAAAAAAAGIs/xUjzxFEVYXI/s1600/091219_o15-6_ds5_uranus_indivtest_reconvBL_ds1ds5compare.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://2.bp.blogspot.com/-ab27Av_tJB4/Tbcu3Jp0x6I/AAAAAAAAGIs/xUjzxFEVYXI/s320/091219_o15-6_ds5_uranus_indivtest_reconvBL_ds1ds5compare.png" /></a></div><br /><br />The problem is essentially the same with the individual scan directions:<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-WwNjh1U-xu0/TbcyTyab16I/AAAAAAAAGI0/oO1fOiY4Bow/s1600/091219_o16_ds1_uranus_indivtest_reconv_ds1ds5compare.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://4.bp.blogspot.com/-WwNjh1U-xu0/TbcyTyab16I/AAAAAAAAGI0/oO1fOiY4Bow/s320/091219_o16_ds1_uranus_indivtest_reconv_ds1ds5compare.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-k2U0rWMtcH8/TbcyUxfGrfI/AAAAAAAAGI8/ErLepYPyYJE/s1600/091219_o15_ds1_uranus_indivtest_reconv_ds1ds5compare.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://3.bp.blogspot.com/-k2U0rWMtcH8/TbcyUxfGrfI/AAAAAAAAGI8/ErLepYPyYJE/s320/091219_o15_ds1_uranus_indivtest_reconv_ds1ds5compare.png" /></a></div><br /><br />What is causing this difference?<br /><ul><li> higher-order corrections to the atmosphere calculation?<br /><li> inadequate sampling of the model?<br /><li> &#8220;pointing&#8221; offsets between the model and the data (note that these are NOT pointing offsets, but they may be &#8220;distortion map&#8221; offsets)?<br /><li> Other?<br /></ul>Examining the weights and scales for two individual (real) observations, ds1 followed by ds5, is not particularly telling; there is one additional outlier bolometer flagged out in the ds1 observation, but there is nothing obviously wrong with that bolometer (it may have much lower high-frequency noise than others).  <div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-FQGo3OPClLw/Tbc5gVqn-1I/AAAAAAAAGJE/RSmGgDcDSK0/s1600/091219_o15-6_ds1_uranus_indivtest_reconv091219_o15_raw_ds1.nc_indiv13pca_weights_iter10.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="229" width="320" src="http://2.bp.blogspot.com/-FQGo3OPClLw/Tbc5gVqn-1I/AAAAAAAAGJE/RSmGgDcDSK0/s320/091219_o15-6_ds1_uranus_indivtest_reconv091219_o15_raw_ds1.nc_indiv13pca_weights_iter10.png" /></a></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-M0u4dlKj5IM/Tbc5g7PQ5YI/AAAAAAAAGJM/njdiKaENlzI/s1600/091219_o15-6_ds5_uranus_indivtest_reconv091219_o15_raw_ds5.nc_indiv13pca_weights_iter10.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="229" width="320" src="http://1.bp.blogspot.com/-M0u4dlKj5IM/Tbc5g7PQ5YI/AAAAAAAAGJM/njdiKaENlzI/s320/091219_o15-6_ds5_uranus_indivtest_reconv091219_o15_raw_ds5.nc_indiv13pca_weights_iter10.png" /></a></div>  The simulations actually have more discrepant weights, but that doesn&#8217;t seem to cause any problems: <div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-pL-VkELw7g4/Tbc7OrD5d6I/AAAAAAAAGJU/zCB9wyF09_g/s1600/airy_test_ds1_reconv_arrang45_atmotest_varyrelscale_amp1.0E-01_weights_iter20.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="229" width="320" src="http://1.bp.blogspot.com/-pL-VkELw7g4/Tbc7OrD5d6I/AAAAAAAAGJU/zCB9wyF09_g/s320/airy_test_ds1_reconv_arrang45_atmotest_varyrelscale_amp1.0E-01_weights_iter20.png" /></a></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-D0GDZ-wq0ZY/Tbc7PIM2pQI/AAAAAAAAGJc/38Edm0ufAs4/s1600/airy_test_ds5_reconv_arrang45_atmotest_varyrelscale_amp1.0E-01_weights_iter20.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="229" width="320" src="http://4.bp.blogspot.com/-D0GDZ-wq0ZY/Tbc7PIM2pQI/AAAAAAAAGJc/38Edm0ufAs4/s320/airy_test_ds5_reconv_arrang45_atmotest_varyrelscale_amp1.0E-01_weights_iter20.png" /></a></div> The timestreams both have similar artifacts: <div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-S_3X_HkqzF4/Tbc7v7rrs4I/AAAAAAAAGJk/y0Wkwo3JYhg/s1600/091219_o15-6_ds1_uranus_indivtest_reconv091219_o15_raw_ds1.nc_indiv13pcatimestream004_plots_10_bolo12.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="229" width="320" src="http://4.bp.blogspot.com/-S_3X_HkqzF4/Tbc7v7rrs4I/AAAAAAAAGJk/y0Wkwo3JYhg/s320/091219_o15-6_ds1_uranus_indivtest_reconv091219_o15_raw_ds1.nc_indiv13pcatimestream004_plots_10_bolo12.png" /></a></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-lg_Z50_vocc/Tbc7wZXRUlI/AAAAAAAAGJs/fcuf9u241QE/s1600/091219_o15-6_ds5_uranus_indivtest_reconv091219_o15_raw_ds5.nc_indiv13pcatimestream004_plots_10_bolo12.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="229" width="320" src="http://4.bp.blogspot.com/-lg_Z50_vocc/Tbc7wZXRUlI/AAAAAAAAGJs/fcuf9u241QE/s320/091219_o15-6_ds5_uranus_indivtest_reconv091219_o15_raw_ds5.nc_indiv13pcatimestream004_plots_10_bolo12.png" /></a></div> while the simulated versions really don&#8217;t:  <div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-cG1uUEY_N9M/Tbc-ZJtPVzI/AAAAAAAAGJ0/VGcWV0JYtxQ/s1600/airy_test_ds1_reconv_arrang45_atmotest_varyrelscale_amp1.0E-01timestream011_plots_20_bolo07.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="229" width="320" src="http://1.bp.blogspot.com/-cG1uUEY_N9M/Tbc-ZJtPVzI/AAAAAAAAGJ0/VGcWV0JYtxQ/s320/airy_test_ds1_reconv_arrang45_atmotest_varyrelscale_amp1.0E-01timestream011_plots_20_bolo07.png" /></a></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-4KA5jSCQgsY/Tbc-ZhvL_lI/AAAAAAAAGJ8/brh-nGwSses/s1600/airy_test_ds5_reconv_arrang45_atmotest_varyrelscale_amp1.0E-01timestream011_plots_20_bolo07.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="229" width="320" src="http://3.bp.blogspot.com/-4KA5jSCQgsY/Tbc-ZhvL_lI/AAAAAAAAGJ8/brh-nGwSses/s320/airy_test_ds5_reconv_arrang45_atmotest_varyrelscale_amp1.0E-01timestream011_plots_20_bolo07.png" /></a></div> This is true even when the relative strength of the atmosphere is higher: <div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-2MZXbARZeWo/Tbc-xHG3bOI/AAAAAAAAGKE/yEiYQ8YqqkU/s1600/airy_test_ds1_reconv_arrang45_atmotest_varyrelscale_amp1.0E%252B00timestream011_plots_20_bolo07.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="229" width="320" src="http://1.bp.blogspot.com/-2MZXbARZeWo/Tbc-xHG3bOI/AAAAAAAAGKE/yEiYQ8YqqkU/s320/airy_test_ds1_reconv_arrang45_atmotest_varyrelscale_amp1.0E%252B00timestream011_plots_20_bolo07.png" /></a></div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-Lr1QqlLNc20/Tbc-xhLCH3I/AAAAAAAAGKM/N1GKh-hZZ-Q/s1600/airy_test_ds5_reconv_arrang45_atmotest_varyrelscale_amp1.0E%252B00timestream011_plots_20_bolo07.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="229" width="320" src="http://2.bp.blogspot.com/-Lr1QqlLNc20/Tbc-xhLCH3I/AAAAAAAAGKM/N1GKh-hZZ-Q/s320/airy_test_ds5_reconv_arrang45_atmotest_varyrelscale_amp1.0E%252B00timestream011_plots_20_bolo07.png" /></a></div><br /><br />I think the most viable candidate is the &#8216;pointing offset&#8217; idea, which will take a little work to simulate properly&#8230;</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Adam Ginsburg</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-26T15:54:00-06:00" pubdate data-updated="true">Apr 26<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/bgps/'>bgps</a>, <a class='category' href='/blog/categories/downsampling/'>downsampling</a>, <a class='category' href='/blog/categories/pipeline/'>pipeline</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://keflavich.github.com/blog/2011/04/26/ds1-ds5-comparisons/" data-via="" data-counturl="http://keflavich.github.com/blog/2011/04/26/ds1-ds5-comparisons/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/04/19/weighting-and-scaling/" title="Previous Post: Weighting and Scaling">&laquo; Weighting and Scaling</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/04/27/azimuthal-averages/" title="Next Post: Azimuthal Averages">Azimuthal Averages &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/26/bash-prompt/">Bash Prompt</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/catalog-vs-image-shift-possible/">Catalog vs Image shift?  A possible solution to the ATLASGAL issue</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/21/idea-multispectral-eigenimage/">Idea: Multispectral Eigenimage decomposition...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/20/first/">Fourier Upsampling</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Adam Ginsburg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

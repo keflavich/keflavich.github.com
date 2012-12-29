@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Downsampling - Why is Dec 2010 different? - Adam Ginsburg's Astro Blog</title>
+  <meta name="author" content="Adam Ginsburg">
+
+  
+  <meta name="description" content="As you&#8217;ll recall from my previous post (and references therein&#8230;), the 2005 Orion data shows a discrepancy between ds1 and ds5 data in &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://keflavich.github.com/blog/2011/02/13/downsampling-why-is-dec-2010-different/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Adam Ginsburg's Astro Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adam Ginsburg's Astro Blog</a></h1>
+  
+    <h2>Nicer than keflavich.blogspot.com</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:keflavich.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Downsampling - Why Is Dec 2010 Different?</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-13T12:43:00-07:00" pubdate data-updated="true">Feb 13<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+As you&#8217;ll recall from <a href="http://bolocam.blogspot.com/2011/02/downsampling-what-is-going-on.html"> my previous post </a> (and references therein&#8230;), the 2005 Orion data shows a discrepancy between ds1 and ds5 data in which the ds1 data is significantly (~10%) higher than the ds5 data.  However, the 2010 Uranus observations show much larger discrepancies between ds1 and ds5 favoring the ds5 data!  Because that was somewhat unbelievable to me, I ran ds1-ds5 comparisons on Uranus data from other epochs, and discovered that ds1&gt;ds5 uniformly (also, it looks a LOT better).<br /><br />So, the question remains, WHY is the Dec 2010 data brighter in ds5?  More confusing to me, why do the ds5 PSFs from 2010 look so reasonable, while the ds5 PSFs from all earlier epochs look terrible?<br /><br />For example, I use the observations 070727_o31 and _o32.  These show clearly the blurring and flux-loss that happens when ds5 data are used for &#8216;normal&#8217; point-sources.  The disagreement is, surprisingly, worse for the co-added image, though the correlation is better&#8230; I&#8217;m not entirely clear what that means besides there being a positional offset between the individual maps that is not entirely believable.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-Fv-rLVtwUQk/TVgwKdUUU-I/AAAAAAAAGBk/M_FHcZaeo7Y/s1600/uranus_070727_ds1_o31-2_0pca_v2.0_map10.fits_compareds1ds5.png" imageanchor="1" style="margin-bottom: 1em; margin-right: 1em;"><img border="0" height="320" src="http://3.bp.blogspot.com/-Fv-rLVtwUQk/TVgwKdUUU-I/AAAAAAAAGBk/M_FHcZaeo7Y/s320/uranus_070727_ds1_o31-2_0pca_v2.0_map10.fits_compareds1ds5.png" width="320" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-Mr9VutL-9t4/TVgyBq2z-kI/AAAAAAAAGBo/fdFkQ-w99Lw/s1600/uranus_v2.0_070727_o32_indiv_map10_compareds1ds5.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="320" src="http://3.bp.blogspot.com/-Mr9VutL-9t4/TVgyBq2z-kI/AAAAAAAAGBo/fdFkQ-w99Lw/s320/uranus_v2.0_070727_o32_indiv_map10_compareds1ds5.png" width="320" /></a></div><br /><br /><a href="http://3.bp.blogspot.com/-jVosT6o4bUw/TVgyCG9ql_I/AAAAAAAAGBs/aju-XfQqMJg/s1600/uranus_v2.0_070727_o31_indiv_map10_compareds1ds5.png" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" height="320" src="http://3.bp.blogspot.com/-jVosT6o4bUw/TVgyCG9ql_I/AAAAAAAAGBs/aju-XfQqMJg/s320/uranus_v2.0_070727_o31_indiv_map10_compareds1ds5.png" style="cursor: move;" width="320" /></a><br /><br /><div class="separator" style="clear: both; text-align: center;">However, the point is that these maps do not share the properties of the 2010 maps, in which the ds5 source is brighter and possibly even more peaked than the ds1 source, despite the ds1 data having lower noise (as you&#8217;d expect):<br /><br /><br /><a href="http://1.bp.blogspot.com/_lsgW26mWZnU/TVSaYfZx0WI/AAAAAAAAGBE/cWbbBQCJOvk/s1600/101208_ob4_ds1ds5_compare.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em; float: center; clear: center;"><img border="0" height="320" src="http://1.bp.blogspot.com/_lsgW26mWZnU/TVSaYfZx0WI/AAAAAAAAGBE/cWbbBQCJOvk/s320/101208_ob4_ds1ds5_compare.png" width="320" /></a></div><br /><br /><br />What could be boosting the flux in the Dec 2010 downsampled data?  Is there something about the lines - before downsampling - that is changing the relative scaling?  Perhaps I can answer this with the w5 maps&#8230; but I think that&#8217;s unlikely&#8230;</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adam</div>
+<div class='content'>
+It looks like, for AFGL 4029 combined images, ds1 and ds5 agree to within 5% in the Dec2010 data.  This implies that the offset is a result of the individual scans instead of coadds, though for the individual observations ds1&gt;ds5 pretty uniformly.</div>
+</div>
+</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Adam Ginsburg</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-13T12:43:00-07:00" pubdate data-updated="true">Feb 13<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/bgps/'>bgps</a>, <a class='category' href='/blog/categories/downsampling/'>downsampling</a>, <a class='category' href='/blog/categories/pipeline/'>pipeline</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://keflavich.github.com/blog/2011/02/13/downsampling-why-is-dec-2010-different/" data-via="" data-counturl="http://keflavich.github.com/blog/2011/02/13/downsampling-why-is-dec-2010-different/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/02/10/downsampling-what-is-going-on/" title="Previous Post: Downsampling - what is going on?">&laquo; Downsampling - what is going on?</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/03/22/revisiting-calibration-yet-again/" title="Next Post: Revisiting calibration yet again">Revisiting calibration yet again &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/26/bash-prompt/">Bash Prompt</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/catalog-vs-image-shift-possible/">Catalog vs Image shift?  A possible solution to the ATLASGAL issue</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/21/idea-multispectral-eigenimage/">Idea: Multispectral Eigenimage decomposition...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/20/first/">Fourier Upsampling</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Adam Ginsburg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

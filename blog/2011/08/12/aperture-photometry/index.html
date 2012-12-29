@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Aperture Photometry - Adam Ginsburg's Astro Blog</title>
+  <meta name="author" content="Adam Ginsburg">
+
+  
+  <meta name="description" content="So the code to add point sources to the maps and perform basic aperture photometry has started working to the point where I can share some results. &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://keflavich.github.com/blog/2011/08/12/aperture-photometry/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Adam Ginsburg's Astro Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adam Ginsburg's Astro Blog</a></h1>
+  
+    <h2>Nicer than keflavich.blogspot.com</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:keflavich.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Aperture Photometry</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-08-12T20:25:00-06:00" pubdate data-updated="true">Aug 12<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+
+<br />So the code to add point sources to the maps and perform basic aperture photometry has started working to the point where I can share some results.<div>
+<br /></div><div>For maps with no underlying sky structure, only point sources, recovery is very nearly perfect, with PearsonR coefficients essentially equal to 1 until the peak amplitude of the point sources drops below 2.0 (and even then they only drop to ~0.997)</div><div>Below is a sample of the difference residual of output-input flux vs input flux for 40&#8221;, 80&#8221; and 120&#8221; apertures</div><div>
+<br /></div><a href="http://2.bp.blogspot.com/-j5k--Oz92T0/TkXiYHLWjQI/AAAAAAAAABc/MnRtjz6hAMo/s1600/exp13_ds2_astrosky_arrang45_srcpeakalpha002.00source_range_00.1_02.0ptsrc_brightness_diffresid.png" onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}"><img src="http://2.bp.blogspot.com/-j5k--Oz92T0/TkXiYHLWjQI/AAAAAAAAABc/MnRtjz6hAMo/s320/exp13_ds2_astrosky_arrang45_srcpeakalpha002.00source_range_00.1_02.0ptsrc_brightness_diffresid.png" border="0" alt="" id="BLOGGER_PHOTO_ID_5640163012222815490" style="display: block; margin-top: 0px; margin-right: auto; margin-bottom: 10px; margin-left: auto; text-align: center; cursor: pointer; width: 320px; height: 320px; " /></a>This may look relatively scattered, but this plot of output flux vs input flux will show just how correlated these are:<div><a href="http://3.bp.blogspot.com/-zL6VyzobtkU/TkXix_KEExI/AAAAAAAAABk/6vYph5jtyM4/s1600/exp13_ds2_astrosky_arrang45_srcpeakalpha002.00source_range_00.1_02.0ptsrc_brightness_lin.png" onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}"><img src="http://3.bp.blogspot.com/-zL6VyzobtkU/TkXix_KEExI/AAAAAAAAABk/6vYph5jtyM4/s320/exp13_ds2_astrosky_arrang45_srcpeakalpha002.00source_range_00.1_02.0ptsrc_brightness_lin.png" border="0" alt="" id="BLOGGER_PHOTO_ID_5640163456746525458" style="cursor: pointer; width: 320px; height: 320px; " /></a>
+<br /><div>
+<br /></div><div><div>Note that for the blank maps, these are taken from simulations using a power law distribution of point sources from 0.1 to 2.0 Jy in magnitude (if we allow the range to extend above 2.0 Jy, the recoveries become even more closely correlated.</div></div></div><div>
+<br /></div><div>As for simulations with background sky structure we see similar patterns for the most part, however a few interesting pieces appear:</div><div>For the 4 different source ranges I ran, the 80&#8221; aperture had the highest pearson r coefficient across all simulations. Generally sitting around 0.95 with the 40&#8221; and 120&#8221; apertures floating from 0.75-0.9. This may be a fluke, however, I need to run more simulations to see if this is reproducible with other seeds.</div><div>
+<br /></div><div>Also, in the difference residuals we can clearly see an underrecovery of flux as input flux increases, which we should probably work to quantify, as seen by this example:</div><a href="http://1.bp.blogspot.com/-X4lP1Pl4PLg/TkXka4eio7I/AAAAAAAAABs/RCKTuX14PD8/s1600/exp13_ds2_astrosky_arrang45_atmotest_amp2.0E%252B01_sky00_seed00_peak001.00_smooth_srcpeakalpha002.00source_range_00.1_02.0_wptsrcptsrc_brightness_diffresid.png" onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 320px; height: 320px;" src="http://1.bp.blogspot.com/-X4lP1Pl4PLg/TkXka4eio7I/AAAAAAAAABs/RCKTuX14PD8/s320/exp13_ds2_astrosky_arrang45_atmotest_amp2.0E%252B01_sky00_seed00_peak001.00_smooth_srcpeakalpha002.00source_range_00.1_02.0_wptsrcptsrc_brightness_diffresid.png" border="0" alt="" id="BLOGGER_PHOTO_ID_5640165258839630770" /></a><div>
+<br /></div></div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Adam Ginsburg</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-08-12T20:25:00-06:00" pubdate data-updated="true">Aug 12<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/aperture-photometry/'>aperture photometry</a>, <a class='category' href='/blog/categories/bgps/'>bgps</a>, <a class='category' href='/blog/categories/point-source/'>point source</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://keflavich.github.com/blog/2011/08/12/aperture-photometry/" data-via="" data-counturl="http://keflavich.github.com/blog/2011/08/12/aperture-photometry/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/08/10/spatial-transfer-function-vs-npca/" title="Previous Post: Spatial Transfer Function vs. nPCA">&laquo; Spatial Transfer Function vs. nPCA</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/08/22/v1-v2-comparison/" title="Next Post: v1-v2 comparison">v1-v2 comparison &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/26/bash-prompt/">Bash Prompt</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/catalog-vs-image-shift-possible/">Catalog vs Image shift?  A possible solution to the ATLASGAL issue</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/21/idea-multispectral-eigenimage/">Idea: Multispectral Eigenimage decomposition...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/20/first/">Fourier Upsampling</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Adam Ginsburg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

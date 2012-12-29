@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Downsampling - what is going on? - Adam Ginsburg's Astro Blog</title>
+  <meta name="author" content="Adam Ginsburg">
+
+  
+  <meta name="description" content="The downsampling failure I noted previously appears to be illusory. It may be that the offset noted only holds for single-frame images, in which &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://keflavich.github.com/blog/2011/02/10/downsampling-what-is-going-on/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Adam Ginsburg's Astro Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adam Ginsburg's Astro Blog</a></h1>
+  
+    <h2>Nicer than keflavich.blogspot.com</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:keflavich.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Downsampling - What Is Going On?</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-10T21:19:00-07:00" pubdate data-updated="true">Feb 10<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+The downsampling failure I <a href="http://bolocam.blogspot.com/2011/01/downsampling-has-serious-negative.html">noted</a> <a href="http://bolocam.blogspot.com/2011/01/more-evidence-that-downsampling-causes.html">previously</a> appears to be illusory.  It may be that the offset noted only holds for single-frame images, in which there may be many blank pixels.  It is possible - though not certain - that the ds1 images were significantly higher than ds5 because more noise-only pixels were included with higher outliers; i.e., ds1 high-outlier noise was being compared to ds5 noise that was lower amplitude. <br /><br />What led to these conclusions?  First, I was getting inconsistent results looking at Uranus in particular - ds5 appeared to have higher fluxes than ds1.  This was inconsistent with <a href="http://bolocam.blogspot.com/2011/01/downsampling-has-serious-negative.html">earlier results</a> on OMC1.  Partly, this is because I switched from my <a href="http://4.bp.blogspot.com/_lsgW26mWZnU/TTiWWl3j3dI/AAAAAAAAF3I/Ef3WHEv5oXU/s1600/omc1_dstest_pixel-pixel.png">hacked-together plots</a> to the much more refined <a href="http://code.google.com/p/bgpspipeline/source/browse/bgps_pipeline/plotting/compare_images.py">compare_images</a> script, which demonstrated the effect of changing the cutoff of the comparison.<br /><br />Also, I added in a Pearson Correlation Coefficient computation.  Given a single data set with the only difference being downsampling, the data should be perfectly correlated even if there is a flux offset (correlation should be 1, but the best fit slope should not be).  It was an indication of a problem when I started seeing correlation coefficients &lt;0.90 for data that had already been sigma-cut; that means that noise was being included in the correlation computations.<br /><br />Therefore, the approach needed is to cut out the high pixels that are on map edges.  This I accomplished by adding an &#8216;aperture&#8217; capability to the compare_images code (for Uranus) and cropping using montage and a wcs-based box for Orion.<br /><br />The results&#8230; are ambiguous.  Wow.  In some sub-fields - within the same co-added map - the agreement is near-perfect.<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-i20j3FEx758/TVR-PbQl7lI/AAAAAAAAGAY/imgMqceS9n8/s1600/v2.0_dl_omc_b_OMC4_ds1ds5_compare.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-i20j3FEx758/TVR-PbQl7lI/AAAAAAAAGAY/imgMqceS9n8/s1600/v2.0_dl_omc_b_OMC4_ds1ds5_compare.png" width="800" /></a></div>In others, ds1 is clearly &gt; ds5 .  <br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-JsRH_ZQilWM/TVR-Os6vBSI/AAAAAAAAGAQ/JRR6Trm-weo/s1600/v2.0_dl_omc_b_OMC2_ds1ds5_compare.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-JsRH_ZQilWM/TVR-Os6vBSI/AAAAAAAAGAQ/JRR6Trm-weo/s1600/v2.0_dl_omc_b_OMC2_ds1ds5_compare.png" width="800" /></a></div>What&#8217;s going on?  ds1 does look uniformly more smooth.<br /><br />Note that the <i>disagreement</i> is nearly scale-free:<a href="http://2.bp.blogspot.com/-J1XXZki2sxU/TVSXhlmGZKI/AAAAAAAAGAg/aDyQ7Sz2CfM/s1600/v2.0_dl_omc_b_OMC2_ds1ds5_psd_compare.png" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" height="320" src="http://2.bp.blogspot.com/-J1XXZki2sxU/TVSXhlmGZKI/AAAAAAAAGAg/aDyQ7Sz2CfM/s320/v2.0_dl_omc_b_OMC2_ds1ds5_psd_compare.png" width="320" /></a><br /><br /><br />OK, so given the conclusion in Orion that ds1>=ds5, what&#8217;s the deal with Uranus?<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-AosJ1vzcYSs/TVSZjIZ81fI/AAAAAAAAGAk/qVGeaJtkbPA/s1600/101208_o10_ds1ds5_compare.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://3.bp.blogspot.com/-AosJ1vzcYSs/TVSZjIZ81fI/AAAAAAAAGAk/qVGeaJtkbPA/s320/101208_o10_ds1ds5_compare.png" /></a></div><br />The first two comparisons are for 1x1&deg; observations; in both cases ds1 &lt; ds5, but by 6% and 24% respectively!  The image of Uranus looks much better (because of lack of parallel lines) in the second, more extreme case.  In both cases, the ds5 excess is nearly scale-free (not shown).<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/_lsgW26mWZnU/TVSZki9k9OI/AAAAAAAAGA0/t9LOGHOAL7Q/s1600/101208_o10_ds1ds5_compare.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://1.bp.blogspot.com/_lsgW26mWZnU/TVSZki9k9OI/AAAAAAAAGA0/t9LOGHOAL7Q/s320/101208_o10_ds1ds5_compare.png" /></a></div><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/_lsgW26mWZnU/TVSZj1pglLI/AAAAAAAAGAs/-4153NoAQQ0/s1600/101208_o11_ds1ds5_compare.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://2.bp.blogspot.com/_lsgW26mWZnU/TVSZj1pglLI/AAAAAAAAGAs/-4153NoAQQ0/s320/101208_o11_ds1ds5_compare.png" /></a></div><br />The 3x1s are also highly discrepant.  #12 shows nearly perfect agreement, albeit with high dispersion (low correlation) because of pixel-to-pixel variations around the peak.  #13 is the only observation with a huge DS1 excess.  It also demonstrates very poor correlation.  It looks like the telescope got bumped for the ds5 data (which is not actually possible; recall they&#8217;re the same data set).  What happened here?  Maybe a glitch that went unflagged (mad_flagger is off by default for individual scans)?<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-9gwzGfDBCEk/TVSZllWeBxI/AAAAAAAAGA8/x3mg5RbMScs/s1600/101208_o12_ds1ds5_compare.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://3.bp.blogspot.com/-9gwzGfDBCEk/TVSZllWeBxI/AAAAAAAAGA8/x3mg5RbMScs/s320/101208_o12_ds1ds5_compare.png" title="101208 Observation 12"/></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-9gwzGfDBCEk/TVSZllWeBxI/AAAAAAAAGA8/x3mg5RbMScs/s1600/101208_o13_ds1ds5_compare.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://3.bp.blogspot.com/-9gwzGfDBCEk/TVSZllWeBxI/AAAAAAAAGA8/x3mg5RbMScs/s320/101208_o13_ds1ds5_compare.png" title="101208 Observation 13"/></a></div><br /><br />In observations 4 and 5, we&#8217;re looking at a 40-50% excess in ds5!  What the heck?  There really is no clear explanation for this.<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/_lsgW26mWZnU/TVSaYfZx0WI/AAAAAAAAGBE/cWbbBQCJOvk/s1600/101208_ob4_ds1ds5_compare.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://1.bp.blogspot.com/_lsgW26mWZnU/TVSaYfZx0WI/AAAAAAAAGBE/cWbbBQCJOvk/s320/101208_ob4_ds1ds5_compare.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/_lsgW26mWZnU/TVSaZM27sqI/AAAAAAAAGBM/XR-6pttUcBo/s1600/101208_ob5_ds1ds5_compare.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://2.bp.blogspot.com/_lsgW26mWZnU/TVSaZM27sqI/AAAAAAAAGBM/XR-6pttUcBo/s320/101208_ob5_ds1ds5_compare.png" /></a></div><br />But&#8230; what?  Magically, they come into perfect agreement when the scan axis nearly lines up with the coordinate axis!  Or, is this just an effect of the worse weather on night 2?<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/_lsgW26mWZnU/TVSaaP6ISNI/AAAAAAAAGBU/PvN5aFOxBAQ/s1600/101209_ob5_ds1ds5_compare.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://3.bp.blogspot.com/_lsgW26mWZnU/TVSaaP6ISNI/AAAAAAAAGBU/PvN5aFOxBAQ/s320/101209_ob5_ds1ds5_compare.png" /></a></div><br />Next thing to try: masked source map comparison.  Unfortunately, masking royally screwed up the long scans - probably because the initial polysub didn&#8217;t work.  And masking in the individual point source maps did nothing&#8230; so that pretty much rules out atmospheric oversubtraction, doesn&#8217;t it?<br /><br />What else could be causing this offset?  0pca looks the same as 13pca, give or take, so it&#8217;s not the atmospheric subtraction.  Could the downsampling result in an offset in the bolo-scaling?  Where else in the process could things go wrong?  Tomorrow, need to investigate .sav files with pyflagger&#8230;</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adam</div>
+<div class='content'>
+From a comparison of 3 different epochs using about a dozen different reduction techniques, but all with pairs of cross-scans, ds1 is uniformly higher than ds5.<br /><br />The only thing left to do is compare the individual scans, I suppose&#8230; if the cross-scans behave differently, that explains the difference between 2010 and other epochs</div>
+</div>
+</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Adam Ginsburg</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-10T21:19:00-07:00" pubdate data-updated="true">Feb 10<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/bgps/'>bgps</a>, <a class='category' href='/blog/categories/pipeline/'>pipeline</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://keflavich.github.com/blog/2011/02/10/downsampling-what-is-going-on/" data-via="" data-counturl="http://keflavich.github.com/blog/2011/02/10/downsampling-what-is-going-on/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/02/06/making-maps-faster/" title="Previous Post: Making maps faster">&laquo; Making maps faster</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/02/13/downsampling-why-is-dec-2010-different/" title="Next Post: Downsampling - Why is Dec 2010 different?">Downsampling - Why is Dec 2010 different? &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/26/bash-prompt/">Bash Prompt</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/catalog-vs-image-shift-possible/">Catalog vs Image shift?  A possible solution to the ATLASGAL issue</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/21/idea-multispectral-eigenimage/">Idea: Multispectral Eigenimage decomposition...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/20/first/">Fourier Upsampling</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Adam Ginsburg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

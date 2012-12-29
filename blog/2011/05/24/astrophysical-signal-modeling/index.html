@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Astrophysical Signal Modeling - Adam Ginsburg's Astro Blog</title>
+  <meta name="author" content="Adam Ginsburg">
+
+  
+  <meta name="description" content="Here we finally get into the meat of the simulations. The goal is to develop realistic - but arbitrary - astrophysical models to run through &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://keflavich.github.com/blog/2011/05/24/astrophysical-signal-modeling/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Adam Ginsburg's Astro Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adam Ginsburg's Astro Blog</a></h1>
+  
+    <h2>Nicer than keflavich.blogspot.com</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:keflavich.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Astrophysical Signal Modeling</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-24T11:39:00-06:00" pubdate data-updated="true">May 24<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+Here we finally get into the meat of the simulations.  The goal is to develop realistic - but arbitrary - astrophysical models to run through simulations.<br /><br />The first step is to figure out what a realistic sky looks like.  To this end, I use the HiGal SDP fields, looking only at their power spectra.  They are well represented by a power law with &alpha; = 3 (shown in the dashed black line below).<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-50R2lfaIGrY/TdvZi5tl5VI/AAAAAAAAGLQ/w45OC9dk3Rg/s1600/sdp_psds_powerlaw.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="249" width="320" src="http://2.bp.blogspot.com/-50R2lfaIGrY/TdvZi5tl5VI/AAAAAAAAGLQ/w45OC9dk3Rg/s320/sdp_psds_powerlaw.png" /></a></div><br />Therefore, I&#8217;ve attempted to randomly sample from a similar power law distribution using the following IDL code:<br /><code><br />    dimsize = 512<br /><br />    realpower = realpowers[ii]<br />    imagpower = imagpowers[ii]<br />    imagscale = imagscales[ii]<br />    peakamp = 1.0<br />    noise = 0.03<br />    smoothscale = 2.0<br />    smoothkernel = psf_gaussian(npix=512,ndim=2,fwhm=31.2/7.2/2.0,/normalize)<br />    sigma_gp = 128.0 ; sigma-width of the Galactic Plane (can get more accurate value from Cara's paper)<br /><br />    xx = findgen(dimsize) #  replicate(1.0,dimsize)<br />    yy = findgen(dimsize) ## replicate(1.0,dimsize)<br />    rr = sqrt( (xx-255.5)^2 + (yy-255.5)^2 )<br />    realpart = (rr^realpower) * randomn(seed1,[dimsize,dimsize])<br />    imagpart = ((rr*imagscale)^imagpower) * randomn(seed2,[dimsize,dimsize])*complex(0,1) <br />    fakesky = abs(fft(shift(realpart + imagpart,0,0),1))<br />    expweight = exp(-(yy-255.5)^2/(2.0*sigma_gp^2)) ; most power is in the inner plane<br /><br />    fakesky *= peakamp/max(fakesky)<br />    fakesky_sm = convolve(fakesky,smoothkernel)<br />    fakesky_sm = fakesky_sm*expweight<br />    fakesky_sm += randomn(seed3,[dimsize,dimsize]) * noise<br /></code><br /><br />Since Power is the fourier-transform squared, I&#8217;m using a power-law of &alpha;=1.5 for the &#8220;real&#8221; part of the sampling.  The imaginary part follows a shallower slope to reduce the amount of power in large structures, which didn&#8217;t look quite right (but maybe I should leave both slopes the same?).  With both the same, and without the imaginary part down-scaled, the structure appears too &#8220;cloudy&#8221; and not &#8220;clumpy&#8221; enough.  But back to that later&#8230;<br /><br />The peak amplitude is set by re-scaling the map.  Ideally, we&#8217;d like to see this set by a point source, since that is true in most fields.<br /><br />The noise level should not be included in simulations, but should be used to show the difference between pipeline-leftover noise and gaussian noise on the sky.  i.e., what structures disappear when you just add noise, and what structures are removed by the pipeline.<br /><br />The PSF is simply to smooth out signals that are removed by the telescope beam.  We can replace this with a &#8220;real&#8221; PSF if and when we&#8217;ve come up with a believable one.<br /><br />The noise is added after the smoothing because it should be on a pixel scale rather than a beam scale.<br /><br />Here are some example realizations with different power laws:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-vCy9Lx2RjWw/Tdvs_PO1u6I/AAAAAAAAGLw/cc7cIupQu0U/s1600/exp7_fakesky_sm_realP-1.0_imagP-1.0_imagS01.0_seednum02.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://3.bp.blogspot.com/-vCy9Lx2RjWw/Tdvs_PO1u6I/AAAAAAAAGLw/cc7cIupQu0U/s320/exp7_fakesky_sm_realP-1.0_imagP-1.0_imagS01.0_seednum02.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-qpgg2U41r6U/Tdvs_RPxARI/AAAAAAAAGL4/v5exzhhqDew/s1600/exp7_fakesky_sm_realP-1.5_imagP-1.5_imagS01.0_seednum02.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://4.bp.blogspot.com/-qpgg2U41r6U/Tdvs_RPxARI/AAAAAAAAGL4/v5exzhhqDew/s320/exp7_fakesky_sm_realP-1.5_imagP-1.5_imagS01.0_seednum02.png" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-2kUqO9aE8zM/Tdvs_maHaCI/AAAAAAAAGMA/u5bDCfiVuH0/s1600/exp7_fakesky_sm_realP-2.0_imagP-2.0_imagS01.0_seednum02.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="320" src="http://3.bp.blogspot.com/-2kUqO9aE8zM/Tdvs_maHaCI/AAAAAAAAGMA/u5bDCfiVuH0/s320/exp7_fakesky_sm_realP-2.0_imagP-2.0_imagS01.0_seednum02.png" /></a></div></div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Adam Ginsburg</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-24T11:39:00-06:00" pubdate data-updated="true">May 24<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/bgps/'>bgps</a>, <a class='category' href='/blog/categories/pipeline/'>pipeline</a>, <a class='category' href='/blog/categories/simulation/'>simulation</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://keflavich.github.com/blog/2011/05/24/astrophysical-signal-modeling/" data-via="" data-counturl="http://keflavich.github.com/blog/2011/05/24/astrophysical-signal-modeling/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/05/21/psf-modeling/" title="Previous Post: PSF modeling">&laquo; PSF modeling</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/05/26/recovery-as-function-of-bolometer-noise/" title="Next Post: Recovery as a function of bolometer noise">Recovery as a function of bolometer noise &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/26/bash-prompt/">Bash Prompt</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/catalog-vs-image-shift-possible/">Catalog vs Image shift?  A possible solution to the ATLASGAL issue</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/21/idea-multispectral-eigenimage/">Idea: Multispectral Eigenimage decomposition...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/20/first/">Fourier Upsampling</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Adam Ginsburg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

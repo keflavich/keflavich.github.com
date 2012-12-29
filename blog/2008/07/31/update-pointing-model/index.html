@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Update - Pointing Model - Adam Ginsburg's Astro Blog</title>
+  <meta name="author" content="Adam Ginsburg">
+
+  
+  <meta name="description" content="Update - Pointing Model 7/31/08The pointing model application &#8220;works&#8221; now, but I have a problem with our model. We don&#8217;t get down &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://keflavich.github.com/blog/2008/07/31/update-pointing-model/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Adam Ginsburg's Astro Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adam Ginsburg's Astro Blog</a></h1>
+  
+    <h2>Nicer than keflavich.blogspot.com</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:keflavich.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Update - Pointing Model</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-07-31T11:10:00-06:00" pubdate data-updated="true">Jul 31<span>st</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+Update - Pointing Model  7/31/08<br />The pointing model application &#8220;works&#8221; now, but I have a problem with our model. We don&#8217;t get down to the <10" RMS offset we're looking for. The mean offsets are all zero, but the spread is more like 20".<br /><br />Example plots on milkyway:  [see attached PDFs too]<br />/scratch/adam_work/plots/models_ptgmdl_0506.ps<br />/scratch/adam_work/plots/models_ptgmdl_0707.ps<br />/scratch/adam_work/plots/models_rawcsoptg_0506.ps<br />/scratch/adam_work/plots/models_rawcsoptg_0707.ps<br /><br />On the left side are plotted &#8220;all&#8221; of the data points, on the right I&#8217;ve used a two-iteration 3-sigma rejection to eliminate outliers to a small degree.<br /><br />Top of these plots - as labeled - is altoff vs. alt, bottom is azoff vs. alt.<br /><br />The red lines are a 2nd order polynomial fit to the data.<br />The cyan lines are the pointing model corrections calculated by Meredith.<br /><br />The &#8216;ptgmdl&#8217; files have had the pointing model corrections applied. Note that they are centered around offsets of zero.<br />The &#8216;rawcsoptg&#8217; files DO NOT have pointing model corrections applied, and FZAO/FAZO have been REMOVED from the original pointing. Hence, these are RAW CSO TELESCOPE POINTING plots.<br /><br />Things to note:<br /><br />    * In the 0707 &#8216;ptgmdl&#8217; set, the az is not quite centered at zero<br />    * the 0506 &#8216;ptgmdl&#8217; set still has bulk offsets<br />    * the ALTOFF and AZOFF are in delta-coordinate: this means that azoff should be scaled by dividing by cos(alt) to put the y-axis in consistent units. In most cases, this means that the already large spread at higher altitudes is going to INCREASE. That means the problem is going to get worse&#8230;<br /><br />Questions:<br /><br />   1. What is the main difference between my plots and Meredith&#8217;s? i.e. why is my RMS ~an order of magnitude larger?<br />   2. Does more outlier rejection make sense? Is there any reason not to trust certain observations if they visible turn out right?<br /><br /><br /><br />PPSes are supposed to be &#8220;absolute references&#8221; for the 1x1, 3x1 maps<br />OLD PROBLEM: PPS and large maps mapped with same &#8216;pointing model&#8217; but ended up with different coordinates</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Adam Ginsburg</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-07-31T11:10:00-06:00" pubdate data-updated="true">Jul 31<span>st</span>, 2008</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/bgps/'>bgps</a>, <a class='category' href='/blog/categories/pointing/'>pointing</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://keflavich.github.com/blog/2008/07/31/update-pointing-model/" data-via="" data-counturl="http://keflavich.github.com/blog/2008/07/31/update-pointing-model/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2008/07/30/defining-pointing-terminology/" title="Previous Post: Defining Pointing Terminology">&laquo; Defining Pointing Terminology</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2008/07/31/galactic-vs-ra-mapping/" title="Next Post: Galactic vs. RA mapping">Galactic vs. RA mapping &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/26/bash-prompt/">Bash Prompt</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/catalog-vs-image-shift-possible/">Catalog vs Image shift?  A possible solution to the ATLASGAL issue</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/21/idea-multispectral-eigenimage/">Idea: Multispectral Eigenimage decomposition...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/20/first/">Fourier Upsampling</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Adam Ginsburg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
