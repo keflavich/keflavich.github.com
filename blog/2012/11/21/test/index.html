@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>test - Adam Ginsburg's Astro Blog</title>
+  <meta name="author" content="Adam Ginsburg">
+
+  
+  <meta name="description" content="Using the numbers we measure for $L(H\alpha)$, I&#8217;ll re-derive key quantities about SN 2009ip.This analysis implicitly assumes that H$\alpha$ &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://keflavich.github.com/blog/2012/11/21/test/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Adam Ginsburg's Astro Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-37306139-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adam Ginsburg's Astro Blog</a></h1>
+  
+    <h2>Nicer than keflavich.blogspot.com</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:keflavich.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/bgps/">BGPS</a></li>
+  <li><a href="/bgps/">BGPS</a></li>
+  <li><a href="/publications/">Research</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Test</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-21T14:48:00-07:00" pubdate data-updated="true">Nov 21<span>st</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+<div class="text_cell_render border-box-sizing rendered_html"><br /><p>Using the numbers we measure for $L(H\alpha)$, I&#8217;ll re-derive key quantities about SN 2009ip.</p><br /><p>This analysis implicitly assumes that H$\alpha$ is optically thick at $10^4$ K.  I believe we should make that assumption explicit in the text.</p><br /></div><br /><div class="cell border-box-sizing code_cell vbox"><br /><div class="input hbox"><br /><div class="prompt input_prompt">In&nbsp;[1]:</div><br /><div class="input_area box-flex1"><br /><div class="highlight"><pre><span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span><span class="p">,</span> <span class="n">constants</span><br /><span class="n">pc</span> <span class="o">=</span> <span class="n">units</span><span class="o">.</span><span class="n">pc</span><span class="o">.</span><span class="n">in_units</span><span class="p">(</span><span class="s">&#39;cm&#39;</span><span class="p">)</span><br /><span class="n">Iha</span> <span class="o">=</span> <span class="mf">2.9e-14</span> <span class="c"># erg s^-1 cm^-2 A^-1</span><br /><span class="n">D</span> <span class="o">=</span> <span class="mf">24e6</span> <span class="o">*</span> <span class="n">pc</span><br /><span class="n">Lha</span> <span class="o">=</span> <span class="n">Iha</span> <span class="o">*</span> <span class="n">D</span><span class="o">**</span><span class="mi">2</span><br /><span class="k">print</span> <span class="n">Iha</span><span class="p">,</span><span class="s">&quot; erg/s/cm^2/A&quot;</span><br /><span class="k">print</span> <span class="n">D</span><span class="p">,</span><span class="s">&quot; cm&quot;</span><br /><span class="k">print</span> <span class="n">Lha</span><span class="p">,</span><span class="s">&quot; erg/s/A&quot;</span><br /></pre></div><br /><br /></div><br /></div><br /><div class="vbox output_wrapper"><br /><div class="output vbox"><br /><div class="hbox output_area"><br /><div class="prompt output_prompt"></div><br /><div class="output_subarea output_stream output_stdout"><br /><pre>2.9e-14  erg/s/cm^2/A<br />7.40562619552e+25  cm<br />1.59045568109e+38  erg/s/A<br /></pre><br /></div><br /></div><br /></div><br /></div><br /></div><br /><div class="cell border-box-sizing code_cell vbox"><br /><div class="input hbox"><br /><div class="prompt input_prompt">In&nbsp;[2]:</div><br /><div class="input_area box-flex1"><br /><div class="highlight"><pre><span class="c"># Use the wavelength form of the Planck function</span><br /><span class="n">h</span> <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">cgs</span><span class="o">.</span><span class="n">h</span><br /><span class="n">k</span> <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">cgs</span><span class="o">.</span><span class="n">k_B</span><br /><span class="n">c</span> <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">cgs</span><span class="o">.</span><span class="n">c</span><br /><span class="k">def</span> <span class="nf">planck</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">temp</span><span class="p">):</span><br />    <span class="sd">&quot;&quot;&quot; erg s^-1 cm^-2 A^-1 sr^-1 &quot;&quot;&quot;</span><br />    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">h</span><span class="o">*</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">lam</span><span class="o">**</span><span class="mi">5</span> <span class="o">*</span> <span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="n">h</span><span class="o">*</span><span class="n">c</span><span class="o">/</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">temperature</span><span class="o">*</span><span class="n">lam</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">**-</span><span class="mi">1</span><br /></pre></div><br /><br /></div><br /></div><br /></div><br /><div class="cell border-box-sizing code_cell vbox"><br /><div class="input hbox"><br /><div class="prompt input_prompt">In&nbsp;[3]:</div><br /><div class="input_area box-flex1"><br /><div class="highlight"><pre><span class="n">angstrom</span> <span class="o">=</span> <span class="n">units</span><span class="o">.</span><span class="n">angstrom</span><span class="o">.</span><span class="n">in_units</span><span class="p">(</span><span class="s">&#39;cm&#39;</span><span class="p">)</span> <span class="c"># angstroms</span><br /><span class="n">wave</span> <span class="o">=</span> <span class="mf">6562.8</span><span class="o">*</span><span class="n">angstrom</span><br /><span class="n">temperature</span> <span class="o">=</span> <span class="mf">1e4</span> <span class="c"># K</span><br /><span class="k">print</span> <span class="s">&quot;sanity check: wave * 1e8 = 6562.8 = &quot;</span><span class="p">,</span><span class="n">wave</span><span class="o">*</span><span class="mf">1e8</span><br /><span class="k">print</span> <span class="s">&quot;planck(6562.8,1e4) = &quot;</span><span class="p">,</span><span class="n">planck</span><span class="p">(</span><span class="n">wave</span><span class="p">,</span><span class="n">temperature</span><span class="p">),</span><span class="s">&quot; erg/s/cm^2/cm&quot;</span><br /><span class="k">print</span> <span class="s">&quot;planck(6562.8,1e4) = &quot;</span><span class="p">,</span><span class="n">planck</span><span class="p">(</span><span class="n">wave</span><span class="p">,</span><span class="n">temperature</span><span class="p">)</span><span class="o">/</span><span class="mf">1e8</span><span class="p">,</span><span class="s">&quot; erg/s/cm^2/A&quot;</span><br /></pre></div><br /><br /></div><br /></div><br /><div class="vbox output_wrapper"><br /><div class="output vbox"><br /><div class="hbox output_area"><br /><div class="prompt output_prompt"></div><br /><div class="output_subarea output_stream output_stdout"><br /><pre>sanity check: wave * 1e8 = 6562.8 =  6562.8<br />planck(6562.8,1e4) =  1.22966749446e+15  erg/s/cm^2/cm<br />planck(6562.8,1e4) =  12296674.9446  erg/s/cm^2/A<br /></pre><br /></div><br /></div><br /></div><br /></div><br /></div><br /><div class="text_cell_render border-box-sizing rendered_html"><br /><p>We&#8217;re trying to solve an equation of the form:<br />$$ L(H\alpha) = \pi R^2 B_\lambda(T) d\lambda $$<br />Since our luminosity is in erg s$^{-1}$ $\dot{A}^{-1}$, we don&#8217;t have to worry about the bandwidth.<br /><br />$$ R = (L(H\alpha) / \pi / B_\lambda(T))^{1/2}$$</p><br /></div><br /><div class="cell border-box-sizing code_cell vbox"><br /><div class="input hbox"><br /><div class="prompt input_prompt">In&nbsp;[4]:</div><br /><div class="input_area box-flex1"><br /><div class="highlight"><pre><span class="n">Aemitting</span> <span class="o">=</span> <span class="n">Lha</span> <span class="o">/</span> <span class="p">(</span><span class="n">planck</span><span class="p">(</span><span class="n">wave</span><span class="p">,</span><span class="n">temperature</span><span class="p">)</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="mf">1e8</span><span class="p">)</span><br /><span class="k">print</span> <span class="s">&quot;Emitting area = &quot;</span><span class="p">,</span><span class="n">Aemitting</span><span class="p">,</span><span class="s">&quot; cm^2&quot;</span><br /><span class="n">R</span> <span class="o">=</span> <span class="p">(</span><span class="n">Aemitting</span><span class="o">/</span><span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><br /><span class="k">print</span> <span class="s">&quot;R = </span><span class="si">%e</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">R</span><span class="p">,</span> <span class="s">&quot; cm&quot;</span><br /><span class="n">au</span> <span class="o">=</span> <span class="n">units</span><span class="o">.</span><span class="n">AU</span><span class="o">.</span><span class="n">in_units</span><span class="p">(</span><span class="s">&#39;cm&#39;</span><span class="p">)</span><br /><span class="k">print</span> <span class="s">&quot;R = &quot;</span><span class="p">,</span><span class="n">R</span><span class="o">/</span><span class="n">au</span><span class="p">,</span><span class="s">&quot; AU&quot;</span><br /><span class="k">print</span> <span class="s">&quot;R = &quot;</span><span class="p">,</span><span class="n">R</span><span class="o">/</span><span class="n">pc</span><span class="p">,</span> <span class="s">&quot; pc&quot;</span><br /></pre></div><br /><br /></div><br /></div><br /><div class="vbox output_wrapper"><br /><div class="output vbox"><br /><div class="hbox output_area"><br /><div class="prompt output_prompt"></div><br /><div class="output_subarea output_stream output_stdout"><br /><pre>Emitting area =  4.11702975893e+30  cm^2<br />R = 1.144767e+15  cm<br />R =  76.5229413217  AU<br />R =  0.000370993688718  pc<br /></pre><br /></div><br /></div><br /></div><br /></div><br /></div><br /><div class="cell border-box-sizing code_cell vbox"><br /><div class="input hbox"><br /><div class="prompt input_prompt">In&nbsp;[5]:</div><br /><div class="input_area box-flex1"><br /><div class="highlight"><pre><span class="c"># Light crossing time</span><br /><span class="n">tc</span> <span class="o">=</span> <span class="n">R</span> <span class="o">/</span> <span class="n">constants</span><span class="o">.</span><span class="n">cgs</span><span class="o">.</span><span class="n">c</span><br /><span class="n">day</span> <span class="o">=</span> <span class="n">units</span><span class="o">.</span><span class="n">day</span><span class="o">.</span><span class="n">in_units</span><span class="p">(</span><span class="s">&#39;s&#39;</span><span class="p">)</span><br /><span class="k">print</span> <span class="s">&quot;Light Crossing time at </span><span class="si">%i</span><span class="s"> AU = </span><span class="si">%f</span><span class="s"> days&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">R</span><span class="o">/</span><span class="n">au</span><span class="p">,</span> <span class="n">tc</span><span class="o">/</span><span class="n">day</span><span class="p">)</span><br /></pre></div><br /><br /></div><br /></div><br /><div class="vbox output_wrapper"><br /><div class="output vbox"><br /><div class="hbox output_area"><br /><div class="prompt output_prompt"></div><br /><div class="output_subarea output_stream output_stdout"><br /><pre>Light Crossing time at 76 AU = 0.441960 days<br /></pre><br /></div><br /></div><br /></div><br /></div><br /></div><br /><div class="cell border-box-sizing code_cell vbox"><br /><div class="input hbox"><br /><div class="prompt input_prompt">In&nbsp;[6]:</div><br /><div class="input_area box-flex1"><br /><div class="highlight"><pre><span class="c"># What if we assume it&#39;s a sphere instead of a disk?</span><br /><span class="c"># area -&gt; 4 * pi * r^2</span><br /><span class="n">R</span> <span class="o">=</span> <span class="p">(</span><span class="n">Aemitting</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span><span class="o">**</span><span class="mf">0.5</span><br /><span class="k">print</span> <span class="s">&quot;R = </span><span class="si">%e</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">R</span><span class="p">,</span> <span class="s">&quot; cm&quot;</span><br /><span class="n">au</span> <span class="o">=</span> <span class="n">units</span><span class="o">.</span><span class="n">AU</span><span class="o">.</span><span class="n">in_units</span><span class="p">(</span><span class="s">&#39;cm&#39;</span><span class="p">)</span><br /><span class="k">print</span> <span class="s">&quot;R = &quot;</span><span class="p">,</span><span class="n">R</span><span class="o">/</span><span class="n">au</span><span class="p">,</span><span class="s">&quot; AU&quot;</span><br /><span class="k">print</span> <span class="s">&quot;R = &quot;</span><span class="p">,</span><span class="n">R</span><span class="o">/</span><span class="n">pc</span><span class="p">,</span> <span class="s">&quot; pc&quot;</span><br /><span class="n">tc</span> <span class="o">=</span> <span class="n">R</span> <span class="o">/</span> <span class="n">constants</span><span class="o">.</span><span class="n">cgs</span><span class="o">.</span><span class="n">c</span><br /><span class="k">print</span> <span class="s">&quot;Light Crossing time at </span><span class="si">%i</span><span class="s"> AU = </span><span class="si">%f</span><span class="s"> days&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">R</span><span class="o">/</span><span class="n">au</span><span class="p">,</span> <span class="n">tc</span><span class="o">/</span><span class="n">day</span><span class="p">)</span><br /></pre></div><br /><br /></div><br /></div><br /><div class="vbox output_wrapper"><br /><div class="output vbox"><br /><div class="hbox output_area"><br /><div class="prompt output_prompt"></div><br /><div class="output_subarea output_stream output_stdout"><br /><pre>R = 5.723835e+14  cm<br />R =  38.2614706609  AU<br />R =  0.000185496844359  pc<br />Light Crossing time at 38 AU = 0.220980 days<br /></pre><br /></div><br /></div><br /></div><br /></div><br /></div><br /><div class="text_cell_render border-box-sizing rendered_html"><br /><p>Because the brightening was sudden, and because a uniform disk is somewhat implausible, we should come up with a different measurement for a disk with an inner hole.  I&#8217;ll use fiducial numbers of 13000 $km s^{-1}$ and $\Delta t \sim 40$ days.</p><br /></div><br /><div class="cell border-box-sizing code_cell vbox"><br /><div class="input hbox"><br /><div class="prompt input_prompt">In&nbsp;[14]:</div><br /><div class="input_area box-flex1"><br /><div class="highlight"><pre><span class="n">kms</span> <span class="o">=</span> <span class="p">(</span><span class="n">units</span><span class="o">.</span><span class="n">km</span><span class="o">/</span><span class="n">units</span><span class="o">.</span><span class="n">s</span><span class="p">)</span><span class="o">.</span><span class="n">in_units</span><span class="p">(</span><span class="s">&#39;cm/s&#39;</span><span class="p">)</span><br /><span class="n">vejecta</span> <span class="o">=</span> <span class="mf">13e3</span> <span class="o">*</span> <span class="n">kms</span><br /><span class="n">deltat</span> <span class="o">=</span> <span class="mi">40</span> <span class="o">*</span> <span class="n">day</span><br /><span class="n">r_collision</span> <span class="o">=</span> <span class="n">vejecta</span><span class="o">*</span><span class="n">deltat</span><br /><span class="k">print</span> <span class="s">&quot;Inner disk radius = &quot;</span><span class="p">,</span><span class="n">r_collision</span><span class="p">,</span><span class="s">&quot; or &quot;</span><span class="p">,</span><span class="n">r_collision</span><span class="o">/</span><span class="n">au</span><span class="p">,</span><span class="s">&quot; AU&quot;</span><br /><span class="k">print</span> <span class="s">&quot;Light crossing time at inner disk radius = &quot;</span><span class="p">,</span><span class="n">r_collision</span> <span class="o">/</span> <span class="n">constants</span><span class="o">.</span><span class="n">cgs</span><span class="o">.</span><span class="n">c</span> <span class="o">/</span> <span class="n">day</span><span class="p">,</span> <span class="s">&quot;days&quot;</span><br /><span class="n">H</span> <span class="o">=</span> <span class="n">Aemitting</span><span class="o">/</span><span class="n">r_collision</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="n">pi</span><br /><span class="k">print</span> <span class="s">&quot;Height needed if this is ALL coming from the inner part of a disk: &quot;</span><span class="p">,</span><span class="n">H</span><span class="p">,</span><span class="s">&quot; cm or &quot;</span><span class="p">,</span><span class="n">H</span><span class="o">/</span><span class="n">au</span><span class="p">,</span><span class="s">&quot; AU&quot;</span><br /><span class="k">print</span> <span class="s">&quot;The speed required to achieve that height in 2 days is &quot;</span><span class="p">,</span> <span class="n">H</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">day</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1e5</span><span class="p">,</span> <span class="s">&quot;km/s&quot;</span><br /></pre></div><br /><br /></div><br /></div><br /><div class="vbox output_wrapper"><br /><div class="output vbox"><br /><div class="hbox output_area"><br /><div class="prompt output_prompt"></div><br /><div class="output_subarea output_stream output_stdout"><br /><pre>Inner disk radius =  4.4928e+15  or  300.325130229  AU<br />Light crossing time at inner disk radius =  1.73453329503 days<br />Height needed if this is ALL coming from the inner part of a disk:  1.45843491139e+14  cm or  9.74903522735  AU<br />The speed required to achieve that height in 2 days is  8440.01684832 km/s<br /></pre><br /></div><br /></div><br /></div><br /></div><br /></div><br /><div class="text_cell_render border-box-sizing rendered_html"><br /><p>We then want $$\int_{r_{inner}}^{r_{outer}} 2 \pi r dr = A_{emitting}$$ or $$ r_{outer}^2 - r_{inner}^2 = A_{emitting} / \pi$$</p><br /></div><br /><div class="cell border-box-sizing code_cell vbox"><br /><div class="input hbox"><br /><div class="prompt input_prompt">In&nbsp;[8]:</div><br /><div class="input_area box-flex1"><br /><div class="highlight"><pre><span class="n">router</span> <span class="o">=</span> <span class="p">(</span><span class="n">Aemitting</span><span class="o">/</span><span class="n">pi</span><span class="o">+</span><span class="n">r_collision</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><br /><span class="k">print</span> <span class="s">&quot;Outer radius = &quot;</span><span class="p">,</span><span class="n">router</span><span class="p">,</span><span class="s">&quot; or &quot;</span><span class="p">,</span><span class="n">router</span><span class="o">/</span><span class="n">au</span><span class="p">,</span><span class="s">&quot; AU&quot;</span><br /><span class="k">print</span> <span class="s">&quot;Delta-R = &quot;</span><span class="p">,</span><span class="n">router</span><span class="o">-</span><span class="n">r_collision</span><span class="p">,</span><span class="s">&quot; or &quot;</span><span class="p">,(</span><span class="n">router</span><span class="o">-</span><span class="n">r_collision</span><span class="p">)</span><span class="o">/</span><span class="n">au</span><span class="p">,</span><span class="s">&quot; AU&quot;</span><br /><span class="n">tcross</span> <span class="o">=</span> <span class="p">(</span><span class="n">router</span><span class="o">-</span><span class="n">r_collision</span><span class="p">)</span> <span class="o">/</span> <span class="n">vejecta</span><br /><span class="k">print</span> <span class="s">&quot;The shock crossing time from inner-&gt;outer at </span><span class="si">%g</span><span class="s"> km/s = </span><span class="si">%g</span><span class="s"> days&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">vejecta</span><span class="o">/</span><span class="n">kms</span><span class="p">,</span> <span class="n">tcross</span><span class="o">/</span><span class="n">day</span><span class="p">)</span><br /></pre></div><br /><br /></div><br /></div><br /><div class="vbox output_wrapper"><br /><div class="output vbox"><br /><div class="hbox output_area"><br /><div class="prompt output_prompt"></div><br /><div class="output_subarea output_stream output_stdout"><br /><pre>Outer radius =  4.6363501932e+15  or  309.920867958  AU<br />Delta-R =  1.43550193199e+14  or  9.59573772859  AU<br />The shock crossing time from inner-&gt;outer at 13000 km/s = 1.27805 days<br /></pre><br /></div><br /></div><br /></div><br /></div><br /></div><br /><div class="text_cell_render border-box-sizing rendered_html"><br /><p>I think this effectively leaves us with the conclusion that there is a 30 AU radius torus at 300 AU from the central source.  That strikes me as somewhat implausible; 30 AU is enormous, particularly at densities $\sim10^{13}$.  I&#8217;ll try computing the mass in the disk assuming it&#8217;s quite thin, $\sim0.1AU$.</p><br /></div><br /><div class="cell border-box-sizing code_cell vbox"><br /><div class="input hbox"><br /><div class="prompt input_prompt">In&nbsp;[9]:</div><br /><div class="input_area box-flex1"><br /><div class="highlight"><pre><span class="n">height</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">au</span><br /><span class="n">volume</span> <span class="o">=</span> <span class="n">Aemitting</span><span class="o">*</span><span class="n">height</span><br /><span class="n">density</span> <span class="o">=</span> <span class="mf">1e13</span> <br /><span class="n">nparticles</span> <span class="o">=</span> <span class="n">volume</span> <span class="o">*</span> <span class="n">density</span><br /><span class="n">msun</span> <span class="o">=</span> <span class="n">units</span><span class="o">.</span><span class="n">msolMass</span><span class="o">.</span><span class="n">in_units</span><span class="p">(</span><span class="s">&#39;g&#39;</span><span class="p">)</span><br /><span class="n">mass</span> <span class="o">=</span> <span class="n">nparticles</span> <span class="o">*</span> <span class="n">constants</span><span class="o">.</span><span class="n">cgs</span><span class="o">.</span><span class="n">m_p</span> <span class="o">*</span> <span class="mf">1.4</span><br /><span class="k">print</span> <span class="s">&quot;mass = &quot;</span><span class="p">,</span><span class="n">mass</span><span class="p">,</span><span class="s">&quot;g = &quot;</span><span class="p">,</span><span class="n">mass</span><span class="o">/</span><span class="n">msun</span><span class="p">,</span><span class="s">&quot;msun&quot;</span><br /></pre></div><br /><br /></div><br /></div><br /><div class="vbox output_wrapper"><br /><div class="output vbox"><br /><div class="hbox output_area"><br /><div class="prompt output_prompt"></div><br /><div class="output_subarea output_stream output_stdout"><br /><pre>mass =  1.44223224375e+32 g =  72.5067741062 msun<br /></pre><br /></div><br /></div><br /></div><br /></div><br /></div><br /><div class="text_cell_render border-box-sizing rendered_html"><br /><p>That&#8217;s ridiculous.  I&#8217;ll invert the assumption: say the disk/torus is 1 msun; how thin must it be?</p><br /></div><br /><div class="cell border-box-sizing code_cell vbox"><br /><div class="input hbox"><br /><div class="prompt input_prompt">In&nbsp;[10]:</div><br /><div class="input_area box-flex1"><br /><div class="highlight"><pre><span class="n">mass</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">msun</span><br /><span class="n">nparticles</span> <span class="o">=</span> <span class="n">mass</span> <span class="o">/</span> <span class="p">(</span><span class="n">constants</span><span class="o">.</span><span class="n">cgs</span><span class="o">.</span><span class="n">m_p</span><span class="o">*</span><span class="mf">1.4</span><span class="p">)</span><br /><span class="n">volume</span> <span class="o">=</span> <span class="n">nparticles</span><span class="o">/</span><span class="n">density</span><br /><span class="n">height</span> <span class="o">=</span> <span class="n">volume</span><span class="o">/</span><span class="n">Aemitting</span><br /><span class="k">print</span> <span class="s">&quot;height of disk = &quot;</span><span class="p">,</span><span class="n">height</span><span class="p">,</span><span class="s">&quot;cm = &quot;</span><span class="p">,</span><span class="n">height</span><span class="o">/</span><span class="n">au</span><span class="p">,</span><span class="s">&quot; AU&quot;</span><br /></pre></div><br /><br /></div><br /></div><br /><div class="vbox output_wrapper"><br /><div class="output vbox"><br /><div class="hbox output_area"><br /><div class="prompt output_prompt"></div><br /><div class="output_subarea output_stream output_stdout"><br /><pre>height of disk =  20632261267.2 cm =  0.0013791814797  AU<br /></pre><br /></div><br /></div><br /></div><br /></div><br /></div><br /><div class="text_cell_render border-box-sizing rendered_html"><br /><p>These numbers don&#8217;t feel right to me.  Why such an ultrathin disk?  It would HAVE to puff up; the pressures are enormous.</p><br /><p>What about the hypothesis that the brightening results from optically thin emission?  I&#8217;ll work under the assumption that H$\alpha$ is &#8220;just barely&#8221; optically thick (i.e. I&#8217;ll cheat and use the optically thin approach);<br />in order to get the high H$\beta$ / H$\alpha$ ratio we actually need it to be pretty optically thick <em>and</em> under the Case B regime (Case C just makes it harder to get the observed $\alpha$/$\beta$ ratio).</p><br /></div><br /><div class="cell border-box-sizing code_cell vbox"><br /><div class="input hbox"><br /><div class="prompt input_prompt">In&nbsp;[18]:</div><br /><div class="input_area box-flex1"><br /><div class="highlight"><pre><span class="n">density</span> <span class="o">=</span> <span class="mf">1e6</span> <span class="c"># assume pretty dense, but still plausibly case B</span><br /><span class="n">alphaB</span> <span class="o">=</span> <span class="mf">2.6e-13</span> <span class="c"># cm^3 s^-1</span><br /><span class="n">Eha</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="n">c</span> <span class="o">/</span> <span class="n">wave</span><br /><span class="n">nphot_perang</span> <span class="o">=</span> <span class="n">Lha</span> <span class="o">/</span> <span class="n">Eha</span> <span class="c"># phot/s/A</span><br /><span class="n">nphot</span> <span class="o">=</span> <span class="n">nphot_perang</span> <span class="o">*</span> <span class="mi">1</span> <span class="c"># phot/s</span><br /><span class="c"># solve for path length</span><br /><span class="c"># nphot = density**2 * alphaB * area * path_length</span><br /><span class="n">path_length</span> <span class="o">=</span> <span class="n">nphot</span> <span class="o">/</span> <span class="p">(</span><span class="n">density</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">alphaB</span><span class="o">*</span><span class="n">Aemitting</span><span class="p">)</span><br /><span class="k">print</span> <span class="s">&quot;Emitting path length for density = </span><span class="si">%0.1e</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">density</span><span class="p">,</span><span class="s">&quot;cm^-3 is &quot;</span><span class="p">,</span><span class="n">path_length</span><span class="p">,</span><span class="s">&quot; = &quot;</span><span class="p">,</span><span class="n">path_length</span><span class="o">/</span><span class="n">pc</span><span class="p">,</span><span class="s">&quot; pc&quot;</span><br /><span class="c"># use the rise time of ~2 days as an upper limit on the emitting size scale</span><br /><span class="n">maxsize</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">day</span><span class="o">*</span><span class="n">c</span><br /><span class="k">print</span> <span class="s">&quot;This is </span><span class="si">%i</span><span class="s"> times larger than the largest allowed scale&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">path_length</span><span class="o">/</span><span class="n">maxsize</span><span class="p">)</span><br /><span class="k">print</span> <span class="s">&quot;Densities must be at least </span><span class="si">%e</span><span class="s"> for optically thin emission to be plausible&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">density</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="n">path_length</span><span class="o">/</span><span class="n">maxsize</span><span class="p">))</span><br /></pre></div><br /><br /></div><br /></div><br /><div class="vbox output_wrapper"><br /><div class="output vbox"><br /><div class="hbox output_area"><br /><div class="prompt output_prompt"></div><br /><div class="output_subarea output_stream output_stdout"><br /><pre>Emitting path length for density = 1.0e+06 cm^-3 is  4.90881531249e+19  =  15.9083870006  pc<br />This is 9475 times larger than the largest allowed scale<br />Densities must be at least 9.734331e+07 for optically thin emission to be plausible<br /></pre><br /></div><br /></div><br /></div><br /></div><br /></div><br /><div class="text_cell_render border-box-sizing rendered_html"><br /><p>So at densities $&gt;5\times10^7$, if H$\alpha$ starts becoming optically thick but H$\beta$ remains optically thin, we could explain the brightening by a filled sphere of just barely optically thick emission.</p><br /></div><br /><div class="text_cell_render border-box-sizing rendered_html"><br /><p>Despite all this, we still don&#8217;t have a great explanation for why the P Cygni profile disappears.  We should revisit that if possible.</p><br /></div><br /><div class="cell border-box-sizing code_cell vbox"><br /><div class="input hbox"><br /><div class="prompt input_prompt">In&nbsp;[22]:</div><br /><div class="input_area box-flex1"><br /><div class="highlight"><pre><span class="c"># limb-brightened shell model</span><br /><span class="n">half_sph_area</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">r_collision</span><span class="o">**</span><span class="mi">2</span><br /><span class="k">print</span> <span class="s">&quot;Fraction of sphere that must be emitting: &quot;</span><span class="p">,</span><span class="n">Aemitting</span><span class="o">/</span><span class="n">half_sph_area</span><br /></pre></div><br /><br /></div><br /></div><br /><div class="vbox output_wrapper"><br /><div class="output vbox"><br /><div class="hbox output_area"><br /><div class="prompt output_prompt"></div><br /><div class="output_subarea output_stream output_stdout"><br /><pre>Fraction of sphere that must be emitting:  0.0324616032628<br /></pre><br /></div><br /></div><br /></div><br /></div><br /></div><br /><br /><div class="cell border-box-sizing code_cell vbox"><br /><div class="input hbox"><br /><div class="prompt input_prompt">In&nbsp;[1]:</div><br /><div class="input_area box-flex1"><br /><div class="highlight"><pre><span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">HTML</span><br /><br /><span class="k">def</span> <span class="nf">blackbg</span><span class="p">():</span><br />	<span class="sd">&quot;&quot;&quot;Black Background code mirror theme.&quot;&quot;&quot;</span><br />	<span class="n">html</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;</span><br /><span class="s">&lt;style type=&quot;text/css&quot;&gt;</span><br /><span class="s">.cm-s-ipython { background-color: black; color: lightblue; }</span><br /><span class="s">.cm-s-ipython span.cm-keyword {color: #00ff00; font-weight: bold;}</span><br /><span class="s">.cm-s-ipython span.cm-number {color: #ee88ee;}</span><br /><span class="s">.cm-s-ipython span.cm-operator {color: lime; font-weight: bold;}</span><br /><span class="s">.cm-s-ipython span.cm-meta {color: white;}</span><br /><span class="s">.cm-s-ipython span.cm-comment {color: cyan; font-style: italic;}</span><br /><span class="s">.cm-s-ipython span.cm-string {color: red;}</span><br /><span class="s">.cm-s-ipython span.cm-error {color: darkred;}</span><br /><span class="s">.cm-s-ipython span.cm-builtin {color: pink; font-weight: bold;}</span><br /><span class="s">.CodeMirror pre.CodeMirror-cursor {color: white; border-left: 1px solid white;}</span><br /><span class="s">.cm-s-ipython span.cm-variable {color: white;}</span><br /><span class="s">div.text_cell_input  {   background-color: black;    color: white;}</span><br /><span class="s">div.text_cell {   background-color: black;    color: white;}</span><br /><span class="s">div#notebook {    background-color: black;     background-image: none;     color: white;}</span><br /><span class="s">div.code_cell { background-color: black;    color: white;}</span><br /><span class="s">div.metaedit .maintoolbar{    background-color: black;    color: white;}</span><br /><span class="s">body{    background-color: black;    color: white;}</span><br /><span class="s">#notebook_name {  background-color: #333333;    color: white; background-image:none;}</span><br /><span class="s">span.ui-widget-content{  background-color: #333333;    color: white; background-image:none;}</span><br /><span class="s">div.ui-widget-content{  background-color: #333333;    color: white; background-image:none;}</span><br /><span class="s">div#ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only output_collapsed vbox{  </span><br /><span class="s">  background-color: black;    color: white;}</span><br /><span class="s">div.input_area{    background-color: black;    color: white;}</span><br /><span class="s">div.ui-widget-content { background-color: #333333; background-image: none;}</span><br /><span class="s">div.input_prompt {color:#6666CC; font-weight: bold;}</span><br /><span class="s">div.output_prompt {color:#CC6666; font-weight: bold;}</span><br /><span class="s">div.output_text {color:white;}</span><br /><span class="s">div.text_cell_render {color:white;}</span><br /><span class="s">span.item_name {color:white;}</span><br /><span class="s">.ui-widget-content a {color:white;}</span><br /><span class="s">div.tooltip .ui-corner-all .tooltiptext .smalltooltip {background-color: black; color:white;}</span><br /><span class="s">.pln {color:white} </span><br /><span class="s">.typ {color:#f9f}</span><br /><span class="s">.lit {color:#BBB}</span><br /><span class="s">.kwd {color:#3e3}</span><br /><span class="s">.metaedit {background: transparent; border-color: transparent; color:white;}</span><br /><span class="s">.ui-button-text {background: #112; color:white; border-color:666;}</span><br /><span class="s">.ui-menubar  {background-color: transparent; background: transparent; background-image:none;}</span><br /><span class="s">.ui-widget-header  {background-color: transparent; background: transparent; background-image:none;}</span><br /><span class="s">.ui-helper-clearfix {background-color: transparent; background: transparent; background-image:none;}</span><br /><span class="s">.ui-corner-all {background: #112; color: white;}</span><br /><span class="s">.ui-widget  {background: #112; color: white;}</span><br /><span class="s">.ui-widget-content {background: #112; color: white;}</span><br /><span class="s">div.highlight {background:black;} /* needed for nbviewer */</span><br /><span class="s">&lt;/style&gt;&quot;&quot;&quot;</span><br />	<span class="k">return</span> <span class="n">HTML</span><span class="p">(</span><span class="n">html</span><span class="p">)</span><br /><br /><span class="n">blackbg</span><span class="p">()</span><br /></pre></div><br /><br /></div><br /></div><br /><div class="vbox output_wrapper"><br /><div class="output vbox"><br /><div class="hbox output_area"><br /><div class="prompt output_prompt">Out[1]:</div><br /><div class="output_subarea output_pyout output_html rendered_html"><br /><br /><style type="text/css"><br />.cm-s-ipython { background-color: black; color: lightblue; }<br />.cm-s-ipython span.cm-keyword {color: #00ff00; font-weight: bold;}<br />.cm-s-ipython span.cm-number {color: #ee88ee;}<br />.cm-s-ipython span.cm-operator {color: lime; font-weight: bold;}<br />.cm-s-ipython span.cm-meta {color: white;}<br />.cm-s-ipython span.cm-comment {color: cyan; font-style: italic;}<br />.cm-s-ipython span.cm-string {color: red;}<br />.cm-s-ipython span.cm-error {color: darkred;}<br />.cm-s-ipython span.cm-builtin {color: pink; font-weight: bold;}<br />.CodeMirror pre.CodeMirror-cursor {color: white; border-left: 1px solid white;}<br />.cm-s-ipython span.cm-variable {color: white;}<br />div.text_cell_input  {   background-color: black;    color: white;}<br />div.text_cell {   background-color: black;    color: white;}<br />div#notebook {    background-color: black;     background-image: none;     color: white;}<br />div.code_cell { background-color: black;    color: white;}<br />div.metaedit .maintoolbar{    background-color: black;    color: white;}<br />body{    background-color: black;    color: white;}<br />#notebook_name {  background-color: #333333;    color: white; background-image:none;}<br />span.ui-widget-content{  background-color: #333333;    color: white; background-image:none;}<br />div.ui-widget-content{  background-color: #333333;    color: white; background-image:none;}<br />div#ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only output_collapsed vbox{  <br />  background-color: black;    color: white;}<br />div.input_area{    background-color: black;    color: white;}<br />div.ui-widget-content { background-color: #333333; background-image: none;}<br />div.input_prompt {color:#6666CC; font-weight: bold;}<br />div.output_prompt {color:#CC6666; font-weight: bold;}<br />div.output_text {color:white;}<br />div.text_cell_render {color:white;}<br />span.item_name {color:white;}<br />.ui-widget-content a {color:white;}<br />div.tooltip .ui-corner-all .tooltiptext .smalltooltip {background-color: black; color:white;}<br />.pln {color:white} <br />.typ {color:#f9f}<br />.lit {color:#BBB}<br />.kwd {color:#3e3}<br />.metaedit {background: transparent; border-color: transparent; color:white;}<br />.ui-button-text {background: #112; color:white; border-color:666;}<br />.ui-menubar  {background-color: transparent; background: transparent; background-image:none;}<br />.ui-widget-header  {background-color: transparent; background: transparent; background-image:none;}<br />.ui-helper-clearfix {background-color: transparent; background: transparent; background-image:none;}<br />.ui-corner-all {background: #112; color: white;}<br />.ui-widget  {background: #112; color: white;}<br />.ui-widget-content {background: #112; color: white;}<br />div.highlight {background:black;} /* needed for nbviewer */<br /></style><br /></div><br /></div><br /></div><br /></div><br /></div><br /></div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Adam Ginsburg</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-21T14:48:00-07:00" pubdate data-updated="true">Nov 21<span>st</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/main/'>main</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/11/20/the-peculiar-balmer-decrement-of-sn/" title="Previous Post: The Peculiar Balmer Decrement of SN 2009ip: Constraints on Circumstellar Geometry  ">&laquo; The Peculiar Balmer Decrement of SN 2009ip: Constraints on Circumstellar Geometry  </a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/12/04/installing-qt-on-107/" title="Next Post: Installing qt on 10.7">Installing qt on 10.7 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/26/bash-prompt/">Bash Prompt</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/20/first/">Fourier Upsampling</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/12/installing-diffuse-or-meld-failure-cant/">Installing diffuse or meld - failure, can't install pygtk</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/04/installing-qt-on-107/">Installing qt on 10.7</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/11/21/test/">test</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/11/08/ipython-notebooks-preserve-figure/">ipython notebooks - preserve figure status between cells</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/11/05/netpbm-install/">netpbm install</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/05/guider-pointing-blog-motion/">Guider Pointing & Blog Motion</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/19/imf-and-number-of-massive-stars-per/">IMF and number of massive stars per cluster</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/19/an-experiment-with-log-normal-density/">Lognormal Density / IPython Notebook</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/06/i-sent-poll-to-aps-grad-students-to/"></a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/04/research-idea-nir-variation/">Research idea:  NIR variation</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/02/research-idea-stacking-finders/">Research Idea: Stacking Finders</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/12/connecting-to-ipython-notebook-with-ssh/">Connecting to ipython notebook with SSH tunneling</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/29/orion-in-infrared-and-millimeter/">Orion in the Infrared and Millimeter</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/03/22/sync-fork-with-original-repository-on/">Sync a fork with the original repository on Git</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/03/22/nan-friendly-convolution/">NaN-friendly convolution</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/01/26/compiling-vim/">Compiling vim...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/01/12/latex-vim-skim/">LaTeX: VIM + Skim</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/01/08/api-documentation-on-agpy/">API documentation on agpy</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/12/latex-producing-bibliography-and-paper/">latex: producing a bibliography and paper independently</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/08/16/mercurial-merge/">mercurial merge</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/08/11/offset-symbols/">Offset symbols?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/07/13/my-scipy-install/">my scipy install...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/28/p-cygni/">P Cygni</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/26/finally-got-matplotlib-to-install/">finally got matplotlib to install...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/25/matplotlib-64-bit-installs-never-work/">matplotlib 64 bit installs never work</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/23/major-mac-problems/">Major mac problems</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/21/dying-dock/">Dying Dock</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/04/30/specanpy/">specanpy</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/03/29/why-cant-numpy-do-duplicate-index/">Why can't numpy do duplicate index assignment</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/03/18/pyspeckit-astronomical-spectroscopic/">pyspeckit: an astronomical spectroscopic toolkit</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/02/02/pstopng/">pstopng</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/12/13/converting-gildas-class-data-cubes-lmv/">Converting GILDAS-CLASS data cubes (lmv files) to fits</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/11/27/idl-syntax-highlighting-in-vim/">IDL syntax highlighting in VIM</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/11/22/mercurial-behave-like-svn/">Mercurial - behave like SVN?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/11/03/repositories-for-observers/">Repositories for observers</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/11/03/bgps-data-paper-published/">BGPS data paper published</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/10/05/next-generation-astronomy/">Next Generation Astronomy</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/09/14/converting-a-class-created-fits-file-to-a-real-fits-compliant-fits-file/">Converting a CLASS-created .fits file to a real (FITS-compliant) FITS file</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/08/18/observing-gbt-signs-of-good-bad-data/">Observing @ GBT: Signs of good & bad data</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/08/17/galactic-formaldehyde-densitometry-project/">Galactic Formaldehyde Densitometry Project</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/08/16/neat-new-things/">Neat new things....</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/08/13/filled-step-plots-in-matplotlib/">Filled step plots in matplotlib</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/08/05/my-starred-reader-articles/">My starred reader articles</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/08/05/first/">First!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/08/05/testing-trackbacks/">Testing trackbacks?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/07/28/histogram-in-google-spreadsheet/">Histogram in Google Spreadsheet</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/07/09/idl-to-python/">IDL-to-Python</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/keflavich">@keflavich</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'keflavich',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Adam Ginsburg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

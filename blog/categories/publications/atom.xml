@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: publications | Adam Ginsburg's Astro Blog]]></title>
+  <link href="http://keflavich.github.com/blog/categories/publications/atom.xml" rel="self"/>
+  <link href="http://keflavich.github.com/"/>
+  <updated>2012-12-29T18:32:32-07:00</updated>
+  <id>http://keflavich.github.com/</id>
+  <author>
+    <name><![CDATA[Adam Ginsburg]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[The Peculiar Balmer Decrement of SN 2009ip: Constraints on Circumstellar Geometry  ]]></title>
+    <link href="http://keflavich.github.com/blog/2012/11/20/the-peculiar-balmer-decrement-of-sn/"/>
+    <updated>2012-11-20T21:46:00-07:00</updated>
+    <id>http://keflavich.github.com/blog/2012/11/20/the-peculiar-balmer-decrement-of-sn</id>
+    <content type="html"><![CDATA[<div class='post'>
+<div dir="ltr" style="text-align: left;" trbidi="on">&nbsp;[ <a href="http://arxiv.org/abs/1211.4577"> arXiv </a> ]<br /><div class="authors"><span style="color: black;"><a href="http://arxiv.org/find/astro-ph/1/au:+Levesque_E/0/1/0/all/0/1" style="text-decoration: initial;">Emily M. Levesque</a>,&nbsp;<a href="http://arxiv.org/find/astro-ph/1/au:+Stringfellow_G/0/1/0/all/0/1" style="text-decoration: initial;">Guy S. Stringfellow</a>,&nbsp;<a href="http://arxiv.org/find/astro-ph/1/au:+Ginsburg_A/0/1/0/all/0/1" style="text-decoration: initial;">Adam G. Ginsburg</a>,&nbsp;<a href="http://arxiv.org/find/astro-ph/1/au:+Bally_J/0/1/0/all/0/1" style="text-decoration: initial;">John Bally</a>,&nbsp;<a href="http://arxiv.org/find/astro-ph/1/au:+Keeney_B/0/1/0/all/0/1" style="text-decoration: initial;">Brian A. Keeney</a></span></div><br /><hr /><br />SN2009ip is a particularly interesting "supernova" since it left a bright remnant behind, indicating that it was instead a supernova impostor. &nbsp;The 2012B event, a brightening in late September 2012, looked like it might be a "genuine supernova", but maybe not. &nbsp;Have a look at the other papers on this object:&nbsp;http://arxiv.org/abs/1210.3568,&nbsp;http://arxiv.org/abs/1210.3347,&nbsp;http://arxiv.org/abs/1209.6320.<br /><br />A few folks at CU, primarily Guy, had acquired some spectra of SN2009ip right around the 2012B event. &nbsp;We had a quick look at the data and decided there was something really interesting in it that other groups (who probably had more complete data) had overlooked.<br /><br />The most interesting single point we noted was a peculiar "Balmer Decrement" (which is the ratio of H-alpha to H-beta). &nbsp;The normal Balmer decrement is ~3 (2.87 at n~10<sup>3</sup> and 10000K), but we observed a decrement of ~1.4 (and so did others, see e.g.&nbsp;http://users.northnet.com.au/~bohlsen/Nova/sn2009ip.htm).<br /><br />This Balmer decrement is weird, because all normal effects will <i>increase</i>&nbsp;rather than decrease the Balmer decrement. <br /><br /><ul style="text-align: left;"><li>Interstellar reddening - affects the blue more than the red, therefore should decrease H-beta relative to H-alpha. &nbsp;Of course, the reddening towards SN2009ip has been measured to be quite low.</li><li>Line Splitting due to optical depth in the H-beta line (photons become "trapped" in the n=4 state and "escape" via Paschen-alpha and H-alpha) - but this only serves to decrease H-beta and increase H-alpha. &nbsp;This is known as "Case C recombination" (see <a href="http://adsabs.harvard.edu/abs/1992ApJ...386..181X">Xu et al 1992</a>, Figure 1)</li></ul><div>So what can increase the Balmer decrement? &nbsp;Two possibilities:&nbsp;</div><div><ol style="text-align: left;"><li>Hydrogen reaches local densities above 10<sup>13</sup> cm<sup>-3</sup>: above these densities, it reaches collisional equilibrium with the gas and adopts the gas temperature. &nbsp;At 10000K, H-beta will be a few times brighter than H-alpha [to-do: put exactly how much brighter...]</li><li>H-alpha becomes optically thick, while H-beta remains optically thin. &nbsp;This is essentially a geometric argument, and is explored a little in the text. &nbsp;If H-alpha becomes optically thick, more hydrogen won't increase the H-alpha brightness, but if H-beta remains optically thin, more hydrogen will increase its brightness. &nbsp;Simple argument, and it hasn't been fully explored yet (does the radiative transfer work, or does the "Case-C" situation kick in too hard first?), but it is a plausible alternative.</li></ol><div><br /></div></div><div>If you want to see my calculations in action, check out the <a href="http://nbviewer.ipython.org/urls/raw.github.com/keflavich/sn2009ip/master/SN2009ip.ipynb">ipython notebook</a>&nbsp;performing the calculations.<br /><br />In case you're interested in Case C recombination, here's a first step: a hydrogen level diagram with levels connected by the (sum of the) Einstein A values between the relevant levels (from&nbsp;<a href="http://physics.nist.gov/cgi-bin/ASD/lines1.pl">http://physics.nist.gov/cgi-bin/ASD/lines1.pl</a>, generated with&nbsp;<a href="https://github.com/keflavich/energyleveldiagrams">https://github.com/keflavich/energyleveldiagrams</a>).<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-L1C1rEu7cSQ/UK1A2KuTwcI/AAAAAAAAHRo/49TKIW0TChQ/s1600/EnergyLevelDiagram.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="428" src="http://1.bp.blogspot.com/-L1C1rEu7cSQ/UK1A2KuTwcI/AAAAAAAAHRo/49TKIW0TChQ/s640/EnergyLevelDiagram.png" width="640" /></a></div><br /></div></div></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Short timescale variability in Orion?  Nope.]]></title>
+    <link href="http://keflavich.github.com/blog/2012/11/19/short-timescale-variability-in-orion/"/>
+    <updated>2012-11-19T00:13:00-07:00</updated>
+    <id>http://keflavich.github.com/blog/2012/11/19/short-timescale-variability-in-orion</id>
+    <content type="html"><![CDATA[<div class='post'>
+<div dir="ltr" style="text-align: left;" trbidi="on">I attempted to use TripleSpec finder / guider images to search for variability &nbsp;on short (~5s) timescales in the Orion Nebula region. &nbsp;This project was an offshoot of the related <a href="http://adamginsburg.blogspot.com/2012/10/using-guider-images-to-achieve.html">http://adamginsburg.blogspot.com/2012/10/using-guider-images-to-achieve.html</a>. &nbsp;I successfully matched the images using a particular catalog &amp; the ever-cool&nbsp;<a href="http://astrometry.net/">astrometry.net </a>with a great deal of assistance from <a href="http://www.astro.princeton.edu/~dstn/">Dustin Lang</a>&nbsp;and some from <a href="http://hoggresearch.blogspot.com/2012/10/time-for-astrometrynet-to-rise-again.html">David Hogg</a>. &nbsp;I'll post details of that process later; it proved challenging but will DEFINITELY be useful again in the future. &nbsp;Short story: I had to build my own indices, then fit twice - once for the first match, once after distortion was applied to re-extract the sources in the right location.<br /><br />Conveniently, one of the products output by the astrometry.net code is ra,dec locations and fluxes (background subtracted) for all of the identified sources. &nbsp;So, I used a simple script to match all sources within 2" of a known source from my input catalog and generate timestream data. &nbsp;It took about an hour of processing (nested for loops - awful, but the only obvious choice at first. &nbsp;Half of the time was probably file IO anyway).<br /><br />I now had a few hundred timestreams of Orion stars. &nbsp;At this point, I hadn't done any kind of quality control, which was obviously a problem because the Trapezium and neighbors were clearly saturated. &nbsp;Also, there are known hot pixels that will drive some stars into weird behavior. &nbsp;But I ignored all of that. &nbsp;All I did for quality control was reject stars with more than about 5% missing data.<br /><br />I elected to go straight for PCA analysis. &nbsp;I assumed the primary component (the most correlated component) would be from the atmosphere, which is almost certainly true. &nbsp;Subtracting that off (shown in the notebook linked below) left some clearly correlated components left over - some of these are instrumental, others are correlated backgrounds, others are correlated saturation levels. &nbsp;I don't honestly know what all of the components are, but I DO know that correlated components are very unlikely to be intrinsic phenomena - stellar brightness isn't correlated.<br /><br />So I tried to cut out ALL correlated components. &nbsp;However, I think in the process I probably removed any useful information - even un-correlated signal should probably have a high amplitude (if it's interesting...) that will get removed through the process I used. &nbsp;Nonetheless, I probably have some upper limits on the 5s scale variability of these stars in K-band. &nbsp;Not enough to do anything like asteroseismology, but it was worth a day's effort.<br /><br />Here's the ipython notebook (gist &amp; nbviewer) for those interested:<br /><a href="https://gist.github.com/4109329">https://gist.github.com/4109329</a><br /><a href="http://nbviewer.ipython.org/4109329/">http://nbviewer.ipython.org/4109329/</a></div></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Planned Serendipity: H-alpha maps around O-stars]]></title>
+    <link href="http://keflavich.github.com/blog/2012/10/11/planned-serendipity-h-alpha-maps-around/"/>
+    <updated>2012-10-11T08:13:00-06:00</updated>
+    <id>http://keflavich.github.com/blog/2012/10/11/planned-serendipity-h-alpha-maps-around</id>
+    <content type="html"><![CDATA[<div class='post'>
+<div dir="ltr" style="text-align: left;" trbidi="on">Plenty of O-stars have been observed in H-alpha because they're in star forming regions. &nbsp;But there are plenty of others - runaways and the like - that haven't. &nbsp;A survey of these stars may turn up nearby ionized features. &nbsp;We may find externally illuminated AGB stars, allowing for determination of their ejecta composition with diagnostic lines that are usually unexcited and unavailable. &nbsp;We may find bipolar ejection nebulae or planetary nebulae with peculiar illumination patterns because they are not centrally lit.<div><br /></div><div>A good starting point &amp; justification for this survey would be to estimate the chance of a coincidence (within 5 pc? &nbsp;10 pc?) of an O star and an AGB star given purely random sampling. &nbsp;Based on the detection of SBW 2 in Carina, I think the odds must be pretty good.</div></div></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Using Guider images to achieve ~arcsecond pointing accuracy]]></title>
+    <link href="http://keflavich.github.com/blog/2012/10/05/using-guider-images-to-achieve/"/>
+    <updated>2012-10-05T08:46:00-06:00</updated>
+    <id>http://keflavich.github.com/blog/2012/10/05/using-guider-images-to-achieve</id>
+    <content type="html"><![CDATA[<div class='post'>
+<div dir="ltr" style="text-align: left;" trbidi="on">One of the challenges of observing in the near-IR / optical is field identification.  In the case of the Apache Point Observatory 3.5m, the "raw" pointing - i.e., if you enter a coordinate and press "slew" - is usually good to within ~1 arcminute.  However, once you're on the target field, it's up to you as the observer to identify the exact location within the 5x5' field to observe. <br /><br />This proves quite challenging in crowded fields, especially with rotation.  It is far more difficult, though, in sparse fields when your target is a faint emission line feature - there will be no corresponding light in your guider image.  But you still want ~arcsecond pointing accuracy. <br /><br />I think this can be achieved by using the astrometry.net source recognition and field identification tools, but highly constrained to be within ~10' of the target field.  The WCS coordinates would then be applied to the guider image, and the target location identified and translated into a telescope pointing offset. <br /><br />This technique is probably not needed for most spectroscopic observations (e.g., of bright point sources).  However, for slit-scan-mapping or observations of faint point sources, this approach provides the opportunity to do fast-switching with a bright calibration star so that telluric correction can be provided on a short (~5-10 minute) timescale, as is needed for truly accurate calibration.</div></div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adam</div>
+<div class='content'>
+I&#39;ve effectively achieved the stated goals regarding pointing; tried to do something more here: http://adamginsburg.blogspot.com/2012/11/short-timescale-variability-in-orion.html.  Will post full details later.</div>
+</div>
+<div class='comment'>
+<div class='author'>Adam</div>
+<div class='content'>
+Some progress in this vein: <br />1. installed astrometry.net (but without some graphical extras)<br />2. figured out how to create indexes!  Finders are ~5x5&#39;, so based on <a href="http://forum.astrometry.net/index.php?p=/discussion/2/problems-with-index-files-generation/p1" rel="nofollow"> this post </a> I want to use ~2-3&#39; healpixes.  <br />3. I also should be using denser catalogs than the all-sky USNO B1, especially for infrared targets.<br /><br />So, here&#39;s a sample build command (using a CDS-based FITS table, but modified by me using atpy):<br />build-index -v -i OMC1_optical_phot_DaRio.fits -o OMC1_optical_phot_DaRio_astrometryindex -N 1758</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Galactic H2CO Densitometry I: Pilot survey of Ultracompact HII regions and methodology]]></title>
+    <link href="http://keflavich.github.com/blog/2012/09/26/galactic-h2co-densitometry-i-pilot/"/>
+    <updated>2012-09-26T10:54:00-06:00</updated>
+    <id>http://keflavich.github.com/blog/2012/09/26/galactic-h2co-densitometry-i-pilot</id>
+    <content type="html"><![CDATA[<div class='post'>
+[ <a href="http://adsabs.harvard.edu/abs/2011ApJ...736..149G"> ADS </a> ] [ <a href="http://eta.colorado.edu/papers/h2co_pilot_draft0607.pdf"> Full Version </a> ] <hr> We examined 24 UCHII regions using the GBT to observe the 2-2 line of ortho-Formaldehyde.  We measured the local gas density and compared to GMCs and other galaxies.  We found densities in GMCs that are 1-2 orders of magnitude higher than the mean density in GMCs, implying that extreme overdensities are common even in "quiescent" (non-star-forming) GMCs.    This work was almost entirely my own, but was seeded by <a href="http://casa.colorado.edu/~jdarling/"> Jeremy Darling </a> Some highlight figures from the paper:  <div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-2FeB2dq7tXE/UGMxy17g_NI/AAAAAAAAHQQ/Ugswqn154-4/s1600/G32.80%252B0.19_both.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="366" width="400" src="http://1.bp.blogspot.com/-2FeB2dq7tXE/UGMxy17g_NI/AAAAAAAAHQQ/Ugswqn154-4/s400/G32.80%252B0.19_both.png" /></a></div>A sample spectrum.  On the top, black is Formaldehyde 1-1, red is Formaldehyde 2-2.  On the bottom, blue is 13CO, red is H77&alpha;, black is H110&alpha;.  <div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-B9zbOPROYn4/UGMxzZSsz9I/AAAAAAAAHQc/tQ_NVJNiVTE/s1600/DensityHistogram.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="304" width="400" src="http://3.bp.blogspot.com/-B9zbOPROYn4/UGMxzZSsz9I/AAAAAAAAHQc/tQ_NVJNiVTE/s400/DensityHistogram.png" /></a></div>Histograms of GMC mean densities and the densities measured directly from our survey.  Note that even for "serendipitious" line of sight GMCs, the densities are MUCH higher than typical GMC densities.  <div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-jfspjzvR6Tc/UGMxz8-7dEI/AAAAAAAAHQo/chH7rwVuyhs/s1600/Derived_DensityVsColumn_ExgalCompare_all_colored.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="272" width="400" src="http://4.bp.blogspot.com/-jfspjzvR6Tc/UGMxz8-7dEI/AAAAAAAAHQo/chH7rwVuyhs/s400/Derived_DensityVsColumn_ExgalCompare_all_colored.png" /></a></div>Comparison of the measured column densities of formaldehyde and inferred number densities of H<sub>2</sub>. </div>
+
+]]></content>
+  </entry>
+  
+</feed>

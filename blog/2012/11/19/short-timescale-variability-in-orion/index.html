@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Short timescale variability in Orion?  Nope. - Adam Ginsburg's Astro Blog</title>
+  <meta name="author" content="Adam Ginsburg">
+
+  
+  <meta name="description" content="I attempted to use TripleSpec finder / guider images to search for variability &nbsp;on short (~5s) timescales in the Orion Nebula region. &nbsp; &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://keflavich.github.com/blog/2012/11/19/short-timescale-variability-in-orion/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Adam Ginsburg's Astro Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-37306139-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adam Ginsburg's Astro Blog</a></h1>
+  
+    <h2>Nicer than keflavich.blogspot.com</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:keflavich.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/bgps/">BGPS</a></li>
+  <li><a href="/bgps/">BGPS</a></li>
+  <li><a href="/publications/">Research</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Short Timescale Variability in Orion? Nope.</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-19T00:13:00-07:00" pubdate data-updated="true">Nov 19<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+<div dir="ltr" style="text-align: left;" trbidi="on">I attempted to use TripleSpec finder / guider images to search for variability &nbsp;on short (~5s) timescales in the Orion Nebula region. &nbsp;This project was an offshoot of the related <a href="http://adamginsburg.blogspot.com/2012/10/using-guider-images-to-achieve.html">http://adamginsburg.blogspot.com/2012/10/using-guider-images-to-achieve.html</a>. &nbsp;I successfully matched the images using a particular catalog &amp; the ever-cool&nbsp;<a href="http://astrometry.net/">astrometry.net </a>with a great deal of assistance from <a href="http://www.astro.princeton.edu/~dstn/">Dustin Lang</a>&nbsp;and some from <a href="http://hoggresearch.blogspot.com/2012/10/time-for-astrometrynet-to-rise-again.html">David Hogg</a>. &nbsp;I&#8217;ll post details of that process later; it proved challenging but will DEFINITELY be useful again in the future. &nbsp;Short story: I had to build my own indices, then fit twice - once for the first match, once after distortion was applied to re-extract the sources in the right location.<br /><br />Conveniently, one of the products output by the astrometry.net code is ra,dec locations and fluxes (background subtracted) for all of the identified sources. &nbsp;So, I used a simple script to match all sources within 2&#8221; of a known source from my input catalog and generate timestream data. &nbsp;It took about an hour of processing (nested for loops - awful, but the only obvious choice at first. &nbsp;Half of the time was probably file IO anyway).<br /><br />I now had a few hundred timestreams of Orion stars. &nbsp;At this point, I hadn&#8217;t done any kind of quality control, which was obviously a problem because the Trapezium and neighbors were clearly saturated. &nbsp;Also, there are known hot pixels that will drive some stars into weird behavior. &nbsp;But I ignored all of that. &nbsp;All I did for quality control was reject stars with more than about 5% missing data.<br /><br />I elected to go straight for PCA analysis. &nbsp;I assumed the primary component (the most correlated component) would be from the atmosphere, which is almost certainly true. &nbsp;Subtracting that off (shown in the notebook linked below) left some clearly correlated components left over - some of these are instrumental, others are correlated backgrounds, others are correlated saturation levels. &nbsp;I don&#8217;t honestly know what all of the components are, but I DO know that correlated components are very unlikely to be intrinsic phenomena - stellar brightness isn&#8217;t correlated.<br /><br />So I tried to cut out ALL correlated components. &nbsp;However, I think in the process I probably removed any useful information - even un-correlated signal should probably have a high amplitude (if it&#8217;s interesting&#8230;) that will get removed through the process I used. &nbsp;Nonetheless, I probably have some upper limits on the 5s scale variability of these stars in K-band. &nbsp;Not enough to do anything like asteroseismology, but it was worth a day&#8217;s effort.<br /><br />Here&#8217;s the ipython notebook (gist &amp; nbviewer) for those interested:<br /><a href="https://gist.github.com/4109329">https://gist.github.com/4109329</a><br /><a href="http://nbviewer.ipython.org/4109329/">http://nbviewer.ipython.org/4109329/</a></div></div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Adam Ginsburg</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-19T00:13:00-07:00" pubdate data-updated="true">Nov 19<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/publications/'>publications</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/11/08/ipython-notebooks-preserve-figure/" title="Previous Post: ipython notebooks - preserve figure status between cells">&laquo; ipython notebooks - preserve figure status between cells</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/11/20/the-peculiar-balmer-decrement-of-sn/" title="Next Post: The Peculiar Balmer Decrement of SN 2009ip: Constraints on Circumstellar Geometry  ">The Peculiar Balmer Decrement of SN 2009ip: Constraints on Circumstellar Geometry   &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/26/bash-prompt/">Bash Prompt</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/triplespec-slit-mapping/">TripleSpec Slit Mapping</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/20/first/">Fourier Upsampling</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/12/installing-diffuse-or-meld-failure-cant/">Installing diffuse or meld - failure, can't install pygtk</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/04/installing-qt-on-107/">Installing qt on 10.7</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/11/21/test/">test</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/11/08/ipython-notebooks-preserve-figure/">ipython notebooks - preserve figure status between cells</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/11/05/netpbm-install/">netpbm install</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/05/guider-pointing-blog-motion/">Guider Pointing & Blog Motion</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/19/imf-and-number-of-massive-stars-per/">IMF and number of massive stars per cluster</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/19/an-experiment-with-log-normal-density/">Lognormal Density / IPython Notebook</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/06/i-sent-poll-to-aps-grad-students-to/"></a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/04/research-idea-nir-variation/">Research idea:  NIR variation</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/02/research-idea-stacking-finders/">Research Idea: Stacking Finders</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/12/connecting-to-ipython-notebook-with-ssh/">Connecting to ipython notebook with SSH tunneling</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/29/orion-in-infrared-and-millimeter/">Orion in the Infrared and Millimeter</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/03/22/sync-fork-with-original-repository-on/">Sync a fork with the original repository on Git</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/03/22/nan-friendly-convolution/">NaN-friendly convolution</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/01/26/compiling-vim/">Compiling vim...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/01/12/latex-vim-skim/">LaTeX: VIM + Skim</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/01/08/api-documentation-on-agpy/">API documentation on agpy</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/12/latex-producing-bibliography-and-paper/">latex: producing a bibliography and paper independently</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/08/16/mercurial-merge/">mercurial merge</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/08/11/offset-symbols/">Offset symbols?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/07/13/my-scipy-install/">my scipy install...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/28/p-cygni/">P Cygni</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/26/finally-got-matplotlib-to-install/">finally got matplotlib to install...</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/25/matplotlib-64-bit-installs-never-work/">matplotlib 64 bit installs never work</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/23/major-mac-problems/">Major mac problems</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/21/dying-dock/">Dying Dock</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/04/30/specanpy/">specanpy</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/03/29/why-cant-numpy-do-duplicate-index/">Why can't numpy do duplicate index assignment</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/03/18/pyspeckit-astronomical-spectroscopic/">pyspeckit: an astronomical spectroscopic toolkit</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/02/02/pstopng/">pstopng</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/12/13/converting-gildas-class-data-cubes-lmv/">Converting GILDAS-CLASS data cubes (lmv files) to fits</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/11/27/idl-syntax-highlighting-in-vim/">IDL syntax highlighting in VIM</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/11/22/mercurial-behave-like-svn/">Mercurial - behave like SVN?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/11/03/repositories-for-observers/">Repositories for observers</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/11/03/bgps-data-paper-published/">BGPS data paper published</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/10/05/next-generation-astronomy/">Next Generation Astronomy</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/09/14/converting-a-class-created-fits-file-to-a-real-fits-compliant-fits-file/">Converting a CLASS-created .fits file to a real (FITS-compliant) FITS file</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/08/18/observing-gbt-signs-of-good-bad-data/">Observing @ GBT: Signs of good & bad data</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/08/17/galactic-formaldehyde-densitometry-project/">Galactic Formaldehyde Densitometry Project</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/08/16/neat-new-things/">Neat new things....</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/08/13/filled-step-plots-in-matplotlib/">Filled step plots in matplotlib</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/08/05/my-starred-reader-articles/">My starred reader articles</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/08/05/first/">First!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/08/05/testing-trackbacks/">Testing trackbacks?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/07/28/histogram-in-google-spreadsheet/">Histogram in Google Spreadsheet</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/07/09/idl-to-python/">IDL-to-Python</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/keflavich">@keflavich</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'keflavich',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Adam Ginsburg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,749 +1,2857 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>http://keflavich.github.com/blog/2008/07/08/buffalo-destroyer/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/08/buffalo-the-destroyer/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/08/buffalo-the-destroyer/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/14/pumphouse-brewery-review/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/14/pumphouse-brewery-review/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/15/explosion/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/15/explosion/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/15/system/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/15/the-system/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/15/the-system/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/15/ssh/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/15/ssh/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/15/mountain-sun/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/15/mountain-sun/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/16/ds9-crosshairs-on-command-line/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/16/ds9-crosshairs-on-command-line/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/16/meta/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/16/meta/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/16/google-accident/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/16/google-accident/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/16/outreach-observing/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/16/outreach-observing/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/07/17/awk-sexagesimal-to-decimal-conversion/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/07/17/awk-sexagesimal-to-decimal-conversion/
+        </loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/17/mac-terminal-stuff/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/17/mac-terminal-stuff/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/18/world-wide-stout/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/18/world-wide-stout/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/18/russell-owen-ds9/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/18/russell-owen-ds9/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/07/18/ds9-commands-to-test-distortion-mapping/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/07/18/ds9-commands-to-test-distortion-mapping/
+        </loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/07/18/lunar-occultation-hi-res-measurements/
+        </loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/07/18/lunar-occultation-hi-res-measurements/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/18/observing-this-weekend/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/18/observing-this-weekend/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/20/how-much-time-per-year-is-spent/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/07/20/how-much-time-per-year-is-spent-traveling/
+        </loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/07/20/how-much-time-per-year-is-spent-traveling/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/07/21/stone-12th-anniversary-bitter-chocolate/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/07/21/stone-12th-anniversary-bitter-chocolate-stout/
+        </loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/07/21/stone-12th-anniversary-bitter-chocolate-stout/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/21/parallactic-angle/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/21/parallactic-angle/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/22/outreach-this-past-weekend/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/22/outreach-this-past-weekend/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/24/guinness-and-dogfish-head/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/24/guinness-and-dogfish-head/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/26/more-tastings/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/26/more-tastings/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/27/delirium-nocturne/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/27/delirium-nocturne/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/28/hebrew-jewbilation-11/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/28/hebrew-jewbilation-11/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/29/seti/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/29/seti/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/29/find-and-xargs/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/29/find-and-xargs/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/30/my-genes/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/30/my-genes/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
         <loc>http://keflavich.github.com/blog/2008/07/30/bolocam-pipeline-blog/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/07/30/new-pipeline-to-cvs/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/07/30/defining-pointing-terminology/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/30/idl-string-conversion/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/30/idl-string-conversion/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/30/not-a-webcomic/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/30/not-a-webcomic/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/30/not-webcomic/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/30/idl-array-indexing/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/30/idl-array-indexing/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/30/boulder-obovoid/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/30/boulder-obovoid/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/31/postscript-to-pdf-conversion/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/07/31/postscript-to-pdf-conversion/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/07/31/update-pointing-model/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/07/31/galactic-vs-ra-mapping/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/07/31/milkyway-scratch-disk-usage/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/01/movie-review-namesake/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/01/movie-review-the-namesake/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/01/movie-review-the-namesake/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/01/pointing-update/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/02/photos-featured-in-an-article/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/02/photos-featured-in-an-article/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/02/photos-featured-in-article/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/03/news-modifications/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/03/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/03/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/03/ag-i-died-in-google-accident/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/03/review-fruition-restaurant/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/03/review-fruition-restaurant/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/03/pointing-model-failure/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/03/l111-observation-notes/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/04/observation-distribution/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/05/molecular-clouds/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/05/molecular-clouds/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/05/defining-a-molecular-cloud/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/05/defining-a-molecular-cloud/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/05/nothing/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/06/astronomy-core-dump/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/06/astronomy-core-dump/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/06/mapped-but-no-dice/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/06/applescripting-out-that-vim-error/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/06/applescripting-out-that-vim-error/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/06/0507-mapping/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/06/occasional-bad-centroid/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/06/distortion-not-distortion-maps/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/06/something-is-wrong-in-0507/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/07/looking-back-at-old-pipeline/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/07/images-with-artifacts/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/08/rms-fails-to-shrink/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/08/big-run-this-weekend/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/09/more-beer-tastes/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/09/more-beer-tastes/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/09/movie-review-hancock/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/09/movie-review-hancock/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/09/blogroll/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/09/blogroll/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/10/movie-review-dark-knight/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/10/movie-review-dark-knight/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/10/glitches-and-errors/</loc>
-        <lastmod>2012-12-28T17:19:47-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/11/cleaning-ideas/</loc>
-        <lastmod>2012-12-28T17:20:13-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/12/wow-fft-failure/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/12/more-cleaning-modifications/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/12/ffts-and-unlucky-primes/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/12/searching-for-more-offsets/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/12/centroiding-and-merediths-files/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/13/direct-comparison-with-merediths/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/17/inconsistent/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/19/modifications/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/20/notice-anything-different/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/21/extracting-figures-from-papers/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/21/extracting-figures-from-papers/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/21/got-sign-wrong-again/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/21/new-pointing-models/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/21/task-list/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/22/back-to-site-editing/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/22/back-to-site-editing/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/22/ten/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/23/nsf-eligibility/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/23/nsf-eligibility/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/23/on-list-for-today/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/23/re-convergence-tests/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/23/merging-postscripts/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/23/merging-postscripts/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/24/some-good-news-some-not-news/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/24/g343-pca-subtraction-comparison/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/25/iterating-to-convergence/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/25/updates-today/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/27/confirmed-error-in-lb-mapping/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/08/28/preparemap-issues/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/30/danger-zone/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/30/danger-zone/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/31/fermentation/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/08/31/fermentation/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/01/1-year-of-data/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/01/1-year-of-data/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/09/02/pointing-model-success/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/03/idl-colors/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/03/idl-colors/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/09/03/using-awk-to-fixed-format-print-in-vim/
+        </loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/09/03/using-awk-to-fixed-format-print-in-vim/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/04/list/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/04/list/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/04/non-greedy-vim/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/04/non-greedy-vim/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/05/hi-kyle/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/05/hi-kyle/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/09/05/new-code/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/09/06/alignment/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/07/baking-again/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/07/baking-again/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/09/08/fresh-blood/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/09/08/broken-rotation/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/08/why-astronomy-is-important/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/08/why-astronomy-is-important/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/09/cgi-errors-on-origins/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/09/cgi-errors-on-origins/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/09/unhealthy-outlier/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/09/unhealthy-outlier/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/09/10/disagreement-over-definition-of-lb/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/10/no-coffee-day-make-me-useless/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/10/no-coffee-day-make-me-useless/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/09/11/google-search-terms-for-which-i-win/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/09/11/google-search-terms-for-which-i-win/
+        </loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/09/11/uh/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/09/12/failed-fields/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/09/13/php-and-cgi-working-in-same-directory/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/09/13/php-and-cgi-working-in-the-same-directory/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/09/13/php-and-cgi-working-in-the-same-directory/
+        </loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/13/figure/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/13/figure/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
     </url>
     <url>
         <loc>
             http://keflavich.github.com/blog/2008/09/14/progress-on-alignment-ideas-for-next/
         </loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/09/14/alignment-success-stories/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/09/15/scripting-whole-survey/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/09/16/mapping-update/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/09/17/maps-with-problems/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/24/do-not-install-10-5-5/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/24/do-not-install-10-5-5/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/24/do-not-install-1055/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/24/python-stuff/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/24/python-stuff/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/24/marc-pound-s-toolbox/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/24/marc-pound-s-toolbox/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/24/marc-pound-toolbox/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/25/pwv/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/25/pwv/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/25/running-at-altitude/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/25/running-at-altitude/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/27/observing-run-summary/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/09/27/observing-run-summary/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/10/07/mathematica/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/10/07/mathematica/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/10/07/sage-casjobs/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/10/07/sage-casjobs/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/10/07/gardening/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/10/07/gardening/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/10/07/flagging/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/10/11/teaching/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/10/11/teaching/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/10/12/mathematica-series-expansions/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/10/12/mathematica-series-expansions/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/10/12/how-do-i-print-a-multi-page-postscript/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/10/12/how-do-i-print-a-multi-page-postscript/
+        </loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/10/12/how-do-i-print-multi-page-postscript/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/10/13/outer-galaxy-fields-done/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/10/15/last-month-observations-in-l111/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/10/15/last-month-s-observations-in-l111/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/10/15/last-month-s-observations-in-l111/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/10/15/new-to-do-list-updated-things/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/10/17/save-restore-in-python/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/10/17/save-restore-in-python/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/10/18/listing-variables-e-g-idl-help-in-python/
+        </loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/10/18/listing-variables-e-g-idl-help-in-python/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/10/18/listing-variables-eg-idl-help-in-python/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/10/19/screen-nohup-ssh-scp/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/10/19/screen-nohup-ssh-scp/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/10/20/observing-10-20/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/10/20/observing-10-20/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/10/20/observing-1020/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/10/26/python-setting-matplotlib-defaults/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/10/26/python-setting-matplotlib-defaults/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/10/27/reinstalling-a-system/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/10/27/reinstalling-a-system/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/10/27/reinstalling-system/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/10/28/port-vs-fink/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/10/28/port-vs-fink/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/10/28/python-one-line-arrays/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/10/28/python-one-line-arrays/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/10/28/python-magic-advanced-numpy-indexing/
+        </loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/10/28/python-magic-advanced-numpy-indexing/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/11/06/photo-contest/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/11/06/photo-contest/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/11/06/bgps-photo/</loc>
-        <lastmod>2012-12-28T17:20:15-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/11/08/latest-re-run-of-pipeline/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/11/08/implementing-weighting/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/11/09/galactic-center-photo-contest/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/11/09/galactic-center-photo-contest/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/11/12/why-do-astronomers-have-such-a-strong-presence-on-the-web/
+        </loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/11/12/why-do-astronomers-have-such-a-strong-presence-on-the-web/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/11/12/why-do-astronomers-have-such-strong/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/11/13/bash-discoveries-readline-questions/
+        </loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/11/13/bash-discoveries-readline-questions/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/11/13/eta-carinae/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/11/13/eta-carinae/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/11/14/rewriting-pipeline-again/</loc>
-        <lastmod>2012-12-28T17:20:16-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/11/14/weighting-and-high-frequency-noise/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/11/14/paragraph-for-methods-paper/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/11/14/weighting-next-steps/</loc>
-        <lastmod>2012-12-28T17:20:17-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/11/16/ultimate-today/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/11/16/ultimate-today/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/11/17/5x1/</loc>
-        <lastmod>2012-12-28T17:20:17-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/11/17/screen-cont/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/11/17/screen-cont-d/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/11/17/screen-cont-d/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/11/17/massive-upgrades-new-strategy/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/11/18/median-drizzling/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/11/18/mad-flagger/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/11/18/version-06-begun/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/11/20/movies/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/11/20/movies/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/11/21/flagger/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/11/23/defusercommon-modified/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/11/24/-inputrc/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/11/24/-inputrc/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/11/24/inputrc/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/11/28/4-errors/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2008/11/28/deconvolution-vs-not/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/12/03/scary/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/12/03/scary/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/12/05/post-rate/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/12/05/post-rate/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/12/11/skill-set/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2008/12/11/skill-set/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/12/21/skim-a-pdf-reader-that-allows-annotations/
+        </loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/12/21/skim-a-pdf-reader-that-allows-annotations/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/12/21/skim-pdf-reader-that-allows-annotations/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/12/27/latex-replace-double-quotes-with-tex/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/12/27/latex-replace-double-quotes-with-tex-quotes/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2008/12/27/latex-replace-double-quotes-with-tex-quotes/
+        </loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2009/01/13/back-to-work/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/01/13/site-visits-comps/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/01/13/site-visits-comps/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/01/14/mosaic-data-reduction/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/01/14/mosaic-data-reduction/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2009/01/14/gem-ob1/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2009/01/15/new-mapping-procedure/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2009/01/15/more-problem-maps/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2009/01/17/0709-rotators-fixed-latest-run/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2009/01/17/flagger-images/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2009/01/22/making-a-postscript-plot-of-a-gigantic-fits-image/
+        </loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2009/01/22/making-a-postscript-plot-of-a-gigantic-fits-image/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2009/01/22/making-postscript-plot-of-gigantic-fits/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2009/01/22/ps2pdf-keep-resolution-crop-to-bounding/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2009/01/22/ps2pdf-keep-resolution-crop-to-bounding-box/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2009/01/22/ps2pdf-keep-resolution-crop-to-bounding-box/
+        </loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2009/01/24/distortion-mapping/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2009/01/24/filling-factors/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2009/01/30/beam-locations-peak-fluxes/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2009/01/31/blnobl-mars/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2009/02/01/sign-errors/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2009/02/01/0707-distortion-maps/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2009/02/01/distortion-mapping-done/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2009/02/06/rant-calcbeamlocations/</loc>
-        <lastmod>2012-12-28T17:20:18-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2009/02/06/planet-fluxes/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/02/18/my-works-featured/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/02/18/my-works-featured/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2009/02/23/return-to-deconvolution/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/02/25/astronomy-gets-some-recognition/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/02/25/astronomy-gets-some-recognition/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2009/03/02/new-series-of-problems/</loc>
-        <lastmod>2012-12-28T17:20:18-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2009/03/02/bunch-of-plots/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>
             http://keflavich.github.com/blog/2009/03/03/43-relative-alignment-and-mosaicing/
         </loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2009/03/03/methods-paper-figures-analysis-to/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2009/03/04/detailed-look-at-l086/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2009/03/08/gem-ob1-comparisons/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2009/03/20/locating-beams/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2009/03/20/eimers-project/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/04/01/april-1st-2009/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/04/01/april-1st-2009/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2009/04/04/electron-cyclotron-masers-from-planets-around-white-dwarves/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2009/04/04/electron-cyclotron-masers-from-planets-around-white-dwarves/
+        </loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/04/04/weekend/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/04/04/weekend/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/04/06/caffeine/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/04/06/caffeine/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/04/14/google-has-failed-me/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/04/14/google-has-failed-me/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/04/15/mac-stuff-cont/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/04/15/mac-stuff-cont-d/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/04/15/mac-stuff-cont-d/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/04/20/hosting-on-my-mac/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/04/20/hosting-on-my-mac/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/04/21/python-64-bit/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/04/21/python-64-bit/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/05/06/quicksilver-and-awesome/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/05/06/quicksilver-and-awesome/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/05/07/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/05/07/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2009/05/07/comedic-timing-has-been-fixed-using/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/05/25/some-comics/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/05/25/some-comics/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/05/26/public-perception-of-astronomers/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/05/26/public-perception-of-astronomers/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/06/02/most-important-astronomical/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2009/06/02/most-important-astronomical-publications/
+        </loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2009/06/02/most-important-astronomical-publications/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/06/14/comps-2-reflections/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/06/14/comps-2-reflections/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/06/15/art-mimicing-reality/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/06/15/art-mimicing-reality/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2009/06/22/release/</loc>
-        <lastmod>2012-12-28T17:20:18-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/06/22/bgps-public-release/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/06/22/bgps-public-release/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2009/06/29/make-pdfs-open-with-the-thumbnails-window-open/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2009/06/29/make-pdfs-open-with-the-thumbnails-window-open/
+        </loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2009/06/29/make-pdfs-open-with-thumbnails-window/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2009/07/02/installing-64-bit-tcl-tk-on-mac-os-x/
+        </loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2009/07/02/installing-64-bit-tcl-tk-on-mac-os-x/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2009/07/02/installing-64-bit-tcltk-on-mac-os-x/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2009/07/05/failure-to-compile-64-bit-gtk-on-mac-os/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2009/07/05/failure-to-compile-64-bit-gtk-on-mac-os/
+        </loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2009/07/08/success-64-bit-python-with-64-bit-tcl-tk/
+        </loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2009/07/08/success-64-bit-python-with-64-bit-tcl-tk/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2009/07/08/success-64-bit-python-with-64-bit-tcltk/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/07/12/year-in-review/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/07/12/year-in-review/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/07/25/movie-review-public-enemies/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/07/25/movie-review-public-enemies/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/08/12/quicksilver-sounds/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/08/12/quicksilver-sounds/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/08/13/login-shell/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/08/13/login-shell/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/08/14/acquiring-dss-images/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/08/14/acquiring-dss-images/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2009/08/15/fits-manipuation-with-imagemagick-gimp/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2009/08/15/fits-manipuation-with-imagemagick-gimp-etc/
+        </loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2009/08/15/fits-manipuation-with-imagemagick-gimp-etc/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/08/17/how-to-make-a-pretty-image/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/08/17/how-to-make-a-pretty-image/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/08/17/how-to-make-pretty-image/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/08/26/cython-vs-f2py/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/08/26/cython-vs-f2py/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/10/14/galaxy-map/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/10/14/galaxy-map/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/10/16/first-paper-accepted/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/10/16/first-paper-accepted/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/10/18/this-week-at-sun/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/10/18/this-week-at-the-sun/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/10/18/this-week-at-the-sun/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/10/18/-6-on-astro-ph-today/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/10/18/-6-on-astro-ph-today/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/10/18/6-on-astro-ph-today/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/10/21/astro-better-post/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/10/21/astro-better-post/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/10/21/new-python-software/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/10/21/new-python-software/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/11/19/wget/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/11/19/wget/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/12/15/detexify/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2009/12/15/detexify/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/01/03/my-month-of-travel/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/01/03/my-month-of-travel/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2010/01/27/wrapping-text-around-a-figure-in-latex/
+        </loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2010/01/27/wrapping-text-around-a-figure-in-latex/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2010/01/27/wrapping-text-around-figure-in-latex/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2010/02/04/logarithmic-colormap-other-colormap-in/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2010/02/04/logarithmic-colormap-other-colormap-in-matplotlib/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2010/02/04/logarithmic-colormap-other-colormap-in-matplotlib/
+        </loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/02/12/psds-cross-correlation/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/02/12/psds-cross-correlation/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/02/14/installing-snow-leopard/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/02/14/installing-snow-leopard/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2010/02/15/python-64-bit-on-mac-os-x-10-6-snow-leopard/
+        </loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2010/02/15/python-64-bit-on-mac-os-x-10-6-snow-leopard/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/02/15/python-64-bit-on-mac-os-x-106-snow/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2010/02/16/another-attempt-to-get-64-bit-python-on/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2010/02/16/another-attempt-to-get-64-bit-python-on-snow-leopard/
+        </loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2010/02/16/another-attempt-to-get-64-bit-python-on-snow-leopard/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/02/16/ds9-gaussian-fitting/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/02/16/ds9-gaussian-fitting/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/02/17/command-of-day/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/02/17/command-of-the-day/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/02/17/command-of-the-day/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/02/25/macvim-crash/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/02/25/macvim-crash/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/03/01/apache-php-mysql-on-snow-leopard/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/03/01/apache-php-mysql-on-snow-leopard/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/03/01/apachephpmysql-on-snow-leopard/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2010/03/05/rebuilding-python-from-scratch-again/
+        </loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2010/03/05/rebuilding-python-from-scratch-again/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/03/18/command-line-escape-key/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/03/18/command-line-escape-key/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/03/28/iraf-append-prepend-replace/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/03/28/iraf-append-prepend-replace/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/03/28/iraf-appendprependreplace/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/04/15/montage-wrapper/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/04/15/montage-wrapper/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/04/22/gildas-class/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/04/22/gildas-class/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/05/01/ratran-on-mac-os-x/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/05/01/ratran-on-mac-os-x/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/05/25/usetex-failure-in-latex-documents/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/05/25/usetex-failure-in-latex-documents/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/05/26/evla-information/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/05/26/evla-information/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2010/06/07/minor-mystery-resolved-perseus-cal/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2010/06/07/pipeline-flowcharts/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>
             http://keflavich.github.com/blog/2010/06/08/aperture-photometry-on-herschel-based/
         </loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2010/06/11/bgps-pipeline-published/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/06/13/ghostscript-error/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/06/13/ghostscript-error/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2010/06/16/pps-analysis/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>
             http://keflavich.github.com/blog/2010/06/21/pps-analysis-suggests-possible-solution/
         </loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2010/06/24/pps-comparison-completed/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2010/06/24/v20-is-to-v10-as-is-to-v10/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/07/09/idl-to-python/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/07/09/idl-to-python/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/07/28/histogram-in-google-spreadsheet/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/07/28/histogram-in-google-spreadsheet/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/08/05/testing-trackbacks/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/08/05/testing-trackbacks/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/08/05/first/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/08/05/first/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/08/05/my-starred-reader-articles/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/08/05/my-starred-reader-articles/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/08/13/filled-step-plots-in-matplotlib/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/08/13/filled-step-plots-in-matplotlib/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/08/16/neat-new-things/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/08/16/neat-new-things/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2010/08/17/galactic-formaldehyde-densitometry-project/
+        </loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2010/08/17/galactic-formaldehyde-densitometry-project/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2010/08/18/observing-gbt-signs-of-good-bad-data/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2010/08/18/observing-gbt-signs-of-good-bad-data/
+        </loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2010/09/14/converting-a-class-created-fits-file-to-a-real-fits-compliant-fits-file/
+        </loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2010/09/14/converting-a-class-created-fits-file-to-a-real-fits-compliant-fits-file/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/10/05/next-generation-astronomy/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/10/05/next-generation-astronomy/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2010/11/03/bgps-data-paper-published/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/11/03/bgps-data-paper-published/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/11/03/bgps-data-paper-published/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/11/03/repositories-for-observers/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/11/03/repositories-for-observers/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/11/22/mercurial-behave-like-svn/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/11/22/mercurial-behave-like-svn/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/11/27/idl-syntax-highlighting-in-vim/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2010/11/27/idl-syntax-highlighting-in-vim/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2010/12/13/converting-gildas-class-data-cubes-lmv/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2010/12/13/converting-gildas-class-data-cubes-lmv-files-to-fits/
+        </loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/01/20/downsampling-has-serious-negative/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>
             http://keflavich.github.com/blog/2011/01/21/more-evidence-that-downsampling-causes/
         </loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/02/01/delining/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2011/02/02/pstopng/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2011/02/02/pstopng/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
     </url>
     <url>
         <loc>
             http://keflavich.github.com/blog/2011/02/02/some-pretty-neat-things-about-delining/
         </loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/02/03/delining-and-cleaning-process/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/02/03/delining-maps/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/02/06/making-maps-faster/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/02/10/downsampling-what-is-going-on/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>
             http://keflavich.github.com/blog/2011/02/13/downsampling-why-is-dec-2010-different/
         </loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2011/03/18/pyspeckit-an-astronomical-spectroscopic-toolkit/
+        </loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2011/03/18/pyspeckit-astronomical-spectroscopic/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/03/22/revisiting-calibration-yet-again/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/03/23/workaround-for-individual-maps/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/03/27/trying-to-bootstrap/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/03/29/careful-comparison-of-ds1-and-ds5/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2011/03/29/why-can-t-numpy-do-duplicate-index-assignment/
+        </loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2011/03/29/why-cant-numpy-do-duplicate-index/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/03/29/progress-but-still-ds1-ds5-issues/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/03/30/weird-problem/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/04/05/deconvolve-and-epochs/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/04/07/deconvolution-vs-not/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/04/07/examining-deconvolution-strategies/</loc>
-        <lastmod>2012-12-28T17:20:19-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/04/11/tests-running/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/04/11/definitive-testing/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/04/18/sampling-causes-problems/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/04/19/sampling-causes-problems-rd-2/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/04/19/weighting-and-scaling/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/04/26/ds1-ds5-comparisons/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/04/27/azimuthal-averages/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2011/04/30/specanpy/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2011/04/30/specanpy/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/05/21/psf-modeling/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/05/24/astrophysical-signal-modeling/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>
             http://keflavich.github.com/blog/2011/05/26/recovery-as-function-of-bolometer-noise/
         </loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>
             http://keflavich.github.com/blog/2011/05/27/recovery-as-function-of-bolometer-noise_27/
         </loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/06/05/hunting-for-preferred-directions/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>
             http://keflavich.github.com/blog/2011/06/07/measuring-preferred-angles-in-herschel/
         </loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2011/06/21/dying-dock/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2011/06/21/dying-dock/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2011/06/23/major-mac-problems/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2011/06/23/major-mac-problems/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/06/23/power-spectra-of-13co-and-bolocam/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2011/06/25/matplotlib-64-bit-installs-never-work/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2011/06/25/matplotlib-64-bit-installs-never-work/
+        </loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2011/06/26/finally-got-matplotlib-to-install/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2011/06/26/finally-got-matplotlib-to-install/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2011/06/28/p-cygni/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2011/06/28/p-cygni/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
     </url>
     <url>
         <loc>
             http://keflavich.github.com/blog/2011/06/28/direct-comparison-of-column-density/
         </loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/07/10/minor-ongoing-problems/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2011/07/11/kinematics-and-h-2-morphology-of/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2011/07/11/spatially-resolved-study-of/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2011/07/11/title-outflows-and-massive-stars-in/
+        </loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2011/07/11/title-bolocam-galactic-plane-survey/
+        </loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2011/07/11/bolocam-galactic-plane-survey-ii/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2011/07/11/bolocam-galactic-plane-survey-iii/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2011/07/11/bolocam-galactic-plane-survey-iv-11-and/
+        </loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2011/07/11/herschel-observations-of-w43-mini/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2011/07/11/star-forming-region-sh-2-233ir-i-deep/
+        </loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2011/07/11/infrared-through-radio-study-of/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/07/12/additional-problems/</loc>
-        <lastmod>2012-12-28T17:20:19-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/07/13/spatial-transfer-functions/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/07/13/masked-edge-effects/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2011/07/13/my-scipy-install/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2011/07/13/my-scipy-install/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
     </url>
     <url>
         <loc>
             http://keflavich.github.com/blog/2011/07/14/testing-out-analytic-filter-functions/
         </loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>
             http://keflavich.github.com/blog/2011/07/15/fourier-transforms-are-not-commutative/
         </loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/07/17/open-questions-im-trying-to-answer/</loc>
-        <lastmod>2012-12-28T17:20:20-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/07/17/when-things-go-really-really-bad/</loc>
-        <lastmod>2012-12-28T17:20:20-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/07/18/bolocat-examination-part-1/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/07/27/examining-bolocat/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/07/28/stf-measurement-attempts-round-3/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>
             http://keflavich.github.com/blog/2011/08/05/spatial-transfer-functions-revisit-4/
         </loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/08/10/spatial-transfer-function-vs-npca/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2011/08/11/offset-symbols/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2011/08/11/offset-symbols/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/08/12/aperture-photometry/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2011/08/16/mercurial-merge/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2011/08/16/mercurial-merge/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/08/22/v1-v2-comparison/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/08/22/bolocat-v1-v2-comparison/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/08/25/v1-vs-v2-calibration-curves/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/08/26/final-calibration-curves-yeah-sure/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/08/29/bolocat-v1-v2-comparison-with-new/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2011/10/12/latex-producing-a-bibliography-and-paper-independently/
+        </loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2011/10/12/latex-producing-bibliography-and-paper/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/11/15/calibration-offsets-revisited/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>
             http://keflavich.github.com/blog/2011/12/02/calibration-as-good-as-its-gonna-get/
         </loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2011/12/30/flow-charts/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2012/01/08/api-documentation-on-agpy/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2012/01/08/api-documentation-on-agpy/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2012/01/12/latex-vim-skim/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2012/01/12/latex-vim-skim/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2012/01/26/compiling-vim/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2012/01/26/compiling-vim/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2012/03/20/new-coalignment-code/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2012/03/22/nan-friendly-convolution/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2012/03/22/nan-friendly-convolution/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2012/03/22/sync-a-fork-with-the-original-repository-on-git/
+        </loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2012/03/22/sync-fork-with-original-repository-on/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2012/03/30/getting-rid-of-haloes/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2012/05/23/bgps-v2-pointing/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2012/05/24/bolocat-v1-vs-v2/</loc>
-        <lastmod>2012-12-28T17:20:21-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2012/05/29/orion-in-infrared-and-millimeter/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2012/05/29/orion-in-the-infrared-and-millimeter/
+        </loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2012/08/12/connecting-to-ipython-notebook-with-ssh/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2012/08/12/connecting-to-ipython-notebook-with-ssh-tunneling/
+        </loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2012/09/02/research-idea-stacking-finders/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2012/09/02/research-idea-stacking-finders/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2012/09/04/research-idea-nir-variation/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2012/09/04/research-idea-nir-variation/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2012/09/06/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2012/09/06/i-sent-poll-to-aps-grad-students-to/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
     </url>
     <url>
         <loc>
             http://keflavich.github.com/blog/2012/09/08/cross-correlation-offsets-revisited/
         </loc>
-        <lastmod>2012-12-28T17:16:02-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2012/09/19/an-experiment-with-log-normal-density/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2012/09/19/lognormal-density-ipython-notebook/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2012/09/19/imf-and-number-of-massive-stars-per/
+        </loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2012/09/19/imf-and-number-of-massive-stars-per/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2012/09/20/characterizing-precursors-to-stellar/
+        </loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2012/09/20/the-optically-bright-post-agb/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2012/09/26/galactic-h2co-densitometry-i-pilot/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2012/10/05/using-guider-images-to-achieve/</loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2012/10/05/guider-pointing-blog-motion/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2012/10/11/planned-serendipity-h-alpha-maps-around/
+        </loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2012/11/05/netpbm-install/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2012/11/08/ipython-notebooks-preserve-figure/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2012/11/19/short-timescale-variability-in-orion/
+        </loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2012/11/20/the-peculiar-balmer-decrement-of-sn/
+        </loc>
+        <lastmod>2012-12-29T18:31:02-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2012/11/21/test/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/blog/2012/12/04/installing-qt-on-107/</loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
     </url>
     <url>
         <loc>
             http://keflavich.github.com/blog/2012/12/10/pointing-cross-correlation-yet-again/
         </loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://keflavich.github.com/blog/2012/12/12/installing-diffuse-or-meld-failure-cant/
+        </loc>
+        <lastmod>2012-12-29T18:20:42-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2012/12/20/first/</loc>
-        <lastmod>2012-12-26T17:30:33-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2012/12/21/idea-multispectral-eigenimage/</loc>
-        <lastmod>2012-12-28T17:20:29-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2012/12/25/triplespec-slit-mapping/</loc>
-        <lastmod>2012-12-26T17:30:33-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2012/12/25/catalog-vs-image-shift-possible/</loc>
-        <lastmod>2012-12-28T17:15:55-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/2012/12/26/bash-prompt/</loc>
-        <lastmod>2012-12-26T17:30:33-07:00</lastmod>
+        <lastmod>2012-12-29T17:47:50-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/bgps/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/blog/archives/</loc>
-        <lastmod>2012-12-28T17:20:29-07:00</lastmod>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
     </url>
     <url>
         <loc>http://keflavich.github.com/</loc>
-        <lastmod>2012-12-28T17:20:29-07:00</lastmod>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://keflavich.github.com/publications/</loc>
+        <lastmod>2012-12-29T18:31:03-07:00</lastmod>
     </url>
 </urlset>
