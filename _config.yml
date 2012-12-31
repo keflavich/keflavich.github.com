@@ -2,12 +2,12 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://yoursite.com
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+url: http://keflavich.github.com
+title: "Adam Ginsburg's Astro Blog"
+subtitle: 
+author: Adam Ginsburg
 simple_search: http://google.com/search
-description:
+description: Working on migrating my various blogspot blogs here
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -18,7 +18,6 @@ date_format: "ordinal"
 # RSS / Email (optional) subscription links (change if using something like Feedburner)
 subscribe_rss: /atom.xml
 subscribe_email:
-category_feeds: false
 # RSS feeds can list your email address if you like
 email:
 
@@ -39,7 +38,7 @@ include:
 markdown: rdiscount
 pygments: false # Jekyll's default Python Pygments have been replaced by pygments.rb. Set to true to use Albino + Pythong Pygments
 
-paginate: 10          # Posts per page on the blog index
+paginate: 5           # Posts per page on the blog index
 pagination_dir: blog  # Directory base for pagination URLs eg. /blog/page/2/
 recent_posts: 5       # Posts in the sidebar Recent Posts section
 excerpt_link: "Read on &rarr;"  # "Continue reading" link text at the bottom of excerpted articles
@@ -59,16 +58,17 @@ blog_index_sidebar: blog_index_default.html
 page_sidebar: page_default.html
 post_sidebar: post_default.html
 
+# list each of the sidebar modules you want to include, in the order you want them to appear.
+# to add custom asides, create files in /source/_includes/custom/asides/ and add them to the list like 'custom/asides/custom_aside_name.html'
+#default_asides: [asides/recent_posts.html, asides/github.html, asides/twitter.html, asides/delicious.html, asides/pinboard.html, asides/googleplus.html]
+
+
 # ----------------------- #
 #   3rd Party Settings    #
 # ----------------------- #
 
-# Javascript social buttons often generate lots of http requests and may track your viewer's browsing history
-# Show respect for privacy and bandwidth with simple links for Twitter, Facebook and Google Plus.
-respectfully_social: true
-
 # Github repositories
-github_user:
+github_user: keflavich
 github_repo_count: 0
 github_show_profile_link: true
 github_skip_forks: true
@@ -79,7 +79,7 @@ twitter_tweet_count: 4
 twitter_show_replies: false
 twitter_follow_button: true
 twitter_show_follower_count: false
-twitter_tweet_button: true
+twitter_tweet_button: false
 
 # Google +1
 google_plus_one: false
@@ -102,10 +102,9 @@ delicious_count: 3
 # Disqus Comments
 disqus_short_name:
 disqus_show_comment_count: false
-disqus_developer: 0
 
 # Google Analytics
-google_analytics_tracking_id:
+google_analytics_tracking_id: UA-37306139-1
 
 # Gaug.es Analytics
 gauges_analytics_tracking_id:
