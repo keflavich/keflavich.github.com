@@ -1,0 +1,25 @@
+---
+layout: post
+title: "Using Guider images to achieve ~arcsecond pointing accuracy"
+date: 2012-10-05T07:46:00-07:00
+categories:
+ - research ideas
+ - astronomy
+ - observing
+---
+
+<div class='post'>
+<div dir="ltr" style="text-align: left;" trbidi="on">One of the challenges of observing in the near-IR / optical is field identification.  In the case of the Apache Point Observatory 3.5m, the "raw" pointing - i.e., if you enter a coordinate and press "slew" - is usually good to within ~1 arcminute.  However, once you're on the target field, it's up to you as the observer to identify the exact location within the 5x5' field to observe. <br /><br />This proves quite challenging in crowded fields, especially with rotation.  It is far more difficult, though, in sparse fields when your target is a faint emission line feature - there will be no corresponding light in your guider image.  But you still want ~arcsecond pointing accuracy. <br /><br />I think this can be achieved by using the astrometry.net source recognition and field identification tools, but highly constrained to be within ~10' of the target field.  The WCS coordinates would then be applied to the guider image, and the target location identified and translated into a telescope pointing offset. <br /><br />This technique is probably not needed for most spectroscopic observations (e.g., of bright point sources).  However, for slit-scan-mapping or observations of faint point sources, this approach provides the opportunity to do fast-switching with a bright calibration star so that telluric correction can be provided on a short (~5-10 minute) timescale, as is needed for truly accurate calibration.</div></div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adam</div>
+<div class='content'>
+I&#39;ve effectively achieved the stated goals regarding pointing; tried to do something more here: http://adamginsburg.blogspot.com/2012/11/short-timescale-variability-in-orion.html.  Will post full details later.</div>
+</div>
+<div class='comment'>
+<div class='author'>Adam</div>
+<div class='content'>
+Some progress in this vein: <br />1. installed astrometry.net (but without some graphical extras)<br />2. figured out how to create indexes!  Finders are ~5x5&#39;, so based on <a href="http://forum.astrometry.net/index.php?p=/discussion/2/problems-with-index-files-generation/p1" rel="nofollow"> this post </a> I want to use ~2-3&#39; healpixes.  <br />3. I also should be using denser catalogs than the all-sky USNO B1, especially for infrared targets.<br /><br />So, here&#39;s a sample build command (using a CDS-based FITS table, but modified by me using atpy):<br />build-index -v -i OMC1_optical_phot_DaRio.fits -o OMC1_optical_phot_DaRio_astrometryindex -N 1758</div>
+</div>
+</div>

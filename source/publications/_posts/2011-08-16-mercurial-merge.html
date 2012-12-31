@@ -1,0 +1,10 @@
+---
+layout: post
+title: "mercurial merge"
+date: 2011-08-16T07:09:00-07:00
+categories:
+ - mercurial
+---
+
+<div class='post'>
+<a href="http://casa.colorado.edu/~ginsbura/index.htm">AG</a><br /><br />My most hated behavior of mercurial:<br /><pre>searching for changes<br /><br />adding changesets<br /><br />adding manifests<br /><br />adding file changes<br /><br />added 1 changesets with 3 changes to 3 files (+1 heads)<br /><br />(run 'hg heads' to see heads, 'hg merge' to merge)<br /><br />remote: 1 changesets found<br /><br />running hook post-pull: hg up<br /><br />abort: crosses branches (merge branches or use --clean to discard changes)<br /><br />warning: post-pull hook exited with status 255<br /><br />$ hg merge<br /><br />abort: outstanding uncommitted changes (use 'hg status' to list changes)<br /><br />$ hg commit<br /><br />nothing changed<br /><br /></pre><br />Solution:<br /><code> hg merge --force </code><br />Hopefully there are other solutions that I'll eventually add to this.</div>

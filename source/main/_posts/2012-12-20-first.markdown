@@ -1,0 +1,12 @@
+---
+layout: post
+title: "Fourier Upsampling"
+date: 2012-12-20 13:49
+comments: true
+categories: fourier
+---
+I wrote some stuff on Fourier interpolation techniques.
+
+Here's the link: [fourier tools](http://image-registration.readthedocs.org/en/latest/fourier_tools.html)
+
+A discussion about adding it into skimage: [skimage group](https://groups.google.com/d/topic/scikit-image/jJN0Nr9LkVI/discussion)
