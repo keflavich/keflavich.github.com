@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div class="blog-index">
-  {% for post in paginator.posts.publications %}
+  {% for post in categories.posts.publications %}
     {% include post/variables.html %}
     <article {% if linklog %}class="linklog"{% endif %}>
       {% include article.html %}
