@@ -60,10 +60,12 @@ titlecase: true       # Converts page and post titles to titlecase
 blog_index_sidebar: blog_index_default.html
 page_sidebar: page_default.html
 post_sidebar: post_default.html
+category_list: category_list.html
+category_cloud: category_cloud.html
 
 # list each of the sidebar modules you want to include, in the order you want them to appear.
 # to add custom asides, create files in /source/_includes/custom/asides/ and add them to the list like 'custom/asides/custom_aside_name.html'
-default_asides: [asides/recent_posts.html, asides/github.html, asides/twitter.html, asides/delicious.html, asides/pinboard.html, asides/googleplus.html]
+# obsolete default_asides: [asides/recent_posts.html, asides/github.html, asides/twitter.html, asides/delicious.html, asides/pinboard.html, asides/googleplus.html, asides/category_list.html, asides/category_cloud.html ]
 
 
 # ----------------------- #
