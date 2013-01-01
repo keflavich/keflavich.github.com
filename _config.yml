@@ -65,7 +65,8 @@ category_cloud: category_cloud.html
 
 # list each of the sidebar modules you want to include, in the order you want them to appear.
 # to add custom asides, create files in /source/_includes/custom/asides/ and add them to the list like 'custom/asides/custom_aside_name.html'
-# obsolete default_asides: [asides/recent_posts.html, asides/github.html, asides/twitter.html, asides/delicious.html, asides/pinboard.html, asides/googleplus.html, asides/category_list.html, asides/category_cloud.html ]
+# obsolete 
+default_asides: [asides/recent_posts.html, asides/github.html, asides/twitter.html, asides/delicious.html, asides/pinboard.html, asides/googleplus.html, custom/asides/category_list.html, custom/asides/category_cloud.html ]
 
 
 # ----------------------- #
