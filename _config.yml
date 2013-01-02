@@ -5,7 +5,8 @@
 url: http://keflavich.github.com
 title: "Adam Ginsburg's Astro Blog"
 subtitle: 
-author: Adam Ginsburg
+author: Adam Ginsburg 
+author_email: adam.g.ginsburg@gmail.com
 simple_search: http://google.com/search
 description: Working on migrating my various blogspot blogs here
 
@@ -19,7 +20,7 @@ date_format: "ordinal"
 subscribe_rss: /atom.xml
 subscribe_email:
 # RSS feeds can list your email address if you like
-email:
+email: adam.g.ginsburg@gmail.com
 
 # ----------------------- #
 #    Jekyll & Plugins     #
@@ -66,7 +67,7 @@ category_cloud: category_cloud.html
 # list each of the sidebar modules you want to include, in the order you want them to appear.
 # to add custom asides, create files in /source/_includes/custom/asides/ and add them to the list like 'custom/asides/custom_aside_name.html'
 # obsolete 
-default_asides: [asides/recent_posts.html, asides/github.html, asides/twitter.html, asides/delicious.html, asides/pinboard.html, asides/googleplus.html, custom/asides/category_list.html, custom/asides/category_cloud.html ]
+#default_asides: [asides/recent_posts.html, asides/github.html, asides/twitter.html, asides/delicious.html, asides/pinboard.html, asides/googleplus.html, custom/asides/category_list.html, custom/asides/category_cloud.html ]
 
 
 # ----------------------- #
